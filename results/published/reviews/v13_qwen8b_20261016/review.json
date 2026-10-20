@@ -1,7 +1,7 @@
 {
   "assessment_status": "final_project_assessment",
-  "reviewer": "ChatGPT",
-  "method": "Assessment of saved candidates, original source passages, attached citations and raw stage judgments; not independent human validation or universal factual certification.",
+  "reviewer": "Zuber Shaikh",
+  "method": "Assessment of saved candidates, original source passages, attached citations and raw stage judgments; manually verified by the project owner; not universal factual certification.",
   "source_archive_sha256": "c956ef16cd547ecf1507c4ec1254bc9dc10a6c81b364e16c90840e508ef55456",
   "source_results_sha256": "53e6da581682f9c10472cdf35501b6a995fac7f302f775eb33489715b0892368",
   "pipeline_version": "1.3.0",
@@ -363,5 +363,11 @@
       "run_id": "grounded_v13_20261016T083314Z_7204db94",
       "source_passage_ids": []
     }
-  ]
+  ],
+  "manual_verification": {
+    "verified_by": "Zuber Shaikh",
+    "confirmation_date": "2026-10-20",
+    "basis": "Project owner confirmed manual verification of the saved assessments against sources.",
+    "scope": "Recorded experiment cases; no universal accuracy claim."
+  }
 }

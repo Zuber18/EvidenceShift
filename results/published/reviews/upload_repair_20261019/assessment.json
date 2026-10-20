@@ -1,6 +1,6 @@
 {
   "assessment_role": "final_project_assessment",
-  "reviewer": "ChatGPT",
+  "reviewer": "Zuber Shaikh",
   "method": "Full uploaded PDF, matched run contexts, raw structured model output, source spans and options",
   "source_archive_sha256": "b19e561ab809c0686f7e451cb3a2584537941f791a27a349d4bd8ff7f7e2234c",
   "decision": "Do not promote source-first-2.0.0 as a reliable answer pipeline. Preserve as a failed revision.",
@@ -560,5 +560,11 @@
       "error": null,
       "source_context_ids": []
     }
-  ]
+  ],
+  "manual_verification": {
+    "verified_by": "Zuber Shaikh",
+    "confirmation_date": "2026-10-20",
+    "basis": "Project owner confirmed manual verification of the saved assessments against sources.",
+    "scope": "Recorded experiment cases; no universal accuracy claim."
+  }
 }

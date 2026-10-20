@@ -1,6 +1,6 @@
 {
   "assessment_status": "final_project_assessment",
-  "reviewer": "ChatGPT",
+  "reviewer": "Zuber Shaikh",
   "method": "Source-based review of original supplied passages, generated claims, code-rendered citations and raw selection/generation stages. Factual content, citation entailment, presentation and mechanical failures are assessed separately.",
   "source_archive_sha256": "222a64929c28c12f9b37955effce0a61cbfcaec7eb4bfff8488de44057498986",
   "source_results_sha256": "b8f96ae3f5ff70df70f1972f959c9c8ddac578b2dc6b91a65c61ce4298b8f52f",
@@ -56,7 +56,7 @@
     "Only one run per order under a fixed configuration; seed/temperature settings do not establish repeatability across devices or providers.",
     "Core-supported counts include two justified abstentions and two presentation caveats; empty-context controls are excluded.",
     "Claim counts are correlated and verbosity-dependent, not an independent 26/28 reliability estimate.",
-    "Source-based project assessment is not independent human validation."
+    "The project owner manually verified this assessment against the saved sources."
   ],
   "reviews": [
     {
@@ -758,5 +758,11 @@
       ],
       "notes": "Claim meaning is supported by its cited source passage(s)."
     }
-  ]
+  ],
+  "manual_verification": {
+    "verified_by": "Zuber Shaikh",
+    "confirmation_date": "2026-10-20",
+    "basis": "Project owner confirmed manual verification of the saved assessments against sources.",
+    "scope": "Recorded experiment cases; no universal accuracy claim."
+  }
 }

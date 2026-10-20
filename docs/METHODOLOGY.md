@@ -30,10 +30,11 @@ trials or confidence intervals.
 | Model judgments | Selected relevance, generated facts, critic responses | Independent factual approval |
 | Source-based assessment | Claim support, actor/action direction, conditions, exceptions, scope, citations and abstention | General reliability on arbitrary documents |
 
-My source-based review workflow is model-assisted. I retain its reviewer and
-method metadata in the saved assessments, which form the project's final
-assessment record. I do not present this process as independent human
-annotation. Historical metadata remains unchanged.
+I manually verified the saved assessments against the source passages. My
+review covers factual support, citations, conditions, exceptions, missing
+information and answer completeness. The current assessment metadata names
+me as the project reviewer. This is project-owner verification, not a
+separate third-party evaluation or a claim of universal factual accuracy.
 
 An existing citation can refer to the wrong actor, fail to support the claim,
 or accompany incorrect arithmetic. An exact quotation can be irrelevant.

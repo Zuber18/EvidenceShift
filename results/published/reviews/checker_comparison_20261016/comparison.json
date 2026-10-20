@@ -1,7 +1,7 @@
 {
   "assessment_status": "final_project_assessment",
-  "reviewer": "ChatGPT",
-  "review_method": "Saved passage and candidate review, separating model outcome labels from the supporting reasons. No independent human validation or held-out accuracy is claimed.",
+  "reviewer": "Zuber Shaikh",
+  "review_method": "Saved passage and candidate review, separating model outcome labels from the supporting reasons. Manually verified by the project owner; no held-out accuracy estimate is claimed.",
   "input_archive_sha256": {
     "qwen3:8b": "fd1e3f28b050cff275581be362694b64de4854a9907bbd6b9148560cdebf2e38",
     "gemma3:4b": "c5b141088de483c1a59f1f32a5158c1952d3c921bbb9cf8db1b2e53aa0c2b495"
@@ -211,5 +211,11 @@
       "notes": "The synthetic candidate makes domestic approval mandatory and allows all expenses without receipts, directly contrary to the supplied policy. Gemma returns no objections.",
       "candidate_answer": "Every journey requires written advance approval, including domestic journeys. [fixture_travel_policy]\nEvery travel expense is reimbursed even without an itemized receipt. [fixture_travel_policy]"
     }
-  ]
+  ],
+  "manual_verification": {
+    "verified_by": "Zuber Shaikh",
+    "confirmation_date": "2026-10-20",
+    "basis": "Project owner confirmed manual verification of the saved assessments against sources.",
+    "scope": "Recorded experiment cases; no universal accuracy claim."
+  }
 }

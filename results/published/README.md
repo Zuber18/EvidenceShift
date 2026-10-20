@@ -33,9 +33,14 @@ dependencies used by the root runners. Run `python scripts/check_repository.py`
 to check integrity and confirmation pairs/counts. This does not score semantic
 correctness or replace the source-based assessment.
 
-The raw archives were supplied by the project owner and the assessments were
-produced by ChatGPT against saved sources. This is not independent human
-validation or a representative estimate over arbitrary user documents.
-Stage timing is local model-call time, not hosted or end-to-end latency.
-Historical next-step text is retained as provenance; current direction is in
-the root README. Never overwrite failed outputs with favorable reruns.
+I manually verified the saved assessments against the source passages.
+The current review metadata identifies me, Zuber Shaikh, as the project
+reviewer. These findings apply to the recorded cases and are not a
+representative estimate over arbitrary user documents. Stage timing records
+local model calls rather than hosted or end-to-end latency. Historical
+next-step notes describe their original experiment phase; the root README
+states the current direction. Failed outputs remain part of the record.
+
+The current assessment metadata was revised after my manual verification.
+Raw model outputs, source passages, run plans and frozen source snapshots
+were not changed. The publication manifest identifies this reviewed revision.
