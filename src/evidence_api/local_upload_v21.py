@@ -12,6 +12,7 @@ SMALL_CORPUS_BYTES = 20000
 
 
 class Workspace(BaselineWorkspace):
+    """Use shared semantic retrieval with expanded context and source-unit selection."""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         try:
@@ -39,6 +40,11 @@ class Workspace(BaselineWorkspace):
             raise
 
     def search(self, question):
+        """Return complete small-corpus coverage or semantic hits with neighbors.
+
+        Expansion stays within document boundaries. Save the coverage plan and
+        omitted passage IDs so missing context remains inspectable.
+        """
         if self.closed:
             raise ValueError('The workspace has been cleared.')
         if not question.strip() or len(question) > 1200:
@@ -76,6 +82,11 @@ class Workspace(BaselineWorkspace):
         return copy.deepcopy(expanded)
 
     def ask(self,question,variant='retrieved',client=None):
+        """Persist one source-unit selection attempt under the requested order.
+
+        Reverse the same passage set or use an empty-context code control. Save
+        errors and raw traces without retrying or certifying factual support.
+        """
         if variant not in {'retrieved','reversed','no_context'}:raise ValueError('Unknown evidence-order variant.')
         folder=self.folder/'runs'/stamp('run_');folder.mkdir(parents=True)
         run={'run_id':folder.name,'service_version':VERSION,'question':question,'variant':variant,

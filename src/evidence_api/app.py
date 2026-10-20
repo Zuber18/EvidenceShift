@@ -16,6 +16,7 @@ Variant = Literal['retrieved', 'reversed', 'no_context']
 
 
 class SearchRequest(BaseModel):
+    """Validate a question and optional document scope before retrieval."""
     model_config = ConfigDict(extra='forbid', str_strip_whitespace=True)
     question: str = Field(min_length=1, max_length=1200)
     top_k: int = Field(default=5, ge=1, le=8)
@@ -23,10 +24,12 @@ class SearchRequest(BaseModel):
 
 
 class AnswerRequest(SearchRequest):
+    """Select a preserved API prompt for one document-grounded response."""
     prompt_name: PromptName = 'original'
 
 
 class ExperimentRequest(SearchRequest):
+    """Declare prompt/order comparisons and labels excluded from model input."""
     prompts: list[PromptName] = Field(default=['original', 'candidate_v2'], min_length=1, max_length=3)
     variants: list[Variant] = Field(default=['retrieved', 'reversed', 'no_context'], min_length=1, max_length=3)
     expected_answer: str | None = Field(default=None, max_length=4000)
@@ -34,6 +37,11 @@ class ExperimentRequest(SearchRequest):
 
 
 def build_engine(data_root=None):
+    """Construct the CPU encoder, tokenizer-aware splitter, store and client.
+
+    The caller may provide an isolated data root. Instantiating the Ollama
+    client does not establish that its server or selected model is ready.
+    """
     from langchain_text_splitters import RecursiveCharacterTextSplitter
     from sentence_transformers import SentenceTransformer
     from ollama import Client
@@ -60,6 +68,10 @@ def build_engine(data_root=None):
 
 
 def create_app(engine=None):
+    """Create API routes around an injected or lifespan-initialized engine.
+
+    Engine injection supports controlled tests without loading real weights.
+    """
     @asynccontextmanager
     async def lifespan(app):
         app.state.engine = engine if engine is not None else build_engine()

@@ -10,6 +10,11 @@ MAX_TEXT = 5_000_000
 
 
 def parse_document(filename: str, raw: bytes):
+    """Validate upload bytes and extract text with physical PDF page numbers.
+
+    Non-PDF text uses page 0. Empty/scanned-only or oversized input is
+    rejected before indexing; this parser does not perform OCR.
+    """
     source = Path(filename.replace('\\', '/')).name
     extension = Path(source).suffix.lower()
     if extension not in {'.pdf', '.txt', '.md', '.docx'}:

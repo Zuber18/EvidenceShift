@@ -66,6 +66,7 @@ def encoder_identity(encoder):
 
 
 def identity_for_store(store):
+    """Fingerprint loaded encoder state together with retrieval settings and packages."""
     identity=copy.deepcopy(encoder_identity(store.encoder))
     identity['retrieval_profile']=copy.deepcopy(store.profile)
     identity['encode_settings']={'device':'cpu','normalize_embeddings':True,'metric':'cosine'}
@@ -94,6 +95,7 @@ def enforce_identity_lock(path,identity):
 
 
 def validated_plan(root):
+    """Load the saved plan and reject a changed baseline generator or version."""
     raw=(Path(root)/'evaluation/fresh_baseline_cases.json').read_bytes();plan=json.loads(raw)
     if hashlib.sha256(Path(base.__file__).read_bytes()).hexdigest()!=plan['baseline_module_sha256']:
         raise ValueError('Preserved baseline generation module differs from the evaluated version.')
@@ -102,6 +104,7 @@ def validated_plan(root):
 
 
 def ollama_client():
+    """Create a bounded-timeout client for a loopback Ollama endpoint."""
     import os
     from ollama import Client
     host=os.environ.get('OLLAMA_HOST','http://localhost:11434')
@@ -111,6 +114,11 @@ def ollama_client():
 
 
 class Workspace:
+    """Own an isolated upload index and a separately persisted session archive.
+
+    Source bytes and run reports survive temporary-workspace cleanup. The
+    base class retains the original top-five retrieval/generation path.
+    """
     def __init__(self,root,uploads,store_factory=None,identity_reader=identity_for_store,parser=None):
         self.root=Path(root);self.plan=validated_plan(self.root);self.closed=False;self.store=None;self.documents=[]
         if not uploads or len(uploads)>MAX_FILES:raise ValueError('Choose between one and eight documents.')
@@ -164,11 +172,17 @@ class Workspace:
             self.close();raise
 
     def search(self,question):
+        """Search only this workspace's uploaded documents using the baseline policy."""
         if self.closed:raise ValueError('The workspace has been cleared.')
         if not question.strip() or len(question)>1200:raise ValueError('Enter a question of 1–1200 characters.')
         with LOCK:return self.store.search(question,5,[d['document_id'] for d in self.documents])
 
     def ask(self,question,variant='retrieved',client=None):
+        """Record one baseline question/order attempt, including any failure.
+
+        The empty-context control skips model calls. Every completed attempt
+        updates the saved session summary; source support is not auto-scored.
+        """
         if variant not in {'retrieved','reversed','no_context'}:raise ValueError('Unknown evidence-order variant.')
         folder=self.folder/'runs'/stamp('run_');folder.mkdir(parents=True)
         run={'run_id':folder.name,'service_version':VERSION,'question':question,'variant':variant,
@@ -204,6 +218,7 @@ class Workspace:
         return run
 
     def save_summary(self):
+        """Refresh the session JSON and CSV index after a recorded attempt."""
         payload={'session_id':self.folder.name,'documents':self.documents,'runs':self.runs,'factual_correctness':'not_automatically_scored'}
         temp=self.folder/'summary.tmp';temp.write_text(json.dumps(payload,indent=2),encoding='utf-8');temp.replace(self.folder/'summary.json')
         if self.runs:
@@ -211,6 +226,10 @@ class Workspace:
                 writer=csv.DictWriter(stream,fieldnames=list(self.runs[0]));writer.writeheader();writer.writerows(self.runs)
 
     def export(self):
+        """Archive saved uploads and all session runs without temporary indexes.
+
+        Exclude the export itself and redundant nested generator ZIP files.
+        """
         bundle=self.folder/'local_upload_smoke_bundle.zip'
         temp=self.folder/'export.tmp'
         with zipfile.ZipFile(temp,'w',zipfile.ZIP_DEFLATED) as archive:
@@ -220,6 +239,10 @@ class Workspace:
         return bundle
 
     def close(self):
+        """Idempotently remove the temporary collection and index directory.
+
+        Saved session uploads, reports and previous results remain available.
+        """
         if self.closed:return
         self.closed=True
         try:

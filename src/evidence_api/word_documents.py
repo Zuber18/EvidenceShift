@@ -4,6 +4,11 @@ from zipfile import ZipFile
 
 
 def extract_docx(raw):
+    """Extract body paragraphs and table rows after checking expanded ZIP size.
+
+    Headers, footers and pagination are not reconstructed. Table cells are
+    joined within each row so the stored text retains their immediate order.
+    """
     from docx import Document
     from docx.table import Table
     from docx.text.paragraph import Paragraph

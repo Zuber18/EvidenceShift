@@ -8,6 +8,11 @@ from .ingestion import parse_document, split_pages
 
 
 class DocumentStore:
+    """Own document bytes and Chroma passages for one retrieval profile.
+
+    The collection name separates embedding/chunking profiles. Encoding and
+    index persistence remain separate from answer generation.
+    """
     def __init__(self, root, encoder, splitter, profile):
         self.root = Path(root)
         self.root.mkdir(parents=True, exist_ok=True)
@@ -24,10 +29,16 @@ class DocumentStore:
         self.originals.mkdir(parents=True, exist_ok=True)
 
     def encode(self, texts):
+        """Return normalized embedding vectors as database-compatible lists."""
         return self.encoder.encode(texts, batch_size=32, normalize_embeddings=True,
                                    convert_to_numpy=True).tolist()
 
     def ingest(self, filename, raw):
+        """Deduplicate, chunk, embed and persist one document.
+
+        On a failed batch or original-file write, remove that document's partial
+        index entries. Identical bytes and extension produce a stable document ID.
+        """
         parsed = parse_document(filename, raw)
         doc_id = parsed['document_id']
         with self.lock:
@@ -61,6 +72,7 @@ class DocumentStore:
                     'chunks': len(chunks), 'deduplicated': False, 'warnings': parsed['warnings']}
 
     def documents(self):
+        """Build a document catalog from paginated metadata without loading text."""
         grouped = {}
         with self.lock:
             # Metadata-only pages avoid materializing all extracted text for the catalog.
@@ -75,6 +87,10 @@ class DocumentStore:
         return list(grouped.values())
 
     def search(self, question, top_k, document_ids=None):
+        """Return cosine-nearest passages, optionally restricted to document IDs.
+
+        Distances are retrieval scores, not factual-support confidence.
+        """
         with self.lock:
             count = self.collection.count()
             if not count:
@@ -90,12 +106,17 @@ class DocumentStore:
                     result['metadatas'][0], result['distances'][0])]
 
     def chunks(self, document_id, limit=50, offset=0):
+        """Read a paginated chunk listing for one indexed document."""
         result = self.collection.get(where={'document_id': document_id}, limit=limit,
                                      offset=offset, include=['documents', 'metadatas'])
         return [{'id': cid, 'text': text, **meta} for cid, text, meta in
                 zip(result['ids'], result['documents'], result['metadatas'])]
 
     def delete(self, document_id):
+        """Delete indexed passages and original bytes for one document.
+
+        Existing experiment archives retain their own saved evidence.
+        """
         with self.lock:
             found = self.collection.get(where={'document_id': document_id}, include=[])
             self.collection.delete(where={'document_id': document_id})
