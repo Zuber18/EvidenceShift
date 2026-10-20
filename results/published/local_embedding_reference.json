@@ -1,0 +1,63 @@
+{
+  "role": "Historical measured reference; not a portable runtime lock",
+  "identity": {
+    "weights_sha256": "1010704dfbca350a64188bbab4e2b9cc72c024ec0160c506a6aa2df8c7d6d948",
+    "tokenizer_sha256": "be31104b6f24999221b2d3c998f415a4ed94b29fdf35ac7d72fba1fc7aacd4ce",
+    "modules": [
+      {
+        "class": "sentence_transformers.base.modules.transformer.Transformer",
+        "config": {
+          "transformer_task": "feature-extraction",
+          "modality_config": {
+            "text": {
+              "method": "forward",
+              "method_output_name": "last_hidden_state"
+            }
+          },
+          "module_output_name": "token_embeddings"
+        }
+      },
+      {
+        "class": "sentence_transformers.sentence_transformer.modules.pooling.Pooling",
+        "config": {
+          "embedding_dimension": 384,
+          "pooling_mode": "mean",
+          "include_prompt": true
+        }
+      },
+      {
+        "class": "sentence_transformers.base.modules.normalize.Normalize",
+        "config": {
+          "module_input_name": "sentence_embedding",
+          "module_output_name": "sentence_embedding"
+        }
+      }
+    ],
+    "max_seq_length": 256,
+    "measurement": "Exact loaded parameter bytes plus tokenizer/module settings; no Hub commit is inferred.",
+    "retrieval_profile": {
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "requested_revision": null,
+      "resolved_revision": null,
+      "chunk_tokens": 180,
+      "overlap_tokens": 30,
+      "splitter": "recursive-huggingface-token-v1",
+      "parser": "pypdf-page-v1"
+    },
+    "encode_settings": {
+      "device": "cpu",
+      "normalize_embeddings": true,
+      "metric": "cosine"
+    },
+    "packages": {
+      "sentence-transformers": "6.1.0",
+      "transformers": "5.19.0",
+      "tokenizers": "0.23.3",
+      "torch": "2.14.1",
+      "chromadb": "1.5.9",
+      "langchain-text-splitters": "1.1.3"
+    },
+    "fingerprint_sha256": "f1b51a5e9164f5c5d7fd99bb79fabf7233618b65b45c48f6d587a28269c532c6"
+  },
+  "source_sha256": "ca4368b17c7b9ec8b7013582ada2ecf737eaa45da396bdec76ed9cf7fc351060"
+}

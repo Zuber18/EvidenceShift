@@ -1,0 +1,19 @@
+{
+  "assessment_status": "final_project_assessment",
+  "reviewer": "ChatGPT",
+  "method": "Inspection of saved diagnostic outcomes, objection targets, witness sets and confirmation reasons. Structural results are separated from factual inference.",
+  "source_archive_sha256": "c0fc3f0298a678387755e6dad7b57e6427c8171620487c1b5667ec57fd0debe8",
+  "counts": {
+    "records": 25,
+    "advisory_inconclusive": 23,
+    "advisory_no_error_reported": 2,
+    "advisory_error_reported": 0,
+    "completed_schema_valid_calls": 57,
+    "code_preflight_insufficient_evidence_objections": 44,
+    "model_confirmations_objection_not_demonstrated": 19,
+    "model_confirmations_insufficient_evidence": 2
+  },
+  "diagnosis": "The critic repeatedly labels answer/source comparisons as cross_source_conflict without two distinct passage witnesses. The added guard correctly refuses those incomplete conflict confirmations but contributes to an unusably inconclusive audit. No improved factual error detection is demonstrated.",
+  "decision": "Freeze this diagnostic. Evaluate preserved baseline answer generation on fresh fixed contexts without using a model gate to approve candidates.",
+  "limits": "No count of inconclusive outputs is interpreted as correct answers or as successful factual detection. Source-based project assessment is not independent human validation."
+}

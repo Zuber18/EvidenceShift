@@ -1,0 +1,69 @@
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+data_local/
+documents/
+.env
+.DS_Store
+
+# EvidenceShift local data and credentials
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+**/.streamlit/secrets.toml
+data_local/
+fix_backups/
+EvidenceShift_Release_Additions/
+.DS_Store
+
+# One-time local migration script
+revise_semantic_demo.py
+
+# One-time local installer
+install_grounded_v13.py
+
+# One-time local installer
+install_context_audit_v131.py
+
+# One-time local installer
+install_context_audit_v132.py
+
+# One-time local installer
+install_fresh_baseline.py
+
+# One-time local installer
+install_document_e2e.py
+
+# Generated evaluation indexes
+results/document_e2e_*/indexes/
+
+# One-time local installer
+install_local_upload.py
+
+config/local_embedding_lock.json
+
+data_local/upload_sessions/
+
+install_upload_repair.py
+
+install_handle_selection.py
+
+# Deliberately selected public results; all other local runs stay private.
+/results/*
+!/results/published/
+/results/published/**/.DS_Store
+
+# One-time consolidation and report-writing helpers
+/prepare_project_consolidation.py
+/install_repository_consolidation.py
+/save_*_review.py
+/save_checker_comparison.py
+/EvidenceShift_Fixes/
+/EvidenceShift_Grounded/
+/EvidenceShift_Repair/

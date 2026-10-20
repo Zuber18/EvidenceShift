@@ -1,0 +1,3 @@
+Fictional EvidenceShift evaluation document.
+
+Human users may access the staging workspace only if both their membership is verified and two-factor authentication is enabled. Verified membership by itself is insufficient.

@@ -1,0 +1,11 @@
+{
+  "tests_passed": 19,
+  "installer_checks": "PASS",
+  "planned_tasks": 25,
+  "original_paragraphs_review_planned": 258,
+  "planned_critic_batches": 36,
+  "maximum_planned_critic_input_bytes": 5913,
+  "input_budget": 6000,
+  "real_model_inference_performed": false,
+  "semantic_accuracy": "unmeasured"
+}

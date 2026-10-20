@@ -1,0 +1,3 @@
+Fictional EvidenceShift evaluation document.
+
+The dashboard shows export creation time and file format. Download links expire after seven days.

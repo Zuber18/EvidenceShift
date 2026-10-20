@@ -1,0 +1,3 @@
+Fictional EvidenceShift evaluation document.
+
+The default retention period for run logs is 60 days. The cleanup job deletes logs after that period unless the exception policy applies.

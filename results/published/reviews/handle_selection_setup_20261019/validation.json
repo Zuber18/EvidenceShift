@@ -1,0 +1,27 @@
+{
+  "version": "source-handles-2.1.0",
+  "new_controlled_tests_passed": 16,
+  "preserved_controlled_tests_passed": 35,
+  "saved_live_context_passages": 19,
+  "code_created_units": 224,
+  "controlled_replay": {
+    "runs_saved": 18,
+    "controlled_model_calls": 16,
+    "zero_call_controls": 2,
+    "actual_PDF_parser_used": true,
+    "ZIP_plan_report_exported": true
+  },
+  "installer_checks": [
+    "additive_install",
+    "repeat_install",
+    "existing_code_results_preserved",
+    "edited_new_module_refused_before_mutation",
+    "changed_baseline_refused"
+  ],
+  "payload_syntax_checks": "passed",
+  "actual_MiniLM_Chroma_run_here": false,
+  "actual_Ollama_run_here": false,
+  "live_Streamlit_browser_tested_here": false,
+  "semantic_reliability_established": false,
+  "next_step": "Local matched replay and source-based assessment; structural validity is not relevance or completeness."
+}

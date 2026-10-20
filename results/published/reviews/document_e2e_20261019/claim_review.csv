@@ -1,0 +1,48 @@
+record_index,format,case_id,claim_index,claim_text,passage_ids,citation_support
+0,txt,build_receipt,0,A build receipt means the build has started.,['doc_b56aef1fdd0ef8825029_p0_c0'],contradicted
+0,txt,build_receipt,1,A build receipt does not guarantee the build will succeed.,['doc_b56aef1fdd0ef8825029_p0_c0'],supported
+0,txt,build_receipt,2,A build receipt confirms that the scheduler received the build request.,['doc_b56aef1fdd0ef8825029_p0_c0'],supported
+0,txt,build_receipt,3,A build receipt includes a request identifier.,['doc_eb506ed2cf2cb3975bfd_p0_c0'],supported
+0,txt,build_receipt,4,"The status page shows queued, running, failed, or completed builds.",['doc_eb506ed2cf2cb3975bfd_p0_c0'],supported
+1,txt,export_email,0,The export service may send a completion email when an export finishes. Completion emails are optional.,['doc_9b30bed2d36fda382347_p0_c0'],supported
+1,txt,export_email,1,Disabling email does not prevent users from downloading completed exports from the dashboard.,['doc_9b30bed2d36fda382347_p0_c0'],supported
+2,txt,retention_exception,0,Run logs are deleted after 60 days by default unless an exception policy applies.,['doc_700e6d8c0da30bdc57a3_p0_c0'],supported
+2,txt,retention_exception,1,"Run logs marked for an active audit are retained until the audit owner releases the hold, even if they are older than 60 days.",['doc_f30fbdf3bc1298867726_p0_c0'],supported
+3,txt,workspace_access,0,Verified membership alone is not enough to access the staging workspace.,['doc_a351cc63880a4825d0ee_p0_c0'],supported
+3,txt,workspace_access,1,Human users need both verified membership and two-factor authentication to access the staging workspace.,['doc_a351cc63880a4825d0ee_p0_c0'],supported
+3,txt,workspace_access,2,"Service accounts require an active workspace token to access the staging workspace, and the two-factor authentication rule does not apply to them.",['doc_6ef4395adfab67c1fcff_p0_c0'],supported
+4,txt,batch_credits,0,"For seven batches in one job, the first three batches are free, and the remaining four batches each cost four processing credits.",['doc_5eaaed5b43e43094fbcf_p0_c0'],supported_derivation_using_question_and_rate
+4,txt,batch_credits,1,The total number of processing credits charged for seven batches in one job is sixteen.,['doc_5eaaed5b43e43094fbcf_p0_c0'],supported_derivation_using_question_and_rate
+5,txt,explicit_precedence,0,The maintenance date for cluster Cedar is 12 November 2028.,['doc_4d0a4f53de94fc613047_p0_c0'],supported
+6,txt,unresolved_dispatch,0,Dispatch sheet Alpha establishes a dispatch date of 6 April 2029 for parcel group R6.,['doc_73499b10b0ca107f15f1_p0_c0'],supported
+6,txt,unresolved_dispatch,1,Dispatch sheet Beta establishes a dispatch date of 14 April 2029 for parcel group R6.,['doc_c19c264df9439b8e1369_p0_c0'],supported
+8,pdf,build_receipt,0,A build receipt means the build has started.,['doc_7808c2b6e587cbc70d62_p2_c0'],contradicted
+8,pdf,build_receipt,1,A build receipt does not guarantee the build will succeed.,"['doc_6f3cc074eeb1e9d40939_p2_c0', 'doc_7808c2b6e587cbc70d62_p2_c0']",supported_with_redundant_citation
+9,pdf,export_email,0,The export service may send a completion email when an export finishes. Completion emails are optional.,['doc_987738fbd9172a30e394_p2_c0'],supported
+9,pdf,export_email,1,Disabling email does not prevent users from downloading completed exports from the dashboard.,['doc_987738fbd9172a30e394_p2_c0'],supported
+10,pdf,retention_exception,0,Run logs are deleted after 60 days by default unless an exception policy applies.,['doc_7215db735ce6cf8b4d22_p2_c0'],supported
+10,pdf,retention_exception,1,"Run logs marked for an active audit are retained until the audit owner releases the hold, even if they are older than 60 days.",['doc_6b70f37543b7dac738f3_p2_c0'],supported
+11,pdf,workspace_access,0,Verified membership alone is not enough to access the staging workspace.,['doc_4ff962bd8594892b1cd8_p2_c0'],supported
+11,pdf,workspace_access,1,Human users need both verified membership and two-factor authentication enabled to access the staging workspace.,['doc_4ff962bd8594892b1cd8_p2_c0'],supported
+11,pdf,workspace_access,2,"Service accounts require an active workspace token to access the staging workspace, and the two-factor authentication rule does not apply to them.",['doc_ccd76d8a2dd86cb3446b_p2_c0'],supported
+12,pdf,batch_credits,0,"For seven batches in one job, the first three batches are free, and the remaining four batches each cost four processing credits.",['doc_ef6a269a150b74e339a3_p2_c0'],supported_derivation_using_question_and_rate
+12,pdf,batch_credits,1,The total number of processing credits charged for seven batches in one job is sixteen.,['doc_ef6a269a150b74e339a3_p2_c0'],supported_derivation_using_question_and_rate
+13,pdf,explicit_precedence,0,The maintenance date for cluster Cedar is 12 November 2028.,['doc_1c3634c771f290a1a5c5_p2_c0'],supported
+13,pdf,explicit_precedence,1,Notice C-1 schedules maintenance for cluster Cedar on 3 November 2028.,['doc_6190a2303c9cf31d9646_p2_c0'],supported
+16,docx,build_receipt,0,A build receipt means the build has started.,['doc_f9955fac2aa2ff48f1e6_p0_c0'],contradicted
+16,docx,build_receipt,1,A build receipt does not guarantee the build will succeed.,['doc_f9955fac2aa2ff48f1e6_p0_c0'],supported
+16,docx,build_receipt,2,A build receipt confirms that the scheduler received the build request.,['doc_f9955fac2aa2ff48f1e6_p0_c0'],supported
+16,docx,build_receipt,3,A build receipt includes a request identifier.,['doc_20e24107ef904f3bfebd_p0_c0'],supported
+16,docx,build_receipt,4,"The status page shows queued, running, failed, or completed builds.",['doc_20e24107ef904f3bfebd_p0_c0'],supported
+17,docx,export_email,0,The export service may send a completion email when an export finishes. Completion emails are optional.,['doc_5b2a371ede05bbf93667_p0_c0'],supported
+17,docx,export_email,1,Disabling email does not prevent users from downloading completed exports from the dashboard.,['doc_5b2a371ede05bbf93667_p0_c0'],supported
+18,docx,retention_exception,0,Run logs are deleted after 60 days by default unless an exception policy applies.,['doc_2a8344c0d87ff571daab_p0_c0'],supported
+18,docx,retention_exception,1,"Run logs marked for an active audit are retained until the audit owner releases the hold, even if they are older than 60 days.",['doc_f3ace5a2880958d4d3ba_p0_c0'],supported
+19,docx,workspace_access,0,Verified membership alone is not enough to access the staging workspace.,['doc_214e6915fc48c5966da0_p0_c0'],supported
+19,docx,workspace_access,1,Human users need both verified membership and two-factor authentication to access the staging workspace.,['doc_214e6915fc48c5966da0_p0_c0'],supported
+19,docx,workspace_access,2,"Service accounts require an active workspace token to access the staging workspace, and the two-factor authentication rule does not apply to them.",['doc_569c77770988a6a57e35_p0_c0'],supported
+20,docx,batch_credits,0,"For seven batches in one job, the first three batches are free, and the remaining four batches each cost four processing credits.",['doc_d265ba0dad7d21692112_p0_c0'],supported_derivation_using_question_and_rate
+20,docx,batch_credits,1,The total number of processing credits charged for seven batches in one job is sixteen.,['doc_d265ba0dad7d21692112_p0_c0'],supported_derivation_using_question_and_rate
+21,docx,explicit_precedence,0,The maintenance date for cluster Cedar is 12 November 2028.,['doc_3df9f0dba29796f93213_p0_c0'],supported
+22,docx,unresolved_dispatch,0,Dispatch sheet Alpha establishes a dispatch date of 6 April 2029 for parcel group R6.,['doc_551f3d7869b3a5b3713b_p0_c0'],supported
+22,docx,unresolved_dispatch,1,Dispatch sheet Beta establishes a dispatch date of 14 April 2029 for parcel group R6.,['doc_9e8125b5f85a212d3f72_p0_c0'],supported

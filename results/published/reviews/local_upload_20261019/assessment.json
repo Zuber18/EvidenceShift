@@ -1,0 +1,154 @@
+{
+  "reviewer": "ChatGPT",
+  "assessment_role": "final_project_assessment",
+  "method": "Saved raw traces and full uploaded PDF",
+  "unique_runs": 16,
+  "identical_duplicate_copies": 10,
+  "reviews": [
+    {
+      "run_id": "run_20261019T104529Z_0903f4ed",
+      "question": "What is the document about? ",
+      "variant": "retrieved",
+      "answer": "The document is about a story involving two characters, Della and Jim, who each sell their most valuable possessions to buy gifts for each other on Christmas. [doc_90949049db10b9f640c8_p6_c1] [doc_90949049db10b9f640c8_p5_c1] [doc_90949049db10b9f640c8_p1_c0] [doc_90949049db10b9f640c8_p3_c0] [doc_90949049db10b9f640c8_p1_c1]\nThe story is titled 'The Gift of the Magi' and draws a parallel between the actions of the magi, who brought gifts to the newborn Christ-child, and the actions of Della and Jim. [doc_90949049db10b9f640c8_p6_c1] [doc_90949049db10b9f640c8_p1_c0] [doc_90949049db10b9f640c8_p3_c0]\nDella sells her hair to buy a gift for Jim, while Jim sells his watch to buy a gift for Della. [doc_90949049db10b9f640c8_p5_c1] [doc_90949049db10b9f640c8_p1_c0] [doc_90949049db10b9f640c8_p3_c0]\nThe story highlights the theme of selfless love and sacrifice, with the characters being described as the 'most wise' despite their actions. [doc_90949049db10b9f640c8_p6_c1] [doc_90949049db10b9f640c8_p5_c1]",
+      "verdict": "correct_for_document_with_citation_defects",
+      "notes": "Summary is correct for full PDF, but watch-sale sentence cites passages without the watch sale, and several citations are extraneous.",
+      "run_sha256": "689693121a43d4083b89937e0761d546f020de2fd382ac8293cc2abd1b5f8ac5"
+    },
+    {
+      "run_id": "run_20261019T104708Z_21d58950",
+      "question": "how much money did Della have",
+      "variant": "retrieved",
+      "answer": "Della had one dollar and eighty-seven cents. [doc_90949049db10b9f640c8_p1_c0]",
+      "verdict": "supported",
+      "notes": "Opening savings amount is $1.87.",
+      "run_sha256": "f68ddfdd5ac0f0377668c1f8627f069c0e6ac2e363b7d0bdabae6577d3c96705"
+    },
+    {
+      "run_id": "run_20261019T104958Z_e9abdb27",
+      "question": "what is della's birth date?",
+      "variant": "retrieved",
+      "answer": "The supplied evidence does not answer this question.",
+      "verdict": "justified_abstention",
+      "notes": "No birth date in PDF.",
+      "run_sha256": "6b6cdd7f92435fea6c37782deb74948ea314d065a7f58db50c06f75a794ed499"
+    },
+    {
+      "run_id": "run_20261019T105006Z_edb370aa",
+      "question": "what is della's birth date?",
+      "variant": "retrieved",
+      "answer": "The supplied evidence does not answer this question.",
+      "verdict": "justified_abstention",
+      "notes": "Repeated birth-date question; same result.",
+      "run_sha256": "46c76bd48366dd49bb7e8ba464d36031566daf25698303eb4a5cf2a69c51f524"
+    },
+    {
+      "run_id": "run_20261019T105231Z_2d84d462",
+      "question": "How much money had Della saved before selling her hair?",
+      "variant": "reversed",
+      "answer": "Della had saved one dollar and eighty-seven cents before selling her hair. [doc_90949049db10b9f640c8_p1_c0]",
+      "verdict": "supported",
+      "notes": "Pre-sale savings $1.87; page 1 supports it.",
+      "run_sha256": "16990533cbca590a6187586585b627cddac724f89c702a9dd689e5c5835ad5ec"
+    },
+    {
+      "run_id": "run_20261019T105536Z_55b47cfd",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "variant": "reversed",
+      "answer": "Della and Jim could not use the gifts they received because they had sold their most valuable possessions to buy each other gifts. [doc_90949049db10b9f640c8_p6_c0] [doc_90949049db10b9f640c8_p5_c1]\nDella sold her hair to buy Jim a gift, and Jim sold his watch to buy Della a gift. [doc_90949049db10b9f640c8_p6_c0] [doc_90949049db10b9f640c8_p5_c1]\nThe gifts were too nice to use because they were purchased with the sale of their most cherished possessions. [doc_90949049db10b9f640c8_p6_c0]",
+      "verdict": "material_reasoning_error",
+      "notes": "Correct sacrifices, but invented causal claim about gifts being too nice; lacks explicit comb/hair and chain/watch explanation.",
+      "run_sha256": "1d8ce9cabe862886fae8920ba50641f4e5950b8c22cf81dbb140bf9972314c43"
+    },
+    {
+      "run_id": "run_20261019T105634Z_5c1223d8",
+      "question": "What is the relationship between Jim and Della?",
+      "variant": "reversed",
+      "answer": "Jim and Della are husband and wife. [doc_90949049db10b9f640c8_p4_c3] [doc_90949049db10b9f640c8_p2_c3] [doc_90949049db10b9f640c8_p2_c1] [doc_90949049db10b9f640c8_p4_c2] [doc_90949049db10b9f640c8_p4_c1]",
+      "verdict": "correct_for_document_with_citation_defects",
+      "notes": "Marriage correct for full PDF, but explicit identifying passage on page 2 is absent from retrieved and cited passages.",
+      "run_sha256": "4eb1ea60b0577dbf70c0b87bd75dac004fdacaf7120b8d7962de9bb1c7afb458"
+    },
+    {
+      "run_id": "run_20261019T105829Z_7f2d1848",
+      "question": "Was the flute made out of jewels? If not then what did Jim buy as a gift for Della?",
+      "variant": "reversed",
+      "answer": "The flute was not made out of jewels. [doc_90949049db10b9f640c8_p2_c2]\nJim bought a gold watch as a gift for Della. [doc_90949049db10b9f640c8_p2_c2]",
+      "verdict": "material_factual_error",
+      "notes": "No flute evidence; inherited watch was not bought for Della. Comb passages missing from top-five context.",
+      "run_sha256": "125ee72b35d85e8a96f5fa279298b3cb41fb331c17bb96886afe5d0f84788116"
+    },
+    {
+      "run_id": "run_20261019T110053Z_ae8d2dc4",
+      "question": "Was the flute made out of jewels? ",
+      "variant": "reversed",
+      "answer": "The supplied evidence does not answer this question.",
+      "verdict": "justified_abstention",
+      "notes": "Standalone flute question correctly abstains.",
+      "run_sha256": "f0951a747e6d000559da9b6beccc040b3e2e084bdc5f25f1eac42ce10fb5f1c7"
+    },
+    {
+      "run_id": "run_20261019T110109Z_1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "variant": "reversed",
+      "answer": "Jim bought a gift for Della. [doc_90949049db10b9f640c8_p2_c1]",
+      "verdict": "incomplete_and_unsupported",
+      "notes": "Does not identify combs; cited paragraph describes Della buying for Jim, not Jim buying for Della.",
+      "run_sha256": "19923e3e92c16157d792de630c168ba171810cad6022585dd1340a3f3aaa7eeb"
+    },
+    {
+      "run_id": "run_20261019T110549Z_99df1fc8",
+      "question": "what is Jim's gift.",
+      "variant": "no_context",
+      "answer": "The supplied evidence does not answer this question.",
+      "verdict": "code_control",
+      "notes": "Empty-context abstention with zero model calls.",
+      "run_sha256": "2704c569a7c968c8f56637af5aab4c33eac4f76b8b8145d0bd316e4439d24b0c"
+    },
+    {
+      "run_id": "run_20261019T110554Z_845176ec",
+      "question": "what is Jim's gift.",
+      "variant": "no_context",
+      "answer": "The supplied evidence does not answer this question.",
+      "verdict": "code_control",
+      "notes": "Repeated empty-context abstention, zero model calls.",
+      "run_sha256": "28e0ea44794d19608244b0fa1021345779cc6db1ec74940f9baaf82c3008e986"
+    },
+    {
+      "run_id": "run_20261019T110605Z_2b1ca96d",
+      "question": "Who is Della?",
+      "variant": "no_context",
+      "answer": "The supplied evidence does not answer this question.",
+      "verdict": "code_control",
+      "notes": "Empty-context abstention with zero model calls.",
+      "run_sha256": "58a2a54006d60942b9158daaf9281a517b7706c8d4ca9465a38ec416c8b94e89"
+    },
+    {
+      "run_id": "run_20261019T110618Z_7acdf90d",
+      "question": "What is this text about?",
+      "variant": "no_context",
+      "answer": "The supplied evidence does not answer this question.",
+      "verdict": "code_control",
+      "notes": "Empty-context abstention with zero model calls.",
+      "run_sha256": "cc1e98464a69fb760aad2f95c49f741b8e207a2c8b06aea2693811e90c0cbedf"
+    },
+    {
+      "run_id": "run_20261019T111240Z_c403395f",
+      "question": "What is this text about?",
+      "variant": "retrieved",
+      "answer": null,
+      "verdict": "input_budget_failure",
+      "notes": "6070-byte input exceeds preserved baseline cap of 6000; generation not called.",
+      "run_sha256": "d64364758d1e97b525afd3bc7d465003394dfa9c06b6aea68b66d4d6c4e82d1d"
+    },
+    {
+      "run_id": "run_20261019T111242Z_4393e2ea",
+      "question": "What is this text about?",
+      "variant": "retrieved",
+      "answer": null,
+      "verdict": "input_budget_failure",
+      "notes": "Repeated 6070-byte failure; generation not called.",
+      "run_sha256": "f59477b56b72e4c9af6d940e9a861f87fce10eb9ce98b90bfdccfc2213a62b14"
+    }
+  ],
+  "limitation": "Exploratory runs, repeated questions and unmatched order variants; no benchmark accuracy estimate."
+}

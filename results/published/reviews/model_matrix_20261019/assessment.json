@@ -1,0 +1,1470 @@
+{
+  "assessment_role": "final_project_assessment",
+  "reviewer": "ChatGPT",
+  "method": "Source-based assessment of all 60 model outputs against actual selected source spans and full supplied story; no model judge",
+  "source_archive_sha256": "284e60acad9e993ee8758634795416088bf71c37008dfcf872545d448a6253bd",
+  "decision": "No configuration qualifies for reserved confirmation. Preserve matrix as negative evidence for this constrained ID-selection protocol.",
+  "planned_and_recorded": 66,
+  "model_calls": 60,
+  "code_controls": 6,
+  "completed_structural_passes": 60,
+  "mechanical_failures": 0,
+  "validated_source_spans": 244,
+  "verified_reversed_context_pairs": 30,
+  "model_response_types": {
+    "supported": 54,
+    "insufficient": 6
+  },
+  "correct_model_abstentions": 4,
+  "unjustified_model_abstentions": 2,
+  "unanswerable_trials": 24,
+  "correct_abstentions_on_unanswerable_trials": 4,
+  "flute_trials": 12,
+  "correct_flute_abstentions": 0,
+  "stage_seconds_sum": 999.52,
+  "source_snapshot_and_runner_hashes_verified": true,
+  "actual_question_matches_job_label_in_all_60_model_inputs": true,
+  "effective_options_match_plan_in_all_60_calls": true,
+  "configuration_summary": [
+    {
+      "model": "qwen3:4b",
+      "representation": "passages",
+      "completed_structural_passes": 10,
+      "birth_date_correct_abstentions_out_of_2": 2,
+      "flute_correct_abstentions_out_of_2": 0,
+      "stage_seconds_sum": 105.86,
+      "confirmation_qualified": false
+    },
+    {
+      "model": "qwen3:4b",
+      "representation": "sentence_units",
+      "completed_structural_passes": 10,
+      "birth_date_correct_abstentions_out_of_2": 2,
+      "flute_correct_abstentions_out_of_2": 0,
+      "stage_seconds_sum": 192.63,
+      "confirmation_qualified": false
+    },
+    {
+      "model": "qwen3:8b",
+      "representation": "passages",
+      "completed_structural_passes": 10,
+      "birth_date_correct_abstentions_out_of_2": 0,
+      "flute_correct_abstentions_out_of_2": 0,
+      "stage_seconds_sum": 171.91,
+      "confirmation_qualified": false
+    },
+    {
+      "model": "qwen3:8b",
+      "representation": "sentence_units",
+      "completed_structural_passes": 10,
+      "birth_date_correct_abstentions_out_of_2": 0,
+      "flute_correct_abstentions_out_of_2": 0,
+      "stage_seconds_sum": 302.55,
+      "confirmation_qualified": false
+    },
+    {
+      "model": "gemma3:4b",
+      "representation": "passages",
+      "completed_structural_passes": 10,
+      "birth_date_correct_abstentions_out_of_2": 0,
+      "flute_correct_abstentions_out_of_2": 0,
+      "stage_seconds_sum": 90.61,
+      "confirmation_qualified": false
+    },
+    {
+      "model": "gemma3:4b",
+      "representation": "sentence_units",
+      "completed_structural_passes": 10,
+      "birth_date_correct_abstentions_out_of_2": 0,
+      "flute_correct_abstentions_out_of_2": 0,
+      "stage_seconds_sum": 135.96,
+      "confirmation_qualified": false
+    }
+  ],
+  "reviews": [
+    {
+      "job_id": "69170d501d6d366adbc3",
+      "model": "gemma3:4b",
+      "representation": "passages",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "no_context",
+      "mechanical_status": "empty_context_control",
+      "response_type": null,
+      "selected_ids": [],
+      "unanswered_parts": [],
+      "assessment": "code_control",
+      "notes": "Zero-generation-call abstention; not a model reasoning score.",
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "job_id": "2e05a6dee65971eb280e",
+      "model": "gemma3:4b",
+      "representation": "passages",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U19",
+        "U15",
+        "U18",
+        "U17",
+        "U10",
+        "U1"
+      ],
+      "unanswered_parts": [
+        "What did Jim buy for Della?"
+      ],
+      "assessment": "core_evidence_with_conflicting_note",
+      "notes": "Jim sold watch to buy combs is present; model nevertheless lists the requested gift as unanswered and adds unrelated passages.",
+      "answer": "“to buy the combs. And now I think we should have our dinner.”\nThe magi, as you know, were wise men—wonderfully wise men— \nwho brought gifts to the newborn Christ-child. They were the first to \ngive Christmas gifts. Being wise, their gifts were doubtless wise ones. \nAnd here I have told you the story of two children who were not wise. \nEach sold the most valuable thing he owned in order to buy a gift for \nthe other. But let me speak a last word to the wise of these days: Of all  \nwho give gifts, these two were the most wise. Of all who give and receive  \ngifts, such as they are the most wise. Everywhere they are the wise ones.  \nThey are the magi.\n6” [doc_90949049db10b9f640c8_p6_c1]\n\n“Jim looked around the room.\n“You say your hair is gone?” he said.\n“You don’t have to look for it,” said Della. “It’s sold, I tell you—\nsold and gone, too. It’s the night before Christmas, boy. Be good to me, \nbecause I sold it for you. Maybe the hairs of my head could be counted,” \nshe said, “but no one could ever count my love for you. Shall we eat  \ndinner, Jim?”\nJim put his arms around his Della. For ten seconds let us look in \nanother direction. Eight dollars a week or a million dollars a year— \nhow different are they? Someone may give you an answer, but it will  \nbe wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.” [doc_90949049db10b9f640c8_p5_c1]\n\n“O .  H e n r y\nAnd then she jumped up and cried, “Oh, oh!”\nJim had not yet seen his beautiful gift. She held it out to him in  \nher open hand. The gold seemed to shine softly as if with her own warm  \nand loving spirit.\n“Isn’t it perfect, Jim? I hunted all over town to find it. You’ll have \nto look at your watch a hundred times a day now. Give me your watch. \nI want to see how they look together.”\nJim sat down and smiled.\n“Della,” said he, “let’s put our Christmas gifts away and keep them  \na while. They’re too nice to use now. I sold the watch to get the money \nto buy the combs. And now I think we should have our dinner.”” [doc_90949049db10b9f640c8_p6_c0]\n\n“perfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of  \nowning them. And now they were hers, but her hair was gone.\nBut she held them to her heart, and at last was able to look up  \nand say: “My hair grows so fast, Jim!”\n5” [doc_90949049db10b9f640c8_p5_c3]\n\n“O .  H e n r y\nWith that chain on his watch, Jim could look at his watch and \nlearn the time anywhere he might be. Though the watch was so fine,  \nit had never had a fine chain. He sometimes took it out and looked at  \nit only when no one could see him do it.\nWhen Della arrived home, her mind quieted a little. She began to  \nthink more reasonably. She started to try to cover the sad marks of what \nshe had done. Love and large-hearted giving, when added together, can \nleave deep marks. It is never easy to cover these marks, dear friends—\nnever easy.\nWithin forty minutes her head looked a little better. With her  \nshort hair, she looked wonderfully like a schoolboy. She stood at the \nlooking-glass for a long time.” [doc_90949049db10b9f640c8_p4_c0]\n\n“T h e  G i f t  o f  t h e  M a g i\np\nT h e  G i f t  o f  t h e  M a g i\nO\nNE DOLLAR AND EIGHTY-SEVEN CENTS.     \nThat was all. She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food. Della counted  \nit three times. One dollar and eighty-seven cents. And the next day  \nwould be Christmas.\nThere was nothing to do but fall on the bed and cry. So Della did it. \nWhile the lady of the home is slowly growing quieter, we can  \nlook at the home. Furnished rooms at a cost of $8 a week. There is lit -\ntle more to say about it.\nIn the hall below was a letter-box too small to hold a letter. There” [doc_90949049db10b9f640c8_p1_c0]"
+    },
+    {
+      "job_id": "f898a88e37315e99f1c0",
+      "model": "gemma3:4b",
+      "representation": "passages",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U5",
+        "U7",
+        "U8",
+        "U9",
+        "U10",
+        "U11"
+      ],
+      "unanswered_parts": [
+        "What did Jim buy for Della's hair?"
+      ],
+      "assessment": "wrong_actor_direction",
+      "notes": "Selected passages cover Della hair and gift for Jim, not Jim comb gift.",
+      "answer": "“he might be able to get a good view of himself. Della, being quite thin, \nhad mastered this art.\nSuddenly she turned from the window and stood before the glass. \nHer eyes were shining brightly, but her face had lost its color. Quickly \nshe pulled down her hair and let it fall to its complete length.\nThe James Dillingham Youngs were very proud of two things which \nthey owned. One thing was Jim’s gold watch. It had once belonged to  \nhis father. And, long ago, it had belonged to his father’s father. The  \nother thing was Della’s hair.\nIf a queen had lived in the rooms near theirs, Della would have \nwashed and dried her hair where the queen could see it. Della knew  \nher hair was more beautiful than any queen’s jewels and gifts.” [doc_90949049db10b9f640c8_p2_c2]\n\n“T h e  G i f t  o f  t h e  M a g i\nhad anything so valuable.\nSo now Della’s beautiful hair fell about her, shining like a falling \nstream of brown water. It reached below her knee. It almost made itself \ninto a dress for her.\nAnd then she put it up on her head again, nervously and quickly. \nOnce she stopped for a moment and stood still while a tear or two ran \ndown her face.\nShe put on her old brown coat. She put on her old brown hat.  \nWith the bright light still in her eyes, she moved quickly out the door \nand down to the street.\nWhere she stopped, the sign said: “Mrs. Sofronie. Hair Articles  \nof all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.” [doc_90949049db10b9f640c8_p3_c0]\n\n“of all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.\nMrs. Sofronie, large, too white, cold-eyed, looked at her.\n“Will you buy my hair?” asked Della.\n“I buy hair,” said Mrs. Sofronie. “Take your hat off and let me look \nat it.”\nDown fell the brown waterfall.\n“Twenty dollars,” said Mrs. Sofronie, lifting the hair to feel its \nweight.\n“Give it to me quick,” said Della.\nOh, and the next two hours seemed to fly. She was going from  \none shop to another, to find a gift for Jim.\nShe found it at last. It surely had been made for Jim and no one \nelse. There was no other like it in any of the shops, and she had looked” [doc_90949049db10b9f640c8_p3_c1]\n\n“else. There was no other like it in any of the shops, and she had looked \nin every shop in the city.\nIt was a gold watch chain, very simply made. Its value was in its  \nrich and pure material. Because it was so plain and simple, you knew  \nthat it was very valuable. All good things are like this.\nIt was good enough for The Watch.\nAs soon as she saw it, she knew that Jim must have it. It was like \nhim. Quietness and value—Jim and the chain both had quietness and \nvalue. She paid twenty-one dollars for it. And she hurried home with  \nthe chain and eighty-seven cents. \n3” [doc_90949049db10b9f640c8_p3_c2]\n\n“O .  H e n r y\nWith that chain on his watch, Jim could look at his watch and \nlearn the time anywhere he might be. Though the watch was so fine,  \nit had never had a fine chain. He sometimes took it out and looked at  \nit only when no one could see him do it.\nWhen Della arrived home, her mind quieted a little. She began to  \nthink more reasonably. She started to try to cover the sad marks of what \nshe had done. Love and large-hearted giving, when added together, can \nleave deep marks. It is never easy to cover these marks, dear friends—\nnever easy.\nWithin forty minutes her head looked a little better. With her  \nshort hair, she looked wonderfully like a schoolboy. She stood at the \nlooking-glass for a long time.” [doc_90949049db10b9f640c8_p4_c0]\n\n“short hair, she looked wonderfully like a schoolboy. She stood at the \nlooking-glass for a long time.\n“If Jim doesn’t kill me,” she said to herself, “before he looks at me  \na second time, he’ll say I look like a girl who sings and dances for money. \nBut what could I do—oh! What could I do with a dollar and eighty-\nseven cents?”\nAt seven, Jim’s dinner was ready for him.\nJim was never late. Della held the watch chain in her hand and \nsat near the door where he always entered. Then she heard his step in  \nthe hall and her face lost color for a moment. She often said little prayers \nquietly, about simple everyday things. And now she said: “Please God, \nmake him think I’m still pretty.”” [doc_90949049db10b9f640c8_p4_c1]"
+    },
+    {
+      "job_id": "46667b473b41a7edbf89",
+      "model": "gemma3:4b",
+      "representation": "passages",
+      "case_id": "2d84d462",
+      "question": "How much money had Della saved before selling her hair?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U1",
+        "U15",
+        "U19",
+        "U2",
+        "U4",
+        "U17"
+      ],
+      "unanswered_parts": [
+        "How much money did Jim spend on his gift?"
+      ],
+      "assessment": "core_evidence_with_irrelevant_note",
+      "notes": "Initial $1.87 present in opening passages; extra story passages and an unasked question about Jim spending.",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\np\nT h e  G i f t  o f  t h e  M a g i\nO\nNE DOLLAR AND EIGHTY-SEVEN CENTS.     \nThat was all. She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food. Della counted  \nit three times. One dollar and eighty-seven cents. And the next day  \nwould be Christmas.\nThere was nothing to do but fall on the bed and cry. So Della did it. \nWhile the lady of the home is slowly growing quieter, we can  \nlook at the home. Furnished rooms at a cost of $8 a week. There is lit -\ntle more to say about it.\nIn the hall below was a letter-box too small to hold a letter. There” [doc_90949049db10b9f640c8_p1_c0]\n\n“Jim looked around the room.\n“You say your hair is gone?” he said.\n“You don’t have to look for it,” said Della. “It’s sold, I tell you—\nsold and gone, too. It’s the night before Christmas, boy. Be good to me, \nbecause I sold it for you. Maybe the hairs of my head could be counted,” \nshe said, “but no one could ever count my love for you. Shall we eat  \ndinner, Jim?”\nJim put his arms around his Della. For ten seconds let us look in \nanother direction. Eight dollars a week or a million dollars a year— \nhow different are they? Someone may give you an answer, but it will  \nbe wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.” [doc_90949049db10b9f640c8_p5_c1]\n\n“to buy the combs. And now I think we should have our dinner.”\nThe magi, as you know, were wise men—wonderfully wise men— \nwho brought gifts to the newborn Christ-child. They were the first to \ngive Christmas gifts. Being wise, their gifts were doubtless wise ones. \nAnd here I have told you the story of two children who were not wise. \nEach sold the most valuable thing he owned in order to buy a gift for \nthe other. But let me speak a last word to the wise of these days: Of all  \nwho give gifts, these two were the most wise. Of all who give and receive  \ngifts, such as they are the most wise. Everywhere they are the wise ones.  \nThey are the magi.\n6” [doc_90949049db10b9f640c8_p6_c1]\n\n“tle more to say about it.\nIn the hall below was a letter-box too small to hold a letter. There \nwas an electric bell, but it could not make a sound. Also there was a  \nname beside the door: “Mr. James Dillingham Young.”\n1” [doc_90949049db10b9f640c8_p1_c1]\n\n“Jim a gift. She had put aside as much as she could for months, with this \nresult. Twenty dollars a week is not much. Everything had cost more \nthan she had expected. It always happened like that.\nOnly $ 1.87 to buy a gift for Jim. Her Jim. She had had many happy \nhours planning something nice for him. Something nearly good enough. \nSomething almost worth the honor of belonging to Jim.\nThere was a looking-glass between the windows of the room. Per -\nhaps you have seen the kind of looking-glass that is placed in $8 fur -\nnished rooms. It was very narrow. A person could see only a little of \nhimself at a time. However, if he was very thin and moved very quickly, \nhe might be able to get a good view of himself. Della, being quite thin, \nhad mastered this art.” [doc_90949049db10b9f640c8_p2_c1]\n\n“perfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of  \nowning them. And now they were hers, but her hair was gone.\nBut she held them to her heart, and at last was able to look up  \nand say: “My hair grows so fast, Jim!”\n5” [doc_90949049db10b9f640c8_p5_c3]"
+    },
+    {
+      "job_id": "9588e46e6e506b70ae70",
+      "model": "gemma3:4b",
+      "representation": "passages",
+      "case_id": "2d84d462",
+      "question": "How much money had Della saved before selling her hair?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U5",
+        "U7",
+        "U8",
+        "U9",
+        "U10",
+        "U11"
+      ],
+      "unanswered_parts": [
+        "How much money did Jim have to buy the combs?"
+      ],
+      "assessment": "wrong_temporal_evidence",
+      "notes": "Omits initial $1.87; passages include later 87-cent remainder instead. Unanswered note shifts to unasked Jim spending.",
+      "answer": "“he might be able to get a good view of himself. Della, being quite thin, \nhad mastered this art.\nSuddenly she turned from the window and stood before the glass. \nHer eyes were shining brightly, but her face had lost its color. Quickly \nshe pulled down her hair and let it fall to its complete length.\nThe James Dillingham Youngs were very proud of two things which \nthey owned. One thing was Jim’s gold watch. It had once belonged to  \nhis father. And, long ago, it had belonged to his father’s father. The  \nother thing was Della’s hair.\nIf a queen had lived in the rooms near theirs, Della would have \nwashed and dried her hair where the queen could see it. Della knew  \nher hair was more beautiful than any queen’s jewels and gifts.” [doc_90949049db10b9f640c8_p2_c2]\n\n“T h e  G i f t  o f  t h e  M a g i\nhad anything so valuable.\nSo now Della’s beautiful hair fell about her, shining like a falling \nstream of brown water. It reached below her knee. It almost made itself \ninto a dress for her.\nAnd then she put it up on her head again, nervously and quickly. \nOnce she stopped for a moment and stood still while a tear or two ran \ndown her face.\nShe put on her old brown coat. She put on her old brown hat.  \nWith the bright light still in her eyes, she moved quickly out the door \nand down to the street.\nWhere she stopped, the sign said: “Mrs. Sofronie. Hair Articles  \nof all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.” [doc_90949049db10b9f640c8_p3_c0]\n\n“of all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.\nMrs. Sofronie, large, too white, cold-eyed, looked at her.\n“Will you buy my hair?” asked Della.\n“I buy hair,” said Mrs. Sofronie. “Take your hat off and let me look \nat it.”\nDown fell the brown waterfall.\n“Twenty dollars,” said Mrs. Sofronie, lifting the hair to feel its \nweight.\n“Give it to me quick,” said Della.\nOh, and the next two hours seemed to fly. She was going from  \none shop to another, to find a gift for Jim.\nShe found it at last. It surely had been made for Jim and no one \nelse. There was no other like it in any of the shops, and she had looked” [doc_90949049db10b9f640c8_p3_c1]\n\n“else. There was no other like it in any of the shops, and she had looked \nin every shop in the city.\nIt was a gold watch chain, very simply made. Its value was in its  \nrich and pure material. Because it was so plain and simple, you knew  \nthat it was very valuable. All good things are like this.\nIt was good enough for The Watch.\nAs soon as she saw it, she knew that Jim must have it. It was like \nhim. Quietness and value—Jim and the chain both had quietness and \nvalue. She paid twenty-one dollars for it. And she hurried home with  \nthe chain and eighty-seven cents. \n3” [doc_90949049db10b9f640c8_p3_c2]\n\n“O .  H e n r y\nWith that chain on his watch, Jim could look at his watch and \nlearn the time anywhere he might be. Though the watch was so fine,  \nit had never had a fine chain. He sometimes took it out and looked at  \nit only when no one could see him do it.\nWhen Della arrived home, her mind quieted a little. She began to  \nthink more reasonably. She started to try to cover the sad marks of what \nshe had done. Love and large-hearted giving, when added together, can \nleave deep marks. It is never easy to cover these marks, dear friends—\nnever easy.\nWithin forty minutes her head looked a little better. With her  \nshort hair, she looked wonderfully like a schoolboy. She stood at the \nlooking-glass for a long time.” [doc_90949049db10b9f640c8_p4_c0]\n\n“short hair, she looked wonderfully like a schoolboy. She stood at the \nlooking-glass for a long time.\n“If Jim doesn’t kill me,” she said to herself, “before he looks at me  \na second time, he’ll say I look like a girl who sings and dances for money. \nBut what could I do—oh! What could I do with a dollar and eighty-\nseven cents?”\nAt seven, Jim’s dinner was ready for him.\nJim was never late. Della held the watch chain in her hand and \nsat near the door where he always entered. Then she heard his step in  \nthe hall and her face lost color for a moment. She often said little prayers \nquietly, about simple everyday things. And now she said: “Please God, \nmake him think I’m still pretty.”” [doc_90949049db10b9f640c8_p4_c1]"
+    },
+    {
+      "job_id": "fd77a833f78beb4814f1",
+      "model": "gemma3:4b",
+      "representation": "passages",
+      "case_id": "55b47cfd",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U1",
+        "U3",
+        "U5",
+        "U6",
+        "U7",
+        "U9"
+      ],
+      "unanswered_parts": [
+        "Why they could not use the gifts they received?"
+      ],
+      "assessment": "incomplete_causal_evidence",
+      "notes": "Selected opening/hair-description/gift-for-Jim text fails to establish both comb/hair-gone and chain/watch-sold reasons; unanswered notes add no supported answer.",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\np\nT h e  G i f t  o f  t h e  M a g i\nO\nNE DOLLAR AND EIGHTY-SEVEN CENTS.     \nThat was all. She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food. Della counted  \nit three times. One dollar and eighty-seven cents. And the next day  \nwould be Christmas.\nThere was nothing to do but fall on the bed and cry. So Della did it. \nWhile the lady of the home is slowly growing quieter, we can  \nlook at the home. Furnished rooms at a cost of $8 a week. There is lit -\ntle more to say about it.\nIn the hall below was a letter-box too small to hold a letter. There” [doc_90949049db10b9f640c8_p1_c0]\n\n“O .  H e n r y\nWhen the name was placed there, Mr. James Dillingham Young \nwas being paid $30 a week. Now, when he was being paid only $20 a \nweek, the name seemed too long and important. It should perhaps have \nbeen “Mr. James D. Young.” But when Mr. James Dillingham Young \nentered the furnished rooms, his name became very short indeed. Mrs. \nJames Dillingham Young put her arms warmly about him and called  \nhim “Jim.” You have already met her. She is Della.\nDella finished her crying and cleaned the marks of it from her face. \nShe stood by the window and looked out with no interest. Tomorrow \nwould be Christmas Day, and she had only $1.87 with which to buy  \nJim a gift. She had put aside as much as she could for months, with this” [doc_90949049db10b9f640c8_p2_c0]\n\n“he might be able to get a good view of himself. Della, being quite thin, \nhad mastered this art.\nSuddenly she turned from the window and stood before the glass. \nHer eyes were shining brightly, but her face had lost its color. Quickly \nshe pulled down her hair and let it fall to its complete length.\nThe James Dillingham Youngs were very proud of two things which \nthey owned. One thing was Jim’s gold watch. It had once belonged to  \nhis father. And, long ago, it had belonged to his father’s father. The  \nother thing was Della’s hair.\nIf a queen had lived in the rooms near theirs, Della would have \nwashed and dried her hair where the queen could see it. Della knew  \nher hair was more beautiful than any queen’s jewels and gifts.” [doc_90949049db10b9f640c8_p2_c2]\n\n“washed and dried her hair where the queen could see it. Della knew  \nher hair was more beautiful than any queen’s jewels and gifts.\nIf a king had lived in the same house, with all his riches, Jim would \nhave looked at his watch every time they met. Jim knew that no king  \n2” [doc_90949049db10b9f640c8_p2_c3]\n\n“T h e  G i f t  o f  t h e  M a g i\nhad anything so valuable.\nSo now Della’s beautiful hair fell about her, shining like a falling \nstream of brown water. It reached below her knee. It almost made itself \ninto a dress for her.\nAnd then she put it up on her head again, nervously and quickly. \nOnce she stopped for a moment and stood still while a tear or two ran \ndown her face.\nShe put on her old brown coat. She put on her old brown hat.  \nWith the bright light still in her eyes, she moved quickly out the door \nand down to the street.\nWhere she stopped, the sign said: “Mrs. Sofronie. Hair Articles  \nof all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.” [doc_90949049db10b9f640c8_p3_c0]\n\n“else. There was no other like it in any of the shops, and she had looked \nin every shop in the city.\nIt was a gold watch chain, very simply made. Its value was in its  \nrich and pure material. Because it was so plain and simple, you knew  \nthat it was very valuable. All good things are like this.\nIt was good enough for The Watch.\nAs soon as she saw it, she knew that Jim must have it. It was like \nhim. Quietness and value—Jim and the chain both had quietness and \nvalue. She paid twenty-one dollars for it. And she hurried home with  \nthe chain and eighty-seven cents. \n3” [doc_90949049db10b9f640c8_p3_c2]"
+    },
+    {
+      "job_id": "ddece9ea742a9a2a2dcd",
+      "model": "gemma3:4b",
+      "representation": "passages",
+      "case_id": "55b47cfd",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U5",
+        "U7",
+        "U8",
+        "U9",
+        "U10",
+        "U11"
+      ],
+      "unanswered_parts": [
+        "Why they could not use the gifts they received?"
+      ],
+      "assessment": "incomplete_causal_evidence",
+      "notes": "Selected opening/hair-description/gift-for-Jim text fails to establish both comb/hair-gone and chain/watch-sold reasons; unanswered notes add no supported answer.",
+      "answer": "“he might be able to get a good view of himself. Della, being quite thin, \nhad mastered this art.\nSuddenly she turned from the window and stood before the glass. \nHer eyes were shining brightly, but her face had lost its color. Quickly \nshe pulled down her hair and let it fall to its complete length.\nThe James Dillingham Youngs were very proud of two things which \nthey owned. One thing was Jim’s gold watch. It had once belonged to  \nhis father. And, long ago, it had belonged to his father’s father. The  \nother thing was Della’s hair.\nIf a queen had lived in the rooms near theirs, Della would have \nwashed and dried her hair where the queen could see it. Della knew  \nher hair was more beautiful than any queen’s jewels and gifts.” [doc_90949049db10b9f640c8_p2_c2]\n\n“T h e  G i f t  o f  t h e  M a g i\nhad anything so valuable.\nSo now Della’s beautiful hair fell about her, shining like a falling \nstream of brown water. It reached below her knee. It almost made itself \ninto a dress for her.\nAnd then she put it up on her head again, nervously and quickly. \nOnce she stopped for a moment and stood still while a tear or two ran \ndown her face.\nShe put on her old brown coat. She put on her old brown hat.  \nWith the bright light still in her eyes, she moved quickly out the door \nand down to the street.\nWhere she stopped, the sign said: “Mrs. Sofronie. Hair Articles  \nof all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.” [doc_90949049db10b9f640c8_p3_c0]\n\n“of all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.\nMrs. Sofronie, large, too white, cold-eyed, looked at her.\n“Will you buy my hair?” asked Della.\n“I buy hair,” said Mrs. Sofronie. “Take your hat off and let me look \nat it.”\nDown fell the brown waterfall.\n“Twenty dollars,” said Mrs. Sofronie, lifting the hair to feel its \nweight.\n“Give it to me quick,” said Della.\nOh, and the next two hours seemed to fly. She was going from  \none shop to another, to find a gift for Jim.\nShe found it at last. It surely had been made for Jim and no one \nelse. There was no other like it in any of the shops, and she had looked” [doc_90949049db10b9f640c8_p3_c1]\n\n“else. There was no other like it in any of the shops, and she had looked \nin every shop in the city.\nIt was a gold watch chain, very simply made. Its value was in its  \nrich and pure material. Because it was so plain and simple, you knew  \nthat it was very valuable. All good things are like this.\nIt was good enough for The Watch.\nAs soon as she saw it, she knew that Jim must have it. It was like \nhim. Quietness and value—Jim and the chain both had quietness and \nvalue. She paid twenty-one dollars for it. And she hurried home with  \nthe chain and eighty-seven cents. \n3” [doc_90949049db10b9f640c8_p3_c2]\n\n“O .  H e n r y\nWith that chain on his watch, Jim could look at his watch and \nlearn the time anywhere he might be. Though the watch was so fine,  \nit had never had a fine chain. He sometimes took it out and looked at  \nit only when no one could see him do it.\nWhen Della arrived home, her mind quieted a little. She began to  \nthink more reasonably. She started to try to cover the sad marks of what \nshe had done. Love and large-hearted giving, when added together, can \nleave deep marks. It is never easy to cover these marks, dear friends—\nnever easy.\nWithin forty minutes her head looked a little better. With her  \nshort hair, she looked wonderfully like a schoolboy. She stood at the \nlooking-glass for a long time.” [doc_90949049db10b9f640c8_p4_c0]\n\n“short hair, she looked wonderfully like a schoolboy. She stood at the \nlooking-glass for a long time.\n“If Jim doesn’t kill me,” she said to herself, “before he looks at me  \na second time, he’ll say I look like a girl who sings and dances for money. \nBut what could I do—oh! What could I do with a dollar and eighty-\nseven cents?”\nAt seven, Jim’s dinner was ready for him.\nJim was never late. Della held the watch chain in her hand and \nsat near the door where he always entered. Then she heard his step in  \nthe hall and her face lost color for a moment. She often said little prayers \nquietly, about simple everyday things. And now she said: “Please God, \nmake him think I’m still pretty.”” [doc_90949049db10b9f640c8_p4_c1]"
+    },
+    {
+      "job_id": "a9a8b8624d58aec09e65",
+      "model": "gemma3:4b",
+      "representation": "passages",
+      "case_id": "ae8d2dc4",
+      "question": "Was the flute made out of jewels? ",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U19",
+        "U15",
+        "U17",
+        "U18",
+        "U16",
+        "U11"
+      ],
+      "unanswered_parts": [
+        "Was the flute made out of jewels?"
+      ],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong. Unanswered note recognizes a missing fact but contradicts supported selection of irrelevant material.",
+      "answer": "“to buy the combs. And now I think we should have our dinner.”\nThe magi, as you know, were wise men—wonderfully wise men— \nwho brought gifts to the newborn Christ-child. They were the first to \ngive Christmas gifts. Being wise, their gifts were doubtless wise ones. \nAnd here I have told you the story of two children who were not wise. \nEach sold the most valuable thing he owned in order to buy a gift for \nthe other. But let me speak a last word to the wise of these days: Of all  \nwho give gifts, these two were the most wise. Of all who give and receive  \ngifts, such as they are the most wise. Everywhere they are the wise ones.  \nThey are the magi.\n6” [doc_90949049db10b9f640c8_p6_c1]\n\n“Jim looked around the room.\n“You say your hair is gone?” he said.\n“You don’t have to look for it,” said Della. “It’s sold, I tell you—\nsold and gone, too. It’s the night before Christmas, boy. Be good to me, \nbecause I sold it for you. Maybe the hairs of my head could be counted,” \nshe said, “but no one could ever count my love for you. Shall we eat  \ndinner, Jim?”\nJim put his arms around his Della. For ten seconds let us look in \nanother direction. Eight dollars a week or a million dollars a year— \nhow different are they? Someone may give you an answer, but it will  \nbe wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.” [doc_90949049db10b9f640c8_p5_c1]\n\n“perfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of  \nowning them. And now they were hers, but her hair was gone.\nBut she held them to her heart, and at last was able to look up  \nand say: “My hair grows so fast, Jim!”\n5” [doc_90949049db10b9f640c8_p5_c3]\n\n“O .  H e n r y\nAnd then she jumped up and cried, “Oh, oh!”\nJim had not yet seen his beautiful gift. She held it out to him in  \nher open hand. The gold seemed to shine softly as if with her own warm  \nand loving spirit.\n“Isn’t it perfect, Jim? I hunted all over town to find it. You’ll have \nto look at your watch a hundred times a day now. Give me your watch. \nI want to see how they look together.”\nJim sat down and smiled.\n“Della,” said he, “let’s put our Christmas gifts away and keep them  \na while. They’re too nice to use now. I sold the watch to get the money \nto buy the combs. And now I think we should have our dinner.”” [doc_90949049db10b9f640c8_p6_c0]\n\n“be wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.\nFrom inside the coat, Jim took something tied in paper. He threw \nit upon the table.\n“I want you to understand me, Dell,” he said. “Nothing like a  \nhaircut could make me love you any less. But if you’ll open that, you  \nmay know what I felt when I came in.”\nWhite fingers pulled off the paper. And then a cry of joy; and  \nthen a change to tears.\nFor there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time. Beautiful combs, with jewels, \nperfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of” [doc_90949049db10b9f640c8_p5_c2]\n\n“short hair, she looked wonderfully like a schoolboy. She stood at the \nlooking-glass for a long time.\n“If Jim doesn’t kill me,” she said to herself, “before he looks at me  \na second time, he’ll say I look like a girl who sings and dances for money. \nBut what could I do—oh! What could I do with a dollar and eighty-\nseven cents?”\nAt seven, Jim’s dinner was ready for him.\nJim was never late. Della held the watch chain in her hand and \nsat near the door where he always entered. Then she heard his step in  \nthe hall and her face lost color for a moment. She often said little prayers \nquietly, about simple everyday things. And now she said: “Please God, \nmake him think I’m still pretty.”” [doc_90949049db10b9f640c8_p4_c1]"
+    },
+    {
+      "job_id": "aaa81aea6de8a6c522e1",
+      "model": "gemma3:4b",
+      "representation": "passages",
+      "case_id": "ae8d2dc4",
+      "question": "Was the flute made out of jewels? ",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U5",
+        "U6",
+        "U7",
+        "U8",
+        "U9",
+        "U10"
+      ],
+      "unanswered_parts": [
+        "Was the flute made out of jewels?"
+      ],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong. Unanswered note recognizes a missing fact but contradicts supported selection of irrelevant material.",
+      "answer": "“he might be able to get a good view of himself. Della, being quite thin, \nhad mastered this art.\nSuddenly she turned from the window and stood before the glass. \nHer eyes were shining brightly, but her face had lost its color. Quickly \nshe pulled down her hair and let it fall to its complete length.\nThe James Dillingham Youngs were very proud of two things which \nthey owned. One thing was Jim’s gold watch. It had once belonged to  \nhis father. And, long ago, it had belonged to his father’s father. The  \nother thing was Della’s hair.\nIf a queen had lived in the rooms near theirs, Della would have \nwashed and dried her hair where the queen could see it. Della knew  \nher hair was more beautiful than any queen’s jewels and gifts.” [doc_90949049db10b9f640c8_p2_c2]\n\n“washed and dried her hair where the queen could see it. Della knew  \nher hair was more beautiful than any queen’s jewels and gifts.\nIf a king had lived in the same house, with all his riches, Jim would \nhave looked at his watch every time they met. Jim knew that no king  \n2” [doc_90949049db10b9f640c8_p2_c3]\n\n“T h e  G i f t  o f  t h e  M a g i\nhad anything so valuable.\nSo now Della’s beautiful hair fell about her, shining like a falling \nstream of brown water. It reached below her knee. It almost made itself \ninto a dress for her.\nAnd then she put it up on her head again, nervously and quickly. \nOnce she stopped for a moment and stood still while a tear or two ran \ndown her face.\nShe put on her old brown coat. She put on her old brown hat.  \nWith the bright light still in her eyes, she moved quickly out the door \nand down to the street.\nWhere she stopped, the sign said: “Mrs. Sofronie. Hair Articles  \nof all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.” [doc_90949049db10b9f640c8_p3_c0]\n\n“of all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.\nMrs. Sofronie, large, too white, cold-eyed, looked at her.\n“Will you buy my hair?” asked Della.\n“I buy hair,” said Mrs. Sofronie. “Take your hat off and let me look \nat it.”\nDown fell the brown waterfall.\n“Twenty dollars,” said Mrs. Sofronie, lifting the hair to feel its \nweight.\n“Give it to me quick,” said Della.\nOh, and the next two hours seemed to fly. She was going from  \none shop to another, to find a gift for Jim.\nShe found it at last. It surely had been made for Jim and no one \nelse. There was no other like it in any of the shops, and she had looked” [doc_90949049db10b9f640c8_p3_c1]\n\n“else. There was no other like it in any of the shops, and she had looked \nin every shop in the city.\nIt was a gold watch chain, very simply made. Its value was in its  \nrich and pure material. Because it was so plain and simple, you knew  \nthat it was very valuable. All good things are like this.\nIt was good enough for The Watch.\nAs soon as she saw it, she knew that Jim must have it. It was like \nhim. Quietness and value—Jim and the chain both had quietness and \nvalue. She paid twenty-one dollars for it. And she hurried home with  \nthe chain and eighty-seven cents. \n3” [doc_90949049db10b9f640c8_p3_c2]\n\n“O .  H e n r y\nWith that chain on his watch, Jim could look at his watch and \nlearn the time anywhere he might be. Though the watch was so fine,  \nit had never had a fine chain. He sometimes took it out and looked at  \nit only when no one could see him do it.\nWhen Della arrived home, her mind quieted a little. She began to  \nthink more reasonably. She started to try to cover the sad marks of what \nshe had done. Love and large-hearted giving, when added together, can \nleave deep marks. It is never easy to cover these marks, dear friends—\nnever easy.\nWithin forty minutes her head looked a little better. With her  \nshort hair, she looked wonderfully like a schoolboy. She stood at the \nlooking-glass for a long time.” [doc_90949049db10b9f640c8_p4_c0]"
+    },
+    {
+      "job_id": "183caa96b973d715d7e9",
+      "model": "gemma3:4b",
+      "representation": "passages",
+      "case_id": "e9abdb27",
+      "question": "what is della's birth date?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U1",
+        "U4",
+        "U5",
+        "U6",
+        "U7",
+        "U8"
+      ],
+      "unanswered_parts": [
+        "Della's birth date"
+      ],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong. Unanswered note recognizes a missing fact but contradicts supported selection of irrelevant material.",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\np\nT h e  G i f t  o f  t h e  M a g i\nO\nNE DOLLAR AND EIGHTY-SEVEN CENTS.     \nThat was all. She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food. Della counted  \nit three times. One dollar and eighty-seven cents. And the next day  \nwould be Christmas.\nThere was nothing to do but fall on the bed and cry. So Della did it. \nWhile the lady of the home is slowly growing quieter, we can  \nlook at the home. Furnished rooms at a cost of $8 a week. There is lit -\ntle more to say about it.\nIn the hall below was a letter-box too small to hold a letter. There” [doc_90949049db10b9f640c8_p1_c0]\n\n“Jim a gift. She had put aside as much as she could for months, with this \nresult. Twenty dollars a week is not much. Everything had cost more \nthan she had expected. It always happened like that.\nOnly $ 1.87 to buy a gift for Jim. Her Jim. She had had many happy \nhours planning something nice for him. Something nearly good enough. \nSomething almost worth the honor of belonging to Jim.\nThere was a looking-glass between the windows of the room. Per -\nhaps you have seen the kind of looking-glass that is placed in $8 fur -\nnished rooms. It was very narrow. A person could see only a little of \nhimself at a time. However, if he was very thin and moved very quickly, \nhe might be able to get a good view of himself. Della, being quite thin, \nhad mastered this art.” [doc_90949049db10b9f640c8_p2_c1]\n\n“he might be able to get a good view of himself. Della, being quite thin, \nhad mastered this art.\nSuddenly she turned from the window and stood before the glass. \nHer eyes were shining brightly, but her face had lost its color. Quickly \nshe pulled down her hair and let it fall to its complete length.\nThe James Dillingham Youngs were very proud of two things which \nthey owned. One thing was Jim’s gold watch. It had once belonged to  \nhis father. And, long ago, it had belonged to his father’s father. The  \nother thing was Della’s hair.\nIf a queen had lived in the rooms near theirs, Della would have \nwashed and dried her hair where the queen could see it. Della knew  \nher hair was more beautiful than any queen’s jewels and gifts.” [doc_90949049db10b9f640c8_p2_c2]\n\n“washed and dried her hair where the queen could see it. Della knew  \nher hair was more beautiful than any queen’s jewels and gifts.\nIf a king had lived in the same house, with all his riches, Jim would \nhave looked at his watch every time they met. Jim knew that no king  \n2” [doc_90949049db10b9f640c8_p2_c3]\n\n“T h e  G i f t  o f  t h e  M a g i\nhad anything so valuable.\nSo now Della’s beautiful hair fell about her, shining like a falling \nstream of brown water. It reached below her knee. It almost made itself \ninto a dress for her.\nAnd then she put it up on her head again, nervously and quickly. \nOnce she stopped for a moment and stood still while a tear or two ran \ndown her face.\nShe put on her old brown coat. She put on her old brown hat.  \nWith the bright light still in her eyes, she moved quickly out the door \nand down to the street.\nWhere she stopped, the sign said: “Mrs. Sofronie. Hair Articles  \nof all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.” [doc_90949049db10b9f640c8_p3_c0]\n\n“of all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.\nMrs. Sofronie, large, too white, cold-eyed, looked at her.\n“Will you buy my hair?” asked Della.\n“I buy hair,” said Mrs. Sofronie. “Take your hat off and let me look \nat it.”\nDown fell the brown waterfall.\n“Twenty dollars,” said Mrs. Sofronie, lifting the hair to feel its \nweight.\n“Give it to me quick,” said Della.\nOh, and the next two hours seemed to fly. She was going from  \none shop to another, to find a gift for Jim.\nShe found it at last. It surely had been made for Jim and no one \nelse. There was no other like it in any of the shops, and she had looked” [doc_90949049db10b9f640c8_p3_c1]"
+    },
+    {
+      "job_id": "eb5dd027ddd3d998ade6",
+      "model": "gemma3:4b",
+      "representation": "passages",
+      "case_id": "e9abdb27",
+      "question": "what is della's birth date?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U7",
+        "U8",
+        "U9",
+        "U10",
+        "U11",
+        "U12"
+      ],
+      "unanswered_parts": [
+        "Della's birth date"
+      ],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong. Unanswered note recognizes a missing fact but contradicts supported selection of irrelevant material.",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\nhad anything so valuable.\nSo now Della’s beautiful hair fell about her, shining like a falling \nstream of brown water. It reached below her knee. It almost made itself \ninto a dress for her.\nAnd then she put it up on her head again, nervously and quickly. \nOnce she stopped for a moment and stood still while a tear or two ran \ndown her face.\nShe put on her old brown coat. She put on her old brown hat.  \nWith the bright light still in her eyes, she moved quickly out the door \nand down to the street.\nWhere she stopped, the sign said: “Mrs. Sofronie. Hair Articles  \nof all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.” [doc_90949049db10b9f640c8_p3_c0]\n\n“of all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.\nMrs. Sofronie, large, too white, cold-eyed, looked at her.\n“Will you buy my hair?” asked Della.\n“I buy hair,” said Mrs. Sofronie. “Take your hat off and let me look \nat it.”\nDown fell the brown waterfall.\n“Twenty dollars,” said Mrs. Sofronie, lifting the hair to feel its \nweight.\n“Give it to me quick,” said Della.\nOh, and the next two hours seemed to fly. She was going from  \none shop to another, to find a gift for Jim.\nShe found it at last. It surely had been made for Jim and no one \nelse. There was no other like it in any of the shops, and she had looked” [doc_90949049db10b9f640c8_p3_c1]\n\n“else. There was no other like it in any of the shops, and she had looked \nin every shop in the city.\nIt was a gold watch chain, very simply made. Its value was in its  \nrich and pure material. Because it was so plain and simple, you knew  \nthat it was very valuable. All good things are like this.\nIt was good enough for The Watch.\nAs soon as she saw it, she knew that Jim must have it. It was like \nhim. Quietness and value—Jim and the chain both had quietness and \nvalue. She paid twenty-one dollars for it. And she hurried home with  \nthe chain and eighty-seven cents. \n3” [doc_90949049db10b9f640c8_p3_c2]\n\n“O .  H e n r y\nWith that chain on his watch, Jim could look at his watch and \nlearn the time anywhere he might be. Though the watch was so fine,  \nit had never had a fine chain. He sometimes took it out and looked at  \nit only when no one could see him do it.\nWhen Della arrived home, her mind quieted a little. She began to  \nthink more reasonably. She started to try to cover the sad marks of what \nshe had done. Love and large-hearted giving, when added together, can \nleave deep marks. It is never easy to cover these marks, dear friends—\nnever easy.\nWithin forty minutes her head looked a little better. With her  \nshort hair, she looked wonderfully like a schoolboy. She stood at the \nlooking-glass for a long time.” [doc_90949049db10b9f640c8_p4_c0]\n\n“short hair, she looked wonderfully like a schoolboy. She stood at the \nlooking-glass for a long time.\n“If Jim doesn’t kill me,” she said to herself, “before he looks at me  \na second time, he’ll say I look like a girl who sings and dances for money. \nBut what could I do—oh! What could I do with a dollar and eighty-\nseven cents?”\nAt seven, Jim’s dinner was ready for him.\nJim was never late. Della held the watch chain in her hand and \nsat near the door where he always entered. Then she heard his step in  \nthe hall and her face lost color for a moment. She often said little prayers \nquietly, about simple everyday things. And now she said: “Please God, \nmake him think I’m still pretty.”” [doc_90949049db10b9f640c8_p4_c1]\n\n“quietly, about simple everyday things. And now she said: “Please God, \nmake him think I’m still pretty.”\nThe door opened and Jim stepped in. He looked very thin and he \nwas not smiling. Poor fellow, he was only twenty-two—and with a fam -\nily to take care of! He needed a new coat and he had nothing to cover \nhis cold hands.\nJim stopped inside the door. He was as quiet as a hunting dog when \nit is near a bird. His eyes looked strangely at Della, and there was an \nexpression in them that she could not understand. It filled her with fear. \nIt was not anger, nor surprise, nor anything she had been ready for. He \nsimply looked at her with that strange expression on his face.\nDella went to him.” [doc_90949049db10b9f640c8_p4_c2]"
+    },
+    {
+      "job_id": "c78223bd5d38754caa8b",
+      "model": "gemma3:4b",
+      "representation": "sentence_units",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "no_context",
+      "mechanical_status": "empty_context_control",
+      "response_type": null,
+      "selected_ids": [],
+      "unanswered_parts": [],
+      "assessment": "code_control",
+      "notes": "Zero-generation-call abstention; not a model reasoning score.",
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "job_id": "b47d3d85f346daea30c9",
+      "model": "gemma3:4b",
+      "representation": "sentence_units",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U169",
+        "U170",
+        "U171",
+        "U177",
+        "U211",
+        "U219"
+      ],
+      "unanswered_parts": [
+        "What did Jim give to Della?",
+        "What did Della give to Jim?"
+      ],
+      "assessment": "core_evidence_with_conflicting_note",
+      "notes": "Contains Jim watch sale for combs among irrelevant love/dinner/moral lines; requested answer and unasked Della gift listed unanswered.",
+      "answer": "“Be good to me, \nbecause I sold it for you.” [doc_90949049db10b9f640c8_p5_c1]\n\n“Maybe the hairs of my head could be counted,” \nshe said, “but no one could ever count my love for you.” [doc_90949049db10b9f640c8_p5_c1]\n\n“Shall we eat  \ndinner, Jim?”” [doc_90949049db10b9f640c8_p5_c1]\n\n“My meaning will be explained soon.” [doc_90949049db10b9f640c8_p5_c1]\n\n“I sold the watch to get the money \nto buy the combs.” [doc_90949049db10b9f640c8_p6_c0]\n\n“Each sold the most valuable thing he owned in order to buy a gift for \nthe other.” [doc_90949049db10b9f640c8_p6_c1]"
+    },
+    {
+      "job_id": "b98807497551f0f52ee3",
+      "model": "gemma3:4b",
+      "representation": "sentence_units",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U64",
+        "U65",
+        "U66",
+        "U67",
+        "U68",
+        "U69"
+      ],
+      "unanswered_parts": [
+        "What did Jim buy for Jim?"
+      ],
+      "assessment": "irrelevant_evidence",
+      "notes": "Hair description does not establish Jim gift; unanswered note invents Jim buying for Jim.",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\nhad anything so valuable.” [doc_90949049db10b9f640c8_p3_c0]\n\n“So now Della’s beautiful hair fell about her, shining like a falling \nstream of brown water.” [doc_90949049db10b9f640c8_p3_c0]\n\n“It reached below her knee.” [doc_90949049db10b9f640c8_p3_c0]\n\n“It almost made itself \ninto a dress for her.” [doc_90949049db10b9f640c8_p3_c0]\n\n“And then she put it up on her head again, nervously and quickly.” [doc_90949049db10b9f640c8_p3_c0]\n\n“Once she stopped for a moment and stood still while a tear or two ran \ndown her face.” [doc_90949049db10b9f640c8_p3_c0]"
+    },
+    {
+      "job_id": "bea7f03d5928c688b363",
+      "model": "gemma3:4b",
+      "representation": "sentence_units",
+      "case_id": "2d84d462",
+      "question": "How much money had Della saved before selling her hair?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U166",
+        "U167",
+        "U168",
+        "U169",
+        "U170",
+        "U171"
+      ],
+      "unanswered_parts": [
+        "How much money had Della saved before selling her hair?",
+        "What was the value of the gold watch chain?"
+      ],
+      "assessment": "irrelevant_evidence",
+      "notes": "Hair description or sold-hair dialogue does not provide initial $1.87; requested amount omitted and notes shift to unasked facts.",
+      "answer": "““You don’t have to look for it,” said Della.” [doc_90949049db10b9f640c8_p5_c1]\n\n““It’s sold, I tell you—\nsold and gone, too.” [doc_90949049db10b9f640c8_p5_c1]\n\n“It’s the night before Christmas, boy.” [doc_90949049db10b9f640c8_p5_c1]\n\n“Be good to me, \nbecause I sold it for you.” [doc_90949049db10b9f640c8_p5_c1]\n\n“Maybe the hairs of my head could be counted,” \nshe said, “but no one could ever count my love for you.” [doc_90949049db10b9f640c8_p5_c1]\n\n“Shall we eat  \ndinner, Jim?”” [doc_90949049db10b9f640c8_p5_c1]"
+    },
+    {
+      "job_id": "7c6930fb0c8aded00998",
+      "model": "gemma3:4b",
+      "representation": "sentence_units",
+      "case_id": "2d84d462",
+      "question": "How much money had Della saved before selling her hair?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U64",
+        "U65",
+        "U66",
+        "U67",
+        "U68",
+        "U69"
+      ],
+      "unanswered_parts": [
+        "How much money did Jim have?"
+      ],
+      "assessment": "irrelevant_evidence",
+      "notes": "Hair description or sold-hair dialogue does not provide initial $1.87; requested amount omitted and notes shift to unasked facts.",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\nhad anything so valuable.” [doc_90949049db10b9f640c8_p3_c0]\n\n“So now Della’s beautiful hair fell about her, shining like a falling \nstream of brown water.” [doc_90949049db10b9f640c8_p3_c0]\n\n“It reached below her knee.” [doc_90949049db10b9f640c8_p3_c0]\n\n“It almost made itself \ninto a dress for her.” [doc_90949049db10b9f640c8_p3_c0]\n\n“And then she put it up on her head again, nervously and quickly.” [doc_90949049db10b9f640c8_p3_c0]\n\n“Once she stopped for a moment and stood still while a tear or two ran \ndown her face.” [doc_90949049db10b9f640c8_p3_c0]"
+    },
+    {
+      "job_id": "176f6a465b643ec1cf25",
+      "model": "gemma3:4b",
+      "representation": "sentence_units",
+      "case_id": "55b47cfd",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ],
+      "unanswered_parts": [
+        "Why they could not use the gifts they received?",
+        "What was the significance of the magi's gifts?"
+      ],
+      "assessment": "incomplete_causal_evidence",
+      "notes": "Selected opening/hair-description/gift-for-Jim text fails to establish both comb/hair-gone and chain/watch-sold reasons; unanswered notes add no supported answer.",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\np\nT h e  G i f t  o f  t h e  M a g i\nO\nNE DOLLAR AND EIGHTY-SEVEN CENTS.” [doc_90949049db10b9f640c8_p1_c0]\n\n“That was all.” [doc_90949049db10b9f640c8_p1_c0]\n\n“She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food.” [doc_90949049db10b9f640c8_p1_c0]\n\n“Della counted  \nit three times.” [doc_90949049db10b9f640c8_p1_c0]\n\n“One dollar and eighty-seven cents.” [doc_90949049db10b9f640c8_p1_c0]\n\n“And the next day  \nwould be Christmas.” [doc_90949049db10b9f640c8_p1_c0]"
+    },
+    {
+      "job_id": "e30d1d6f601c3fe90ac5",
+      "model": "gemma3:4b",
+      "representation": "sentence_units",
+      "case_id": "55b47cfd",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U64",
+        "U65",
+        "U66",
+        "U67",
+        "U68",
+        "U69"
+      ],
+      "unanswered_parts": [
+        "Why they could not use the gifts they received.",
+        "What Jim’s feelings were about the situation."
+      ],
+      "assessment": "incomplete_causal_evidence",
+      "notes": "Selected opening/hair-description/gift-for-Jim text fails to establish both comb/hair-gone and chain/watch-sold reasons; unanswered notes add no supported answer.",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\nhad anything so valuable.” [doc_90949049db10b9f640c8_p3_c0]\n\n“So now Della’s beautiful hair fell about her, shining like a falling \nstream of brown water.” [doc_90949049db10b9f640c8_p3_c0]\n\n“It reached below her knee.” [doc_90949049db10b9f640c8_p3_c0]\n\n“It almost made itself \ninto a dress for her.” [doc_90949049db10b9f640c8_p3_c0]\n\n“And then she put it up on her head again, nervously and quickly.” [doc_90949049db10b9f640c8_p3_c0]\n\n“Once she stopped for a moment and stood still while a tear or two ran \ndown her face.” [doc_90949049db10b9f640c8_p3_c0]"
+    },
+    {
+      "job_id": "5f89a5998cb8e36ede9f",
+      "model": "gemma3:4b",
+      "representation": "sentence_units",
+      "case_id": "ae8d2dc4",
+      "question": "Was the flute made out of jewels? ",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U219",
+        "U221",
+        "U223",
+        "U176",
+        "U197"
+      ],
+      "unanswered_parts": [
+        "Was the flute made out of jewels?"
+      ],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong. Unanswered note recognizes a missing fact but contradicts supported selection of irrelevant material.",
+      "answer": "“Each sold the most valuable thing he owned in order to buy a gift for \nthe other.” [doc_90949049db10b9f640c8_p6_c1]\n\n“Of all who give and receive  \ngifts, such as they are the most wise.” [doc_90949049db10b9f640c8_p6_c1]\n\n“They are the magi.” [doc_90949049db10b9f640c8_p6_c1]\n\n“The  magi brought valuable gifts, but that was not among \nthem.” [doc_90949049db10b9f640c8_p5_c1]\n\n“5” [doc_90949049db10b9f640c8_p5_c3]"
+    },
+    {
+      "job_id": "f47f943258fe47731435",
+      "model": "gemma3:4b",
+      "representation": "sentence_units",
+      "case_id": "ae8d2dc4",
+      "question": "Was the flute made out of jewels? ",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U64",
+        "U65",
+        "U66",
+        "U67",
+        "U68",
+        "U69"
+      ],
+      "unanswered_parts": [
+        "Was the flute made out of jewels?"
+      ],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong. Unanswered note recognizes a missing fact but contradicts supported selection of irrelevant material.",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\nhad anything so valuable.” [doc_90949049db10b9f640c8_p3_c0]\n\n“So now Della’s beautiful hair fell about her, shining like a falling \nstream of brown water.” [doc_90949049db10b9f640c8_p3_c0]\n\n“It reached below her knee.” [doc_90949049db10b9f640c8_p3_c0]\n\n“It almost made itself \ninto a dress for her.” [doc_90949049db10b9f640c8_p3_c0]\n\n“And then she put it up on her head again, nervously and quickly.” [doc_90949049db10b9f640c8_p3_c0]\n\n“Once she stopped for a moment and stood still while a tear or two ran \ndown her face.” [doc_90949049db10b9f640c8_p3_c0]"
+    },
+    {
+      "job_id": "98d2540bf3d5c75313f5",
+      "model": "gemma3:4b",
+      "representation": "sentence_units",
+      "case_id": "e9abdb27",
+      "question": "what is della's birth date?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U166",
+        "U167",
+        "U168",
+        "U169",
+        "U170",
+        "U171"
+      ],
+      "unanswered_parts": [
+        "Della's birth date"
+      ],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong. Unanswered note recognizes a missing fact but contradicts supported selection of irrelevant material.",
+      "answer": "““You don’t have to look for it,” said Della.” [doc_90949049db10b9f640c8_p5_c1]\n\n““It’s sold, I tell you—\nsold and gone, too.” [doc_90949049db10b9f640c8_p5_c1]\n\n“It’s the night before Christmas, boy.” [doc_90949049db10b9f640c8_p5_c1]\n\n“Be good to me, \nbecause I sold it for you.” [doc_90949049db10b9f640c8_p5_c1]\n\n“Maybe the hairs of my head could be counted,” \nshe said, “but no one could ever count my love for you.” [doc_90949049db10b9f640c8_p5_c1]\n\n“Shall we eat  \ndinner, Jim?”” [doc_90949049db10b9f640c8_p5_c1]"
+    },
+    {
+      "job_id": "a6eb449593ddd2ef5157",
+      "model": "gemma3:4b",
+      "representation": "sentence_units",
+      "case_id": "e9abdb27",
+      "question": "what is della's birth date?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U64",
+        "U65",
+        "U66",
+        "U67",
+        "U68",
+        "U69"
+      ],
+      "unanswered_parts": [
+        "Della's birth date"
+      ],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong. Unanswered note recognizes a missing fact but contradicts supported selection of irrelevant material.",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\nhad anything so valuable.” [doc_90949049db10b9f640c8_p3_c0]\n\n“So now Della’s beautiful hair fell about her, shining like a falling \nstream of brown water.” [doc_90949049db10b9f640c8_p3_c0]\n\n“It reached below her knee.” [doc_90949049db10b9f640c8_p3_c0]\n\n“It almost made itself \ninto a dress for her.” [doc_90949049db10b9f640c8_p3_c0]\n\n“And then she put it up on her head again, nervously and quickly.” [doc_90949049db10b9f640c8_p3_c0]\n\n“Once she stopped for a moment and stood still while a tear or two ran \ndown her face.” [doc_90949049db10b9f640c8_p3_c0]"
+    },
+    {
+      "job_id": "87f44966b4b9673ad61e",
+      "model": "qwen3:4b",
+      "representation": "passages",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "no_context",
+      "mechanical_status": "empty_context_control",
+      "response_type": null,
+      "selected_ids": [],
+      "unanswered_parts": [],
+      "assessment": "code_control",
+      "notes": "Zero-generation-call abstention; not a model reasoning score.",
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "job_id": "d916c64ad1c3ba874818",
+      "model": "qwen3:4b",
+      "representation": "passages",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U18",
+        "U16",
+        "U15",
+        "U14",
+        "U13",
+        "U12"
+      ],
+      "unanswered_parts": [
+        "what did Jim buy as a gift for Della?"
+      ],
+      "assessment": "core_evidence_with_conflicting_note",
+      "notes": "Combs and Jim watch sale are present, but the model incorrectly lists the actual answerable question as unanswered; excessive extra passages.",
+      "answer": "“O .  H e n r y\nAnd then she jumped up and cried, “Oh, oh!”\nJim had not yet seen his beautiful gift. She held it out to him in  \nher open hand. The gold seemed to shine softly as if with her own warm  \nand loving spirit.\n“Isn’t it perfect, Jim? I hunted all over town to find it. You’ll have \nto look at your watch a hundred times a day now. Give me your watch. \nI want to see how they look together.”\nJim sat down and smiled.\n“Della,” said he, “let’s put our Christmas gifts away and keep them  \na while. They’re too nice to use now. I sold the watch to get the money \nto buy the combs. And now I think we should have our dinner.”” [doc_90949049db10b9f640c8_p6_c0]\n\n“be wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.\nFrom inside the coat, Jim took something tied in paper. He threw \nit upon the table.\n“I want you to understand me, Dell,” he said. “Nothing like a  \nhaircut could make me love you any less. But if you’ll open that, you  \nmay know what I felt when I came in.”\nWhite fingers pulled off the paper. And then a cry of joy; and  \nthen a change to tears.\nFor there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time. Beautiful combs, with jewels, \nperfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of” [doc_90949049db10b9f640c8_p5_c2]\n\n“Jim looked around the room.\n“You say your hair is gone?” he said.\n“You don’t have to look for it,” said Della. “It’s sold, I tell you—\nsold and gone, too. It’s the night before Christmas, boy. Be good to me, \nbecause I sold it for you. Maybe the hairs of my head could be counted,” \nshe said, “but no one could ever count my love for you. Shall we eat  \ndinner, Jim?”\nJim put his arms around his Della. For ten seconds let us look in \nanother direction. Eight dollars a week or a million dollars a year— \nhow different are they? Someone may give you an answer, but it will  \nbe wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.” [doc_90949049db10b9f640c8_p5_c1]\n\n“T h e  G i f t  o f  t h e  M a g i\ngift. My hair will grow again. You won’t care, will you? My hair grows \nvery fast. It’s Christmas, Jim. Let’s be happy. You don’t know what a \nnice—what a beautiful nice gift I got for you.”\n“You’ve cut off your hair?” asked Jim slowly. He seemed to labor \nto understand what had happened. He seemed not to feel sure he  \nknew.\n“Cut it off and sold it,” said Della. “Don’t you like me now? I’m  \nme, Jim. I’m the same without my hair.”\nJim looked around the room.\n“You say your hair is gone?” he said.” [doc_90949049db10b9f640c8_p5_c0]\n\n“simply looked at her with that strange expression on his face.\nDella went to him.\n“Jim, dear,” she cried, “don’t look at me like that. I had my hair cut \noff and sold it. I couldn’t live through Christmas without giving you a  \n4” [doc_90949049db10b9f640c8_p4_c3]\n\n“quietly, about simple everyday things. And now she said: “Please God, \nmake him think I’m still pretty.”\nThe door opened and Jim stepped in. He looked very thin and he \nwas not smiling. Poor fellow, he was only twenty-two—and with a fam -\nily to take care of! He needed a new coat and he had nothing to cover \nhis cold hands.\nJim stopped inside the door. He was as quiet as a hunting dog when \nit is near a bird. His eyes looked strangely at Della, and there was an \nexpression in them that she could not understand. It filled her with fear. \nIt was not anger, nor surprise, nor anything she had been ready for. He \nsimply looked at her with that strange expression on his face.\nDella went to him.” [doc_90949049db10b9f640c8_p4_c2]"
+    },
+    {
+      "job_id": "5e171488fa15d9483736",
+      "model": "qwen3:4b",
+      "representation": "passages",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U8",
+        "U9"
+      ],
+      "unanswered_parts": [
+        "what did Jim buy as a gift for Della?"
+      ],
+      "assessment": "wrong_actor_direction",
+      "notes": "Selects Della hair sale and watch chain for Jim, not Jim comb gift to Della; question listed unanswered.",
+      "answer": "“of all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.\nMrs. Sofronie, large, too white, cold-eyed, looked at her.\n“Will you buy my hair?” asked Della.\n“I buy hair,” said Mrs. Sofronie. “Take your hat off and let me look \nat it.”\nDown fell the brown waterfall.\n“Twenty dollars,” said Mrs. Sofronie, lifting the hair to feel its \nweight.\n“Give it to me quick,” said Della.\nOh, and the next two hours seemed to fly. She was going from  \none shop to another, to find a gift for Jim.\nShe found it at last. It surely had been made for Jim and no one \nelse. There was no other like it in any of the shops, and she had looked” [doc_90949049db10b9f640c8_p3_c1]\n\n“else. There was no other like it in any of the shops, and she had looked \nin every shop in the city.\nIt was a gold watch chain, very simply made. Its value was in its  \nrich and pure material. Because it was so plain and simple, you knew  \nthat it was very valuable. All good things are like this.\nIt was good enough for The Watch.\nAs soon as she saw it, she knew that Jim must have it. It was like \nhim. Quietness and value—Jim and the chain both had quietness and \nvalue. She paid twenty-one dollars for it. And she hurried home with  \nthe chain and eighty-seven cents. \n3” [doc_90949049db10b9f640c8_p3_c2]"
+    },
+    {
+      "job_id": "5e84de4451c98bd33924",
+      "model": "qwen3:4b",
+      "representation": "passages",
+      "case_id": "2d84d462",
+      "question": "How much money had Della saved before selling her hair?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U1",
+        "U3",
+        "U8"
+      ],
+      "unanswered_parts": [
+        "How much money had Della saved before selling her hair?"
+      ],
+      "assessment": "core_evidence_with_conflicting_note",
+      "notes": "Initial $1.87 is in selected passages; incorrect unanswered note and extra hair-sale passage weaken result.",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\np\nT h e  G i f t  o f  t h e  M a g i\nO\nNE DOLLAR AND EIGHTY-SEVEN CENTS.     \nThat was all. She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food. Della counted  \nit three times. One dollar and eighty-seven cents. And the next day  \nwould be Christmas.\nThere was nothing to do but fall on the bed and cry. So Della did it. \nWhile the lady of the home is slowly growing quieter, we can  \nlook at the home. Furnished rooms at a cost of $8 a week. There is lit -\ntle more to say about it.\nIn the hall below was a letter-box too small to hold a letter. There” [doc_90949049db10b9f640c8_p1_c0]\n\n“O .  H e n r y\nWhen the name was placed there, Mr. James Dillingham Young \nwas being paid $30 a week. Now, when he was being paid only $20 a \nweek, the name seemed too long and important. It should perhaps have \nbeen “Mr. James D. Young.” But when Mr. James Dillingham Young \nentered the furnished rooms, his name became very short indeed. Mrs. \nJames Dillingham Young put her arms warmly about him and called  \nhim “Jim.” You have already met her. She is Della.\nDella finished her crying and cleaned the marks of it from her face. \nShe stood by the window and looked out with no interest. Tomorrow \nwould be Christmas Day, and she had only $1.87 with which to buy  \nJim a gift. She had put aside as much as she could for months, with this” [doc_90949049db10b9f640c8_p2_c0]\n\n“of all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.\nMrs. Sofronie, large, too white, cold-eyed, looked at her.\n“Will you buy my hair?” asked Della.\n“I buy hair,” said Mrs. Sofronie. “Take your hat off and let me look \nat it.”\nDown fell the brown waterfall.\n“Twenty dollars,” said Mrs. Sofronie, lifting the hair to feel its \nweight.\n“Give it to me quick,” said Della.\nOh, and the next two hours seemed to fly. She was going from  \none shop to another, to find a gift for Jim.\nShe found it at last. It surely had been made for Jim and no one \nelse. There was no other like it in any of the shops, and she had looked” [doc_90949049db10b9f640c8_p3_c1]"
+    },
+    {
+      "job_id": "c5de0c1c4ac5b5e76db1",
+      "model": "qwen3:4b",
+      "representation": "passages",
+      "case_id": "2d84d462",
+      "question": "How much money had Della saved before selling her hair?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U3"
+      ],
+      "unanswered_parts": [
+        "How much money had Della saved before selling her hair?"
+      ],
+      "assessment": "core_evidence_with_conflicting_note",
+      "notes": "Selected page 2 includes initial $1.87 but model incorrectly marks that question unanswered.",
+      "answer": "“O .  H e n r y\nWhen the name was placed there, Mr. James Dillingham Young \nwas being paid $30 a week. Now, when he was being paid only $20 a \nweek, the name seemed too long and important. It should perhaps have \nbeen “Mr. James D. Young.” But when Mr. James Dillingham Young \nentered the furnished rooms, his name became very short indeed. Mrs. \nJames Dillingham Young put her arms warmly about him and called  \nhim “Jim.” You have already met her. She is Della.\nDella finished her crying and cleaned the marks of it from her face. \nShe stood by the window and looked out with no interest. Tomorrow \nwould be Christmas Day, and she had only $1.87 with which to buy  \nJim a gift. She had put aside as much as she could for months, with this” [doc_90949049db10b9f640c8_p2_c0]"
+    },
+    {
+      "job_id": "ca53e97efd4493c75961",
+      "model": "qwen3:4b",
+      "representation": "passages",
+      "case_id": "55b47cfd",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "insufficient",
+      "selected_ids": [],
+      "unanswered_parts": [
+        "Why they both could not use the gifts they received?"
+      ],
+      "assessment": "unjustified_abstention",
+      "notes": "Complete evidence includes the sacrifices and unusable gifts; question is answerable.",
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "job_id": "bddec7e9b497c57fa7a5",
+      "model": "qwen3:4b",
+      "representation": "passages",
+      "case_id": "55b47cfd",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "insufficient",
+      "selected_ids": [],
+      "unanswered_parts": [
+        "Why they both could not use the gifts they received?"
+      ],
+      "assessment": "unjustified_abstention",
+      "notes": "Complete evidence includes the sacrifices and unusable gifts; question is answerable.",
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "job_id": "2c84561eabbbba64bc14",
+      "model": "qwen3:4b",
+      "representation": "passages",
+      "case_id": "ae8d2dc4",
+      "question": "Was the flute made out of jewels? ",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U16",
+        "U18"
+      ],
+      "unanswered_parts": [
+        "Was the flute made out of jewels?"
+      ],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong. Unanswered note recognizes a missing fact but contradicts supported selection of irrelevant material.",
+      "answer": "“be wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.\nFrom inside the coat, Jim took something tied in paper. He threw \nit upon the table.\n“I want you to understand me, Dell,” he said. “Nothing like a  \nhaircut could make me love you any less. But if you’ll open that, you  \nmay know what I felt when I came in.”\nWhite fingers pulled off the paper. And then a cry of joy; and  \nthen a change to tears.\nFor there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time. Beautiful combs, with jewels, \nperfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of” [doc_90949049db10b9f640c8_p5_c2]\n\n“O .  H e n r y\nAnd then she jumped up and cried, “Oh, oh!”\nJim had not yet seen his beautiful gift. She held it out to him in  \nher open hand. The gold seemed to shine softly as if with her own warm  \nand loving spirit.\n“Isn’t it perfect, Jim? I hunted all over town to find it. You’ll have \nto look at your watch a hundred times a day now. Give me your watch. \nI want to see how they look together.”\nJim sat down and smiled.\n“Della,” said he, “let’s put our Christmas gifts away and keep them  \na while. They’re too nice to use now. I sold the watch to get the money \nto buy the combs. And now I think we should have our dinner.”” [doc_90949049db10b9f640c8_p6_c0]"
+    },
+    {
+      "job_id": "14fab13c55bf91b05af6",
+      "model": "qwen3:4b",
+      "representation": "passages",
+      "case_id": "ae8d2dc4",
+      "question": "Was the flute made out of jewels? ",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U5",
+        "U6",
+        "U8",
+        "U9",
+        "U13",
+        "U14"
+      ],
+      "unanswered_parts": [
+        "Was the flute made out of jewels?"
+      ],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong. Unanswered note recognizes a missing fact but contradicts supported selection of irrelevant material.",
+      "answer": "“he might be able to get a good view of himself. Della, being quite thin, \nhad mastered this art.\nSuddenly she turned from the window and stood before the glass. \nHer eyes were shining brightly, but her face had lost its color. Quickly \nshe pulled down her hair and let it fall to its complete length.\nThe James Dillingham Youngs were very proud of two things which \nthey owned. One thing was Jim’s gold watch. It had once belonged to  \nhis father. And, long ago, it had belonged to his father’s father. The  \nother thing was Della’s hair.\nIf a queen had lived in the rooms near theirs, Della would have \nwashed and dried her hair where the queen could see it. Della knew  \nher hair was more beautiful than any queen’s jewels and gifts.” [doc_90949049db10b9f640c8_p2_c2]\n\n“washed and dried her hair where the queen could see it. Della knew  \nher hair was more beautiful than any queen’s jewels and gifts.\nIf a king had lived in the same house, with all his riches, Jim would \nhave looked at his watch every time they met. Jim knew that no king  \n2” [doc_90949049db10b9f640c8_p2_c3]\n\n“of all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.\nMrs. Sofronie, large, too white, cold-eyed, looked at her.\n“Will you buy my hair?” asked Della.\n“I buy hair,” said Mrs. Sofronie. “Take your hat off and let me look \nat it.”\nDown fell the brown waterfall.\n“Twenty dollars,” said Mrs. Sofronie, lifting the hair to feel its \nweight.\n“Give it to me quick,” said Della.\nOh, and the next two hours seemed to fly. She was going from  \none shop to another, to find a gift for Jim.\nShe found it at last. It surely had been made for Jim and no one \nelse. There was no other like it in any of the shops, and she had looked” [doc_90949049db10b9f640c8_p3_c1]\n\n“else. There was no other like it in any of the shops, and she had looked \nin every shop in the city.\nIt was a gold watch chain, very simply made. Its value was in its  \nrich and pure material. Because it was so plain and simple, you knew  \nthat it was very valuable. All good things are like this.\nIt was good enough for The Watch.\nAs soon as she saw it, she knew that Jim must have it. It was like \nhim. Quietness and value—Jim and the chain both had quietness and \nvalue. She paid twenty-one dollars for it. And she hurried home with  \nthe chain and eighty-seven cents. \n3” [doc_90949049db10b9f640c8_p3_c2]\n\n“simply looked at her with that strange expression on his face.\nDella went to him.\n“Jim, dear,” she cried, “don’t look at me like that. I had my hair cut \noff and sold it. I couldn’t live through Christmas without giving you a  \n4” [doc_90949049db10b9f640c8_p4_c3]\n\n“T h e  G i f t  o f  t h e  M a g i\ngift. My hair will grow again. You won’t care, will you? My hair grows \nvery fast. It’s Christmas, Jim. Let’s be happy. You don’t know what a \nnice—what a beautiful nice gift I got for you.”\n“You’ve cut off your hair?” asked Jim slowly. He seemed to labor \nto understand what had happened. He seemed not to feel sure he  \nknew.\n“Cut it off and sold it,” said Della. “Don’t you like me now? I’m  \nme, Jim. I’m the same without my hair.”\nJim looked around the room.\n“You say your hair is gone?” he said.” [doc_90949049db10b9f640c8_p5_c0]"
+    },
+    {
+      "job_id": "ac76f7979f601e28bcd4",
+      "model": "qwen3:4b",
+      "representation": "passages",
+      "case_id": "e9abdb27",
+      "question": "what is della's birth date?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "insufficient",
+      "selected_ids": [],
+      "unanswered_parts": [
+        "what is della's birth date?"
+      ],
+      "assessment": "justified_abstention",
+      "notes": "Requested fact is absent from full PDF; no selected units and exact abstention.",
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "job_id": "e98cc0b6a5ee246d1108",
+      "model": "qwen3:4b",
+      "representation": "passages",
+      "case_id": "e9abdb27",
+      "question": "what is della's birth date?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "insufficient",
+      "selected_ids": [],
+      "unanswered_parts": [
+        "della's birth date"
+      ],
+      "assessment": "justified_abstention",
+      "notes": "Requested fact is absent from full PDF; no selected units and exact abstention.",
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "job_id": "c22fd4716e70860a2066",
+      "model": "qwen3:4b",
+      "representation": "sentence_units",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "no_context",
+      "mechanical_status": "empty_context_control",
+      "response_type": null,
+      "selected_ids": [],
+      "unanswered_parts": [],
+      "assessment": "code_control",
+      "notes": "Zero-generation-call abstention; not a model reasoning score.",
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "job_id": "d8c9047f470e47470430",
+      "model": "qwen3:4b",
+      "representation": "sentence_units",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U211"
+      ],
+      "unanswered_parts": [],
+      "assessment": "core_useful_evidence",
+      "notes": "Selects Jim statement that he sold watch to buy combs; relevant core evidence.",
+      "answer": "“I sold the watch to get the money \nto buy the combs.” [doc_90949049db10b9f640c8_p6_c0]"
+    },
+    {
+      "job_id": "40b5effe289bbf645615",
+      "model": "qwen3:4b",
+      "representation": "sentence_units",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U84",
+        "U85",
+        "U91",
+        "U92",
+        "U93",
+        "U94"
+      ],
+      "unanswered_parts": [],
+      "assessment": "wrong_actor_direction",
+      "notes": "Selects hair sale and gold watch chain belonging to Della-to-Jim transaction; fails requested direction.",
+      "answer": "““Twenty dollars,” said Mrs. Sofronie, lifting the hair to feel its \nweight.” [doc_90949049db10b9f640c8_p3_c1]\n\n““Give it to me quick,” said Della.” [doc_90949049db10b9f640c8_p3_c1]\n\n“else.” [doc_90949049db10b9f640c8_p3_c2]\n\n“There was no other like it in any of the shops, and she had looked \nin every shop in the city.” [doc_90949049db10b9f640c8_p3_c2]\n\n“It was a gold watch chain, very simply made.” [doc_90949049db10b9f640c8_p3_c2]\n\n“Its value was in its  \nrich and pure material.” [doc_90949049db10b9f640c8_p3_c2]"
+    },
+    {
+      "job_id": "f7435ae0d62617281ef7",
+      "model": "qwen3:4b",
+      "representation": "sentence_units",
+      "case_id": "2d84d462",
+      "question": "How much money had Della saved before selling her hair?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U102",
+        "U103",
+        "U104",
+        "U105",
+        "U106",
+        "U107"
+      ],
+      "unanswered_parts": [
+        "How much money had Della saved before selling her hair?"
+      ],
+      "assessment": "wrong_temporal_evidence",
+      "notes": "Selects later 87-cent remainder and watch descriptions; initial $1.87 omitted. Unanswered note does not make irrelevant selections a correct answer.",
+      "answer": "“And she hurried home with  \nthe chain and eighty-seven cents.” [doc_90949049db10b9f640c8_p3_c2]\n\n“3” [doc_90949049db10b9f640c8_p3_c2]\n\n“O .” [doc_90949049db10b9f640c8_p4_c0]\n\n“H e n r y\nWith that chain on his watch, Jim could look at his watch and \nlearn the time anywhere he might be.” [doc_90949049db10b9f640c8_p4_c0]\n\n“Though the watch was so fine,  \nit had never had a fine chain.” [doc_90949049db10b9f640c8_p4_c0]\n\n“He sometimes took it out and looked at  \nit only when no one could see him do it.” [doc_90949049db10b9f640c8_p4_c0]"
+    },
+    {
+      "job_id": "597d2ab30137aecb6537",
+      "model": "qwen3:4b",
+      "representation": "sentence_units",
+      "case_id": "2d84d462",
+      "question": "How much money had Della saved before selling her hair?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U102"
+      ],
+      "unanswered_parts": [
+        "How much money had Della saved before selling her hair?"
+      ],
+      "assessment": "wrong_temporal_evidence",
+      "notes": "Only selected fact is later 87-cent remainder; initial $1.87 omitted.",
+      "answer": "“And she hurried home with  \nthe chain and eighty-seven cents.” [doc_90949049db10b9f640c8_p3_c2]"
+    },
+    {
+      "job_id": "1c71e65b0028f8351019",
+      "model": "qwen3:4b",
+      "representation": "sentence_units",
+      "case_id": "55b47cfd",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U211",
+        "U212",
+        "U191",
+        "U190",
+        "U189",
+        "U188"
+      ],
+      "unanswered_parts": [
+        "Why they both could not use the gifts they received?"
+      ],
+      "assessment": "incomplete_causal_evidence",
+      "notes": "Watch-sale and comb/hair-use facts present, but hair-gone fact omitted; extra dinner line and unfinished fragment. Marks question unanswered.",
+      "answer": "“I sold the watch to get the money \nto buy the combs.” [doc_90949049db10b9f640c8_p6_c0]\n\n“And now I think we should have our dinner.”” [doc_90949049db10b9f640c8_p6_c0]\n\n“She had looked at them without the least hope of” [doc_90949049db10b9f640c8_p5_c2]\n\n“She had known they cost too much for  \nher to buy them.” [doc_90949049db10b9f640c8_p5_c2]\n\n“Beautiful combs, with jewels, \nperfect for her beautiful hair.” [doc_90949049db10b9f640c8_p5_c2]\n\n“For there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time.” [doc_90949049db10b9f640c8_p5_c2]"
+    },
+    {
+      "job_id": "6cced9d372d4d7e9226b",
+      "model": "qwen3:4b",
+      "representation": "sentence_units",
+      "case_id": "55b47cfd",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U144",
+        "U145",
+        "U146",
+        "U147",
+        "U148",
+        "U149"
+      ],
+      "unanswered_parts": [
+        "Why they both could not use the gifts they received?"
+      ],
+      "assessment": "incomplete_causal_evidence",
+      "notes": "Hair-growth dialogue alone does not establish both unusable gifts or missing watch; includes page/chunk fragments.",
+      "answer": "“I couldn’t live through Christmas without giving you a  \n4” [doc_90949049db10b9f640c8_p4_c3]\n\n“T h e  G i f t  o f  t h e  M a g i\ngift.” [doc_90949049db10b9f640c8_p5_c0]\n\n“My hair will grow again.” [doc_90949049db10b9f640c8_p5_c0]\n\n“You won’t care, will you?” [doc_90949049db10b9f640c8_p5_c0]\n\n“My hair grows \nvery fast.” [doc_90949049db10b9f640c8_p5_c0]\n\n“It’s Christmas, Jim.” [doc_90949049db10b9f640c8_p5_c0]"
+    },
+    {
+      "job_id": "8316628672ca60a537b5",
+      "model": "qwen3:4b",
+      "representation": "sentence_units",
+      "case_id": "ae8d2dc4",
+      "question": "Was the flute made out of jewels? ",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U199",
+        "U200",
+        "U201",
+        "U202",
+        "U203",
+        "U204"
+      ],
+      "unanswered_parts": [
+        "Was the flute made out of jewels?"
+      ],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong. Unanswered note recognizes a missing fact but contradicts supported selection of irrelevant material.",
+      "answer": "“H e n r y\nAnd then she jumped up and cried, “Oh, oh!”” [doc_90949049db10b9f640c8_p6_c0]\n\n“Jim had not yet seen his beautiful gift.” [doc_90949049db10b9f640c8_p6_c0]\n\n“She held it out to him in  \nher open hand.” [doc_90949049db10b9f640c8_p6_c0]\n\n“The gold seemed to shine softly as if with her own warm  \nand loving spirit.” [doc_90949049db10b9f640c8_p6_c0]\n\n““Isn’t it perfect, Jim?” [doc_90949049db10b9f640c8_p6_c0]\n\n“I hunted all over town to find it.” [doc_90949049db10b9f640c8_p6_c0]"
+    },
+    {
+      "job_id": "165eb317e6fb5d686ae0",
+      "model": "qwen3:4b",
+      "representation": "sentence_units",
+      "case_id": "ae8d2dc4",
+      "question": "Was the flute made out of jewels? ",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U84"
+      ],
+      "unanswered_parts": [
+        "Was the flute made out of jewels?"
+      ],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong. Unanswered note recognizes a missing fact but contradicts supported selection of irrelevant material.",
+      "answer": "““Twenty dollars,” said Mrs. Sofronie, lifting the hair to feel its \nweight.” [doc_90949049db10b9f640c8_p3_c1]"
+    },
+    {
+      "job_id": "0220c01955068b68a03e",
+      "model": "qwen3:4b",
+      "representation": "sentence_units",
+      "case_id": "e9abdb27",
+      "question": "what is della's birth date?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "insufficient",
+      "selected_ids": [],
+      "unanswered_parts": [
+        "what is della's birth date?"
+      ],
+      "assessment": "justified_abstention",
+      "notes": "Requested fact is absent from full PDF; no selected units and exact abstention.",
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "job_id": "9c105c3e192cf38f440a",
+      "model": "qwen3:4b",
+      "representation": "sentence_units",
+      "case_id": "e9abdb27",
+      "question": "what is della's birth date?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "insufficient",
+      "selected_ids": [],
+      "unanswered_parts": [
+        "what is della's birth date?"
+      ],
+      "assessment": "justified_abstention",
+      "notes": "Requested fact is absent from full PDF; no selected units and exact abstention.",
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "job_id": "433e7d5878129e2bdb43",
+      "model": "qwen3:8b",
+      "representation": "passages",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "no_context",
+      "mechanical_status": "empty_context_control",
+      "response_type": null,
+      "selected_ids": [],
+      "unanswered_parts": [],
+      "assessment": "code_control",
+      "notes": "Zero-generation-call abstention; not a model reasoning score.",
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "job_id": "93440e212b4c65880083",
+      "model": "qwen3:8b",
+      "representation": "passages",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U16",
+        "U17",
+        "U18"
+      ],
+      "unanswered_parts": [],
+      "assessment": "core_useful_evidence",
+      "notes": "Includes Jim wrapped gift, combs, hair-gone passage and watch-sale statement; useful but lengthy evidence view.",
+      "answer": "“be wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.\nFrom inside the coat, Jim took something tied in paper. He threw \nit upon the table.\n“I want you to understand me, Dell,” he said. “Nothing like a  \nhaircut could make me love you any less. But if you’ll open that, you  \nmay know what I felt when I came in.”\nWhite fingers pulled off the paper. And then a cry of joy; and  \nthen a change to tears.\nFor there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time. Beautiful combs, with jewels, \nperfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of” [doc_90949049db10b9f640c8_p5_c2]\n\n“perfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of  \nowning them. And now they were hers, but her hair was gone.\nBut she held them to her heart, and at last was able to look up  \nand say: “My hair grows so fast, Jim!”\n5” [doc_90949049db10b9f640c8_p5_c3]\n\n“O .  H e n r y\nAnd then she jumped up and cried, “Oh, oh!”\nJim had not yet seen his beautiful gift. She held it out to him in  \nher open hand. The gold seemed to shine softly as if with her own warm  \nand loving spirit.\n“Isn’t it perfect, Jim? I hunted all over town to find it. You’ll have \nto look at your watch a hundred times a day now. Give me your watch. \nI want to see how they look together.”\nJim sat down and smiled.\n“Della,” said he, “let’s put our Christmas gifts away and keep them  \na while. They’re too nice to use now. I sold the watch to get the money \nto buy the combs. And now I think we should have our dinner.”” [doc_90949049db10b9f640c8_p6_c0]"
+    },
+    {
+      "job_id": "570e271010aa0f071167",
+      "model": "qwen3:8b",
+      "representation": "passages",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U9",
+        "U16"
+      ],
+      "unanswered_parts": [],
+      "assessment": "core_evidence_with_confusing_extra",
+      "notes": "Comb gift passage is relevant, but Della gold watch chain passage introduces opposite transaction.",
+      "answer": "“else. There was no other like it in any of the shops, and she had looked \nin every shop in the city.\nIt was a gold watch chain, very simply made. Its value was in its  \nrich and pure material. Because it was so plain and simple, you knew  \nthat it was very valuable. All good things are like this.\nIt was good enough for The Watch.\nAs soon as she saw it, she knew that Jim must have it. It was like \nhim. Quietness and value—Jim and the chain both had quietness and \nvalue. She paid twenty-one dollars for it. And she hurried home with  \nthe chain and eighty-seven cents. \n3” [doc_90949049db10b9f640c8_p3_c2]\n\n“be wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.\nFrom inside the coat, Jim took something tied in paper. He threw \nit upon the table.\n“I want you to understand me, Dell,” he said. “Nothing like a  \nhaircut could make me love you any less. But if you’ll open that, you  \nmay know what I felt when I came in.”\nWhite fingers pulled off the paper. And then a cry of joy; and  \nthen a change to tears.\nFor there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time. Beautiful combs, with jewels, \nperfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of” [doc_90949049db10b9f640c8_p5_c2]"
+    },
+    {
+      "job_id": "0e99f06c1120c0dfb06c",
+      "model": "qwen3:8b",
+      "representation": "passages",
+      "case_id": "2d84d462",
+      "question": "How much money had Della saved before selling her hair?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U1",
+        "U3",
+        "U4",
+        "U8"
+      ],
+      "unanswered_parts": [],
+      "assessment": "core_evidence_with_extra",
+      "notes": "Includes opening $1.87 savings in multiple passages; hair-sale passage extra.",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\np\nT h e  G i f t  o f  t h e  M a g i\nO\nNE DOLLAR AND EIGHTY-SEVEN CENTS.     \nThat was all. She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food. Della counted  \nit three times. One dollar and eighty-seven cents. And the next day  \nwould be Christmas.\nThere was nothing to do but fall on the bed and cry. So Della did it. \nWhile the lady of the home is slowly growing quieter, we can  \nlook at the home. Furnished rooms at a cost of $8 a week. There is lit -\ntle more to say about it.\nIn the hall below was a letter-box too small to hold a letter. There” [doc_90949049db10b9f640c8_p1_c0]\n\n“O .  H e n r y\nWhen the name was placed there, Mr. James Dillingham Young \nwas being paid $30 a week. Now, when he was being paid only $20 a \nweek, the name seemed too long and important. It should perhaps have \nbeen “Mr. James D. Young.” But when Mr. James Dillingham Young \nentered the furnished rooms, his name became very short indeed. Mrs. \nJames Dillingham Young put her arms warmly about him and called  \nhim “Jim.” You have already met her. She is Della.\nDella finished her crying and cleaned the marks of it from her face. \nShe stood by the window and looked out with no interest. Tomorrow \nwould be Christmas Day, and she had only $1.87 with which to buy  \nJim a gift. She had put aside as much as she could for months, with this” [doc_90949049db10b9f640c8_p2_c0]\n\n“Jim a gift. She had put aside as much as she could for months, with this \nresult. Twenty dollars a week is not much. Everything had cost more \nthan she had expected. It always happened like that.\nOnly $ 1.87 to buy a gift for Jim. Her Jim. She had had many happy \nhours planning something nice for him. Something nearly good enough. \nSomething almost worth the honor of belonging to Jim.\nThere was a looking-glass between the windows of the room. Per -\nhaps you have seen the kind of looking-glass that is placed in $8 fur -\nnished rooms. It was very narrow. A person could see only a little of \nhimself at a time. However, if he was very thin and moved very quickly, \nhe might be able to get a good view of himself. Della, being quite thin, \nhad mastered this art.” [doc_90949049db10b9f640c8_p2_c1]\n\n“of all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.\nMrs. Sofronie, large, too white, cold-eyed, looked at her.\n“Will you buy my hair?” asked Della.\n“I buy hair,” said Mrs. Sofronie. “Take your hat off and let me look \nat it.”\nDown fell the brown waterfall.\n“Twenty dollars,” said Mrs. Sofronie, lifting the hair to feel its \nweight.\n“Give it to me quick,” said Della.\nOh, and the next two hours seemed to fly. She was going from  \none shop to another, to find a gift for Jim.\nShe found it at last. It surely had been made for Jim and no one \nelse. There was no other like it in any of the shops, and she had looked” [doc_90949049db10b9f640c8_p3_c1]"
+    },
+    {
+      "job_id": "c434d7f88f9130432c1d",
+      "model": "qwen3:8b",
+      "representation": "passages",
+      "case_id": "2d84d462",
+      "question": "How much money had Della saved before selling her hair?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U1",
+        "U3",
+        "U4",
+        "U8",
+        "U9",
+        "U12"
+      ],
+      "unanswered_parts": [],
+      "assessment": "core_evidence_with_extra",
+      "notes": "Initial $1.87 present; also includes later 87-cent remainder and unrelated Jim entrance, requiring reader to distinguish time points.",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\np\nT h e  G i f t  o f  t h e  M a g i\nO\nNE DOLLAR AND EIGHTY-SEVEN CENTS.     \nThat was all. She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food. Della counted  \nit three times. One dollar and eighty-seven cents. And the next day  \nwould be Christmas.\nThere was nothing to do but fall on the bed and cry. So Della did it. \nWhile the lady of the home is slowly growing quieter, we can  \nlook at the home. Furnished rooms at a cost of $8 a week. There is lit -\ntle more to say about it.\nIn the hall below was a letter-box too small to hold a letter. There” [doc_90949049db10b9f640c8_p1_c0]\n\n“O .  H e n r y\nWhen the name was placed there, Mr. James Dillingham Young \nwas being paid $30 a week. Now, when he was being paid only $20 a \nweek, the name seemed too long and important. It should perhaps have \nbeen “Mr. James D. Young.” But when Mr. James Dillingham Young \nentered the furnished rooms, his name became very short indeed. Mrs. \nJames Dillingham Young put her arms warmly about him and called  \nhim “Jim.” You have already met her. She is Della.\nDella finished her crying and cleaned the marks of it from her face. \nShe stood by the window and looked out with no interest. Tomorrow \nwould be Christmas Day, and she had only $1.87 with which to buy  \nJim a gift. She had put aside as much as she could for months, with this” [doc_90949049db10b9f640c8_p2_c0]\n\n“Jim a gift. She had put aside as much as she could for months, with this \nresult. Twenty dollars a week is not much. Everything had cost more \nthan she had expected. It always happened like that.\nOnly $ 1.87 to buy a gift for Jim. Her Jim. She had had many happy \nhours planning something nice for him. Something nearly good enough. \nSomething almost worth the honor of belonging to Jim.\nThere was a looking-glass between the windows of the room. Per -\nhaps you have seen the kind of looking-glass that is placed in $8 fur -\nnished rooms. It was very narrow. A person could see only a little of \nhimself at a time. However, if he was very thin and moved very quickly, \nhe might be able to get a good view of himself. Della, being quite thin, \nhad mastered this art.” [doc_90949049db10b9f640c8_p2_c1]\n\n“of all Kinds.”\nUp to the second floor Della ran, and stopped to get her breath.\nMrs. Sofronie, large, too white, cold-eyed, looked at her.\n“Will you buy my hair?” asked Della.\n“I buy hair,” said Mrs. Sofronie. “Take your hat off and let me look \nat it.”\nDown fell the brown waterfall.\n“Twenty dollars,” said Mrs. Sofronie, lifting the hair to feel its \nweight.\n“Give it to me quick,” said Della.\nOh, and the next two hours seemed to fly. She was going from  \none shop to another, to find a gift for Jim.\nShe found it at last. It surely had been made for Jim and no one \nelse. There was no other like it in any of the shops, and she had looked” [doc_90949049db10b9f640c8_p3_c1]\n\n“else. There was no other like it in any of the shops, and she had looked \nin every shop in the city.\nIt was a gold watch chain, very simply made. Its value was in its  \nrich and pure material. Because it was so plain and simple, you knew  \nthat it was very valuable. All good things are like this.\nIt was good enough for The Watch.\nAs soon as she saw it, she knew that Jim must have it. It was like \nhim. Quietness and value—Jim and the chain both had quietness and \nvalue. She paid twenty-one dollars for it. And she hurried home with  \nthe chain and eighty-seven cents. \n3” [doc_90949049db10b9f640c8_p3_c2]\n\n“quietly, about simple everyday things. And now she said: “Please God, \nmake him think I’m still pretty.”\nThe door opened and Jim stepped in. He looked very thin and he \nwas not smiling. Poor fellow, he was only twenty-two—and with a fam -\nily to take care of! He needed a new coat and he had nothing to cover \nhis cold hands.\nJim stopped inside the door. He was as quiet as a hunting dog when \nit is near a bird. His eyes looked strangely at Della, and there was an \nexpression in them that she could not understand. It filled her with fear. \nIt was not anger, nor surprise, nor anything she had been ready for. He \nsimply looked at her with that strange expression on his face.\nDella went to him.” [doc_90949049db10b9f640c8_p4_c2]"
+    },
+    {
+      "job_id": "8135bb4bb8420fee911d",
+      "model": "qwen3:8b",
+      "representation": "passages",
+      "case_id": "55b47cfd",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U15",
+        "U16",
+        "U17",
+        "U18"
+      ],
+      "unanswered_parts": [],
+      "assessment": "substantial_but_incomplete_explanation",
+      "notes": "Hair-gone, comb use and watch-sale evidence present. No concise causal explanation and watch-chain identification is implicit in selected page-6 dialogue rather than explicit.",
+      "answer": "“Jim looked around the room.\n“You say your hair is gone?” he said.\n“You don’t have to look for it,” said Della. “It’s sold, I tell you—\nsold and gone, too. It’s the night before Christmas, boy. Be good to me, \nbecause I sold it for you. Maybe the hairs of my head could be counted,” \nshe said, “but no one could ever count my love for you. Shall we eat  \ndinner, Jim?”\nJim put his arms around his Della. For ten seconds let us look in \nanother direction. Eight dollars a week or a million dollars a year— \nhow different are they? Someone may give you an answer, but it will  \nbe wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.” [doc_90949049db10b9f640c8_p5_c1]\n\n“be wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.\nFrom inside the coat, Jim took something tied in paper. He threw \nit upon the table.\n“I want you to understand me, Dell,” he said. “Nothing like a  \nhaircut could make me love you any less. But if you’ll open that, you  \nmay know what I felt when I came in.”\nWhite fingers pulled off the paper. And then a cry of joy; and  \nthen a change to tears.\nFor there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time. Beautiful combs, with jewels, \nperfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of” [doc_90949049db10b9f640c8_p5_c2]\n\n“perfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of  \nowning them. And now they were hers, but her hair was gone.\nBut she held them to her heart, and at last was able to look up  \nand say: “My hair grows so fast, Jim!”\n5” [doc_90949049db10b9f640c8_p5_c3]\n\n“O .  H e n r y\nAnd then she jumped up and cried, “Oh, oh!”\nJim had not yet seen his beautiful gift. She held it out to him in  \nher open hand. The gold seemed to shine softly as if with her own warm  \nand loving spirit.\n“Isn’t it perfect, Jim? I hunted all over town to find it. You’ll have \nto look at your watch a hundred times a day now. Give me your watch. \nI want to see how they look together.”\nJim sat down and smiled.\n“Della,” said he, “let’s put our Christmas gifts away and keep them  \na while. They’re too nice to use now. I sold the watch to get the money \nto buy the combs. And now I think we should have our dinner.”” [doc_90949049db10b9f640c8_p6_c0]"
+    },
+    {
+      "job_id": "0e24520c7fe3a0304b45",
+      "model": "qwen3:8b",
+      "representation": "passages",
+      "case_id": "55b47cfd",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U13",
+        "U14",
+        "U15",
+        "U16",
+        "U17",
+        "U18"
+      ],
+      "unanswered_parts": [],
+      "assessment": "substantial_but_incomplete_explanation",
+      "notes": "Useful hair sale, hair gone, comb and watch-sale passages, but long evidence display leaves chain/use link implicit.",
+      "answer": "“simply looked at her with that strange expression on his face.\nDella went to him.\n“Jim, dear,” she cried, “don’t look at me like that. I had my hair cut \noff and sold it. I couldn’t live through Christmas without giving you a  \n4” [doc_90949049db10b9f640c8_p4_c3]\n\n“T h e  G i f t  o f  t h e  M a g i\ngift. My hair will grow again. You won’t care, will you? My hair grows \nvery fast. It’s Christmas, Jim. Let’s be happy. You don’t know what a \nnice—what a beautiful nice gift I got for you.”\n“You’ve cut off your hair?” asked Jim slowly. He seemed to labor \nto understand what had happened. He seemed not to feel sure he  \nknew.\n“Cut it off and sold it,” said Della. “Don’t you like me now? I’m  \nme, Jim. I’m the same without my hair.”\nJim looked around the room.\n“You say your hair is gone?” he said.” [doc_90949049db10b9f640c8_p5_c0]\n\n“Jim looked around the room.\n“You say your hair is gone?” he said.\n“You don’t have to look for it,” said Della. “It’s sold, I tell you—\nsold and gone, too. It’s the night before Christmas, boy. Be good to me, \nbecause I sold it for you. Maybe the hairs of my head could be counted,” \nshe said, “but no one could ever count my love for you. Shall we eat  \ndinner, Jim?”\nJim put his arms around his Della. For ten seconds let us look in \nanother direction. Eight dollars a week or a million dollars a year— \nhow different are they? Someone may give you an answer, but it will  \nbe wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.” [doc_90949049db10b9f640c8_p5_c1]\n\n“be wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.\nFrom inside the coat, Jim took something tied in paper. He threw \nit upon the table.\n“I want you to understand me, Dell,” he said. “Nothing like a  \nhaircut could make me love you any less. But if you’ll open that, you  \nmay know what I felt when I came in.”\nWhite fingers pulled off the paper. And then a cry of joy; and  \nthen a change to tears.\nFor there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time. Beautiful combs, with jewels, \nperfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of” [doc_90949049db10b9f640c8_p5_c2]\n\n“perfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of  \nowning them. And now they were hers, but her hair was gone.\nBut she held them to her heart, and at last was able to look up  \nand say: “My hair grows so fast, Jim!”\n5” [doc_90949049db10b9f640c8_p5_c3]\n\n“O .  H e n r y\nAnd then she jumped up and cried, “Oh, oh!”\nJim had not yet seen his beautiful gift. She held it out to him in  \nher open hand. The gold seemed to shine softly as if with her own warm  \nand loving spirit.\n“Isn’t it perfect, Jim? I hunted all over town to find it. You’ll have \nto look at your watch a hundred times a day now. Give me your watch. \nI want to see how they look together.”\nJim sat down and smiled.\n“Della,” said he, “let’s put our Christmas gifts away and keep them  \na while. They’re too nice to use now. I sold the watch to get the money \nto buy the combs. And now I think we should have our dinner.”” [doc_90949049db10b9f640c8_p6_c0]"
+    },
+    {
+      "job_id": "b6687e021f1c95aec0d7",
+      "model": "qwen3:8b",
+      "representation": "passages",
+      "case_id": "ae8d2dc4",
+      "question": "Was the flute made out of jewels? ",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U16",
+        "U17"
+      ],
+      "unanswered_parts": [],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong.",
+      "answer": "“be wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.\nFrom inside the coat, Jim took something tied in paper. He threw \nit upon the table.\n“I want you to understand me, Dell,” he said. “Nothing like a  \nhaircut could make me love you any less. But if you’ll open that, you  \nmay know what I felt when I came in.”\nWhite fingers pulled off the paper. And then a cry of joy; and  \nthen a change to tears.\nFor there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time. Beautiful combs, with jewels, \nperfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of” [doc_90949049db10b9f640c8_p5_c2]\n\n“perfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of  \nowning them. And now they were hers, but her hair was gone.\nBut she held them to her heart, and at last was able to look up  \nand say: “My hair grows so fast, Jim!”\n5” [doc_90949049db10b9f640c8_p5_c3]"
+    },
+    {
+      "job_id": "0146b6f1c32b35c21c18",
+      "model": "qwen3:8b",
+      "representation": "passages",
+      "case_id": "ae8d2dc4",
+      "question": "Was the flute made out of jewels? ",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U5",
+        "U16"
+      ],
+      "unanswered_parts": [],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong.",
+      "answer": "“he might be able to get a good view of himself. Della, being quite thin, \nhad mastered this art.\nSuddenly she turned from the window and stood before the glass. \nHer eyes were shining brightly, but her face had lost its color. Quickly \nshe pulled down her hair and let it fall to its complete length.\nThe James Dillingham Youngs were very proud of two things which \nthey owned. One thing was Jim’s gold watch. It had once belonged to  \nhis father. And, long ago, it had belonged to his father’s father. The  \nother thing was Della’s hair.\nIf a queen had lived in the rooms near theirs, Della would have \nwashed and dried her hair where the queen could see it. Della knew  \nher hair was more beautiful than any queen’s jewels and gifts.” [doc_90949049db10b9f640c8_p2_c2]\n\n“be wrong. The  magi brought valuable gifts, but that was not among \nthem. My meaning will be explained soon.\nFrom inside the coat, Jim took something tied in paper. He threw \nit upon the table.\n“I want you to understand me, Dell,” he said. “Nothing like a  \nhaircut could make me love you any less. But if you’ll open that, you  \nmay know what I felt when I came in.”\nWhite fingers pulled off the paper. And then a cry of joy; and  \nthen a change to tears.\nFor there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time. Beautiful combs, with jewels, \nperfect for her beautiful hair. She had known they cost too much for  \nher to buy them. She had looked at them without the least hope of” [doc_90949049db10b9f640c8_p5_c2]"
+    },
+    {
+      "job_id": "7249f3d888663aa9f5cd",
+      "model": "qwen3:8b",
+      "representation": "passages",
+      "case_id": "e9abdb27",
+      "question": "what is della's birth date?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U3",
+        "U2"
+      ],
+      "unanswered_parts": [],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong.",
+      "answer": "“O .  H e n r y\nWhen the name was placed there, Mr. James Dillingham Young \nwas being paid $30 a week. Now, when he was being paid only $20 a \nweek, the name seemed too long and important. It should perhaps have \nbeen “Mr. James D. Young.” But when Mr. James Dillingham Young \nentered the furnished rooms, his name became very short indeed. Mrs. \nJames Dillingham Young put her arms warmly about him and called  \nhim “Jim.” You have already met her. She is Della.\nDella finished her crying and cleaned the marks of it from her face. \nShe stood by the window and looked out with no interest. Tomorrow \nwould be Christmas Day, and she had only $1.87 with which to buy  \nJim a gift. She had put aside as much as she could for months, with this” [doc_90949049db10b9f640c8_p2_c0]\n\n“tle more to say about it.\nIn the hall below was a letter-box too small to hold a letter. There \nwas an electric bell, but it could not make a sound. Also there was a  \nname beside the door: “Mr. James Dillingham Young.”\n1” [doc_90949049db10b9f640c8_p1_c1]"
+    },
+    {
+      "job_id": "b27c09570bb85ba79273",
+      "model": "qwen3:8b",
+      "representation": "passages",
+      "case_id": "e9abdb27",
+      "question": "what is della's birth date?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U3"
+      ],
+      "unanswered_parts": [],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong.",
+      "answer": "“O .  H e n r y\nWhen the name was placed there, Mr. James Dillingham Young \nwas being paid $30 a week. Now, when he was being paid only $20 a \nweek, the name seemed too long and important. It should perhaps have \nbeen “Mr. James D. Young.” But when Mr. James Dillingham Young \nentered the furnished rooms, his name became very short indeed. Mrs. \nJames Dillingham Young put her arms warmly about him and called  \nhim “Jim.” You have already met her. She is Della.\nDella finished her crying and cleaned the marks of it from her face. \nShe stood by the window and looked out with no interest. Tomorrow \nwould be Christmas Day, and she had only $1.87 with which to buy  \nJim a gift. She had put aside as much as she could for months, with this” [doc_90949049db10b9f640c8_p2_c0]"
+    },
+    {
+      "job_id": "b648dab654b8de35ec76",
+      "model": "qwen3:8b",
+      "representation": "sentence_units",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "no_context",
+      "mechanical_status": "empty_context_control",
+      "response_type": null,
+      "selected_ids": [],
+      "unanswered_parts": [],
+      "assessment": "code_control",
+      "notes": "Zero-generation-call abstention; not a model reasoning score.",
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "job_id": "10831b8b3816d76956c8",
+      "model": "qwen3:8b",
+      "representation": "sentence_units",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U211",
+        "U188",
+        "U198",
+        "U204"
+      ],
+      "unanswered_parts": [],
+      "assessment": "core_evidence_with_fragments",
+      "notes": "Correct comb and watch-sale evidence, plus irrelevant O . header and dialogue about Della shopping for Jim.",
+      "answer": "“I sold the watch to get the money \nto buy the combs.” [doc_90949049db10b9f640c8_p6_c0]\n\n“For there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time.” [doc_90949049db10b9f640c8_p5_c2]\n\n“O .” [doc_90949049db10b9f640c8_p6_c0]\n\n“I hunted all over town to find it.” [doc_90949049db10b9f640c8_p6_c0]"
+    },
+    {
+      "job_id": "55c0f6cf5ec55cfdaf7c",
+      "model": "qwen3:8b",
+      "representation": "sentence_units",
+      "case_id": "1f939d31",
+      "question": "what did Jim buy as a gift for Della?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U91",
+        "U188",
+        "U211"
+      ],
+      "unanswered_parts": [],
+      "assessment": "core_evidence_with_fragments",
+      "notes": "Correct comb and watch-sale evidence plus meaningless else. fragment.",
+      "answer": "“else.” [doc_90949049db10b9f640c8_p3_c2]\n\n“For there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time.” [doc_90949049db10b9f640c8_p5_c2]\n\n“I sold the watch to get the money \nto buy the combs.” [doc_90949049db10b9f640c8_p6_c0]"
+    },
+    {
+      "job_id": "f6c8df286eb3e37920a8",
+      "model": "qwen3:8b",
+      "representation": "sentence_units",
+      "case_id": "2d84d462",
+      "question": "How much money had Della saved before selling her hair?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U3",
+        "U37",
+        "U101",
+        "U102"
+      ],
+      "unanswered_parts": [],
+      "assessment": "core_evidence_with_mixed_time_points",
+      "notes": "Initial $1.87 present but also later $21 payment and 87-cent remainder without temporal explanation.",
+      "answer": "“She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food.” [doc_90949049db10b9f640c8_p1_c0]\n\n“Only $ 1.87 to buy a gift for Jim.” [doc_90949049db10b9f640c8_p2_c1]\n\n“She paid twenty-one dollars for it.” [doc_90949049db10b9f640c8_p3_c2]\n\n“And she hurried home with  \nthe chain and eighty-seven cents.” [doc_90949049db10b9f640c8_p3_c2]"
+    },
+    {
+      "job_id": "eb28325439d5c87e76ce",
+      "model": "qwen3:8b",
+      "representation": "sentence_units",
+      "case_id": "2d84d462",
+      "question": "How much money had Della saved before selling her hair?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U3",
+        "U30",
+        "U101",
+        "U102"
+      ],
+      "unanswered_parts": [],
+      "assessment": "core_evidence_with_mixed_time_points",
+      "notes": "Initial $1.87 present alongside $21 purchase and later 87-cent remainder; requires reader to resolve time points.",
+      "answer": "“She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food.” [doc_90949049db10b9f640c8_p1_c0]\n\n“Tomorrow \nwould be Christmas Day, and she had only $1.87 with which to buy  \nJim a gift.” [doc_90949049db10b9f640c8_p2_c0]\n\n“She paid twenty-one dollars for it.” [doc_90949049db10b9f640c8_p3_c2]\n\n“And she hurried home with  \nthe chain and eighty-seven cents.” [doc_90949049db10b9f640c8_p3_c2]"
+    },
+    {
+      "job_id": "43ba3d977b0078501a5a",
+      "model": "qwen3:8b",
+      "representation": "sentence_units",
+      "case_id": "55b47cfd",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U211",
+        "U195",
+        "U196",
+        "U198",
+        "U201",
+        "U205"
+      ],
+      "unanswered_parts": [],
+      "assessment": "incomplete_causal_evidence",
+      "notes": "Watch sold and hair gone are present, but output includes O . header and weak pronoun-only references rather than clear item/use explanation.",
+      "answer": "“I sold the watch to get the money \nto buy the combs.” [doc_90949049db10b9f640c8_p6_c0]\n\n“And now they were hers, but her hair was gone.” [doc_90949049db10b9f640c8_p5_c3]\n\n“But she held them to her heart, and at last was able to look up  \nand say: “My hair grows so fast, Jim!”” [doc_90949049db10b9f640c8_p5_c3]\n\n“O .” [doc_90949049db10b9f640c8_p6_c0]\n\n“She held it out to him in  \nher open hand.” [doc_90949049db10b9f640c8_p6_c0]\n\n“You’ll have \nto look at your watch a hundred times a day now.” [doc_90949049db10b9f640c8_p6_c0]"
+    },
+    {
+      "job_id": "56a0f14ca0e09727a401",
+      "model": "qwen3:8b",
+      "representation": "sentence_units",
+      "case_id": "55b47cfd",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U144",
+        "U153",
+        "U184",
+        "U211"
+      ],
+      "unanswered_parts": [],
+      "assessment": "incomplete_causal_evidence",
+      "notes": "Watch sale only; missing hair-gone/comb-use reason, with irrelevant dialogue and fragments.",
+      "answer": "“I couldn’t live through Christmas without giving you a  \n4” [doc_90949049db10b9f640c8_p4_c3]\n\n“asked Jim slowly.” [doc_90949049db10b9f640c8_p5_c0]\n\n““Nothing like a  \nhaircut could make me love you any less.” [doc_90949049db10b9f640c8_p5_c2]\n\n“I sold the watch to get the money \nto buy the combs.” [doc_90949049db10b9f640c8_p6_c0]"
+    },
+    {
+      "job_id": "74f81e76fe80706c46a2",
+      "model": "qwen3:8b",
+      "representation": "sentence_units",
+      "case_id": "ae8d2dc4",
+      "question": "Was the flute made out of jewels? ",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U189",
+        "U193",
+        "U194",
+        "U195",
+        "U196"
+      ],
+      "unanswered_parts": [],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong.",
+      "answer": "“Beautiful combs, with jewels, \nperfect for her beautiful hair.” [doc_90949049db10b9f640c8_p5_c2]\n\n“She had known they cost too much for  \nher to buy them.” [doc_90949049db10b9f640c8_p5_c3]\n\n“She had looked at them without the least hope of  \nowning them.” [doc_90949049db10b9f640c8_p5_c3]\n\n“And now they were hers, but her hair was gone.” [doc_90949049db10b9f640c8_p5_c3]\n\n“But she held them to her heart, and at last was able to look up  \nand say: “My hair grows so fast, Jim!”” [doc_90949049db10b9f640c8_p5_c3]"
+    },
+    {
+      "job_id": "f360d786cf77fcdcbaa1",
+      "model": "qwen3:8b",
+      "representation": "sentence_units",
+      "case_id": "ae8d2dc4",
+      "question": "Was the flute made out of jewels? ",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U58",
+        "U189",
+        "U190"
+      ],
+      "unanswered_parts": [],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong.",
+      "answer": "“If a queen had lived in the rooms near theirs, Della would have \nwashed and dried her hair where the queen could see it.” [doc_90949049db10b9f640c8_p2_c2]\n\n“Beautiful combs, with jewels, \nperfect for her beautiful hair.” [doc_90949049db10b9f640c8_p5_c2]\n\n“She had known they cost too much for  \nher to buy them.” [doc_90949049db10b9f640c8_p5_c2]"
+    },
+    {
+      "job_id": "82e5f62123e485a672b8",
+      "model": "qwen3:8b",
+      "representation": "sentence_units",
+      "case_id": "e9abdb27",
+      "question": "what is della's birth date?",
+      "order": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U30",
+        "U166",
+        "U167",
+        "U168",
+        "U169",
+        "U170"
+      ],
+      "unanswered_parts": [],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong.",
+      "answer": "“Tomorrow \nwould be Christmas Day, and she had only $1.87 with which to buy  \nJim a gift.” [doc_90949049db10b9f640c8_p2_c0]\n\n““You don’t have to look for it,” said Della.” [doc_90949049db10b9f640c8_p5_c1]\n\n““It’s sold, I tell you—\nsold and gone, too.” [doc_90949049db10b9f640c8_p5_c1]\n\n“It’s the night before Christmas, boy.” [doc_90949049db10b9f640c8_p5_c1]\n\n“Be good to me, \nbecause I sold it for you.” [doc_90949049db10b9f640c8_p5_c1]\n\n“Maybe the hairs of my head could be counted,” \nshe said, “but no one could ever count my love for you.” [doc_90949049db10b9f640c8_p5_c1]"
+    },
+    {
+      "job_id": "c773bf3f8352b32ec2ee",
+      "model": "qwen3:8b",
+      "representation": "sentence_units",
+      "case_id": "e9abdb27",
+      "question": "what is della's birth date?",
+      "order": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "response_type": "supported",
+      "selected_ids": [
+        "U30"
+      ],
+      "unanswered_parts": [],
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "No birth date or flute fact exists in source. Selected related story text does not answer question; supported label is wrong.",
+      "answer": "“Tomorrow \nwould be Christmas Day, and she had only $1.87 with which to buy  \nJim a gift.” [doc_90949049db10b9f640c8_p2_c0]"
+    }
+  ],
+  "interpretation": [
+    "Zero mechanical failures establish output-contract and copy integrity only.",
+    "Failures persist across all three models under this protocol; selecting a different tested model alone does not produce a reliable system.",
+    "Qwen 8B frequently includes useful evidence for answerable questions, but fails birth-date and flute abstention in both representations/orders.",
+    "Qwen 4B correctly abstains on birth date but fails flute; whole-passage mode also unjustifiably abstains on why question.",
+    "Gemma selects irrelevant material and repeats identical hair-description blocks for several distinct reversed questions. Saved model inputs contain the correct questions, so no question-routing mismatch was found.",
+    "The protocol, unit representation and these local models interact; the experiment does not prove model capability alone is the cause.",
+    "Some outputs contain requested facts while falsely listing the same question as unanswered. Such cases are not counted as fully correct answers."
+  ],
+  "next_step": "Keep confirmation set unused. Diagnose with direct-answer RAG on the same fixed evidence, measuring source support, scope coverage and abstention separately from schema validity.",
+  "limitations": [
+    "Five reused development questions on one known story; not an unbiased test set.",
+    "One generation per matrix cell; no significance or broad model ranking claim.",
+    "Fixed full-context experiment, not retrieval or hosting evaluation.",
+    "Copied evidence view, not a test of fluent generated answers."
+  ]
+}

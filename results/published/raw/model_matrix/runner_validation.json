@@ -1,0 +1,13 @@
+{
+  "self_tests_passed": 8,
+  "controlled_development_records": 66,
+  "controlled_development_generation_calls": 60,
+  "resume_additional_generation_calls": 0,
+  "controlled_confirmation_records": 17,
+  "frozen_application_module_preserved": true,
+  "passage_units_per_development_case": 19,
+  "sentence_units_per_development_case": 224,
+  "changed_confirmation_selection_refused": true,
+  "actual_Ollama_executed_during_packaging": false,
+  "semantic_accuracy_established": false
+}

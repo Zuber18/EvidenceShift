@@ -1,0 +1,166 @@
+run_id,question,variant,mechanical_status,assessment,notes,answer
+run_20261019T121052Z_f1a4093f,what did Jim buy as a gift for Della?,retrieved,candidate_recorded,core_evidence_with_confusing_extra,"Combs and watch-sale evidence are useful, but the gold watch chain is Della gift to Jim and is misleading extra evidence for this question.","“It was a gold watch chain, very simply made.” [doc_90949049db10b9f640c8_p3_c2]
+
+“For there lay The Combs—the combs that Della had seen in a 
+shop window and loved for a long time.” [doc_90949049db10b9f640c8_p5_c2]
+
+“I sold the watch to get the money 
+to buy the combs.” [doc_90949049db10b9f640c8_p6_c0]"
+run_20261019T121127Z_5f45a730,what did Jim buy as a gift for Della?,reversed,candidate_recorded,core_evidence_with_extra,Combs and watch-sale excerpts establish the requested gift; cost-to-Della excerpt is not necessary.,"“I sold the watch to get the money 
+to buy the combs.” [doc_90949049db10b9f640c8_p6_c0]
+
+“For there lay The Combs—the combs that Della had seen in a 
+shop window and loved for a long time.” [doc_90949049db10b9f640c8_p5_c2]
+
+“She had known they cost too much for  
+her to buy them.” [doc_90949049db10b9f640c8_p5_c2]"
+run_20261019T121157Z_b371dcd8,Was the flute made out of jewels? If not then what did Jim buy as a gift for Della?,retrieved,candidate_recorded,partial_answer_missing_premise_disclosure,"Correct evidence for combs, but flute subquestion is not answered or marked unsupported. unanswered_parts is empty.","“For there lay The Combs—the combs that Della had seen in a 
+shop window and loved for a long time.” [doc_90949049db10b9f640c8_p5_c2]
+
+“I sold the watch to get the money 
+to buy the combs.” [doc_90949049db10b9f640c8_p6_c0]"
+run_20261019T121227Z_08b85972,Was the flute made out of jewels? If not then what did Jim buy as a gift for Della?,reversed,candidate_recorded,partial_answer_missing_premise_disclosure,Correct jeweled-comb/watch-sale evidence; absent flute premise is not disclosed as unsupported.,"“Beautiful combs, with jewels, 
+perfect for her beautiful hair.” [doc_90949049db10b9f640c8_p5_c2]
+
+“I sold the watch to get the money 
+to buy the combs.” [doc_90949049db10b9f640c8_p6_c0]"
+run_20261019T121256Z_29025891,Why they botth could not use the gifts they recieved?,retrieved,candidate_recorded,partial_evidence_with_fragments,"Hair-gone and watch-sale facts help, but item/use links are not fully explained. Includes irrelevant O . header and weak context fragments.","“I sold the watch to get the money 
+to buy the combs.” [doc_90949049db10b9f640c8_p6_c0]
+
+“And now they were hers, but her hair was gone.” [doc_90949049db10b9f640c8_p5_c3]
+
+“But she held them to her heart, and at last was able to look up  
+and say: “My hair grows so fast, Jim!”” [doc_90949049db10b9f640c8_p5_c3]
+
+“O .” [doc_90949049db10b9f640c8_p6_c0]
+
+“She held it out to him in  
+her open hand.” [doc_90949049db10b9f640c8_p6_c0]
+
+“You’ll have 
+to look at your watch a hundred times a day now.” [doc_90949049db10b9f640c8_p6_c0]"
+run_20261019T121328Z_511d0b2c,Why they botth could not use the gifts they recieved?,reversed,candidate_recorded,incomplete_evidence,"Watch-sale excerpt is useful, but hair-gone/comb-use side is missing; asked Jim slowly and other excerpts do not provide the reason.","“I couldn’t live through Christmas without giving you a  
+4” [doc_90949049db10b9f640c8_p4_c3]
+
+“asked Jim slowly.” [doc_90949049db10b9f640c8_p5_c0]
+
+““Nothing like a  
+haircut could make me love you any less.” [doc_90949049db10b9f640c8_p5_c2]
+
+“I sold the watch to get the money 
+to buy the combs.” [doc_90949049db10b9f640c8_p6_c0]"
+run_20261019T121358Z_07dbd9bd,What is the relationship between Jim and Della?,retrieved,candidate_recorded,core_evidence_with_fragments,Mrs James Young identification and She is Della support marriage when read with parent passage. Four other units are unnecessary or incomplete.,"“She is Della.” [doc_90949049db10b9f640c8_p2_c0]
+
+“Mrs. 
+James Dillingham Young put her arms warmly about him and called  
+him “Jim.”” [doc_90949049db10b9f640c8_p2_c0]
+
+“I had my hair cut 
+off and sold it.” [doc_90949049db10b9f640c8_p4_c3]
+
+“asked Jim slowly.” [doc_90949049db10b9f640c8_p5_c0]
+
+““You say your hair is gone?”” [doc_90949049db10b9f640c8_p5_c0]
+
+““Nothing like a  
+haircut could make me love you any less.” [doc_90949049db10b9f640c8_p5_c2]"
+run_20261019T121429Z_28a99eca,What is the relationship between Jim and Della?,reversed,candidate_recorded,incomplete_evidence,"Della identification, Christmas savings and hair ownership do not establish marital relationship. Explicit Mrs James Young unit is omitted.","“She is Della.” [doc_90949049db10b9f640c8_p2_c0]
+
+“Della finished her crying and cleaned the marks of it from her face.” [doc_90949049db10b9f640c8_p2_c0]
+
+“She stood by the window and looked out with no interest.” [doc_90949049db10b9f640c8_p2_c0]
+
+“Tomorrow 
+would be Christmas Day, and she had only $1.87 with which to buy  
+Jim a gift.” [doc_90949049db10b9f640c8_p2_c0]
+
+“She had put aside as much as she could for months, with this” [doc_90949049db10b9f640c8_p2_c0]
+
+“The  
+other thing was Della’s hair.” [doc_90949049db10b9f640c8_p2_c2]"
+run_20261019T121500Z_a1d22046,How much money had Della saved before selling her hair?,retrieved,candidate_recorded,supported_amount_with_extra,Includes both One dollar and eighty-seven cents and Only $1.87. Additional saving/counting units are unnecessary but relevant.,"“She had put it aside, one cent and then another and then 
+another, in her careful buying of meat and other food.” [doc_90949049db10b9f640c8_p1_c0]
+
+“Della counted  
+it three times.” [doc_90949049db10b9f640c8_p1_c0]
+
+“One dollar and eighty-seven cents.” [doc_90949049db10b9f640c8_p1_c0]
+
+“Only $ 1.87 to buy a gift for Jim.” [doc_90949049db10b9f640c8_p2_c1]"
+run_20261019T121531Z_c282c454,How much money had Della saved before selling her hair?,reversed,candidate_recorded,wrong_temporal_evidence,"Omits initial $1.87. Selects eighty-seven cents after purchasing the chain, a different point in time, without resolving requested pre-hair-sale amount.","“She had put it aside, one cent and then another and then 
+another, in her careful buying of meat and other food.” [doc_90949049db10b9f640c8_p1_c0]
+
+“She had put aside as much as she could for months, with this” [doc_90949049db10b9f640c8_p2_c0]
+
+“And she hurried home with  
+the chain and eighty-seven cents.” [doc_90949049db10b9f640c8_p3_c2]"
+run_20261019T121602Z_1a63f625,what is della's birth date?,retrieved,candidate_recorded,irrelevant_instead_of_abstention,Christmas Eve and $1.87 do not establish Della birth date; response incorrectly marked supported.,"“Tomorrow 
+would be Christmas Day, and she had only $1.87 with which to buy  
+Jim a gift.” [doc_90949049db10b9f640c8_p2_c0]"
+run_20261019T121631Z_56541d5e,what is della's birth date?,reversed,candidate_recorded,irrelevant_instead_of_abstention,Saving money and looking out the window do not establish Della birth date; response incorrectly marked supported.,"“She had put it aside, one cent and then another and then 
+another, in her careful buying of meat and other food.” [doc_90949049db10b9f640c8_p1_c0]
+
+“She stood by the window and looked out with no interest.” [doc_90949049db10b9f640c8_p2_c0]"
+run_20261019T121701Z_6c8ce242,Was the flute made out of jewels? ,retrieved,candidate_recorded,irrelevant_instead_of_abstention,Combs and their cost do not establish anything about a flute. Response incorrectly marked supported with no unanswered part.,"“Beautiful combs, with jewels, 
+perfect for her beautiful hair.” [doc_90949049db10b9f640c8_p5_c2]
+
+“She had known they cost too much for  
+her to buy them.” [doc_90949049db10b9f640c8_p5_c2]
+
+“She had looked at them without the least hope of” [doc_90949049db10b9f640c8_p5_c2]
+
+“perfect for her beautiful hair.” [doc_90949049db10b9f640c8_p5_c3]
+
+“She had known they cost too much for  
+her to buy them.” [doc_90949049db10b9f640c8_p5_c3]
+
+“She had looked at them without the least hope of  
+owning them.” [doc_90949049db10b9f640c8_p5_c3]"
+run_20261019T121732Z_c8d54451,Was the flute made out of jewels? ,reversed,candidate_recorded,irrelevant_instead_of_abstention,Jewels on combs and sale of watch do not establish flute properties. Correct behavior is abstention about the flute.,"“Beautiful combs, with jewels, 
+perfect for her beautiful hair.” [doc_90949049db10b9f640c8_p5_c2]
+
+“She had known they cost too much for  
+her to buy them.” [doc_90949049db10b9f640c8_p5_c2]
+
+“She had looked at them without the least hope of” [doc_90949049db10b9f640c8_p5_c2]
+
+“I sold the watch to get the money 
+to buy the combs.” [doc_90949049db10b9f640c8_p6_c0]"
+run_20261019T121803Z_15f07c61,What is this text about?,retrieved,candidate_recorded,incomplete_summary_evidence,Title and opening savings scene only. Omits mutual gift sacrifice and central story events/theme; not an adequate story overview.,"“T h e  G i f t  o f  t h e  M a g i
+p
+T h e  G i f t  o f  t h e  M a g i
+O
+NE DOLLAR AND EIGHTY-SEVEN CENTS.” [doc_90949049db10b9f640c8_p1_c0]
+
+“That was all.” [doc_90949049db10b9f640c8_p1_c0]
+
+“She had put it aside, one cent and then another and then 
+another, in her careful buying of meat and other food.” [doc_90949049db10b9f640c8_p1_c0]
+
+“Della counted  
+it three times.” [doc_90949049db10b9f640c8_p1_c0]
+
+“One dollar and eighty-seven cents.” [doc_90949049db10b9f640c8_p1_c0]
+
+“And the next day  
+would be Christmas.” [doc_90949049db10b9f640c8_p1_c0]"
+run_20261019T121833Z_ad93ff04,What is this text about?,reversed,candidate_recorded,incomplete_summary_evidence,Same six introductory units selected under reversal. Does not cover central plot/theme.,"“T h e  G i f t  o f  t h e  M a g i
+p
+T h e  G i f t  o f  t h e  M a g i
+O
+NE DOLLAR AND EIGHTY-SEVEN CENTS.” [doc_90949049db10b9f640c8_p1_c0]
+
+“That was all.” [doc_90949049db10b9f640c8_p1_c0]
+
+“She had put it aside, one cent and then another and then 
+another, in her careful buying of meat and other food.” [doc_90949049db10b9f640c8_p1_c0]
+
+“Della counted  
+it three times.” [doc_90949049db10b9f640c8_p1_c0]
+
+“One dollar and eighty-seven cents.” [doc_90949049db10b9f640c8_p1_c0]
+
+“And the next day  
+would be Christmas.” [doc_90949049db10b9f640c8_p1_c0]"
+run_20261019T121904Z_4c2c4909,Was the flute made out of jewels? If not then what did Jim buy as a gift for Della?,no_context,empty_context_control,code_control,No-context abstention with no model calls.,The supplied evidence does not answer this question.
+run_20261019T121904Z_defb2bc1,what did Jim buy as a gift for Della?,no_context,empty_context_control,code_control,No-context abstention with no model calls.,The supplied evidence does not answer this question.

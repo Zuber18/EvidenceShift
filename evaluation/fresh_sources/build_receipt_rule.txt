@@ -1,0 +1,3 @@
+Fictional EvidenceShift evaluation document.
+
+A build receipt confirms only that the scheduler received the build request. It does not confirm that execution has started. A queued build may later fail validation and never run.

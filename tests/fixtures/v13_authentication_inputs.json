@@ -1,0 +1,334 @@
+[
+  {
+    "source_variant": "retrieved",
+    "original_record": {
+      "prompt_name": "benchmark_input",
+      "variant": "retrieved",
+      "context": [
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c533",
+          "text": "15.5.2.  401 Unauthorized\n\n   The 401 (Unauthorized) status code indicates that the request has not\n   been applied because it lacks valid authentication credentials for\n   the target resource.  The server generating a 401 response MUST send\n   a WWW-Authenticate header field (Section 11.6.1) containing at least\n   one challenge applicable to the target resource.\n\n   If the request included authentication credentials, then the 401\n   response indicates that authorization has been refused for those\n   credentials.  The user agent MAY repeat the request with a new or\n   replaced Authorization header field (Section 11.6.2).  If the 401\n   response contains the same challenge as the prior response, and the\n   user agent has already attempted authentication at least once, then\n   the user agent SHOULD present the enclosed representation to the\n   user, since it usually contains relevant diagnostic information.\n\n15.5.3.  402 Payment Required",
+          "document_id": "doc_818496e68519f685dc7b",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "page": 0,
+          "source": "rfc9110.txt",
+          "chunk": 533,
+          "distance": 0.4006311893463135
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c640",
+          "text": "| 401   | Unauthorized                  | 15.5.2  |\n            +-------+-------------------------------+---------+\n            | 402   | Payment Required              | 15.5.3  |\n            +-------+-------------------------------+---------+\n            | 403   | Forbidden                     | 15.5.4  |",
+          "chunk": 640,
+          "page": 0,
+          "document_id": "doc_818496e68519f685dc7b",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "source": "rfc9110.txt",
+          "distance": 0.4362446665763855
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c534",
+          "text": "15.5.3.  402 Payment Required\n\n   The 402 (Payment Required) status code is reserved for future use.\n\n15.5.4.  403 Forbidden\n\n   The 403 (Forbidden) status code indicates that the server understood\n   the request but refuses to fulfill it.  A server that wishes to make\n   public why the request has been forbidden can describe that reason in\n   the response content (if any).\n\n   If authentication credentials were provided in the request, the\n   server considers them insufficient to grant access.  The client\n   SHOULD NOT automatically repeat the request with the same\n   credentials.  The client MAY repeat the request with new or different\n   credentials.  However, a request might be forbidden for reasons\n   unrelated to the credentials.\n\n   An origin server that wishes to \"hide\" the current existence of a\n   forbidden target resource MAY instead respond with a status code of\n   404 (Not Found).\n\n15.5.5.  404 Not Found",
+          "document_id": "doc_818496e68519f685dc7b",
+          "chunk": 534,
+          "source": "rfc9110.txt",
+          "page": 0,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "distance": 0.4745655059814453
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c353",
+          "text": "auth-param     = token BWS \"=\" BWS ( token / quoted-string )\n\n   Parameter values can be expressed either as \"token\" or as \"quoted-\n   string\" (Section 5.6).  Authentication scheme definitions need to\n   accept both notations, both for senders and recipients, to allow\n   recipients to use generic parsing components regardless of the\n   authentication scheme.\n\n   For backwards compatibility, authentication scheme definitions can\n   restrict the format for senders to one of the two variants.  This can\n   be important when it is known that deployed implementations will fail\n   when encountering one of the two formats.\n\n11.3.  Challenge and Response\n\n   A 401 (Unauthorized) response message is used by an origin server to\n   challenge the authorization of a user agent, including a\n   WWW-Authenticate header field containing at least one challenge\n   applicable to the requested resource.",
+          "chunk": 353,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "document_id": "doc_818496e68519f685dc7b",
+          "page": 0,
+          "source": "rfc9110.txt",
+          "distance": 0.49030929803848267
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c357",
+          "text": "A server that receives valid credentials that are not adequate to\n   gain access ought to respond with the 403 (Forbidden) status code\n   (Section 15.5.4).\n\n   HTTP does not restrict applications to this simple challenge-response\n   framework for access authentication.  Additional mechanisms can be\n   used, such as authentication at the transport level or via message\n   encapsulation, and with additional header fields specifying\n   authentication information.  However, such additional mechanisms are\n   not defined by this specification.\n\n   Note that various custom mechanisms for user authentication use the\n   Set-Cookie and Cookie header fields, defined in [COOKIE], for passing\n   tokens related to authentication.\n\n11.5.  Establishing a Protection Space (Realm)\n\n   The \"realm\" authentication parameter is reserved for use by\n   authentication schemes that wish to indicate a scope of protection.",
+          "document_id": "doc_818496e68519f685dc7b",
+          "source": "rfc9110.txt",
+          "chunk": 357,
+          "page": 0,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "distance": 0.49216198921203613
+        }
+      ],
+      "user_prompt": "{\"question\": \"How do HTTP 401 and 403 differ?\", \"evidence\": [{\"id\": \"doc_818496e68519f685dc7b_p0_c533\", \"text\": \"15.5.2.  401 Unauthorized\\n\\n   The 401 (Unauthorized) status code indicates that the request has not\\n   been applied because it lacks valid authentication credentials for\\n   the target resource.  The server generating a 401 response MUST send\\n   a WWW-Authenticate header field (Section 11.6.1) containing at least\\n   one challenge applicable to the target resource.\\n\\n   If the request included authentication credentials, then the 401\\n   response indicates that authorization has been refused for those\\n   credentials.  The user agent MAY repeat the request with a new or\\n   replaced Authorization header field (Section 11.6.2).  If the 401\\n   response contains the same challenge as the prior response, and the\\n   user agent has already attempted authentication at least once, then\\n   the user agent SHOULD present the enclosed representation to the\\n   user, since it usually contains relevant diagnostic information.\\n\\n15.5.3.  402 Payment Required\", \"document_id\": \"doc_818496e68519f685dc7b\", \"sha256\": \"21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a\", \"page\": 0, \"source\": \"rfc9110.txt\", \"chunk\": 533, \"distance\": 0.4006311893463135}, {\"id\": \"doc_818496e68519f685dc7b_p0_c640\", \"text\": \"| 401   | Unauthorized                  | 15.5.2  |\\n            +-------+-------------------------------+---------+\\n            | 402   | Payment Required              | 15.5.3  |\\n            +-------+-------------------------------+---------+\\n            | 403   | Forbidden                     | 15.5.4  |\", \"chunk\": 640, \"page\": 0, \"document_id\": \"doc_818496e68519f685dc7b\", \"sha256\": \"21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a\", \"source\": \"rfc9110.txt\", \"distance\": 0.4362446665763855}, {\"id\": \"doc_818496e68519f685dc7b_p0_c534\", \"text\": \"15.5.3.  402 Payment Required\\n\\n   The 402 (Payment Required) status code is reserved for future use.\\n\\n15.5.4.  403 Forbidden\\n\\n   The 403 (Forbidden) status code indicates that the server understood\\n   the request but refuses to fulfill it.  A server that wishes to make\\n   public why the request has been forbidden can describe that reason in\\n   the response content (if any).\\n\\n   If authentication credentials were provided in the request, the\\n   server considers them insufficient to grant access.  The client\\n   SHOULD NOT automatically repeat the request with the same\\n   credentials.  The client MAY repeat the request with new or different\\n   credentials.  However, a request might be forbidden for reasons\\n   unrelated to the credentials.\\n\\n   An origin server that wishes to \\\"hide\\\" the current existence of a\\n   forbidden target resource MAY instead respond with a status code of\\n   404 (Not Found).\\n\\n15.5.5.  404 Not Found\", \"document_id\": \"doc_818496e68519f685dc7b\", \"chunk\": 534, \"source\": \"rfc9110.txt\", \"page\": 0, \"sha256\": \"21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a\", \"distance\": 0.4745655059814453}, {\"id\": \"doc_818496e68519f685dc7b_p0_c353\", \"text\": \"auth-param     = token BWS \\\"=\\\" BWS ( token / quoted-string )\\n\\n   Parameter values can be expressed either as \\\"token\\\" or as \\\"quoted-\\n   string\\\" (Section 5.6).  Authentication scheme definitions need to\\n   accept both notations, both for senders and recipients, to allow\\n   recipients to use generic parsing components regardless of the\\n   authentication scheme.\\n\\n   For backwards compatibility, authentication scheme definitions can\\n   restrict the format for senders to one of the two variants.  This can\\n   be important when it is known that deployed implementations will fail\\n   when encountering one of the two formats.\\n\\n11.3.  Challenge and Response\\n\\n   A 401 (Unauthorized) response message is used by an origin server to\\n   challenge the authorization of a user agent, including a\\n   WWW-Authenticate header field containing at least one challenge\\n   applicable to the requested resource.\", \"chunk\": 353, \"sha256\": \"21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a\", \"document_id\": \"doc_818496e68519f685dc7b\", \"page\": 0, \"source\": \"rfc9110.txt\", \"distance\": 0.49030929803848267}, {\"id\": \"doc_818496e68519f685dc7b_p0_c357\", \"text\": \"A server that receives valid credentials that are not adequate to\\n   gain access ought to respond with the 403 (Forbidden) status code\\n   (Section 15.5.4).\\n\\n   HTTP does not restrict applications to this simple challenge-response\\n   framework for access authentication.  Additional mechanisms can be\\n   used, such as authentication at the transport level or via message\\n   encapsulation, and with additional header fields specifying\\n   authentication information.  However, such additional mechanisms are\\n   not defined by this specification.\\n\\n   Note that various custom mechanisms for user authentication use the\\n   Set-Cookie and Cookie header fields, defined in [COOKIE], for passing\\n   tokens related to authentication.\\n\\n11.5.  Establishing a Protection Space (Realm)\\n\\n   The \\\"realm\\\" authentication parameter is reserved for use by\\n   authentication schemes that wish to indicate a scope of protection.\", \"document_id\": \"doc_818496e68519f685dc7b\", \"source\": \"rfc9110.txt\", \"chunk\": 357, \"page\": 0, \"sha256\": \"21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a\", \"distance\": 0.49216198921203613}]}",
+      "input_only": true
+    },
+    "question": "How do HTTP 401 and 403 differ?",
+    "structured_answer": {
+      "response_type": "supported",
+      "claims": [
+        {
+          "text": "HTTP 401 (Unauthorized) indicates that the request lacks valid authentication credentials for the target resource.",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "text": "HTTP 403 (Forbidden) indicates that the server understood the request but refuses to fulfill it, regardless of the authentication credentials provided.",
+          "evidence": [
+            "E4"
+          ]
+        },
+        {
+          "text": "If authentication credentials are provided in a request, the server may respond with 401 if they are insufficient, or with 403 if the request is forbidden for reasons unrelated to the credentials.",
+          "evidence": [
+            "E5"
+          ]
+        },
+        {
+          "text": "The 403 status code is used when the server denies access to a resource, even if the request includes valid credentials.",
+          "evidence": [
+            "E6"
+          ]
+        }
+      ]
+    },
+    "selection": {
+      "answerability": "supported",
+      "evidence_handles": [
+        "S2",
+        "S3",
+        "S5",
+        "S8",
+        "S9",
+        "S17"
+      ]
+    },
+    "validated_evidence": [
+      {
+        "handle": "E1",
+        "selection_handle": "S2",
+        "quote": "The 401 (Unauthorized) status code indicates that the request has not\n   been applied because it lacks valid authentication credentials for\n   the target resource.  The server generating a 401 response MUST send\n   a WWW-Authenticate header field (Section 11.6.1) containing at least\n   one challenge applicable to the target resource.",
+        "passage_ids": [
+          "doc_818496e68519f685dc7b_p0_c533"
+        ],
+        "source_assignment": "code_extracted_source_paragraph",
+        "quotation_verified": true,
+        "match_policy": "original paragraph copied by code; case-sensitive whitespace-normalized provenance"
+      },
+      {
+        "handle": "E2",
+        "selection_handle": "S3",
+        "quote": "If the request included authentication credentials, then the 401\n   response indicates that authorization has been refused for those\n   credentials.  The user agent MAY repeat the request with a new or\n   replaced Authorization header field (Section 11.6.2).  If the 401\n   response contains the same challenge as the prior response, and the\n   user agent has already attempted authentication at least once, then\n   the user agent SHOULD present the enclosed representation to the\n   user, since it usually contains relevant diagnostic information.",
+        "passage_ids": [
+          "doc_818496e68519f685dc7b_p0_c533"
+        ],
+        "source_assignment": "code_extracted_source_paragraph",
+        "quotation_verified": true,
+        "match_policy": "original paragraph copied by code; case-sensitive whitespace-normalized provenance"
+      },
+      {
+        "handle": "E3",
+        "selection_handle": "S5",
+        "quote": "| 401   | Unauthorized                  | 15.5.2  |\n            +-------+-------------------------------+---------+\n            | 402   | Payment Required              | 15.5.3  |\n            +-------+-------------------------------+---------+\n            | 403   | Forbidden                     | 15.5.4  |",
+        "passage_ids": [
+          "doc_818496e68519f685dc7b_p0_c640"
+        ],
+        "source_assignment": "code_extracted_source_paragraph",
+        "quotation_verified": true,
+        "match_policy": "original paragraph copied by code; case-sensitive whitespace-normalized provenance"
+      },
+      {
+        "handle": "E4",
+        "selection_handle": "S8",
+        "quote": "The 403 (Forbidden) status code indicates that the server understood\n   the request but refuses to fulfill it.  A server that wishes to make\n   public why the request has been forbidden can describe that reason in\n   the response content (if any).",
+        "passage_ids": [
+          "doc_818496e68519f685dc7b_p0_c534"
+        ],
+        "source_assignment": "code_extracted_source_paragraph",
+        "quotation_verified": true,
+        "match_policy": "original paragraph copied by code; case-sensitive whitespace-normalized provenance"
+      },
+      {
+        "handle": "E5",
+        "selection_handle": "S9",
+        "quote": "If authentication credentials were provided in the request, the\n   server considers them insufficient to grant access.  The client\n   SHOULD NOT automatically repeat the request with the same\n   credentials.  The client MAY repeat the request with new or different\n   credentials.  However, a request might be forbidden for reasons\n   unrelated to the credentials.",
+        "passage_ids": [
+          "doc_818496e68519f685dc7b_p0_c534"
+        ],
+        "source_assignment": "code_extracted_source_paragraph",
+        "quotation_verified": true,
+        "match_policy": "original paragraph copied by code; case-sensitive whitespace-normalized provenance"
+      },
+      {
+        "handle": "E6",
+        "selection_handle": "S17",
+        "quote": "A server that receives valid credentials that are not adequate to\n   gain access ought to respond with the 403 (Forbidden) status code\n   (Section 15.5.4).",
+        "passage_ids": [
+          "doc_818496e68519f685dc7b_p0_c357"
+        ],
+        "source_assignment": "code_extracted_source_paragraph",
+        "quotation_verified": true,
+        "match_policy": "original paragraph copied by code; case-sensitive whitespace-normalized provenance"
+      }
+    ]
+  },
+  {
+    "source_variant": "reversed",
+    "original_record": {
+      "prompt_name": "benchmark_input",
+      "variant": "reversed",
+      "context": [
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c357",
+          "text": "A server that receives valid credentials that are not adequate to\n   gain access ought to respond with the 403 (Forbidden) status code\n   (Section 15.5.4).\n\n   HTTP does not restrict applications to this simple challenge-response\n   framework for access authentication.  Additional mechanisms can be\n   used, such as authentication at the transport level or via message\n   encapsulation, and with additional header fields specifying\n   authentication information.  However, such additional mechanisms are\n   not defined by this specification.\n\n   Note that various custom mechanisms for user authentication use the\n   Set-Cookie and Cookie header fields, defined in [COOKIE], for passing\n   tokens related to authentication.\n\n11.5.  Establishing a Protection Space (Realm)\n\n   The \"realm\" authentication parameter is reserved for use by\n   authentication schemes that wish to indicate a scope of protection.",
+          "document_id": "doc_818496e68519f685dc7b",
+          "source": "rfc9110.txt",
+          "chunk": 357,
+          "page": 0,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "distance": 0.49216198921203613
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c353",
+          "text": "auth-param     = token BWS \"=\" BWS ( token / quoted-string )\n\n   Parameter values can be expressed either as \"token\" or as \"quoted-\n   string\" (Section 5.6).  Authentication scheme definitions need to\n   accept both notations, both for senders and recipients, to allow\n   recipients to use generic parsing components regardless of the\n   authentication scheme.\n\n   For backwards compatibility, authentication scheme definitions can\n   restrict the format for senders to one of the two variants.  This can\n   be important when it is known that deployed implementations will fail\n   when encountering one of the two formats.\n\n11.3.  Challenge and Response\n\n   A 401 (Unauthorized) response message is used by an origin server to\n   challenge the authorization of a user agent, including a\n   WWW-Authenticate header field containing at least one challenge\n   applicable to the requested resource.",
+          "chunk": 353,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "document_id": "doc_818496e68519f685dc7b",
+          "page": 0,
+          "source": "rfc9110.txt",
+          "distance": 0.49030929803848267
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c534",
+          "text": "15.5.3.  402 Payment Required\n\n   The 402 (Payment Required) status code is reserved for future use.\n\n15.5.4.  403 Forbidden\n\n   The 403 (Forbidden) status code indicates that the server understood\n   the request but refuses to fulfill it.  A server that wishes to make\n   public why the request has been forbidden can describe that reason in\n   the response content (if any).\n\n   If authentication credentials were provided in the request, the\n   server considers them insufficient to grant access.  The client\n   SHOULD NOT automatically repeat the request with the same\n   credentials.  The client MAY repeat the request with new or different\n   credentials.  However, a request might be forbidden for reasons\n   unrelated to the credentials.\n\n   An origin server that wishes to \"hide\" the current existence of a\n   forbidden target resource MAY instead respond with a status code of\n   404 (Not Found).\n\n15.5.5.  404 Not Found",
+          "document_id": "doc_818496e68519f685dc7b",
+          "chunk": 534,
+          "source": "rfc9110.txt",
+          "page": 0,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "distance": 0.4745655059814453
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c640",
+          "text": "| 401   | Unauthorized                  | 15.5.2  |\n            +-------+-------------------------------+---------+\n            | 402   | Payment Required              | 15.5.3  |\n            +-------+-------------------------------+---------+\n            | 403   | Forbidden                     | 15.5.4  |",
+          "chunk": 640,
+          "page": 0,
+          "document_id": "doc_818496e68519f685dc7b",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "source": "rfc9110.txt",
+          "distance": 0.4362446665763855
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c533",
+          "text": "15.5.2.  401 Unauthorized\n\n   The 401 (Unauthorized) status code indicates that the request has not\n   been applied because it lacks valid authentication credentials for\n   the target resource.  The server generating a 401 response MUST send\n   a WWW-Authenticate header field (Section 11.6.1) containing at least\n   one challenge applicable to the target resource.\n\n   If the request included authentication credentials, then the 401\n   response indicates that authorization has been refused for those\n   credentials.  The user agent MAY repeat the request with a new or\n   replaced Authorization header field (Section 11.6.2).  If the 401\n   response contains the same challenge as the prior response, and the\n   user agent has already attempted authentication at least once, then\n   the user agent SHOULD present the enclosed representation to the\n   user, since it usually contains relevant diagnostic information.\n\n15.5.3.  402 Payment Required",
+          "document_id": "doc_818496e68519f685dc7b",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "page": 0,
+          "source": "rfc9110.txt",
+          "chunk": 533,
+          "distance": 0.4006311893463135
+        }
+      ],
+      "user_prompt": "{\"question\": \"How do HTTP 401 and 403 differ?\", \"evidence\": [{\"id\": \"doc_818496e68519f685dc7b_p0_c357\", \"text\": \"A server that receives valid credentials that are not adequate to\\n   gain access ought to respond with the 403 (Forbidden) status code\\n   (Section 15.5.4).\\n\\n   HTTP does not restrict applications to this simple challenge-response\\n   framework for access authentication.  Additional mechanisms can be\\n   used, such as authentication at the transport level or via message\\n   encapsulation, and with additional header fields specifying\\n   authentication information.  However, such additional mechanisms are\\n   not defined by this specification.\\n\\n   Note that various custom mechanisms for user authentication use the\\n   Set-Cookie and Cookie header fields, defined in [COOKIE], for passing\\n   tokens related to authentication.\\n\\n11.5.  Establishing a Protection Space (Realm)\\n\\n   The \\\"realm\\\" authentication parameter is reserved for use by\\n   authentication schemes that wish to indicate a scope of protection.\", \"document_id\": \"doc_818496e68519f685dc7b\", \"source\": \"rfc9110.txt\", \"chunk\": 357, \"page\": 0, \"sha256\": \"21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a\", \"distance\": 0.49216198921203613}, {\"id\": \"doc_818496e68519f685dc7b_p0_c353\", \"text\": \"auth-param     = token BWS \\\"=\\\" BWS ( token / quoted-string )\\n\\n   Parameter values can be expressed either as \\\"token\\\" or as \\\"quoted-\\n   string\\\" (Section 5.6).  Authentication scheme definitions need to\\n   accept both notations, both for senders and recipients, to allow\\n   recipients to use generic parsing components regardless of the\\n   authentication scheme.\\n\\n   For backwards compatibility, authentication scheme definitions can\\n   restrict the format for senders to one of the two variants.  This can\\n   be important when it is known that deployed implementations will fail\\n   when encountering one of the two formats.\\n\\n11.3.  Challenge and Response\\n\\n   A 401 (Unauthorized) response message is used by an origin server to\\n   challenge the authorization of a user agent, including a\\n   WWW-Authenticate header field containing at least one challenge\\n   applicable to the requested resource.\", \"chunk\": 353, \"sha256\": \"21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a\", \"document_id\": \"doc_818496e68519f685dc7b\", \"page\": 0, \"source\": \"rfc9110.txt\", \"distance\": 0.49030929803848267}, {\"id\": \"doc_818496e68519f685dc7b_p0_c534\", \"text\": \"15.5.3.  402 Payment Required\\n\\n   The 402 (Payment Required) status code is reserved for future use.\\n\\n15.5.4.  403 Forbidden\\n\\n   The 403 (Forbidden) status code indicates that the server understood\\n   the request but refuses to fulfill it.  A server that wishes to make\\n   public why the request has been forbidden can describe that reason in\\n   the response content (if any).\\n\\n   If authentication credentials were provided in the request, the\\n   server considers them insufficient to grant access.  The client\\n   SHOULD NOT automatically repeat the request with the same\\n   credentials.  The client MAY repeat the request with new or different\\n   credentials.  However, a request might be forbidden for reasons\\n   unrelated to the credentials.\\n\\n   An origin server that wishes to \\\"hide\\\" the current existence of a\\n   forbidden target resource MAY instead respond with a status code of\\n   404 (Not Found).\\n\\n15.5.5.  404 Not Found\", \"document_id\": \"doc_818496e68519f685dc7b\", \"chunk\": 534, \"source\": \"rfc9110.txt\", \"page\": 0, \"sha256\": \"21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a\", \"distance\": 0.4745655059814453}, {\"id\": \"doc_818496e68519f685dc7b_p0_c640\", \"text\": \"| 401   | Unauthorized                  | 15.5.2  |\\n            +-------+-------------------------------+---------+\\n            | 402   | Payment Required              | 15.5.3  |\\n            +-------+-------------------------------+---------+\\n            | 403   | Forbidden                     | 15.5.4  |\", \"chunk\": 640, \"page\": 0, \"document_id\": \"doc_818496e68519f685dc7b\", \"sha256\": \"21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a\", \"source\": \"rfc9110.txt\", \"distance\": 0.4362446665763855}, {\"id\": \"doc_818496e68519f685dc7b_p0_c533\", \"text\": \"15.5.2.  401 Unauthorized\\n\\n   The 401 (Unauthorized) status code indicates that the request has not\\n   been applied because it lacks valid authentication credentials for\\n   the target resource.  The server generating a 401 response MUST send\\n   a WWW-Authenticate header field (Section 11.6.1) containing at least\\n   one challenge applicable to the target resource.\\n\\n   If the request included authentication credentials, then the 401\\n   response indicates that authorization has been refused for those\\n   credentials.  The user agent MAY repeat the request with a new or\\n   replaced Authorization header field (Section 11.6.2).  If the 401\\n   response contains the same challenge as the prior response, and the\\n   user agent has already attempted authentication at least once, then\\n   the user agent SHOULD present the enclosed representation to the\\n   user, since it usually contains relevant diagnostic information.\\n\\n15.5.3.  402 Payment Required\", \"document_id\": \"doc_818496e68519f685dc7b\", \"sha256\": \"21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a\", \"page\": 0, \"source\": \"rfc9110.txt\", \"chunk\": 533, \"distance\": 0.4006311893463135}]}",
+      "input_only": true
+    },
+    "question": "How do HTTP 401 and 403 differ?",
+    "structured_answer": {
+      "response_type": "supported",
+      "claims": [
+        {
+          "text": "HTTP 401 (Unauthorized) is used when the server requires the client to authenticate to access a resource, typically by including a WWW-Authenticate header.",
+          "evidence": [
+            "E2"
+          ]
+        },
+        {
+          "text": "HTTP 403 (Forbidden) is used when the server understands the request but refuses to fulfill it, even if the client provides valid credentials.",
+          "evidence": [
+            "E1",
+            "E3",
+            "E4",
+            "E5",
+            "E6"
+          ]
+        }
+      ]
+    },
+    "selection": {
+      "answerability": "supported",
+      "evidence_handles": [
+        "S1",
+        "S10",
+        "S13",
+        "S14",
+        "S15",
+        "S18"
+      ]
+    },
+    "validated_evidence": [
+      {
+        "handle": "E1",
+        "selection_handle": "S1",
+        "quote": "A server that receives valid credentials that are not adequate to\n   gain access ought to respond with the 403 (Forbidden) status code\n   (Section 15.5.4).",
+        "passage_ids": [
+          "doc_818496e68519f685dc7b_p0_c357"
+        ],
+        "source_assignment": "code_extracted_source_paragraph",
+        "quotation_verified": true,
+        "match_policy": "original paragraph copied by code; case-sensitive whitespace-normalized provenance"
+      },
+      {
+        "handle": "E2",
+        "selection_handle": "S10",
+        "quote": "A 401 (Unauthorized) response message is used by an origin server to\n   challenge the authorization of a user agent, including a\n   WWW-Authenticate header field containing at least one challenge\n   applicable to the requested resource.",
+        "passage_ids": [
+          "doc_818496e68519f685dc7b_p0_c353"
+        ],
+        "source_assignment": "code_extracted_source_paragraph",
+        "quotation_verified": true,
+        "match_policy": "original paragraph copied by code; case-sensitive whitespace-normalized provenance"
+      },
+      {
+        "handle": "E3",
+        "selection_handle": "S13",
+        "quote": "15.5.4.  403 Forbidden",
+        "passage_ids": [
+          "doc_818496e68519f685dc7b_p0_c534"
+        ],
+        "source_assignment": "code_extracted_source_paragraph",
+        "quotation_verified": true,
+        "match_policy": "original paragraph copied by code; case-sensitive whitespace-normalized provenance"
+      },
+      {
+        "handle": "E4",
+        "selection_handle": "S14",
+        "quote": "The 403 (Forbidden) status code indicates that the server understood\n   the request but refuses to fulfill it.  A server that wishes to make\n   public why the request has been forbidden can describe that reason in\n   the response content (if any).",
+        "passage_ids": [
+          "doc_818496e68519f685dc7b_p0_c534"
+        ],
+        "source_assignment": "code_extracted_source_paragraph",
+        "quotation_verified": true,
+        "match_policy": "original paragraph copied by code; case-sensitive whitespace-normalized provenance"
+      },
+      {
+        "handle": "E5",
+        "selection_handle": "S15",
+        "quote": "If authentication credentials were provided in the request, the\n   server considers them insufficient to grant access.  The client\n   SHOULD NOT automatically repeat the request with the same\n   credentials.  The client MAY repeat the request with new or different\n   credentials.  However, a request might be forbidden for reasons\n   unrelated to the credentials.",
+        "passage_ids": [
+          "doc_818496e68519f685dc7b_p0_c534"
+        ],
+        "source_assignment": "code_extracted_source_paragraph",
+        "quotation_verified": true,
+        "match_policy": "original paragraph copied by code; case-sensitive whitespace-normalized provenance"
+      },
+      {
+        "handle": "E6",
+        "selection_handle": "S18",
+        "quote": "| 401   | Unauthorized                  | 15.5.2  |\n            +-------+-------------------------------+---------+\n            | 402   | Payment Required              | 15.5.3  |\n            +-------+-------------------------------+---------+\n            | 403   | Forbidden                     | 15.5.4  |",
+        "passage_ids": [
+          "doc_818496e68519f685dc7b_p0_c640"
+        ],
+        "source_assignment": "code_extracted_source_paragraph",
+        "quotation_verified": true,
+        "match_policy": "original paragraph copied by code; case-sensitive whitespace-normalized provenance"
+      }
+    ]
+  }
+]

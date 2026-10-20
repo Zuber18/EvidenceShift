@@ -1,0 +1,38 @@
+{
+  "experiment_version": "model-matrix-1.0.0",
+  "job": {
+    "job_id": "87f44966b4b9673ad61e",
+    "model": "qwen3:4b",
+    "representation": "passages",
+    "case_id": "1f939d31",
+    "question": "what did Jim buy as a gift for Della?",
+    "order": "no_context"
+  },
+  "context": [],
+  "result": {
+    "experiment_version": "source-handles-2.1.0",
+    "run_id": "source_38e00c2a12f84e569a703d62e678cd20",
+    "question": "what did Jim buy as a gift for Della?",
+    "original_context": [],
+    "metadata": {
+      "experiment": "model-matrix-1.0.0",
+      "phase": "development",
+      "representation": "passages",
+      "order": "no_context",
+      "job_id": "87f44966b4b9673ad61e"
+    },
+    "stages": [],
+    "status": "empty_context_control",
+    "complete": true,
+    "candidate_answer": "The supplied evidence does not answer this question.",
+    "delivery_answer": null,
+    "answer_mode": "code_copied_evidence_units",
+    "factual_correctness": "not_automatically_scored",
+    "mechanical_checks": {
+      "deterministic_abstention": true
+    },
+    "model_verifier_used": false,
+    "evidence_catalog": []
+  },
+  "status": "empty_context_control"
+}

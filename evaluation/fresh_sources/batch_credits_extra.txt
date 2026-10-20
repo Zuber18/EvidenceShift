@@ -1,0 +1,3 @@
+Fictional EvidenceShift evaluation document.
+
+A job may contain between one and twenty batches. Each batch is assigned a unique sequence number.

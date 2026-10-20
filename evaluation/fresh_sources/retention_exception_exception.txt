@@ -1,0 +1,3 @@
+Fictional EvidenceShift evaluation document.
+
+Run logs marked for an active audit are retained until the audit owner releases the hold, even if they are older than 60 days. After release, the normal cleanup policy applies.

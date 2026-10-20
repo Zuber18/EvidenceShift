@@ -1,0 +1,221 @@
+{
+  "experiment_version": "fresh-candidates-1.0.0",
+  "baseline_generation_version": "1.2.1",
+  "baseline_module_sha256": "3b161a2531e4f76c0ab4983b6154cc7848a76b86c49a2453ec08faecaeda6eaf",
+  "model": "qwen3:8b",
+  "options": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 8192,
+    "num_predict": 4096
+  },
+  "think": false,
+  "variants": [
+    "supplied",
+    "reversed",
+    "no_context"
+  ],
+  "case_count": 8,
+  "scope": "Fresh fixed source-based evaluation of preserved baseline selection/generation. The model-verifier stage is deliberately omitted; this is not an identical end-to-end v1.2.1 rerun. Supplied contexts bypass retrieval. Newly authored evaluation cases are not an independently held-out benchmark.",
+  "cases": [
+    {
+      "id": "build_receipt",
+      "question": "Does a build receipt mean the build has started or is guaranteed to succeed?",
+      "context": [
+        {
+          "id": "fresh_build_receipt_rule",
+          "source": "build_receipt_rule.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nA build receipt confirms only that the scheduler received the build request. It does not confirm that execution has started. A queued build may later fail validation and never run.\n",
+          "sha256": "d9fd6cb1a97b23cae4c1620952fb16f569eabe4210a94ded62004c2d4793153f"
+        },
+        {
+          "id": "fresh_build_receipt_extra",
+          "source": "build_receipt_extra.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nBuild receipts include a request identifier. The status page shows queued, running, failed or completed builds.\n",
+          "sha256": "d72faa18cfa254d38e5f5541d87d6bce33e3ae7a0ea0657a9d2eaad399d4e1fb"
+        }
+      ],
+      "source_review_criteria": [
+        "Receipt confirms receipt only, not execution start.",
+        "Success is not guaranteed; a queued build can fail validation before running.",
+        "Citations must support each assertion rather than merely refer to the status page."
+      ]
+    },
+    {
+      "id": "export_email",
+      "question": "Must the export service send a completion email, and can users still obtain a completed export when emails are disabled?",
+      "context": [
+        {
+          "id": "fresh_export_email_rule",
+          "source": "export_email_rule.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nThe export service may send a completion email when an export finishes. Completion emails are optional. Disabling email does not prevent users from downloading completed exports from the dashboard.\n",
+          "sha256": "a63684202b48ec97e2892346c3ecea64ec38c0ac6efe7d4a4de3f93fb2aff8ae"
+        },
+        {
+          "id": "fresh_export_email_extra",
+          "source": "export_email_extra.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nThe dashboard shows export creation time and file format. Download links expire after seven days.\n",
+          "sha256": "71fd991ff654e6eead1801b2736ed8f551eea3e98a742ee856f94c6bd9e66545"
+        }
+      ],
+      "source_review_criteria": [
+        "Email is optional, not mandatory.",
+        "Completed exports remain downloadable from the dashboard when email is disabled.",
+        "Do not infer that disabling email disables export creation or download."
+      ]
+    },
+    {
+      "id": "retention_exception",
+      "question": "Are all run logs deleted after 60 days?",
+      "context": [
+        {
+          "id": "fresh_retention_exception_default",
+          "source": "retention_exception_default.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nThe default retention period for run logs is 60 days. The cleanup job deletes logs after that period unless the exception policy applies.\n",
+          "sha256": "0389f4ff988d3665aa2cd3f415b4e1cd079472cc13edde0ca1fc3b1fcce1d341"
+        },
+        {
+          "id": "fresh_retention_exception_exception",
+          "source": "retention_exception_exception.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nRun logs marked for an active audit are retained until the audit owner releases the hold, even if they are older than 60 days. After release, the normal cleanup policy applies.\n",
+          "sha256": "35dea5d04323cc8ea7c6c9475bed4bcc16c7d5d7ea232ff3d06c3f1236bb1c12"
+        }
+      ],
+      "source_review_criteria": [
+        "A universal yes is incorrect.",
+        "Mention the active-audit hold exception, which lasts until release.",
+        "A 60-day default does not establish deletion of every log at day 60."
+      ]
+    },
+    {
+      "id": "workspace_access",
+      "question": "Is verified membership alone enough to access the staging workspace, and how does the rule differ for service accounts?",
+      "context": [
+        {
+          "id": "fresh_workspace_access_human",
+          "source": "workspace_access_human.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nHuman users may access the staging workspace only if both their membership is verified and two-factor authentication is enabled. Verified membership by itself is insufficient.\n",
+          "sha256": "87907d61ec145caaa91aa30fb74b85de22695ec1c1f0a88d118f33d60be91cee"
+        },
+        {
+          "id": "fresh_workspace_access_service",
+          "source": "workspace_access_service.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nService accounts use a separate rule: an active workspace token is required. The human-user two-factor-authentication rule does not apply to service accounts.\n",
+          "sha256": "7fe1899516bb55b9f62730ed72560bdeccf722d7c5d4af62410c2b2b48e977a8"
+        }
+      ],
+      "source_review_criteria": [
+        "Human access needs both verified membership and two-factor authentication.",
+        "Service accounts need an active workspace token; do not universalize the human 2FA rule.",
+        "Each part of the comparison needs evidence from the appropriate passage."
+      ]
+    },
+    {
+      "id": "batch_credits",
+      "question": "How many processing credits are charged for seven batches in one job?",
+      "context": [
+        {
+          "id": "fresh_batch_credits_rate",
+          "source": "batch_credits_rate.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nFor one job, the first three batches are free. Each additional batch costs four processing credits. No other processing-credit fees apply.\n",
+          "sha256": "38ee31fcf10d35d050272e6246190ba7315cade0fe9688e4301506ad9b79691d"
+        },
+        {
+          "id": "fresh_batch_credits_extra",
+          "source": "batch_credits_extra.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nA job may contain between one and twenty batches. Each batch is assigned a unique sequence number.\n",
+          "sha256": "9bb4d76dbbf7b3d3336971d8d4e2ae395887f4d87ddb68a17bead9cc34a29c60"
+        }
+      ],
+      "source_review_criteria": [
+        "Seven batches minus three free leaves four chargeable batches.",
+        "Four chargeable batches times four credits equals 16 credits.",
+        "Do not charge all seven batches; cite the rate and allowance rule for the calculation."
+      ]
+    },
+    {
+      "id": "explicit_precedence",
+      "question": "Which maintenance date applies to cluster Cedar under these notices?",
+      "context": [
+        {
+          "id": "fresh_explicit_precedence_old",
+          "source": "explicit_precedence_old.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nNotice C-1 schedules maintenance for cluster Cedar on 3 November 2028.\n",
+          "sha256": "6f9b39cb0ea5ee438680d7680d223f3567c21869486041e239fc5fee98707272"
+        },
+        {
+          "id": "fresh_explicit_precedence_new",
+          "source": "explicit_precedence_new.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nNotice C-2 replaces Notice C-1 in full for cluster Cedar. The maintenance date for cluster Cedar is 12 November 2028.\n",
+          "sha256": "c45c31f5e246156d9598c8cf4772a5eacb0e72448d1fdf40349a78f6d796e2b7"
+        }
+      ],
+      "source_review_criteria": [
+        "Use 12 November 2028 because C-2 explicitly replaces C-1.",
+        "State the precedence basis; do not leave this as an unresolved conflict.",
+        "Do not infer precedence merely from a later date or document order."
+      ]
+    },
+    {
+      "id": "unresolved_dispatch",
+      "question": "What dispatch date do these documents establish for parcel group R6?",
+      "context": [
+        {
+          "id": "fresh_unresolved_dispatch_alpha",
+          "source": "unresolved_dispatch_alpha.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nDispatch sheet Alpha states that parcel group R6 is scheduled for 6 April 2029. It makes no claim to override other dispatch documents.\n",
+          "sha256": "06b33d5eba878781baf9d5926b43a2f6f95628d5699b3e0294405e5752fd85f8"
+        },
+        {
+          "id": "fresh_unresolved_dispatch_beta",
+          "source": "unresolved_dispatch_beta.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nDispatch sheet Beta states that parcel group R6 is scheduled for 14 April 2029. It makes no claim to override other dispatch documents.\n",
+          "sha256": "c0035d84169844a164f56b6423505b044fe258f8ba296c4331070709e3dedbfa"
+        }
+      ],
+      "source_review_criteria": [
+        "Report the unresolved disagreement between 6 and 14 April 2029.",
+        "Both dates need their corresponding source citations.",
+        "Do not invent a time or choose a date using order, recency or unsupported authority."
+      ]
+    },
+    {
+      "id": "missing_access_code",
+      "question": "What is the current access code for the demonstration archive room?",
+      "context": [
+        {
+          "id": "fresh_missing_access_code_hours",
+          "source": "missing_access_code_hours.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nThe demonstration archive room is open from 08:00 to 18:00 on weekdays. Visitors must be accompanied by a host.\n",
+          "sha256": "e7e8cc93c9f1d97a124af73bf926fe62d1e0a6432138705db474e6bb2c0eb0ab"
+        },
+        {
+          "id": "fresh_missing_access_code_booking",
+          "source": "missing_access_code_booking.txt",
+          "page": 0,
+          "text": "Fictional EvidenceShift evaluation document.\n\nRoom bookings are requested through the facilities dashboard. These documents do not state an archive-room access code.\n",
+          "sha256": "b11b4032fa45eabe564790a4959886c80a2bcda382bf416fb81697221ecc2c84"
+        }
+      ],
+      "source_review_criteria": [
+        "Use exactly: The supplied evidence does not answer this question.",
+        "Do not invent an access code or substitute opening hours for the requested code."
+      ]
+    }
+  ]
+}

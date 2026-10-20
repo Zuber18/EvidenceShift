@@ -1,0 +1,404 @@
+{
+  "benchmark_version": "1.0.0",
+  "pipeline_version": "1.2.1",
+  "case_count": 8,
+  "models": [
+    "qwen3:4b",
+    "qwen3:8b",
+    "gemma3:4b"
+  ],
+  "variants": [
+    "retrieved",
+    "reversed",
+    "no_context"
+  ],
+  "options": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 8192,
+    "num_predict": 4096
+  },
+  "think": false,
+  "note": "Fixed benchmark: 66 pipeline inputs across three models; 24 empty-context inputs make no generation calls; up to 126 nonempty-context stage calls. Single-passage reversals are skipped. Existing development cases are not held-out data. Review labels are never model inputs.",
+  "cases": [
+    {
+      "id": "accepted_202",
+      "kind": "saved_rfc_evidence",
+      "question": "Does HTTP 202 Accepted guarantee that processing has completed or will eventually succeed?",
+      "source_run_id": "20261014T102622Z_ae1ddcc9",
+      "context": [
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c491",
+          "text": "The 202 response is intentionally noncommittal.  Its purpose is to\n   allow a server to accept a request for some other process (perhaps a\n   batch-oriented process that is only run once per day) without\n   requiring that the user agent's connection to the server persist\n   until the process is completed.  The representation sent with this\n   response ought to describe the request's current status and point to\n   (or embed) a status monitor that can provide the user with an\n   estimate of when the request will be fulfilled.\n\n15.3.4.  203 Non-Authoritative Information",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "page": 0,
+          "source": "rfc9110.txt",
+          "document_id": "doc_818496e68519f685dc7b",
+          "chunk": 491,
+          "distance": 0.3786022663116455
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c323",
+          "text": "*  A client that sends a 100-continue expectation is not required to\n      wait for any specific length of time; such a client MAY proceed to\n      send the content even if it has not yet received a response.\n      Furthermore, since 100 (Continue) responses cannot be sent through\n      an HTTP/1.0 intermediary, such a client SHOULD NOT wait for an\n      indefinite period before sending the content.\n\n   *  A client that receives a 417 (Expectation Failed) status code in\n      response to a request containing a 100-continue expectation SHOULD\n      repeat that request without a 100-continue expectation, since the\n      417 response merely indicates that the response chain does not\n      support expectations (e.g., it passes through an HTTP/1.0 server).\n\n   Requirements for servers:\n\n   *  A server that receives a 100-continue expectation in an HTTP/1.0\n      request MUST ignore that expectation.",
+          "document_id": "doc_818496e68519f685dc7b",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "page": 0,
+          "chunk": 323,
+          "source": "rfc9110.txt",
+          "distance": 0.4106673002243042
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c490",
+          "text": "The 201 response content typically describes and links to the\n   resource(s) created.  Any validator fields (Section 8.8) sent in the\n   response convey the current validators for a new representation\n   created by the request.  Note that the PUT method (Section 9.3.4) has\n   additional requirements that might preclude sending such validators.\n\n15.3.3.  202 Accepted\n\n   The 202 (Accepted) status code indicates that the request has been\n   accepted for processing, but the processing has not been completed.\n   The request might or might not eventually be acted upon, as it might\n   be disallowed when processing actually takes place.  There is no\n   facility in HTTP for re-sending a status code from an asynchronous\n   operation.",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "source": "rfc9110.txt",
+          "chunk": 490,
+          "document_id": "doc_818496e68519f685dc7b",
+          "page": 0,
+          "distance": 0.4219754934310913
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c324",
+          "text": "Requirements for servers:\n\n   *  A server that receives a 100-continue expectation in an HTTP/1.0\n      request MUST ignore that expectation.\n\n   *  A server MAY omit sending a 100 (Continue) response if it has\n      already received some or all of the content for the corresponding\n      request, or if the framing indicates that there is no content.\n\n   *  A server that sends a 100 (Continue) response MUST ultimately send\n      a final status code, once it receives and processes the request\n      content, unless the connection is closed prematurely.\n\n   *  A server that responds with a final status code before reading the\n      entire request content SHOULD indicate whether it intends to close\n      the connection (e.g., see Section 9.6 of [HTTP/1.1]) or continue\n      reading the request content.",
+          "document_id": "doc_818496e68519f685dc7b",
+          "source": "rfc9110.txt",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "page": 0,
+          "chunk": 324,
+          "distance": 0.43394726514816284
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c177",
+          "text": "All responses, regardless of the status code (including interim\n   responses) can be sent at any time after a request is received, even\n   if the request is not yet complete.  A response can complete before\n   its corresponding request is complete (Section 6.1).  Likewise,\n   clients are not expected to wait any specific amount of time for a\n   response.  Clients (including intermediaries) might abandon a request\n   if the response is not received within a reasonable period of time.\n\n   A client that receives a response while it is still sending the\n   associated request SHOULD continue sending that request unless it\n   receives an explicit indication to the contrary (see, e.g.,\n   Section 9.5 of [HTTP/1.1] and Section 6.4 of [HTTP/2]).\n\n7.6.  Message Forwarding",
+          "document_id": "doc_818496e68519f685dc7b",
+          "page": 0,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "source": "rfc9110.txt",
+          "chunk": 177,
+          "distance": 0.44058889150619507
+        }
+      ],
+      "review_criteria": [
+        "Processing is not completed.",
+        "Eventual success is not guaranteed."
+      ],
+      "source": "RFC 9110, https://www.rfc-editor.org/rfc/rfc9110.html",
+      "retrieval_profile": "frozen saved original-context snapshot; retrieval not repeated"
+    },
+    {
+      "id": "method_405",
+      "kind": "saved_rfc_evidence",
+      "question": "What does HTTP 405 Method Not Allowed mean, and what response header must the origin server include?",
+      "source_run_id": "20261014T102814Z_5c7d370b",
+      "context": [
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c536",
+          "text": "15.5.6.  405 Method Not Allowed\n\n   The 405 (Method Not Allowed) status code indicates that the method\n   received in the request-line is known by the origin server but not\n   supported by the target resource.  The origin server MUST generate an\n   Allow header field in a 405 response containing a list of the target\n   resource's currently supported methods.\n\n   A 405 response is heuristically cacheable; i.e., unless otherwise\n   indicated by the method definition or explicit cache controls (see\n   Section 4.2.2 of [CACHING]).\n\n15.5.7.  406 Not Acceptable\n\n   The 406 (Not Acceptable) status code indicates that the target\n   resource does not have a current representation that would be\n   acceptable to the user agent, according to the proactive negotiation\n   header fields received in the request (Section 12.1), and the server\n   is unwilling to supply a default representation.",
+          "chunk": 536,
+          "page": 0,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "source": "rfc9110.txt",
+          "document_id": "doc_818496e68519f685dc7b",
+          "distance": 0.23356759548187256
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c341",
+          "text": "Allow = #method\n\n   Example of use:\n\n   Allow: GET, HEAD, PUT\n\n   The actual set of allowed methods is defined by the origin server at\n   the time of each request.  An origin server MUST generate an Allow\n   header field in a 405 (Method Not Allowed) response and MAY do so in\n   any other response.  An empty Allow field value indicates that the\n   resource allows no methods, which might occur in a 405 response if\n   the resource has been temporarily disabled by configuration.\n\n   A proxy MUST NOT modify the Allow header field -- it does not need to\n   understand all of the indicated methods in order to handle them\n   according to the generic message handling rules.\n\n10.2.2.  Location\n\n   The \"Location\" header field is used in some responses to refer to a\n   specific resource in relation to the response.  The type of\n   relationship is defined by the combination of request method and\n   status code semantics.\n\n     Location = URI-reference",
+          "chunk": 341,
+          "page": 0,
+          "document_id": "doc_818496e68519f685dc7b",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "source": "rfc9110.txt",
+          "distance": 0.2786157727241516
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c272",
+          "text": "Table 4\n\n   All general-purpose servers MUST support the methods GET and HEAD.\n   All other methods are OPTIONAL.\n\n   The set of methods allowed by a target resource can be listed in an\n   Allow header field (Section 10.2.1).  However, the set of allowed\n   methods can change dynamically.  An origin server that receives a\n   request method that is unrecognized or not implemented SHOULD respond\n   with the 501 (Not Implemented) status code.  An origin server that\n   receives a request method that is recognized and implemented, but not\n   allowed for the target resource, SHOULD respond with the 405 (Method\n   Not Allowed) status code.\n\n   Additional methods, outside the scope of this specification, have\n   been specified for use in HTTP.  All such methods ought to be\n   registered within the \"Hypertext Transfer Protocol (HTTP) Method\n   Registry\", as described in Section 16.1.\n\n9.2.  Common Method Properties",
+          "page": 0,
+          "source": "rfc9110.txt",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "chunk": 272,
+          "document_id": "doc_818496e68519f685dc7b",
+          "distance": 0.3301851749420166
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c642",
+          "text": "| 405   | Method Not Allowed            | 15.5.6  |\n            +-------+-------------------------------+---------+\n            | 406   | Not Acceptable                | 15.5.7  |\n            +-------+-------------------------------+---------+\n            | 407   | Proxy Authentication Required | 15.5.8  |",
+          "source": "rfc9110.txt",
+          "page": 0,
+          "chunk": 642,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "document_id": "doc_818496e68519f685dc7b",
+          "distance": 0.33682960271835327
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c544",
+          "text": "15.5.16.  415 Unsupported Media Type\n\n   The 415 (Unsupported Media Type) status code indicates that the\n   origin server is refusing to service the request because the content\n   is in a format not supported by this method on the target resource.\n\n   The format problem might be due to the request's indicated\n   Content-Type or Content-Encoding, or as a result of inspecting the\n   data directly.\n\n   If the problem was caused by an unsupported content coding, the\n   Accept-Encoding response header field (Section 12.5.3) ought to be\n   used to indicate which (if any) content codings would have been\n   accepted in the request.\n\n   On the other hand, if the cause was an unsupported media type, the\n   Accept response header field (Section 12.5.1) can be used to indicate\n   which media types would have been accepted in the request.",
+          "page": 0,
+          "chunk": 544,
+          "source": "rfc9110.txt",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "document_id": "doc_818496e68519f685dc7b",
+          "distance": 0.37185704708099365
+        }
+      ],
+      "review_criteria": [
+        "Server recognizes the method; target resource does not support it.",
+        "Allow header listing currently supported methods is mandatory."
+      ],
+      "source": "RFC 9110, https://www.rfc-editor.org/rfc/rfc9110.html",
+      "retrieval_profile": "frozen saved original-context snapshot; retrieval not repeated"
+    },
+    {
+      "id": "gone_410",
+      "kind": "saved_rfc_evidence",
+      "question": "Does HTTP 410 Gone mean a resource is definitely gone forever, and which status should be used if permanence is unknown?",
+      "source_run_id": "20261014T103026Z_3f65565b",
+      "context": [
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c540",
+          "text": "The 410 response is primarily intended to assist the task of web\n   maintenance by notifying the recipient that the resource is\n   intentionally unavailable and that the server owners desire that\n   remote links to that resource be removed.  Such an event is common\n   for limited-time, promotional services and for resources belonging to\n   individuals no longer associated with the origin server's site.  It\n   is not necessary to mark all permanently unavailable resources as\n   \"gone\" or to keep the mark for any length of time -- that is left to\n   the discretion of the server owner.\n\n   A 410 response is heuristically cacheable; i.e., unless otherwise\n   indicated by the method definition or explicit cache controls (see\n   Section 4.2.2 of [CACHING]).\n\n15.5.12.  411 Length Required",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "source": "rfc9110.txt",
+          "document_id": "doc_818496e68519f685dc7b",
+          "page": 0,
+          "chunk": 540,
+          "distance": 0.1987876296043396
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c539",
+          "text": "Conflicts are most likely to occur in response to a PUT request.  For\n   example, if versioning were being used and the representation being\n   PUT included changes to a resource that conflict with those made by\n   an earlier (third-party) request, the origin server might use a 409\n   response to indicate that it can't complete the request.  In this\n   case, the response representation would likely contain information\n   useful for merging the differences based on the revision history.\n\n15.5.11.  410 Gone\n\n   The 410 (Gone) status code indicates that access to the target\n   resource is no longer available at the origin server and that this\n   condition is likely to be permanent.  If the origin server does not\n   know, or has no facility to determine, whether or not the condition\n   is permanent, the status code 404 (Not Found) ought to be used\n   instead.",
+          "source": "rfc9110.txt",
+          "chunk": 539,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "page": 0,
+          "document_id": "doc_818496e68519f685dc7b",
+          "distance": 0.3671145439147949
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c535",
+          "text": "15.5.5.  404 Not Found\n\n   The 404 (Not Found) status code indicates that the origin server did\n   not find a current representation for the target resource or is not\n   willing to disclose that one exists.  A 404 status code does not\n   indicate whether this lack of representation is temporary or\n   permanent; the 410 (Gone) status code is preferred over 404 if the\n   origin server knows, presumably through some configurable means, that\n   the condition is likely to be permanent.\n\n   A 404 response is heuristically cacheable; i.e., unless otherwise\n   indicated by the method definition or explicit cache controls (see\n   Section 4.2.2 of [CACHING]).\n\n15.5.6.  405 Method Not Allowed",
+          "chunk": 535,
+          "page": 0,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "source": "rfc9110.txt",
+          "document_id": "doc_818496e68519f685dc7b",
+          "distance": 0.4247250556945801
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c538",
+          "text": "15.5.9.  408 Request Timeout\n\n   The 408 (Request Timeout) status code indicates that the server did\n   not receive a complete request message within the time that it was\n   prepared to wait.\n\n   If the client has an outstanding request in transit, it MAY repeat\n   that request.  If the current connection is not usable (e.g., as it\n   would be in HTTP/1.1 because request delimitation is lost), a new\n   connection will be used.\n\n15.5.10.  409 Conflict\n\n   The 409 (Conflict) status code indicates that the request could not\n   be completed due to a conflict with the current state of the target\n   resource.  This code is used in situations where the user might be\n   able to resolve the conflict and resubmit the request.  The server\n   SHOULD generate content that includes enough information for a user\n   to recognize the source of the conflict.",
+          "page": 0,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "document_id": "doc_818496e68519f685dc7b",
+          "chunk": 538,
+          "source": "rfc9110.txt",
+          "distance": 0.4407956004142761
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c479",
+          "text": "Responses with status codes that are defined as heuristically\n   cacheable (e.g., 200, 203, 204, 206, 300, 301, 308, 404, 405, 410,\n   414, and 501 in this specification) can be reused by a cache with\n   heuristic expiration unless otherwise indicated by the method\n   definition or explicit cache controls [CACHING]; all other status\n   codes are not heuristically cacheable.\n\n   Additional status codes, outside the scope of this specification,\n   have been specified for use in HTTP.  All such status codes ought to\n   be registered within the \"Hypertext Transfer Protocol (HTTP) Status\n   Code Registry\", as described in Section 16.2.\n\n15.2.  Informational 1xx",
+          "document_id": "doc_818496e68519f685dc7b",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "chunk": 479,
+          "page": 0,
+          "source": "rfc9110.txt",
+          "distance": 0.45457297563552856
+        }
+      ],
+      "review_criteria": [
+        "Unavailable at the origin, likely permanent rather than definitely permanent.",
+        "404 is recommended if permanence cannot be determined."
+      ],
+      "source": "RFC 9110, https://www.rfc-editor.org/rfc/rfc9110.html",
+      "retrieval_profile": "frozen saved original-context snapshot; retrieval not repeated"
+    },
+    {
+      "id": "service_unavailable",
+      "kind": "saved_rfc_evidence",
+      "question": "What does HTTP 503 mean, and when might a server send Retry-After?",
+      "source_run_id": "20261013T140618Z_71733f5d",
+      "context": [
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c554",
+          "text": "15.6.4.  503 Service Unavailable\n\n   The 503 (Service Unavailable) status code indicates that the server\n   is currently unable to handle the request due to a temporary overload\n   or scheduled maintenance, which will likely be alleviated after some\n   delay.  The server MAY send a Retry-After header field\n   (Section 10.2.3) to suggest an appropriate amount of time for the\n   client to wait before retrying the request.\n\n      |  *Note:* The existence of the 503 status code does not imply\n      |  that a server has to use it when becoming overloaded.  Some\n      |  servers might simply refuse the connection.\n\n15.6.5.  504 Gateway Timeout",
+          "page": 0,
+          "document_id": "doc_818496e68519f685dc7b",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "source": "rfc9110.txt",
+          "chunk": 554,
+          "distance": 0.2575535774230957
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c346",
+          "text": "|  *Note:* The Content-Location header field (Section 8.7) differs\n      |  from Location in that the Content-Location refers to the most\n      |  specific resource corresponding to the enclosed representation.\n      |  It is therefore possible for a response to contain both the\n      |  Location and Content-Location header fields.\n\n10.2.3.  Retry-After\n\n   Servers send the \"Retry-After\" header field to indicate how long the\n   user agent ought to wait before making a follow-up request.  When\n   sent with a 503 (Service Unavailable) response, Retry-After indicates\n   how long the service is expected to be unavailable to the client.\n   When sent with any 3xx (Redirection) response, Retry-After indicates\n   the minimum time that the user agent is asked to wait before issuing\n   the redirected request.",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "document_id": "doc_818496e68519f685dc7b",
+          "chunk": 346,
+          "source": "rfc9110.txt",
+          "page": 0,
+          "distance": 0.32529449462890625
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c538",
+          "text": "15.5.9.  408 Request Timeout\n\n   The 408 (Request Timeout) status code indicates that the server did\n   not receive a complete request message within the time that it was\n   prepared to wait.\n\n   If the client has an outstanding request in transit, it MAY repeat\n   that request.  If the current connection is not usable (e.g., as it\n   would be in HTTP/1.1 because request delimitation is lost), a new\n   connection will be used.\n\n15.5.10.  409 Conflict\n\n   The 409 (Conflict) status code indicates that the request could not\n   be completed due to a conflict with the current state of the target\n   resource.  This code is used in situations where the user might be\n   able to resolve the conflict and resubmit the request.  The server\n   SHOULD generate content that includes enough information for a user\n   to recognize the source of the conflict.",
+          "document_id": "doc_818496e68519f685dc7b",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "source": "rfc9110.txt",
+          "chunk": 538,
+          "page": 0,
+          "distance": 0.369604229927063
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c555",
+          "text": "15.6.5.  504 Gateway Timeout\n\n   The 504 (Gateway Timeout) status code indicates that the server,\n   while acting as a gateway or proxy, did not receive a timely response\n   from an upstream server it needed to access in order to complete the\n   request.\n\n15.6.6.  505 HTTP Version Not Supported\n\n   The 505 (HTTP Version Not Supported) status code indicates that the\n   server does not support, or refuses to support, the major version of\n   HTTP that was used in the request message.  The server is indicating\n   that it is unable or unwilling to complete the request using the same\n   major version as the client, as described in Section 2.5, other than\n   with this error message.  The server SHOULD generate a representation\n   for the 505 response that describes why that version is not supported\n   and what other protocols are supported by that server.\n\n16.  Extending HTTP",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "chunk": 555,
+          "document_id": "doc_818496e68519f685dc7b",
+          "page": 0,
+          "source": "rfc9110.txt",
+          "distance": 0.38346177339553833
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c347",
+          "text": "The Retry-After field value can be either an HTTP-date or a number of\n   seconds to delay after receiving the response.\n\n     Retry-After = HTTP-date / delay-seconds\n\n   A delay-seconds value is a non-negative decimal integer, representing\n   time in seconds.\n\n     delay-seconds  = 1*DIGIT\n\n   Two examples of its use are\n\n   Retry-After: Fri, 31 Dec 1999 23:59:59 GMT\n   Retry-After: 120\n\n   In the latter example, the delay is 2 minutes.\n\n10.2.4.  Server",
+          "source": "rfc9110.txt",
+          "page": 0,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "chunk": 347,
+          "document_id": "doc_818496e68519f685dc7b",
+          "distance": 0.3988792896270752
+        }
+      ],
+      "review_criteria": [
+        "503 concerns temporary inability to handle a request, e.g. overload or maintenance.",
+        "Retry-After is optional, not mandatory."
+      ],
+      "source": "RFC 9110, https://www.rfc-editor.org/rfc/rfc9110.html",
+      "retrieval_profile": "frozen saved original-context snapshot; retrieval not repeated"
+    },
+    {
+      "id": "authentication_vs_refusal",
+      "kind": "saved_rfc_evidence",
+      "question": "How do HTTP 401 and 403 differ?",
+      "source_run_id": "20261013T141108Z_1c0dd66e",
+      "context": [
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c533",
+          "text": "15.5.2.  401 Unauthorized\n\n   The 401 (Unauthorized) status code indicates that the request has not\n   been applied because it lacks valid authentication credentials for\n   the target resource.  The server generating a 401 response MUST send\n   a WWW-Authenticate header field (Section 11.6.1) containing at least\n   one challenge applicable to the target resource.\n\n   If the request included authentication credentials, then the 401\n   response indicates that authorization has been refused for those\n   credentials.  The user agent MAY repeat the request with a new or\n   replaced Authorization header field (Section 11.6.2).  If the 401\n   response contains the same challenge as the prior response, and the\n   user agent has already attempted authentication at least once, then\n   the user agent SHOULD present the enclosed representation to the\n   user, since it usually contains relevant diagnostic information.\n\n15.5.3.  402 Payment Required",
+          "document_id": "doc_818496e68519f685dc7b",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "page": 0,
+          "source": "rfc9110.txt",
+          "chunk": 533,
+          "distance": 0.4006311893463135
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c640",
+          "text": "| 401   | Unauthorized                  | 15.5.2  |\n            +-------+-------------------------------+---------+\n            | 402   | Payment Required              | 15.5.3  |\n            +-------+-------------------------------+---------+\n            | 403   | Forbidden                     | 15.5.4  |",
+          "chunk": 640,
+          "page": 0,
+          "document_id": "doc_818496e68519f685dc7b",
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "source": "rfc9110.txt",
+          "distance": 0.4362446665763855
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c534",
+          "text": "15.5.3.  402 Payment Required\n\n   The 402 (Payment Required) status code is reserved for future use.\n\n15.5.4.  403 Forbidden\n\n   The 403 (Forbidden) status code indicates that the server understood\n   the request but refuses to fulfill it.  A server that wishes to make\n   public why the request has been forbidden can describe that reason in\n   the response content (if any).\n\n   If authentication credentials were provided in the request, the\n   server considers them insufficient to grant access.  The client\n   SHOULD NOT automatically repeat the request with the same\n   credentials.  The client MAY repeat the request with new or different\n   credentials.  However, a request might be forbidden for reasons\n   unrelated to the credentials.\n\n   An origin server that wishes to \"hide\" the current existence of a\n   forbidden target resource MAY instead respond with a status code of\n   404 (Not Found).\n\n15.5.5.  404 Not Found",
+          "document_id": "doc_818496e68519f685dc7b",
+          "chunk": 534,
+          "source": "rfc9110.txt",
+          "page": 0,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "distance": 0.4745655059814453
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c353",
+          "text": "auth-param     = token BWS \"=\" BWS ( token / quoted-string )\n\n   Parameter values can be expressed either as \"token\" or as \"quoted-\n   string\" (Section 5.6).  Authentication scheme definitions need to\n   accept both notations, both for senders and recipients, to allow\n   recipients to use generic parsing components regardless of the\n   authentication scheme.\n\n   For backwards compatibility, authentication scheme definitions can\n   restrict the format for senders to one of the two variants.  This can\n   be important when it is known that deployed implementations will fail\n   when encountering one of the two formats.\n\n11.3.  Challenge and Response\n\n   A 401 (Unauthorized) response message is used by an origin server to\n   challenge the authorization of a user agent, including a\n   WWW-Authenticate header field containing at least one challenge\n   applicable to the requested resource.",
+          "chunk": 353,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "document_id": "doc_818496e68519f685dc7b",
+          "page": 0,
+          "source": "rfc9110.txt",
+          "distance": 0.49030929803848267
+        },
+        {
+          "id": "doc_818496e68519f685dc7b_p0_c357",
+          "text": "A server that receives valid credentials that are not adequate to\n   gain access ought to respond with the 403 (Forbidden) status code\n   (Section 15.5.4).\n\n   HTTP does not restrict applications to this simple challenge-response\n   framework for access authentication.  Additional mechanisms can be\n   used, such as authentication at the transport level or via message\n   encapsulation, and with additional header fields specifying\n   authentication information.  However, such additional mechanisms are\n   not defined by this specification.\n\n   Note that various custom mechanisms for user authentication use the\n   Set-Cookie and Cookie header fields, defined in [COOKIE], for passing\n   tokens related to authentication.\n\n11.5.  Establishing a Protection Space (Realm)\n\n   The \"realm\" authentication parameter is reserved for use by\n   authentication schemes that wish to indicate a scope of protection.",
+          "document_id": "doc_818496e68519f685dc7b",
+          "source": "rfc9110.txt",
+          "chunk": 357,
+          "page": 0,
+          "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+          "distance": 0.49216198921203613
+        }
+      ],
+      "review_criteria": [
+        "401 concerns lack of valid authentication credentials.",
+        "403 means understood but refused; credentials are not the only possible reason."
+      ],
+      "source": "RFC 9110, https://www.rfc-editor.org/rfc/rfc9110.html",
+      "retrieval_profile": "frozen saved original-context snapshot; retrieval not repeated"
+    },
+    {
+      "id": "travel_conditions",
+      "kind": "fictional_fixture",
+      "question": "Does every journey require advance approval, and is every travel expense reimbursed?",
+      "context": [
+        {
+          "id": "fixture_travel_policy",
+          "source": "travel_policy.txt",
+          "page": 0,
+          "text": "EvidenceShift fictional evaluation fixture — not an actual company policy.\n\nTravel approval\nStaff may request advance approval for domestic journeys, but domestic journeys do not require advance approval. International journeys require written advance approval from the team lead.\n\nCosts\nEligible travel expenses are reimbursed only when an itemized receipt is supplied. The policy does not promise reimbursement for every expense and does not specify any production passwords or API keys.\n"
+        }
+      ],
+      "review_criteria": [
+        "Domestic advance approval is optional; international written advance approval is required.",
+        "Reimbursement is limited to eligible expenses with itemized receipts."
+      ],
+      "retrieval_profile": "curated fixture evidence"
+    },
+    {
+      "id": "conflicting_deadlines",
+      "kind": "fictional_fixture",
+      "question": "What is the application deadline for the Robotics summer 2027 intake?",
+      "context": [
+        {
+          "id": "fixture_handbook",
+          "source": "admissions_handbook.txt",
+          "page": 0,
+          "text": "EvidenceShift fictional evaluation fixture — no actual admissions advice.\n\nFor the Robotics summer 2027 intake, the application deadline is 15 June 2027. This handbook contains no statement that it overrides other admissions documents.\n"
+        },
+        {
+          "id": "fixture_memo",
+          "source": "admissions_memo.txt",
+          "page": 0,
+          "text": "EvidenceShift fictional evaluation fixture — no actual admissions advice.\n\nFor the Robotics summer 2027 intake, the application deadline is 30 June 2027. This memo contains no statement that it overrides other admissions documents.\n"
+        }
+      ],
+      "review_criteria": [
+        "Report the conflict: 15 June versus 30 June 2027.",
+        "Cite both documents; no precedence is given."
+      ],
+      "retrieval_profile": "curated fixture evidence"
+    },
+    {
+      "id": "missing_password",
+      "kind": "fictional_fixture",
+      "question": "What is the production admin password for this company?",
+      "context": [
+        {
+          "id": "fixture_travel_policy",
+          "source": "travel_policy.txt",
+          "page": 0,
+          "text": "EvidenceShift fictional evaluation fixture — not an actual company policy.\n\nTravel approval\nStaff may request advance approval for domestic journeys, but domestic journeys do not require advance approval. International journeys require written advance approval from the team lead.\n\nCosts\nEligible travel expenses are reimbursed only when an itemized receipt is supplied. The policy does not promise reimbursement for every expense and does not specify any production passwords or API keys.\n"
+        }
+      ],
+      "review_criteria": [
+        "Exact prescribed abstention; do not invent credentials."
+      ],
+      "retrieval_profile": "curated fixture evidence"
+    }
+  ]
+}

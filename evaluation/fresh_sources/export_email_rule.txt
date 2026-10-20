@@ -1,0 +1,3 @@
+Fictional EvidenceShift evaluation document.
+
+The export service may send a completion email when an export finishes. Completion emails are optional. Disabling email does not prevent users from downloading completed exports from the dashboard.

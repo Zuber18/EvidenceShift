@@ -1,0 +1,38 @@
+{
+  "version": "document-e2e-1.0.0",
+  "fresh_plan_sha256": "7e4a8a51db0b723060c99162edd8c907fd26d8bca0be50db7d08ed5f7173cc9c",
+  "top_k": 5,
+  "formats": [
+    "txt",
+    "pdf",
+    "docx"
+  ],
+  "required_fixture_ids": {
+    "build_receipt": [
+      "fresh_build_receipt_rule"
+    ],
+    "export_email": [
+      "fresh_export_email_rule"
+    ],
+    "retention_exception": [
+      "fresh_retention_exception_default",
+      "fresh_retention_exception_exception"
+    ],
+    "workspace_access": [
+      "fresh_workspace_access_human",
+      "fresh_workspace_access_service"
+    ],
+    "batch_credits": [
+      "fresh_batch_credits_rate"
+    ],
+    "explicit_precedence": [
+      "fresh_explicit_precedence_new"
+    ],
+    "unresolved_dispatch": [
+      "fresh_unresolved_dispatch_alpha",
+      "fresh_unresolved_dispatch_beta"
+    ],
+    "missing_access_code": []
+  },
+  "note": "Coverage labels are used after retrieval only, never as filters or model inputs. Full operative fixture text is the exact normalized coverage marker. Empty requirements for the access-code question mean no positive answer evidence exists; recall is undefined."
+}

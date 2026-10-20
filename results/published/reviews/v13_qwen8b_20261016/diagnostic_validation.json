@@ -1,0 +1,17 @@
+{
+  "automated_component_tests_passed": 13,
+  "installer_checks": [
+    "fresh_install",
+    "repeat_install",
+    "preserve_existing_data",
+    "refuse_conflicting_added_file_before_writes",
+    "refuse_changed_baseline_before_writes"
+  ],
+  "saved_candidates_plus_controls_planned": 17,
+  "original_source_paragraphs_planned": 240,
+  "possible_confirmation_inputs_planned": 240,
+  "maximum_planned_input_bytes": 5976,
+  "input_byte_budget": 6000,
+  "real_model_inference_performed": false,
+  "interpretation": "Mechanics and input planning verified. Semantic performance awaits the local Qwen recheck."
+}

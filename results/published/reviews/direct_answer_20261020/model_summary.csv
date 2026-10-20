@@ -1,0 +1,4 @@
+model,planned_model_trials,completed,output_limit_failures,supported_substantive_answers,clean_justified_exact_abstentions,clean_justified_nonexact_abstentions,stage_seconds_sum
+qwen3:4b,10,4,6,0,0,0,570.07
+qwen3:8b,10,10,0,3,4,0,187.22
+gemma3:4b,10,10,0,0,2,1,101.03

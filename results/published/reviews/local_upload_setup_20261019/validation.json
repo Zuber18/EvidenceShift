@@ -1,0 +1,17 @@
+{
+  "service_tests_passed": 13,
+  "installer_checks": [
+    "fresh_install",
+    "repeat_install",
+    "existing_API_cloud_app_and_data_preserved",
+    "identity_and_index_ignore_rules",
+    "conflicting_edit_refusal",
+    "changed_generator_hash_refusal"
+  ],
+  "ui_python_syntax_check": "passed",
+  "test_doubles": "Controlled parameter arrays, model responses and store/search; actual TXT parsing.",
+  "real_encoder_fingerprinting_executed_here": false,
+  "live_streamlit_browser_tested_here": false,
+  "live_ollama_tested_here": false,
+  "next_check": "Representative local document uploads and questions through the UI."
+}

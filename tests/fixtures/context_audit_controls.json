@@ -1,0 +1,121 @@
+[
+  {
+    "name": "hidden_opposing_deadline",
+    "kind": "saved_negative_control",
+    "question": "What is the application deadline for the Robotics summer 2027 intake?",
+    "candidate_answer": "The application deadline for the Robotics summer 2027 intake is 30 June 2027. [fixture_memo]",
+    "context": [
+      {
+        "id": "fixture_memo",
+        "source": "admissions_memo.txt",
+        "page": 0,
+        "text": "EvidenceShift fictional evaluation fixture \u2014 no actual admissions advice.\n\nFor the Robotics summer 2027 intake, the application deadline is 30 June 2027. This memo contains no statement that it overrides other admissions documents.\n"
+      },
+      {
+        "id": "fixture_handbook",
+        "source": "admissions_handbook.txt",
+        "page": 0,
+        "text": "EvidenceShift fictional evaluation fixture \u2014 no actual admissions advice.\n\nFor the Robotics summer 2027 intake, the application deadline is 15 June 2027. This handbook contains no statement that it overrides other admissions documents.\n"
+      }
+    ],
+    "source_run_id": "grounded_20261015T125129Z_0092a985",
+    "expected_context_result": "context_objection_confirmed"
+  },
+  {
+    "name": "certainty_overstatement",
+    "kind": "saved_negative_control",
+    "question": "Does HTTP 410 Gone mean a resource is definitely gone forever, and which status should be used if permanence is unknown?",
+    "candidate_answer": "HTTP 410 Gone means a resource is definitely gone forever [doc_818496e68519f685dc7b_p0_c539]\nIf permanence is unknown, the status code 404 (Not Found) should be used [doc_818496e68519f685dc7b_p0_c539]",
+    "context": [
+      {
+        "id": "doc_818496e68519f685dc7b_p0_c540",
+        "text": "The 410 response is primarily intended to assist the task of web\n   maintenance by notifying the recipient that the resource is\n   intentionally unavailable and that the server owners desire that\n   remote links to that resource be removed.  Such an event is common\n   for limited-time, promotional services and for resources belonging to\n   individuals no longer associated with the origin server's site.  It\n   is not necessary to mark all permanently unavailable resources as\n   \"gone\" or to keep the mark for any length of time -- that is left to\n   the discretion of the server owner.\n\n   A 410 response is heuristically cacheable; i.e., unless otherwise\n   indicated by the method definition or explicit cache controls (see\n   Section 4.2.2 of [CACHING]).\n\n15.5.12.  411 Length Required",
+        "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+        "source": "rfc9110.txt",
+        "document_id": "doc_818496e68519f685dc7b",
+        "page": 0,
+        "chunk": 540,
+        "distance": 0.1987876296043396
+      },
+      {
+        "id": "doc_818496e68519f685dc7b_p0_c539",
+        "text": "Conflicts are most likely to occur in response to a PUT request.  For\n   example, if versioning were being used and the representation being\n   PUT included changes to a resource that conflict with those made by\n   an earlier (third-party) request, the origin server might use a 409\n   response to indicate that it can't complete the request.  In this\n   case, the response representation would likely contain information\n   useful for merging the differences based on the revision history.\n\n15.5.11.  410 Gone\n\n   The 410 (Gone) status code indicates that access to the target\n   resource is no longer available at the origin server and that this\n   condition is likely to be permanent.  If the origin server does not\n   know, or has no facility to determine, whether or not the condition\n   is permanent, the status code 404 (Not Found) ought to be used\n   instead.",
+        "source": "rfc9110.txt",
+        "chunk": 539,
+        "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+        "page": 0,
+        "document_id": "doc_818496e68519f685dc7b",
+        "distance": 0.3671145439147949
+      },
+      {
+        "id": "doc_818496e68519f685dc7b_p0_c535",
+        "text": "15.5.5.  404 Not Found\n\n   The 404 (Not Found) status code indicates that the origin server did\n   not find a current representation for the target resource or is not\n   willing to disclose that one exists.  A 404 status code does not\n   indicate whether this lack of representation is temporary or\n   permanent; the 410 (Gone) status code is preferred over 404 if the\n   origin server knows, presumably through some configurable means, that\n   the condition is likely to be permanent.\n\n   A 404 response is heuristically cacheable; i.e., unless otherwise\n   indicated by the method definition or explicit cache controls (see\n   Section 4.2.2 of [CACHING]).\n\n15.5.6.  405 Method Not Allowed",
+        "chunk": 535,
+        "page": 0,
+        "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+        "source": "rfc9110.txt",
+        "document_id": "doc_818496e68519f685dc7b",
+        "distance": 0.4247250556945801
+      },
+      {
+        "id": "doc_818496e68519f685dc7b_p0_c538",
+        "text": "15.5.9.  408 Request Timeout\n\n   The 408 (Request Timeout) status code indicates that the server did\n   not receive a complete request message within the time that it was\n   prepared to wait.\n\n   If the client has an outstanding request in transit, it MAY repeat\n   that request.  If the current connection is not usable (e.g., as it\n   would be in HTTP/1.1 because request delimitation is lost), a new\n   connection will be used.\n\n15.5.10.  409 Conflict\n\n   The 409 (Conflict) status code indicates that the request could not\n   be completed due to a conflict with the current state of the target\n   resource.  This code is used in situations where the user might be\n   able to resolve the conflict and resubmit the request.  The server\n   SHOULD generate content that includes enough information for a user\n   to recognize the source of the conflict.",
+        "page": 0,
+        "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+        "document_id": "doc_818496e68519f685dc7b",
+        "chunk": 538,
+        "source": "rfc9110.txt",
+        "distance": 0.4407956004142761
+      },
+      {
+        "id": "doc_818496e68519f685dc7b_p0_c479",
+        "text": "Responses with status codes that are defined as heuristically\n   cacheable (e.g., 200, 203, 204, 206, 300, 301, 308, 404, 405, 410,\n   414, and 501 in this specification) can be reused by a cache with\n   heuristic expiration unless otherwise indicated by the method\n   definition or explicit cache controls [CACHING]; all other status\n   codes are not heuristically cacheable.\n\n   Additional status codes, outside the scope of this specification,\n   have been specified for use in HTTP.  All such status codes ought to\n   be registered within the \"Hypertext Transfer Protocol (HTTP) Status\n   Code Registry\", as described in Section 16.2.\n\n15.2.  Informational 1xx",
+        "document_id": "doc_818496e68519f685dc7b",
+        "sha256": "21c1cdce6ab0e5509b04d84a28000836c7a087cf786efe6f04877ebfff47232a",
+        "chunk": 479,
+        "page": 0,
+        "source": "rfc9110.txt",
+        "distance": 0.45457297563552856
+      }
+    ],
+    "source_run_id": "grounded_20261015T105114Z_1173d6be",
+    "expected_context_result": "context_objection_confirmed"
+  },
+  {
+    "name": "invented_deadline_time",
+    "kind": "saved_negative_control",
+    "question": "What is the application deadline for the Robotics summer 2027 intake?",
+    "candidate_answer": "The application deadline for the Robotics summer 2027 intake is 15 June 2:00 PM [fixture_handbook]\nThe application deadline for the Robotics summer 2027 intake is 30 June 2027 [fixture_memo]",
+    "context": [
+      {
+        "id": "fixture_handbook",
+        "source": "admissions_handbook.txt",
+        "page": 0,
+        "text": "EvidenceShift fictional evaluation fixture \u2014 no actual admissions advice.\n\nFor the Robotics summer 2027 intake, the application deadline is 15 June 2027. This handbook contains no statement that it overrides other admissions documents.\n"
+      },
+      {
+        "id": "fixture_memo",
+        "source": "admissions_memo.txt",
+        "page": 0,
+        "text": "EvidenceShift fictional evaluation fixture \u2014 no actual admissions advice.\n\nFor the Robotics summer 2027 intake, the application deadline is 30 June 2027. This memo contains no statement that it overrides other admissions documents.\n"
+      }
+    ],
+    "source_run_id": "grounded_20261015T105300Z_e471dc6c",
+    "expected_context_result": "context_objection_confirmed"
+  },
+  {
+    "name": "removed_travel_qualification",
+    "kind": "synthetic_negative_control",
+    "question": "Does every journey require advance approval, and is every travel expense reimbursed?",
+    "candidate_answer": "Every journey requires written advance approval, including domestic journeys. [fixture_travel_policy]\nEvery travel expense is reimbursed even without an itemized receipt. [fixture_travel_policy]",
+    "context": [
+      {
+        "id": "fixture_travel_policy",
+        "source": "travel_policy.txt",
+        "page": 0,
+        "text": "EvidenceShift fictional evaluation fixture \u2014 not an actual company policy.\n\nTravel approval\nStaff may request advance approval for domestic journeys, but domestic journeys do not require advance approval. International journeys require written advance approval from the team lead.\n\nCosts\nEligible travel expenses are reimbursed only when an itemized receipt is supplied. The policy does not promise reimbursement for every expense and does not specify any production passwords or API keys.\n"
+      }
+    ],
+    "expected_context_result": "context_objection_confirmed"
+  }
+]

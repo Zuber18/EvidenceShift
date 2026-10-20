@@ -1,0 +1,31 @@
+{
+  "version": "direct-answer-baseline-1.0.0",
+  "job": {
+    "job_id": "a88f2107e8d97e926706",
+    "model": "qwen3:8b",
+    "case_id": "confirm_1",
+    "question": "Does receipt L-84 prove that the booking is approved?",
+    "order": "no_context"
+  },
+  "context": [],
+  "status": "empty_context_control",
+  "candidate_answer": "The supplied evidence does not answer this question.",
+  "raw_answer": null,
+  "production_delivery": false,
+  "factual_correctness": "not_automatically_scored",
+  "stages": [],
+  "checks": {
+    "completed": true,
+    "citation_ids": [],
+    "unknown_citation_ids": [],
+    "citation_ids_valid": true,
+    "has_citations": false,
+    "exact_abstention": true,
+    "abstention_with_extra_text": false,
+    "factual_correctness": "not_automatically_scored",
+    "semantic_citation_support": "not_automatically_scored",
+    "answer_completeness": "not_automatically_scored"
+  },
+  "model_calls": 0,
+  "complete": true
+}

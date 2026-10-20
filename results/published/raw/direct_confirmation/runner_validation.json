@@ -1,0 +1,10 @@
+{
+  "self_tests_passed": 4,
+  "controlled_saved_records": 17,
+  "controlled_generation_calls": 16,
+  "completed_resume_additional_calls": 0,
+  "frozen_prompt_options_no_schema_preserved": true,
+  "exact_context_reversal_pairs": 8,
+  "actual_Ollama_executed_during_packaging": false,
+  "semantic_reliability_established": false
+}

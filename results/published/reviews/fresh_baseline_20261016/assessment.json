@@ -1,0 +1,762 @@
+{
+  "assessment_status": "final_project_assessment",
+  "reviewer": "ChatGPT",
+  "method": "Source-based review of original supplied passages, generated claims, code-rendered citations and raw selection/generation stages. Factual content, citation entailment, presentation and mechanical failures are assessed separately.",
+  "source_archive_sha256": "222a64929c28c12f9b37955effce0a61cbfcaec7eb4bfff8488de44057498986",
+  "source_results_sha256": "b8f96ae3f5ff70df70f1972f959c9c8ddac578b2dc6b91a65c61ce4298b8f52f",
+  "frozen_plan_sha256": "7e4a8a51db0b723060c99162edd8c907fd26d8bca0be50db7d08ed5f7173cc9c",
+  "counts": {
+    "total_records": 24,
+    "nonempty_context_records": 16,
+    "empty_context_code_controls": 8,
+    "nonempty_completed_candidates": 15,
+    "core_supported_nonempty_outcomes": 13,
+    "core_supported_with_presentation_caveat": 2,
+    "materially_incorrect_nonempty_answers": 2,
+    "mechanical_contract_failures": 1,
+    "supported_substantive_answers": 11,
+    "justified_nonempty_context_abstentions": 2,
+    "substantive_answers_with_material_error": 2,
+    "rendered_claims": 28,
+    "claim_support_counts": {
+      "contradicted": 2,
+      "supported": 21,
+      "supported_with_redundant_citation": 1,
+      "supported_derivation_using_question_and_cited_rate": 4
+    },
+    "model_calls": 30,
+    "schema_valid_stop_completions": 30,
+    "maximum_input_bytes_with_schema": 2123,
+    "summed_stage_seconds": 81.31
+  },
+  "structural_validation": {
+    "frozen_plan_hash_matches": true,
+    "baseline_module_hash_matches": true,
+    "all_original_contexts_and_orders_match_plan": true,
+    "source_text_hashes_match": true,
+    "all_30_raw_outputs_locally_schema_validated": true,
+    "all_selected_quotes_and_citation_mappings_recomputed": true,
+    "all_15_nonempty_candidates_recomputed": true,
+    "dispatch_contract_failure_reproduced": true,
+    "no_model_verifier_calls": true,
+    "all_delivery_answers_none": true
+  },
+  "ordering_findings": "Seven of eight scenario pairs produce candidates in both orders; their core conclusions agree, including the consistently wrong build-start conclusion. The dispatch pair differs in mechanical completion and answerability labels. Precedence explanation appears only in supplied order. Consistency is not correctness.",
+  "decision": "Preserve this first fresh run without selective retries. Proceed to end-to-end document ingestion/retrieval evaluation using frozen generation, keeping semantic judgments advisory. Do not claim reliable factuality or deploy an automatic factual gate.",
+  "next_evaluation_scope": [
+    "Verify TXT/PDF/DOCX ingestion and retained source/page metadata.",
+    "Measure whether semantic retrieval includes all evidence needed for qualifications, precedence and conflicts.",
+    "Assess generated answer correctness and citation support separately on the actually retrieved context.",
+    "Keep the build negation error, conflict-label failure and presentation caveats in published limitations."
+  ],
+  "limits": [
+    "Fresh authored synthetic cases, not an independently held-out or representative real-document benchmark.",
+    "Fixed supplied passages bypass retrieval; no new retrieval or hosted performance result is established.",
+    "No direct accuracy-improvement claim relative to earlier different case sets.",
+    "Only one run per order under a fixed configuration; seed/temperature settings do not establish repeatability across devices or providers.",
+    "Core-supported counts include two justified abstentions and two presentation caveats; empty-context controls are excluded.",
+    "Claim counts are correlated and verbosity-dependent, not an independent 26/28 reliability estimate.",
+    "Source-based project assessment is not independent human validation."
+  ],
+  "reviews": [
+    {
+      "record_index": 0,
+      "case_id": "build_receipt",
+      "variant": "supplied",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "material_error",
+      "citation_assessment": "contains_contradicted_claim",
+      "presentation_assessment": "material_error",
+      "notes": "The first claim turns a receipt into a guarantee that execution started, directly contrary to the rule that it does not confirm execution and may never run. Later claims about receipt, success uncertainty, identifiers and status categories are supported. The incorrect first claim makes the answer materially wrong.",
+      "candidate_answer": "A build receipt means the build has started. [fresh_build_receipt_rule]\nA build receipt does not guarantee the build will succeed. [fresh_build_receipt_rule]\nA build receipt confirms that the scheduler received the build request. [fresh_build_receipt_rule]\nA build receipt includes a request identifier. [fresh_build_receipt_extra]\nThe status page shows queued, running, failed, or completed builds. [fresh_build_receipt_extra]",
+      "run_id": "candidate_20261016T102708Z_e1f56c7f",
+      "source_passage_ids": [
+        "fresh_build_receipt_rule",
+        "fresh_build_receipt_extra"
+      ]
+    },
+    {
+      "record_index": 1,
+      "case_id": "build_receipt",
+      "variant": "reversed",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "material_error",
+      "citation_assessment": "contains_contradicted_claim",
+      "presentation_assessment": "material_error",
+      "notes": "The same started-execution error remains after reversal. The no-success-guarantee claim is supported by the rule passage, but its extra citation to the identifier/status passage is not needed and does not independently support that claim.",
+      "candidate_answer": "A build receipt means the build has started. [fresh_build_receipt_rule]\nA build receipt does not guarantee the build will succeed. [fresh_build_receipt_extra] [fresh_build_receipt_rule]",
+      "run_id": "candidate_20261016T102718Z_cd7bf9eb",
+      "source_passage_ids": [
+        "fresh_build_receipt_extra",
+        "fresh_build_receipt_rule"
+      ]
+    },
+    {
+      "record_index": 2,
+      "case_id": "build_receipt",
+      "variant": "no_context",
+      "pipeline_status": "empty_context_control",
+      "factual_assessment": "not_applicable_code_control",
+      "citation_assessment": "not_applicable_code_control",
+      "presentation_assessment": "code_control",
+      "notes": "Exact abstention rendered by code with zero model calls. Excluded from model factual-reasoning counts.",
+      "candidate_answer": "The supplied evidence does not answer this question.",
+      "run_id": "candidate_20261016T102722Z_5b4b1c4d",
+      "source_passage_ids": []
+    },
+    {
+      "record_index": 3,
+      "case_id": "export_email",
+      "variant": "supplied",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "core_supported",
+      "citation_assessment": "supported",
+      "presentation_assessment": "adequate",
+      "notes": "Correctly preserves optional completion email and continued dashboard download when email is disabled. Both claims have direct support in the cited rule.",
+      "candidate_answer": "The export service may send a completion email when an export finishes. Completion emails are optional. [fresh_export_email_rule]\nDisabling email does not prevent users from downloading completed exports from the dashboard. [fresh_export_email_rule]",
+      "run_id": "candidate_20261016T102722Z_e28cc561",
+      "source_passage_ids": [
+        "fresh_export_email_rule",
+        "fresh_export_email_extra"
+      ]
+    },
+    {
+      "record_index": 4,
+      "case_id": "export_email",
+      "variant": "reversed",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "core_supported",
+      "citation_assessment": "supported",
+      "presentation_assessment": "adequate",
+      "notes": "Same supported optional-email and dashboard-access conclusions under reversal.",
+      "candidate_answer": "The export service may send a completion email when an export finishes. Completion emails are optional. [fresh_export_email_rule]\nDisabling email does not prevent users from downloading completed exports from the dashboard. [fresh_export_email_rule]",
+      "run_id": "candidate_20261016T102727Z_645d50b8",
+      "source_passage_ids": [
+        "fresh_export_email_extra",
+        "fresh_export_email_rule"
+      ]
+    },
+    {
+      "record_index": 5,
+      "case_id": "export_email",
+      "variant": "no_context",
+      "pipeline_status": "empty_context_control",
+      "factual_assessment": "not_applicable_code_control",
+      "citation_assessment": "not_applicable_code_control",
+      "presentation_assessment": "code_control",
+      "notes": "Exact abstention rendered by code with zero model calls. Excluded from model factual-reasoning counts.",
+      "candidate_answer": "The supplied evidence does not answer this question.",
+      "run_id": "candidate_20261016T102732Z_38ef99ad",
+      "source_passage_ids": []
+    },
+    {
+      "record_index": 6,
+      "case_id": "retention_exception",
+      "variant": "supplied",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "core_supported",
+      "citation_assessment": "supported",
+      "presentation_assessment": "adequate",
+      "notes": "Correctly distinguishes the 60-day default from the active-audit hold until release. Each claim cites the applicable passage.",
+      "candidate_answer": "Run logs are deleted after 60 days by default unless an exception policy applies. [fresh_retention_exception_default]\nRun logs marked for an active audit are retained until the audit owner releases the hold, even if they are older than 60 days. [fresh_retention_exception_exception]",
+      "run_id": "candidate_20261016T102732Z_9314cf31",
+      "source_passage_ids": [
+        "fresh_retention_exception_default",
+        "fresh_retention_exception_exception"
+      ]
+    },
+    {
+      "record_index": 7,
+      "case_id": "retention_exception",
+      "variant": "reversed",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "core_supported",
+      "citation_assessment": "supported",
+      "presentation_assessment": "adequate",
+      "notes": "Same correct exception/default interpretation after reversal; the order of explanation changes without changing the rule.",
+      "candidate_answer": "Run logs are not deleted after 60 days if they are marked for an active audit and the audit owner has not released the hold. [fresh_retention_exception_exception]\nThe default retention period for run logs is 60 days, and they are deleted after that period unless an exception policy applies. [fresh_retention_exception_default]",
+      "run_id": "candidate_20261016T102738Z_0a3236b7",
+      "source_passage_ids": [
+        "fresh_retention_exception_exception",
+        "fresh_retention_exception_default"
+      ]
+    },
+    {
+      "record_index": 8,
+      "case_id": "retention_exception",
+      "variant": "no_context",
+      "pipeline_status": "empty_context_control",
+      "factual_assessment": "not_applicable_code_control",
+      "citation_assessment": "not_applicable_code_control",
+      "presentation_assessment": "code_control",
+      "notes": "Exact abstention rendered by code with zero model calls. Excluded from model factual-reasoning counts.",
+      "candidate_answer": "The supplied evidence does not answer this question.",
+      "run_id": "candidate_20261016T102744Z_ad773052",
+      "source_passage_ids": []
+    },
+    {
+      "record_index": 9,
+      "case_id": "workspace_access",
+      "variant": "supplied",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "core_supported",
+      "citation_assessment": "supported",
+      "presentation_assessment": "adequate",
+      "notes": "Correctly requires both human membership verification and two-factor authentication, and distinguishes the service-account token rule. Citations match each part.",
+      "candidate_answer": "Verified membership alone is not sufficient for human users to access the staging workspace; two-factor authentication must also be enabled. [fresh_workspace_access_human]\nService accounts require an active workspace token to access the staging workspace, and the two-factor authentication rule for human users does not apply to them. [fresh_workspace_access_service]",
+      "run_id": "candidate_20261016T102744Z_566c3d45",
+      "source_passage_ids": [
+        "fresh_workspace_access_human",
+        "fresh_workspace_access_service"
+      ]
+    },
+    {
+      "record_index": 10,
+      "case_id": "workspace_access",
+      "variant": "reversed",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "core_supported",
+      "citation_assessment": "supported",
+      "presentation_assessment": "adequate",
+      "notes": "Same supported human and service-account distinctions after reversal.",
+      "candidate_answer": "Verified membership alone is not sufficient for human users to access the staging workspace; two-factor authentication must also be enabled. [fresh_workspace_access_human]\nService accounts require an active workspace token to access the staging workspace, and the human-user two-factor authentication rule does not apply to them. [fresh_workspace_access_service]",
+      "run_id": "candidate_20261016T102751Z_dbe5eff7",
+      "source_passage_ids": [
+        "fresh_workspace_access_service",
+        "fresh_workspace_access_human"
+      ]
+    },
+    {
+      "record_index": 11,
+      "case_id": "workspace_access",
+      "variant": "no_context",
+      "pipeline_status": "empty_context_control",
+      "factual_assessment": "not_applicable_code_control",
+      "citation_assessment": "not_applicable_code_control",
+      "presentation_assessment": "code_control",
+      "notes": "Exact abstention rendered by code with zero model calls. Excluded from model factual-reasoning counts.",
+      "candidate_answer": "The supplied evidence does not answer this question.",
+      "run_id": "candidate_20261016T102757Z_c4a0a9bc",
+      "source_passage_ids": []
+    },
+    {
+      "record_index": 12,
+      "case_id": "batch_credits",
+      "variant": "supplied",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "core_supported",
+      "citation_assessment": "supported_using_question_and_rate_derivation",
+      "presentation_assessment": "adequate",
+      "notes": "Correct derivation: seven batches minus three free leaves four chargeable, at four credits each, for 16 credits. The quantity seven comes from the question and the allowance/rate from the cited passage.",
+      "candidate_answer": "For seven batches in one job, the first three batches are free, and the remaining four batches each cost four processing credits. [fresh_batch_credits_rate]\nThe total number of processing credits charged for seven batches in one job is sixteen. [fresh_batch_credits_rate]",
+      "run_id": "candidate_20261016T102757Z_6d7cad45",
+      "source_passage_ids": [
+        "fresh_batch_credits_rate",
+        "fresh_batch_credits_extra"
+      ]
+    },
+    {
+      "record_index": 13,
+      "case_id": "batch_credits",
+      "variant": "reversed",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "core_supported",
+      "citation_assessment": "supported_using_question_and_rate_derivation",
+      "presentation_assessment": "adequate",
+      "notes": "Same correct 16-credit derivation with reversed evidence. Citation support includes arithmetic using the question, not a literal source quotation of sixteen.",
+      "candidate_answer": "For seven batches in one job, the first three batches are free, and the remaining four batches each cost four processing credits. [fresh_batch_credits_rate]\nThe total number of processing credits charged for seven batches in one job is sixteen. [fresh_batch_credits_rate]",
+      "run_id": "candidate_20261016T102802Z_cf10997c",
+      "source_passage_ids": [
+        "fresh_batch_credits_extra",
+        "fresh_batch_credits_rate"
+      ]
+    },
+    {
+      "record_index": 14,
+      "case_id": "batch_credits",
+      "variant": "no_context",
+      "pipeline_status": "empty_context_control",
+      "factual_assessment": "not_applicable_code_control",
+      "citation_assessment": "not_applicable_code_control",
+      "presentation_assessment": "code_control",
+      "notes": "Exact abstention rendered by code with zero model calls. Excluded from model factual-reasoning counts.",
+      "candidate_answer": "The supplied evidence does not answer this question.",
+      "run_id": "candidate_20261016T102808Z_d8f604de",
+      "source_passage_ids": []
+    },
+    {
+      "record_index": 15,
+      "case_id": "explicit_precedence",
+      "variant": "supplied",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "core_supported",
+      "citation_assessment": "supported",
+      "presentation_assessment": "adequate",
+      "notes": "Correctly selects 12 November 2028 and explicitly explains that C-2 replaces C-1. Both claims cite the operative replacement notice.",
+      "candidate_answer": "The maintenance date for cluster Cedar is 12 November 2028. [fresh_explicit_precedence_new]\nNotice C-2 replaces Notice C-1 in full for cluster Cedar. [fresh_explicit_precedence_new]",
+      "run_id": "candidate_20261016T102808Z_e16bdda6",
+      "source_passage_ids": [
+        "fresh_explicit_precedence_old",
+        "fresh_explicit_precedence_new"
+      ]
+    },
+    {
+      "record_index": 16,
+      "case_id": "explicit_precedence",
+      "variant": "reversed",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "core_supported",
+      "citation_assessment": "supported",
+      "presentation_assessment": "explanation_omitted",
+      "notes": "The selected date and citation are correct. The answer omits the replacement explanation requested by the prespecified review criterion; the actual question asks which date applies, so this is an explanation caveat rather than a false date.",
+      "candidate_answer": "The maintenance date for cluster Cedar is 12 November 2028. [fresh_explicit_precedence_new]",
+      "run_id": "candidate_20261016T102813Z_b49cad7e",
+      "source_passage_ids": [
+        "fresh_explicit_precedence_new",
+        "fresh_explicit_precedence_old"
+      ]
+    },
+    {
+      "record_index": 17,
+      "case_id": "explicit_precedence",
+      "variant": "no_context",
+      "pipeline_status": "empty_context_control",
+      "factual_assessment": "not_applicable_code_control",
+      "citation_assessment": "not_applicable_code_control",
+      "presentation_assessment": "code_control",
+      "notes": "Exact abstention rendered by code with zero model calls. Excluded from model factual-reasoning counts.",
+      "candidate_answer": "The supplied evidence does not answer this question.",
+      "run_id": "candidate_20261016T102817Z_873e0dbe",
+      "source_passage_ids": []
+    },
+    {
+      "record_index": 18,
+      "case_id": "unresolved_dispatch",
+      "variant": "supplied",
+      "pipeline_status": "mechanical_failure",
+      "factual_assessment": "no_completed_candidate",
+      "citation_assessment": "no_completed_candidate",
+      "presentation_assessment": "not_completed",
+      "notes": "No candidate is recorded because selection says supported while generation says conflict. Both selected source dates are preserved in the raw generated claims, but that latent content is not counted as a completed answer. This is a selection/generation contract failure, not a transport or JSON-schema failure. The selection category is itself inappropriate for unresolved opposing dates.",
+      "candidate_answer": null,
+      "run_id": "candidate_20261016T102817Z_6327562d",
+      "source_passage_ids": [
+        "fresh_unresolved_dispatch_alpha",
+        "fresh_unresolved_dispatch_beta"
+      ]
+    },
+    {
+      "record_index": 19,
+      "case_id": "unresolved_dispatch",
+      "variant": "reversed",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "core_supported",
+      "citation_assessment": "supported",
+      "presentation_assessment": "conflict_only_implicit_and_mislabelled",
+      "notes": "Both dates and their source attributions are correct. However, the response type is supported and the answer does not explicitly say that the date remains unresolved. This is implicit conflict reporting with a presentation/answerability-label caveat; it is not proof that one authoritative date was established.",
+      "candidate_answer": "The dispatch date for parcel group R6 is 14 April 2029 according to Dispatch sheet Beta. [fresh_unresolved_dispatch_beta]\nThe dispatch date for parcel group R6 is 6 April 2029 according to Dispatch sheet Alpha. [fresh_unresolved_dispatch_alpha]",
+      "run_id": "candidate_20261016T102823Z_49a91e60",
+      "source_passage_ids": [
+        "fresh_unresolved_dispatch_beta",
+        "fresh_unresolved_dispatch_alpha"
+      ]
+    },
+    {
+      "record_index": 20,
+      "case_id": "unresolved_dispatch",
+      "variant": "no_context",
+      "pipeline_status": "empty_context_control",
+      "factual_assessment": "not_applicable_code_control",
+      "citation_assessment": "not_applicable_code_control",
+      "presentation_assessment": "code_control",
+      "notes": "Exact abstention rendered by code with zero model calls. Excluded from model factual-reasoning counts.",
+      "candidate_answer": "The supplied evidence does not answer this question.",
+      "run_id": "candidate_20261016T102829Z_b4cb6189",
+      "source_passage_ids": []
+    },
+    {
+      "record_index": 21,
+      "case_id": "missing_access_code",
+      "variant": "supplied",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "core_supported",
+      "citation_assessment": "not_applicable_justified_abstention",
+      "presentation_assessment": "adequate",
+      "notes": "Correct prescribed abstention: none of the supplied passages states the requested access code. This is an evidence-bearing answerability test, distinct from an empty-context code control.",
+      "candidate_answer": "The supplied evidence does not answer this question.",
+      "run_id": "candidate_20261016T102829Z_9fa7689b",
+      "source_passage_ids": [
+        "fresh_missing_access_code_hours",
+        "fresh_missing_access_code_booking"
+      ]
+    },
+    {
+      "record_index": 22,
+      "case_id": "missing_access_code",
+      "variant": "reversed",
+      "pipeline_status": "candidate_recorded",
+      "factual_assessment": "core_supported",
+      "citation_assessment": "not_applicable_justified_abstention",
+      "presentation_assessment": "adequate",
+      "notes": "Same justified abstention after reversal. No code or opening-hour substitution is invented.",
+      "candidate_answer": "The supplied evidence does not answer this question.",
+      "run_id": "candidate_20261016T102830Z_adcd7e32",
+      "source_passage_ids": [
+        "fresh_missing_access_code_booking",
+        "fresh_missing_access_code_hours"
+      ]
+    },
+    {
+      "record_index": 23,
+      "case_id": "missing_access_code",
+      "variant": "no_context",
+      "pipeline_status": "empty_context_control",
+      "factual_assessment": "not_applicable_code_control",
+      "citation_assessment": "not_applicable_code_control",
+      "presentation_assessment": "code_control",
+      "notes": "Exact abstention rendered by code with zero model calls. Excluded from model factual-reasoning counts.",
+      "candidate_answer": "The supplied evidence does not answer this question.",
+      "run_id": "candidate_20261016T102832Z_0aceae02",
+      "source_passage_ids": []
+    }
+  ],
+  "claim_reviews": [
+    {
+      "record_index": 0,
+      "case_id": "build_receipt",
+      "variant": "supplied",
+      "claim_index": 0,
+      "claim_text": "A build receipt means the build has started.",
+      "citation_support": "contradicted",
+      "passage_ids": [
+        "fresh_build_receipt_rule"
+      ],
+      "notes": "The cited rule denies a receipt guarantee of execution; receipt does not establish that execution started."
+    },
+    {
+      "record_index": 0,
+      "case_id": "build_receipt",
+      "variant": "supplied",
+      "claim_index": 1,
+      "claim_text": "A build receipt does not guarantee the build will succeed.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_build_receipt_rule"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 0,
+      "case_id": "build_receipt",
+      "variant": "supplied",
+      "claim_index": 2,
+      "claim_text": "A build receipt confirms that the scheduler received the build request.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_build_receipt_rule"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 0,
+      "case_id": "build_receipt",
+      "variant": "supplied",
+      "claim_index": 3,
+      "claim_text": "A build receipt includes a request identifier.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_build_receipt_extra"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 0,
+      "case_id": "build_receipt",
+      "variant": "supplied",
+      "claim_index": 4,
+      "claim_text": "The status page shows queued, running, failed, or completed builds.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_build_receipt_extra"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 1,
+      "case_id": "build_receipt",
+      "variant": "reversed",
+      "claim_index": 0,
+      "claim_text": "A build receipt means the build has started.",
+      "citation_support": "contradicted",
+      "passage_ids": [
+        "fresh_build_receipt_rule"
+      ],
+      "notes": "The cited rule denies a receipt guarantee of execution; receipt does not establish that execution started."
+    },
+    {
+      "record_index": 1,
+      "case_id": "build_receipt",
+      "variant": "reversed",
+      "claim_index": 1,
+      "claim_text": "A build receipt does not guarantee the build will succeed.",
+      "citation_support": "supported_with_redundant_citation",
+      "passage_ids": [
+        "fresh_build_receipt_extra",
+        "fresh_build_receipt_rule"
+      ],
+      "notes": "The rule passage supports the claim; the identifier/status passage is an irrelevant extra citation."
+    },
+    {
+      "record_index": 3,
+      "case_id": "export_email",
+      "variant": "supplied",
+      "claim_index": 0,
+      "claim_text": "The export service may send a completion email when an export finishes. Completion emails are optional.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_export_email_rule"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 3,
+      "case_id": "export_email",
+      "variant": "supplied",
+      "claim_index": 1,
+      "claim_text": "Disabling email does not prevent users from downloading completed exports from the dashboard.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_export_email_rule"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 4,
+      "case_id": "export_email",
+      "variant": "reversed",
+      "claim_index": 0,
+      "claim_text": "The export service may send a completion email when an export finishes. Completion emails are optional.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_export_email_rule"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 4,
+      "case_id": "export_email",
+      "variant": "reversed",
+      "claim_index": 1,
+      "claim_text": "Disabling email does not prevent users from downloading completed exports from the dashboard.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_export_email_rule"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 6,
+      "case_id": "retention_exception",
+      "variant": "supplied",
+      "claim_index": 0,
+      "claim_text": "Run logs are deleted after 60 days by default unless an exception policy applies.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_retention_exception_default"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 6,
+      "case_id": "retention_exception",
+      "variant": "supplied",
+      "claim_index": 1,
+      "claim_text": "Run logs marked for an active audit are retained until the audit owner releases the hold, even if they are older than 60 days.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_retention_exception_exception"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 7,
+      "case_id": "retention_exception",
+      "variant": "reversed",
+      "claim_index": 0,
+      "claim_text": "Run logs are not deleted after 60 days if they are marked for an active audit and the audit owner has not released the hold.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_retention_exception_exception"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 7,
+      "case_id": "retention_exception",
+      "variant": "reversed",
+      "claim_index": 1,
+      "claim_text": "The default retention period for run logs is 60 days, and they are deleted after that period unless an exception policy applies.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_retention_exception_default"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 9,
+      "case_id": "workspace_access",
+      "variant": "supplied",
+      "claim_index": 0,
+      "claim_text": "Verified membership alone is not sufficient for human users to access the staging workspace; two-factor authentication must also be enabled.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_workspace_access_human"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 9,
+      "case_id": "workspace_access",
+      "variant": "supplied",
+      "claim_index": 1,
+      "claim_text": "Service accounts require an active workspace token to access the staging workspace, and the two-factor authentication rule for human users does not apply to them.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_workspace_access_service"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 10,
+      "case_id": "workspace_access",
+      "variant": "reversed",
+      "claim_index": 0,
+      "claim_text": "Verified membership alone is not sufficient for human users to access the staging workspace; two-factor authentication must also be enabled.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_workspace_access_human"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 10,
+      "case_id": "workspace_access",
+      "variant": "reversed",
+      "claim_index": 1,
+      "claim_text": "Service accounts require an active workspace token to access the staging workspace, and the human-user two-factor authentication rule does not apply to them.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_workspace_access_service"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 12,
+      "case_id": "batch_credits",
+      "variant": "supplied",
+      "claim_index": 0,
+      "claim_text": "For seven batches in one job, the first three batches are free, and the remaining four batches each cost four processing credits.",
+      "citation_support": "supported_derivation_using_question_and_cited_rate",
+      "passage_ids": [
+        "fresh_batch_credits_rate"
+      ],
+      "notes": "Arithmetic uses seven batches from the question plus the cited three-free/four-credit rule."
+    },
+    {
+      "record_index": 12,
+      "case_id": "batch_credits",
+      "variant": "supplied",
+      "claim_index": 1,
+      "claim_text": "The total number of processing credits charged for seven batches in one job is sixteen.",
+      "citation_support": "supported_derivation_using_question_and_cited_rate",
+      "passage_ids": [
+        "fresh_batch_credits_rate"
+      ],
+      "notes": "Arithmetic uses seven batches from the question plus the cited three-free/four-credit rule."
+    },
+    {
+      "record_index": 13,
+      "case_id": "batch_credits",
+      "variant": "reversed",
+      "claim_index": 0,
+      "claim_text": "For seven batches in one job, the first three batches are free, and the remaining four batches each cost four processing credits.",
+      "citation_support": "supported_derivation_using_question_and_cited_rate",
+      "passage_ids": [
+        "fresh_batch_credits_rate"
+      ],
+      "notes": "Arithmetic uses seven batches from the question plus the cited three-free/four-credit rule."
+    },
+    {
+      "record_index": 13,
+      "case_id": "batch_credits",
+      "variant": "reversed",
+      "claim_index": 1,
+      "claim_text": "The total number of processing credits charged for seven batches in one job is sixteen.",
+      "citation_support": "supported_derivation_using_question_and_cited_rate",
+      "passage_ids": [
+        "fresh_batch_credits_rate"
+      ],
+      "notes": "Arithmetic uses seven batches from the question plus the cited three-free/four-credit rule."
+    },
+    {
+      "record_index": 15,
+      "case_id": "explicit_precedence",
+      "variant": "supplied",
+      "claim_index": 0,
+      "claim_text": "The maintenance date for cluster Cedar is 12 November 2028.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_explicit_precedence_new"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 15,
+      "case_id": "explicit_precedence",
+      "variant": "supplied",
+      "claim_index": 1,
+      "claim_text": "Notice C-2 replaces Notice C-1 in full for cluster Cedar.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_explicit_precedence_new"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 16,
+      "case_id": "explicit_precedence",
+      "variant": "reversed",
+      "claim_index": 0,
+      "claim_text": "The maintenance date for cluster Cedar is 12 November 2028.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_explicit_precedence_new"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 19,
+      "case_id": "unresolved_dispatch",
+      "variant": "reversed",
+      "claim_index": 0,
+      "claim_text": "The dispatch date for parcel group R6 is 14 April 2029 according to Dispatch sheet Beta.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_unresolved_dispatch_beta"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    },
+    {
+      "record_index": 19,
+      "case_id": "unresolved_dispatch",
+      "variant": "reversed",
+      "claim_index": 1,
+      "claim_text": "The dispatch date for parcel group R6 is 6 April 2029 according to Dispatch sheet Alpha.",
+      "citation_support": "supported",
+      "passage_ids": [
+        "fresh_unresolved_dispatch_alpha"
+      ],
+      "notes": "Claim meaning is supported by its cited source passage(s)."
+    }
+  ]
+}

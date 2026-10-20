@@ -1,0 +1,582 @@
+[
+  {
+    "phase": "model_matrix",
+    "archive": "model_matrix_bundle.zip",
+    "archive_sha256": "284e60acad9e993ee8758634795416088bf71c37008dfcf872545d448a6253bd",
+    "selection": "All job record.json files, source snapshots and declared top-level provenance files; no duplicate stage exports.",
+    "included_members": [
+      {
+        "member": "jobs/0146b6f1c32b35c21c18/record.json",
+        "sha256": "40ff2438faa58b631679033dbba6bd864bea2a9fabca43404ddf175402bfcc06"
+      },
+      {
+        "member": "jobs/0220c01955068b68a03e/record.json",
+        "sha256": "602efdb282369a6d31ea45b8a2bdb67c773c815ab118353770be27cab19c80c6"
+      },
+      {
+        "member": "jobs/0e24520c7fe3a0304b45/record.json",
+        "sha256": "4feb7bb5e7eee28a948af66a5fcb0b38e2fefc10394d68447ad798b4e4443b15"
+      },
+      {
+        "member": "jobs/0e99f06c1120c0dfb06c/record.json",
+        "sha256": "c5cffea0ac987b72ee8be60cd0241bf7fd5795a6d63c50ea6b94296c8c793d2c"
+      },
+      {
+        "member": "jobs/10831b8b3816d76956c8/record.json",
+        "sha256": "cea3551c626b794743d85049d3519b08f8933a80f97f23f8039c37aa8db63cd3"
+      },
+      {
+        "member": "jobs/14fab13c55bf91b05af6/record.json",
+        "sha256": "251858bb7bbff6b1c4b677b36466b8733e70dbdbcd009df74ecaa4b5072631ce"
+      },
+      {
+        "member": "jobs/165eb317e6fb5d686ae0/record.json",
+        "sha256": "cd61184c5f12aefb99e5fc59387b88762b01ed4631d490c8aed48cd85dc88e41"
+      },
+      {
+        "member": "jobs/176f6a465b643ec1cf25/record.json",
+        "sha256": "dd7e049c5ddb01615321f1d59d61db769570aea5ed0ba332597d54d78223ace2"
+      },
+      {
+        "member": "jobs/183caa96b973d715d7e9/record.json",
+        "sha256": "b19fb3e81cc023297c6eefb01ba88b695becafb65a9709f6d7d4857d035a2c99"
+      },
+      {
+        "member": "jobs/1c71e65b0028f8351019/record.json",
+        "sha256": "4b8e42aa89b2723e10ee5ddc30b21a103ed9f6528e4f9bfea6e7268d5180f52a"
+      },
+      {
+        "member": "jobs/2c84561eabbbba64bc14/record.json",
+        "sha256": "1158f2d5a3e027f891215779fcf30b7feea8e71bdfa653d7cd9e62dddd4dd0a4"
+      },
+      {
+        "member": "jobs/2e05a6dee65971eb280e/record.json",
+        "sha256": "d698b815b8345ba4328558460f16639994ceb152ef16351fefb87bab64d1581a"
+      },
+      {
+        "member": "jobs/40b5effe289bbf645615/record.json",
+        "sha256": "c7ef9c04e63a2a93ae7fda1fcb56b2854f71add6e9c03eda1a9a60aa3916c941"
+      },
+      {
+        "member": "jobs/433e7d5878129e2bdb43/record.json",
+        "sha256": "8a7f4679419dcbea8d23c66c34a3bcaf7df100c548b04ba2fdc4ce58bf7699eb"
+      },
+      {
+        "member": "jobs/43ba3d977b0078501a5a/record.json",
+        "sha256": "ed5d0a75de53bf57772413f1ce805ae60ab234fe6a8f039d7160e2d7b51c3369"
+      },
+      {
+        "member": "jobs/46667b473b41a7edbf89/record.json",
+        "sha256": "7445816ed905e448129a3afe9d9475cabf879e982d9ee8049333c951fce066b4"
+      },
+      {
+        "member": "jobs/55c0f6cf5ec55cfdaf7c/record.json",
+        "sha256": "09190d29cd509e85f22a7c9bc8de2c37c7a2e49f93bcfe723d31aa67dd2330fa"
+      },
+      {
+        "member": "jobs/56a0f14ca0e09727a401/record.json",
+        "sha256": "baf99a53e37a33e0dabad4788e4f208599dde9bdfce865ec028de4a75f7a6672"
+      },
+      {
+        "member": "jobs/570e271010aa0f071167/record.json",
+        "sha256": "1dc3270740c005126a95867a2593c86a6754e0f0a8621f759bf5ece9c16c4f46"
+      },
+      {
+        "member": "jobs/597d2ab30137aecb6537/record.json",
+        "sha256": "3c01f4bbc8e104fa8f605e116e6a747ad4af24fa228c322d49f2d60dd33ea92f"
+      },
+      {
+        "member": "jobs/5e171488fa15d9483736/record.json",
+        "sha256": "c3d91191aacfd4a815902fb0c2c584e27004e546e97640611deead775998ea0e"
+      },
+      {
+        "member": "jobs/5e84de4451c98bd33924/record.json",
+        "sha256": "04beeaaf7e0a90fe89466434d0f190639d35558bc18a6ec375c799d388b2aafa"
+      },
+      {
+        "member": "jobs/5f89a5998cb8e36ede9f/record.json",
+        "sha256": "5b1ca74baddeb459b314cf168298f4e118433d2b6a829927dd4e2a5b81e9f91d"
+      },
+      {
+        "member": "jobs/69170d501d6d366adbc3/record.json",
+        "sha256": "3b70e8a148b2c209e22d69a59e181c42867bd7ca1bab2b9d3f0c096761b3b639"
+      },
+      {
+        "member": "jobs/6cced9d372d4d7e9226b/record.json",
+        "sha256": "0cbc6b1feaf3897f2d79eff40e98ab58d74d037bdecd95a58b168833a2068496"
+      },
+      {
+        "member": "jobs/7249f3d888663aa9f5cd/record.json",
+        "sha256": "997969624ba4d59fa623cf0962167c868348f0918cad61bd95005608fdd68224"
+      },
+      {
+        "member": "jobs/74f81e76fe80706c46a2/record.json",
+        "sha256": "53b85af625390ac9da0c2dfc8d39b0ec76743bc596415c94358ff1521632f22f"
+      },
+      {
+        "member": "jobs/7c6930fb0c8aded00998/record.json",
+        "sha256": "d26e35852803dc43dd87887ca95338460d090a1267df841bc665bf4068d71987"
+      },
+      {
+        "member": "jobs/8135bb4bb8420fee911d/record.json",
+        "sha256": "aed7a0df7542cc8ae474fd743ba31244a69df8fb8b6870b0cbc1554ea2382e11"
+      },
+      {
+        "member": "jobs/82e5f62123e485a672b8/record.json",
+        "sha256": "206d0827b6a4696fb53a2798aaaad5eb7c193d7af683b26197fe4144543e3b3f"
+      },
+      {
+        "member": "jobs/8316628672ca60a537b5/record.json",
+        "sha256": "3901d5cd754625d765fc75df41653f34bd8ff7da5a7acdd57eda0aa623e27070"
+      },
+      {
+        "member": "jobs/87f44966b4b9673ad61e/record.json",
+        "sha256": "04f530cc2154c0686ff55ea22f18354f81bd5d9b9dde8b79b8d93af945db2dac"
+      },
+      {
+        "member": "jobs/93440e212b4c65880083/record.json",
+        "sha256": "e40e72daecc2c5266e2140afa9f9c3a7e31de6db160fc21189219221fb3b702d"
+      },
+      {
+        "member": "jobs/9588e46e6e506b70ae70/record.json",
+        "sha256": "aa5ab75fa25d392414851b7957232362dfb8152512a211a7a6e3d5cc2adcb1ea"
+      },
+      {
+        "member": "jobs/98d2540bf3d5c75313f5/record.json",
+        "sha256": "55c59f43227023ea05512089efaee9669a6b996049f9379aa1aa6fc67036385f"
+      },
+      {
+        "member": "jobs/9c105c3e192cf38f440a/record.json",
+        "sha256": "1be921dd74e70a8db6b5f7015023607c43652f3dd81780b088d34ff39ad26beb"
+      },
+      {
+        "member": "jobs/a6eb449593ddd2ef5157/record.json",
+        "sha256": "02e6a991db8fa82f76c8680d000d1a88d9957641688e99db385afc0b58ac5193"
+      },
+      {
+        "member": "jobs/a9a8b8624d58aec09e65/record.json",
+        "sha256": "b48d74e6bb09935a0ecfbf5b955fb37773f521cd6da0a540ca16c5cae37ae656"
+      },
+      {
+        "member": "jobs/aaa81aea6de8a6c522e1/record.json",
+        "sha256": "1cdcdb8fdc0e0ffcb9a7c43532587ca39ddf8c83cf21900b3fe8e28b6414aa4d"
+      },
+      {
+        "member": "jobs/ac76f7979f601e28bcd4/record.json",
+        "sha256": "8b85979e4937d5e3e0bcc2ae62779628437a167457843a069189ce9a6b5e8295"
+      },
+      {
+        "member": "jobs/b27c09570bb85ba79273/record.json",
+        "sha256": "65f0952f943793afef669e581267485d612275e119d3984e8c999d9ec5b87413"
+      },
+      {
+        "member": "jobs/b47d3d85f346daea30c9/record.json",
+        "sha256": "525c56ad21792da1c9b301a7e74d757b05f67a60c3885da24775b4913e9897a3"
+      },
+      {
+        "member": "jobs/b648dab654b8de35ec76/record.json",
+        "sha256": "ceae923bde81422b9af54ef46b608e7794fb4b4aff4344835b25e1a9c912c71f"
+      },
+      {
+        "member": "jobs/b6687e021f1c95aec0d7/record.json",
+        "sha256": "ad34fec7a1d87faaf8d7508a6e9d30485d3ebe9c1e7e50be98861dffee0ce11a"
+      },
+      {
+        "member": "jobs/b98807497551f0f52ee3/record.json",
+        "sha256": "ce6e2ecdb717472247549a8eca41b863eae81d81e1522c2e84186a3a4a579e03"
+      },
+      {
+        "member": "jobs/bddec7e9b497c57fa7a5/record.json",
+        "sha256": "45b73e6e0402bf3e7bfb41b0ff39e8435c075807d057c9bb6dbd74bf5a274ea6"
+      },
+      {
+        "member": "jobs/bea7f03d5928c688b363/record.json",
+        "sha256": "7915b27241295bf4f1f9f2afd020aa31ae0cd067d497b0b9fa5da003e5e86bd9"
+      },
+      {
+        "member": "jobs/c22fd4716e70860a2066/record.json",
+        "sha256": "e58fcd54ba0faa2320818f4c8bd04162a841a2ef1183987c2a71eb9ab5c5fbfa"
+      },
+      {
+        "member": "jobs/c434d7f88f9130432c1d/record.json",
+        "sha256": "980a468c89ae744613492bb42617680c03f409e09bbcc05f3df2035a05e50361"
+      },
+      {
+        "member": "jobs/c5de0c1c4ac5b5e76db1/record.json",
+        "sha256": "32a81624e788f50694ec42fa73b373ef05b6e1b6c7f823b3d7451adfeb1047ff"
+      },
+      {
+        "member": "jobs/c773bf3f8352b32ec2ee/record.json",
+        "sha256": "513986112c62f6a766abb46111ab894b317a394f76e7c1a4971829059fd61a22"
+      },
+      {
+        "member": "jobs/c78223bd5d38754caa8b/record.json",
+        "sha256": "7e58caf769660cf2979617cfb30134b012f00d6b18adaaffec3822254897cd08"
+      },
+      {
+        "member": "jobs/ca53e97efd4493c75961/record.json",
+        "sha256": "6e03fd7d0e8b0699364881617c1250bb0727033a281226bd18ec7484f33fa64d"
+      },
+      {
+        "member": "jobs/d8c9047f470e47470430/record.json",
+        "sha256": "fe455cf4c9a0be4cef215109814e0694423a804596ac4c104c17535bb36c8951"
+      },
+      {
+        "member": "jobs/d916c64ad1c3ba874818/record.json",
+        "sha256": "1b09c4c248aa8c0e7351ebde93a7de30ad3e3ec9c6c456098bdb095482712f3d"
+      },
+      {
+        "member": "jobs/ddece9ea742a9a2a2dcd/record.json",
+        "sha256": "66a81500a09c4615ac8479b9cd81775331178021cb416720146f477f00df860e"
+      },
+      {
+        "member": "jobs/e30d1d6f601c3fe90ac5/record.json",
+        "sha256": "f189cda9094874d8b98089d4719dc8a46aa622c15cffadee9903842245648fcf"
+      },
+      {
+        "member": "jobs/e98cc0b6a5ee246d1108/record.json",
+        "sha256": "cd6d43788fa84a44ba6420ca23c2d36fc29b83a08340f48c8767607719a873d2"
+      },
+      {
+        "member": "jobs/eb28325439d5c87e76ce/record.json",
+        "sha256": "32d36723f7510df901873660f42de5d5cb7e13ba905edb6883f6fb64f602a497"
+      },
+      {
+        "member": "jobs/eb5dd027ddd3d998ade6/record.json",
+        "sha256": "6ded9a40642758d8187375d95b24cea0aec12896f92598374593219d5f7ffadc"
+      },
+      {
+        "member": "jobs/f360d786cf77fcdcbaa1/record.json",
+        "sha256": "7e291f0407822838e4ebee9465e3c0440dfaa50e8fba751dd269f680210bf56f"
+      },
+      {
+        "member": "jobs/f47f943258fe47731435/record.json",
+        "sha256": "ed8d2ea58225e30fbd6028ec1f7191f0745201bfe8d8d1d6bd294358f12dca1b"
+      },
+      {
+        "member": "jobs/f6c8df286eb3e37920a8/record.json",
+        "sha256": "ebffdf703a235f7dac7d5c8e8c58469b0ba8526ff30ee4bae85ceb5469b96c29"
+      },
+      {
+        "member": "jobs/f7435ae0d62617281ef7/record.json",
+        "sha256": "44f7cf430e3ed90b835f1c3aac9fbf554d5d2323b072b6d22a16151dc95f5106"
+      },
+      {
+        "member": "jobs/f898a88e37315e99f1c0/record.json",
+        "sha256": "9c1b51e57a9e55513a55fe39124f5530ed158d6bf8e1e9b9ad46ee53722a68f3"
+      },
+      {
+        "member": "jobs/fd77a833f78beb4814f1/record.json",
+        "sha256": "f8a143a08a164b25f10b6d9e153b10c5ce51787b0d0a2b1574895bfeead49b79"
+      },
+      {
+        "member": "model_inventory.json",
+        "sha256": "c423a75b0009fda28e5be0e776a8ad5d15ed9ef5486ba252b52159bc47eedd28"
+      },
+      {
+        "member": "plan.json",
+        "sha256": "8c0588365c19b4ff3b18673cc112ffe1d5e202347807963aa7488af8a4078453"
+      },
+      {
+        "member": "runner_validation.json",
+        "sha256": "0239c3a95756d60345dfca20198aa00f04625573eebbe94f3f62fcf89f5962f0"
+      },
+      {
+        "member": "runs.csv",
+        "sha256": "2d2383b058740021f146c7873abebd132dd9c1d407700d4e531735e752b54297"
+      },
+      {
+        "member": "source_snapshot/compare_evidence_models.py",
+        "sha256": "94e20274faf6dc789208a266f87cc616a930ffa413dc4035529ccaac33ee8bae"
+      },
+      {
+        "member": "source_snapshot/src/evidence_api/grounded.py",
+        "sha256": "3b161a2531e4f76c0ab4983b6154cc7848a76b86c49a2453ec08faecaeda6eaf"
+      },
+      {
+        "member": "source_snapshot/src/evidence_api/source_handles.py",
+        "sha256": "ad1d81245af840ba4821ab2f9d73259fb94531e64be82886e2150b96009e4244"
+      },
+      {
+        "member": "summary.json",
+        "sha256": "49a917be9ba577476ff8d992d9d60c22db291be4abe089d4d897af9c4dbf5f17"
+      }
+    ]
+  },
+  {
+    "phase": "direct_answer",
+    "archive": "direct_answer_bundle.zip",
+    "archive_sha256": "414a2fa16f9b265e8f7dec8bb177a859663823a10a8689cab2e4af190253affc",
+    "selection": "All job record.json files, source snapshots and declared top-level provenance files; no duplicate stage exports.",
+    "included_members": [
+      {
+        "member": "jobs/06a49eaf58edefbe7cc7/record.json",
+        "sha256": "314984509e07892d801de4a94ad916adeb1ad3840f9f77d1173c5624cecfdc0a"
+      },
+      {
+        "member": "jobs/2d7503d014b923689a64/record.json",
+        "sha256": "2c1460a96418afe6ffb5a1c1811711155ab9b6f58e225fed1d6102ae40fbbf27"
+      },
+      {
+        "member": "jobs/3d5f2772611f78473b80/record.json",
+        "sha256": "dde2840eb7c6876b00f9162017e925a892c5e6280ea33fd6e620ade9031dff90"
+      },
+      {
+        "member": "jobs/4f1e119b95a1a31e3c09/record.json",
+        "sha256": "ff0d778e7ee2d54d5d52e0eb307c09142efa830c7a906b735c0931006dcb2db9"
+      },
+      {
+        "member": "jobs/58e60e460a91779a2767/record.json",
+        "sha256": "6a5ef1f92c36faa43f87715fc7001f6ce9a7658401cc45d94c0cc7badb21d37e"
+      },
+      {
+        "member": "jobs/5dd4fee148ae266c8aef/record.json",
+        "sha256": "57982bcf63ce4ca75c695ca9217851a2110214375aaeda410620ed4142388016"
+      },
+      {
+        "member": "jobs/5ed1e865811280cef264/record.json",
+        "sha256": "db6634947b3d4d294182e31f7a67dabece72c6237cdad7e4919ecf0506dfc071"
+      },
+      {
+        "member": "jobs/6cb9f7f567f001e341b7/record.json",
+        "sha256": "23c6359f5278754817b432fefccb64eae567bcf77c8f23a7244eb8075948da51"
+      },
+      {
+        "member": "jobs/6d51a45371d87a899a5c/record.json",
+        "sha256": "6ac3382388330f59741f09541547d668b9e723924490d47947d271cce00c3d95"
+      },
+      {
+        "member": "jobs/6ec76162b0e6b228bfdc/record.json",
+        "sha256": "0837731fdc5df8a114ddac2ea16d5da9ba8b69d917a040567d2f2a3e1e5ee188"
+      },
+      {
+        "member": "jobs/6feb9e0aa53d78d1545b/record.json",
+        "sha256": "d1c0e5b4648da58d54c38fbcab509c00fd7dec7c2a204e8905b1fd30e8469483"
+      },
+      {
+        "member": "jobs/70df0ba151663c3911ef/record.json",
+        "sha256": "e798a6b8c949718bc8791a7d7294842bb44f3ea493cecc548df3626ddc21a8ee"
+      },
+      {
+        "member": "jobs/72de862cb9092d4a77f9/record.json",
+        "sha256": "8c90607648d9097752c05799cd9a5265b2678538fb45d8e0ba6dd0feccac5a85"
+      },
+      {
+        "member": "jobs/73bf6ce7c988d108c049/record.json",
+        "sha256": "3d99c0175388e88f7da6c042a14db961bf351bc02ba6971bb167b9eaebc910d6"
+      },
+      {
+        "member": "jobs/76bff5c24e68acce68c0/record.json",
+        "sha256": "568c746630033eec554a59aa2a09051644b387aa1ccd723624823d28e9d912c2"
+      },
+      {
+        "member": "jobs/793a6028bb3890c9c39c/record.json",
+        "sha256": "4ce26b56b78e3e43088745bf66739aa27def440031df3a3aeae1db0f81ffaa9d"
+      },
+      {
+        "member": "jobs/7d9e452a13e500fdfac9/record.json",
+        "sha256": "d72b3c5cbfda6cb41347aeee2677788ef9de7cbd8e0e6a894a9d8f2b5d348b5a"
+      },
+      {
+        "member": "jobs/7ebce14db34f76a57019/record.json",
+        "sha256": "0c8880be88f0d030d5f7f4db784d80ea9a66d5a7f2d02e0535431088c85dafdd"
+      },
+      {
+        "member": "jobs/7ee945350b52395d848a/record.json",
+        "sha256": "a39c250ec6cd26344063ea3c044779076921fcf07235d78732671cb8cf7575ec"
+      },
+      {
+        "member": "jobs/8b4b900ef2c14a346753/record.json",
+        "sha256": "a725ab850f838bafe7296960fcea97993010e5cae49988dc3a8451cc70de5120"
+      },
+      {
+        "member": "jobs/b0ee2015e0033bf40119/record.json",
+        "sha256": "e18d7e2d2e09c430845a3ff197a6c57db60b42ff812484cbb52e63998997aa48"
+      },
+      {
+        "member": "jobs/b9bcec4703f02c02e6f0/record.json",
+        "sha256": "19ac0b35356d241a584e7ff564559dd7741247608750f08ec04d2511d3847e4d"
+      },
+      {
+        "member": "jobs/bd6e9f567e35a315d081/record.json",
+        "sha256": "4031873e4cb30815c8969b889356bb498d10ab9cf3e05593087ce16c0c5c1236"
+      },
+      {
+        "member": "jobs/c0536fd8454d4acf507b/record.json",
+        "sha256": "a3b43f12d253e6040154dba77b1a123eae624493f571bcaf43384c19d40e9516"
+      },
+      {
+        "member": "jobs/c1598902b60cbbbe89c6/record.json",
+        "sha256": "241d445b59408f20678b0098b2eea72eafcecc76da218755fc849795403797e6"
+      },
+      {
+        "member": "jobs/d8d39031bf36c9125291/record.json",
+        "sha256": "563b1dbc6de6d4c3982767d9dff9e5083bb0b4e842a7529e13f2b6da3e7de916"
+      },
+      {
+        "member": "jobs/e1904b37896318965fce/record.json",
+        "sha256": "ccc0ba5a12acaedbdf55903c0cf94d7496017dc612ea0c3729137ed122bbb581"
+      },
+      {
+        "member": "jobs/e1c5e8cfd4aca80d4dd7/record.json",
+        "sha256": "bd0690132890357d75a8b9abfe5a27b680fb9087e3ad8c74c30efcefaefb9b09"
+      },
+      {
+        "member": "jobs/e34f32373627fed221f8/record.json",
+        "sha256": "7bc041d0284634f4cf41ad99e89e2f6fa733aba3011081db7d6d3232125b6bba"
+      },
+      {
+        "member": "jobs/e530ce62aa6e7a26cff4/record.json",
+        "sha256": "817c4b44521eec8b5b03dd6589dd752d2deda0bfc3d3e8189ff374718a1231e6"
+      },
+      {
+        "member": "jobs/f24b679fc05cf2322884/record.json",
+        "sha256": "9471b2765278cf1fa32ded9adcb3adbc99c116245528763085f6a92223dfb818"
+      },
+      {
+        "member": "jobs/f2e1723e52a1dec7d3e5/record.json",
+        "sha256": "799c56ba1fe11a87daeaf48daaaa844c3eb104ac6e260b33fbf7643de121a95a"
+      },
+      {
+        "member": "jobs/f81070f65ddb458ce3e4/record.json",
+        "sha256": "b9541b16d657418bc8e326a7345fb374c20e0792f3de402f019a52f0fe1ad0df"
+      },
+      {
+        "member": "model_inventory.json",
+        "sha256": "c423a75b0009fda28e5be0e776a8ad5d15ed9ef5486ba252b52159bc47eedd28"
+      },
+      {
+        "member": "plan.json",
+        "sha256": "77454214baf88035ed4408a4b2925a224d75dc1ecfb0b5b3ee9ac3e6959e94e3"
+      },
+      {
+        "member": "runner_validation.json",
+        "sha256": "8262d2d18e93a3aadef51c7ae00d63362b3eb65e16136172263320264e6d7db3"
+      },
+      {
+        "member": "runs.csv",
+        "sha256": "4a8a2b84a97deb166030791e2ca839794cee6eb095ac1c04276de04ae7b6bdfa"
+      },
+      {
+        "member": "source_snapshot/run_direct_answer_baseline.py",
+        "sha256": "935aa7576d165f4ee0c48f89acc8ad17799152c6211c3f30152744851cb4e8b3"
+      },
+      {
+        "member": "summary.json",
+        "sha256": "6fa93c5e5afb85f371b8e9f0ffc8fb49dec0a4c382baea1e03010716ebff603f"
+      }
+    ]
+  },
+  {
+    "phase": "direct_confirmation",
+    "archive": "direct_confirmation_bundle.zip",
+    "archive_sha256": "6fa73b65d6f67dc2d98e9eceb09227d6ded1aa8fe1eaf351914244ac638a2aa0",
+    "selection": "All job record.json files, source snapshots and declared top-level provenance files; no duplicate stage exports.",
+    "included_members": [
+      {
+        "member": "jobs/43211bb3d8dcba6df3fe/record.json",
+        "sha256": "d17d2a5838f8e48a90ece80f7f1cb55b75e4ed3a74c3563b2162523ebb68a19e"
+      },
+      {
+        "member": "jobs/6680af6b0662ab5815ee/record.json",
+        "sha256": "cec2c6101719ace0920f83810ed716489a579eaf54066149607c20940ecbb7f0"
+      },
+      {
+        "member": "jobs/70b71affbf6f348814b9/record.json",
+        "sha256": "a2d2d1bdc35e47ce88b7f54af91544b350a414aa02346a008e63deb3985b0d93"
+      },
+      {
+        "member": "jobs/70c0234a4a803e6c596d/record.json",
+        "sha256": "71cafdee1eee280b1ad037793ef7f89f527d0cc1baa7ebba2f0078c6cc9c6e05"
+      },
+      {
+        "member": "jobs/99e333a515987897f39e/record.json",
+        "sha256": "695506114e23c08d3facf52df8ecaa7e0a635ee8897eb6b8f0c9ef65ba28a767"
+      },
+      {
+        "member": "jobs/a5db7ba803e794d3d1e7/record.json",
+        "sha256": "f060cb935c67cf5fe9c909bd9f4d9d1c5069a57145b736cc7520a46333c6a21c"
+      },
+      {
+        "member": "jobs/a88f2107e8d97e926706/record.json",
+        "sha256": "3580e2bc1e450404579304526d32ddb6bc39f3ffff32b56ff4755269668c7da8"
+      },
+      {
+        "member": "jobs/ab721c95d4df337bd812/record.json",
+        "sha256": "1f73292398866f8efd1e560b3d2721b3b6f57d249807c3d81b88c157a84a000d"
+      },
+      {
+        "member": "jobs/af8946031ecbba76666a/record.json",
+        "sha256": "eea15d7cf95f53fc9725289454f2e4aaeb9379d8e54588ff93e13293ee899b28"
+      },
+      {
+        "member": "jobs/b196385392036ceed89c/record.json",
+        "sha256": "98577cd768ce7a5e5d37ecf9e96c730ab56594345367714c109fca75ef0b83b2"
+      },
+      {
+        "member": "jobs/b7ec0d9ee9daba752e1f/record.json",
+        "sha256": "ec11a915fc610ff0aa2d3aa7816af82f2a53c95b321343ef041c869566d84175"
+      },
+      {
+        "member": "jobs/c8551367286fb359b6bc/record.json",
+        "sha256": "f024d4d3379dbf53ebd10c0615e878f5a3156c83bfc82b262671fa040b50e310"
+      },
+      {
+        "member": "jobs/da9e480ba7e42efe6480/record.json",
+        "sha256": "1900f818f274e3d06c16c3ab4c4c6584261ed53a7f60005f29f3af0e73e0f3d9"
+      },
+      {
+        "member": "jobs/e29b2981e8094e54ab03/record.json",
+        "sha256": "c3f4264736e001fa82c3fcbb24208b0ff13b199ad947dcede8b204db9fafecfb"
+      },
+      {
+        "member": "jobs/eb9826c14917bad60a88/record.json",
+        "sha256": "9e5ee00f97e3c63b11343b45bf48f1b8b6f6d87128f00efb153fbdc320fd85e8"
+      },
+      {
+        "member": "jobs/f4899ef537cceb7161f3/record.json",
+        "sha256": "66b0cf038e020f1c5ad0e8ceac581b5a440583db68f8b542a8cfcca06c276aad"
+      },
+      {
+        "member": "jobs/fcd9730b34dc4786e23f/record.json",
+        "sha256": "5fc84177cec0c76c7e889a927dc4fb0715de709692be832c94ee234c640fb997"
+      },
+      {
+        "member": "model_inventory.json",
+        "sha256": "c423a75b0009fda28e5be0e776a8ad5d15ed9ef5486ba252b52159bc47eedd28"
+      },
+      {
+        "member": "ollama_version_observation.json",
+        "sha256": "908cbfb8ea51cb966652380a41051a813a5936bb872584c2fcb33f8db3209c2b"
+      },
+      {
+        "member": "plan.json",
+        "sha256": "28b0db9f62cbcf263c8f9c85b9a450f87ff286b6a37c2d1ecee62a7dee21b933"
+      },
+      {
+        "member": "runner_validation.json",
+        "sha256": "e1e0261f07818fcd31512bdd35f4b5fbef0b6379414ee746abe96f9f0f23634b"
+      },
+      {
+        "member": "runs.csv",
+        "sha256": "8c2d518fdf94ac9285f360b17fd032075ab9ae5b8361731a0559beeb0343f792"
+      },
+      {
+        "member": "source_snapshot/compare_evidence_models.py",
+        "sha256": "94e20274faf6dc789208a266f87cc616a930ffa413dc4035529ccaac33ee8bae"
+      },
+      {
+        "member": "source_snapshot/run_direct_answer_baseline.py",
+        "sha256": "935aa7576d165f4ee0c48f89acc8ad17799152c6211c3f30152744851cb4e8b3"
+      },
+      {
+        "member": "source_snapshot/run_direct_confirmation.py",
+        "sha256": "0327ffedf4186350a1442163d6cfd62cb4be01da5a3bb6f46903d720fedd5774"
+      },
+      {
+        "member": "summary.json",
+        "sha256": "76b1eda30bf7f16555a56d7bf915691cdf5ff865dd7b46769aae5d396199b33a"
+      }
+    ]
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "version": "direct-answer-baseline-1.0.0",
+  "job": {
+    "job_id": "6cb9f7f567f001e341b7",
+    "model": "gemma3:4b",
+    "case_id": "1f939d31",
+    "question": "what did Jim buy as a gift for Della?",
+    "order": "no_context"
+  },
+  "context": [],
+  "status": "empty_context_control",
+  "candidate_answer": "The supplied evidence does not answer this question.",
+  "raw_answer": null,
+  "production_delivery": false,
+  "factual_correctness": "not_automatically_scored",
+  "stages": [],
+  "checks": {
+    "completed": true,
+    "citation_ids": [],
+    "unknown_citation_ids": [],
+    "citation_ids_valid": true,
+    "has_citations": false,
+    "exact_abstention": true,
+    "abstention_with_extra_text": false,
+    "factual_correctness": "not_automatically_scored",
+    "semantic_citation_support": "not_automatically_scored",
+    "answer_completeness": "not_automatically_scored"
+  },
+  "model_calls": 0,
+  "complete": true
+}

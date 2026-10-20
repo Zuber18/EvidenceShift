@@ -1,0 +1,215 @@
+{
+  "assessment_status": "final_project_assessment",
+  "reviewer": "ChatGPT",
+  "review_method": "Saved passage and candidate review, separating model outcome labels from the supporting reasons. No independent human validation or held-out accuracy is claimed.",
+  "input_archive_sha256": {
+    "qwen3:8b": "fd1e3f28b050cff275581be362694b64de4854a9907bbd6b9148560cdebf2e38",
+    "gemma3:4b": "c5b141088de483c1a59f1f32a5158c1952d3c921bbb9cf8db1b2e53aa0c2b495"
+  },
+  "shared_source_results_sha256": "53e6da581682f9c10472cdf35501b6a995fac7f302f775eb33489715b0892368",
+  "controls": {
+    "same_candidates_questions_context": true,
+    "same_critic_messages_schemas_options": true,
+    "same_control_definitions": true,
+    "same_original_benchmark_hash": true,
+    "records_per_model": 17
+  },
+  "models": {
+    "qwen3:8b": {
+      "supported_core_candidates": 10,
+      "false_rejections": 4,
+      "appropriate_clears": 6,
+      "erroneous_authentication_candidates_flagged": 0,
+      "erroneous_authentication_candidates_total": 2,
+      "known_negative_controls_flagged": 4,
+      "known_negative_controls_total": 4,
+      "known_negative_controls_with_at_least_one_sound_confirmation": 3,
+      "calls": 43,
+      "summed_stage_seconds": 155.88
+    },
+    "gemma3:4b": {
+      "supported_core_candidates": 10,
+      "false_rejections": 8,
+      "appropriate_clears": 2,
+      "erroneous_authentication_candidates_flagged": 2,
+      "erroneous_authentication_candidates_with_sound_confirmation": 0,
+      "known_negative_controls_flagged": 2,
+      "known_negative_controls_total": 4,
+      "known_negative_controls_with_sound_confirmation": 0,
+      "calls": 55,
+      "summed_stage_seconds": 163.45
+    }
+  },
+  "gemma_mechanical_validation": {
+    "records_recomputed": 17,
+    "raw_responses_locally_schema_validated": 55,
+    "all_finish_with_stop": true,
+    "maximum_actual_input_bytes": 5976,
+    "budget": 6000,
+    "saved_context_witnesses_and_complete_paragraph_coverage_match": true
+  },
+  "decision": "Do not promote either checker to an automatic factual gate. Stop model substitution on this diagnostic contract.",
+  "next_implementation_requirements": [
+    "Require an allowed candidate claim/sentence handle for every objection; code must copy the exact targeted text so the critic cannot replace a negative claim with a positive claim.",
+    "Use verdict names explicitly describing candidate error rather than the ambiguous invalidates label. Enum semantics still require empirical validation.",
+    "Require source handles sufficient for the alleged issue; cross-source conflict confirmation must receive both opposing passages. If the complete required evidence cannot fit, retain uncertainty rather than assert a result from a partial source set.",
+    "Keep semantic judgments advisory while enforcing provenance, handle, quote-fidelity and completion checks in code. Mechanical validation must not be labelled factual correctness.",
+    "Freeze this paired comparison. Add fresh held-out qualification, negation and conflict cases before evaluating an updated verifier. Do not use the same development cases to claim general accuracy."
+  ],
+  "scope_limit": "This experiment rechecked saved answers; it did not change retrieval, generate new answers or improve end-to-end delivery. Reversed variants often contain different saved candidates, so not all differences isolate source order alone.",
+  "reviews": [
+    {
+      "name": "accepted_202/retrieved",
+      "kind": "saved_v13_candidate",
+      "qwen_status": "context_objection_confirmed",
+      "gemma_status": "context_objection_confirmed",
+      "gemma_source_assessment": "false_rejection",
+      "notes": "The candidate correctly denies guarantees of completion and success. Gemma treats accepted-but-not-completed as contradicting that negative claim. A heading-only witness is selected; confirmation still invents a contradiction.",
+      "candidate_answer": "HTTP 202 Accepted does not guarantee that processing has completed. [doc_818496e68519f685dc7b_p0_c490]\nHTTP 202 Accepted does not guarantee that the request will eventually succeed. [doc_818496e68519f685dc7b_p0_c490]\nThe 202 response is intended to allow a server to accept a request for some other process without requiring the user agent's connection to persist until the process is completed. [doc_818496e68519f685dc7b_p0_c491]\nThe representation sent with a 202 response should describe the request's current status and point to or embed a status monitor. [doc_818496e68519f685dc7b_p0_c491]"
+    },
+    {
+      "name": "accepted_202/reversed",
+      "kind": "saved_v13_candidate",
+      "qwen_status": "context_clear",
+      "gemma_status": "context_objection_confirmed",
+      "gemma_source_assessment": "false_rejection",
+      "notes": "The critic rewrites the candidate as guaranteeing completion, although the candidate explicitly denies it. Confirmation repeats this negation error and also relies on unrelated 100-continue text.",
+      "candidate_answer": "HTTP 202 Accepted does not guarantee that processing has completed. [doc_818496e68519f685dc7b_p0_c490]\nHTTP 202 Accepted does not guarantee that processing will eventually succeed. [doc_818496e68519f685dc7b_p0_c490] [doc_818496e68519f685dc7b_p0_c491]\nThe 202 response is intentionally noncommittal and does not provide a guarantee about the eventual success of the request. [doc_818496e68519f685dc7b_p0_c491]"
+    },
+    {
+      "name": "method_405/retrieved",
+      "kind": "saved_v13_candidate",
+      "qwen_status": "context_clear",
+      "gemma_status": "context_objection_confirmed",
+      "gemma_source_assessment": "false_rejection",
+      "notes": "Gemma confuses the choice of 405 versus 501 for different method conditions with the mandatory Allow header on a 405 response. It also treats equivalent Allow descriptions as contradictory.",
+      "candidate_answer": "HTTP 405 Method Not Allowed means the method received in the request-line is known by the origin server but not supported by the target resource. [doc_818496e68519f685dc7b_p0_c536]\nThe origin server must include the Allow header field in a 405 response containing a list of the target resource's currently supported methods. [doc_818496e68519f685dc7b_p0_c536] [doc_818496e68519f685dc7b_p0_c341]\nThe Allow header field lists the actual set of allowed methods, which is defined by the origin server at the time of each request. [doc_818496e68519f685dc7b_p0_c341]\nThe Allow header field can include methods such as GET, HEAD, and PUT. [doc_818496e68519f685dc7b_p0_c341]"
+    },
+    {
+      "name": "method_405/reversed",
+      "kind": "saved_v13_candidate",
+      "qwen_status": "context_clear",
+      "gemma_status": "context_objection_confirmed",
+      "gemma_source_assessment": "false_rejection",
+      "notes": "Same 405/501 scope confusion. Another objection attributes an empty-Allow claim to the candidate even though the saved answer never mentions empty values.",
+      "candidate_answer": "HTTP 405 Method Not Allowed means the method received in the request-line is known by the origin server but not supported by the target resource. [doc_818496e68519f685dc7b_p0_c536]\nThe origin server must include the Allow header field in a 405 response containing a list of the target resource's currently supported methods. [doc_818496e68519f685dc7b_p0_c536] [doc_818496e68519f685dc7b_p0_c341]"
+    },
+    {
+      "name": "gone_410/retrieved",
+      "kind": "saved_v13_candidate",
+      "qwen_status": "context_clear",
+      "gemma_status": "context_objection_confirmed",
+      "gemma_source_assessment": "false_rejection",
+      "notes": "The answer says not definitely forever and correctly selects 404 when permanence is unknown. Gemma attributes the opposite claim to it and invents a conflict between unknown and known permanence conditions. The pre-existing weaker extra citation remains a separate precision caveat.",
+      "candidate_answer": "HTTP 410 Gone does not necessarily mean a resource is definitely gone forever. [doc_818496e68519f685dc7b_p0_c540] [doc_818496e68519f685dc7b_p0_c539]\nIf the permanence of a resource's unavailability is unknown, the 404 (Not Found) status code should be used. [doc_818496e68519f685dc7b_p0_c539] [doc_818496e68519f685dc7b_p0_c535]"
+    },
+    {
+      "name": "gone_410/reversed",
+      "kind": "saved_v13_candidate",
+      "qwen_status": "context_clear",
+      "gemma_status": "context_objection_confirmed",
+      "gemma_source_assessment": "false_rejection",
+      "notes": "The candidate preserves likely permanence and the unknown-permanence 404 fallback. Gemma changes these to assertions of definite permanence or use of 410 when unknown, then rejects those invented claims.",
+      "candidate_answer": "HTTP 410 Gone does not necessarily mean a resource is gone forever, but it indicates that the resource is likely to be permanently unavailable. [doc_818496e68519f685dc7b_p0_c539]\nIf the permanence of a resource's unavailability is unknown, the 404 (Not Found) status code should be used instead of 410. [doc_818496e68519f685dc7b_p0_c539]\nThe 410 status code is preferred over 404 when the origin server knows the unavailability is likely to be permanent. [doc_818496e68519f685dc7b_p0_c535]\nThe 410 response is heuristically cacheable unless otherwise indicated by the method definition or explicit cache controls. [doc_818496e68519f685dc7b_p0_c540]"
+    },
+    {
+      "name": "service_unavailable/retrieved",
+      "kind": "saved_v13_candidate",
+      "qwen_status": "context_clear",
+      "gemma_status": "context_objection_confirmed",
+      "gemma_source_assessment": "false_rejection",
+      "notes": "Gemma treats may send Retry-After as contradicted by no requirement to issue 503 at all. It also says HTTP-date-or-seconds is unsupported while selecting a witness that states exactly that.",
+      "candidate_answer": "HTTP 503 means the server is temporarily unable to handle the request, often due to overload or maintenance. [doc_818496e68519f685dc7b_p0_c554]\nA server may send the Retry-After header with a 503 response to suggest how long the client should wait before retrying. [doc_818496e68519f685dc7b_p0_c554] [doc_818496e68519f685dc7b_p0_c346]\nThe Retry-After header can indicate either an HTTP date or a number of seconds to delay. [doc_818496e68519f685dc7b_p0_c347]"
+    },
+    {
+      "name": "service_unavailable/reversed",
+      "kind": "saved_v13_candidate",
+      "qwen_status": "context_clear",
+      "gemma_status": "context_objection_confirmed",
+      "gemma_source_assessment": "rejection_with_invalid_context_reason_and_separate_citation_defect",
+      "notes": "The first claim has an existing c346 versus c554 citation-support defect. Gemma does not identify it: it attacks the supported Retry-After usage using a 504 timeout witness, mixing source handles and status codes.",
+      "candidate_answer": "HTTP 503 means the server is temporarily over capacity or down and cannot handle the request. [doc_818496e68519f685dc7b_p0_c346]\nA server might send Retry-After with HTTP 503 to indicate how long the service is expected to be unavailable. [doc_818496e68519f685dc7b_p0_c346]\nThe Retry-After field can be an HTTP-date or a number of seconds to delay. [doc_818496e68519f685dc7b_p0_c347]"
+    },
+    {
+      "name": "authentication_vs_refusal/retrieved",
+      "kind": "saved_v13_candidate",
+      "qwen_status": "context_clear",
+      "gemma_status": "context_objection_confirmed",
+      "gemma_source_assessment": "correct_rejection_label_without_sound_confirmation",
+      "notes": "The actual error is universalizing a possible unrelated-credentials cause of 403; final-claim citations are also inadequate. Gemma instead invents a candidate statement about not repeating 401 credentials. Its other confirmation explicitly calls the candidate accurate while choosing invalidates.",
+      "candidate_answer": "HTTP 401 indicates that the request lacks valid authentication credentials for the target resource. [doc_818496e68519f685dc7b_p0_c533]\nHTTP 403 indicates that the server understood the request but refuses to fulfill it, even if the request includes valid authentication credentials. [doc_818496e68519f685dc7b_p0_c534]\nHTTP 401 requires the client to provide authentication credentials, while HTTP 403 indicates that the request is denied for reasons unrelated to authentication. [doc_818496e68519f685dc7b_p0_c534] [doc_818496e68519f685dc7b_p0_c357]"
+    },
+    {
+      "name": "authentication_vs_refusal/reversed",
+      "kind": "saved_v13_candidate",
+      "qwen_status": "context_clear",
+      "gemma_status": "context_objection_confirmed",
+      "gemma_source_assessment": "correct_rejection_label_without_sound_confirmation",
+      "notes": "Actual errors are a universal unrelated-credentials cause and weakening the mandatory 401 challenge to typically. Gemma attacks a defensible valid-but-inadequate-credentials description and invents a repeat-credentials statement not in the answer. No complete sound confirmation identifies the actual errors.",
+      "candidate_answer": "HTTP 401 (Unauthorized) is used when the server requires authentication credentials to access a resource. [doc_818496e68519f685dc7b_p0_c353]\nHTTP 403 (Forbidden) is used when the server understands the request but refuses to fulfill it, even if the request includes valid credentials. [doc_818496e68519f685dc7b_p0_c357] [doc_818496e68519f685dc7b_p0_c534]\nHTTP 401 typically includes a WWW-Authenticate header field to challenge the client for credentials. [doc_818496e68519f685dc7b_p0_c353]\nHTTP 403 indicates that the server is refusing to fulfill the request for reasons unrelated to the credentials provided. [doc_818496e68519f685dc7b_p0_c534]\nThe 401 and 403 status codes are distinct and serve different purposes in HTTP. [doc_818496e68519f685dc7b_p0_c640]"
+    },
+    {
+      "name": "travel_conditions/retrieved",
+      "kind": "saved_v13_candidate",
+      "qwen_status": "context_objection_confirmed",
+      "gemma_status": "context_clear",
+      "gemma_source_assessment": "appropriate_context_clear",
+      "notes": "The source conditions and answer agree; Gemma proposes no objection. Qwen had falsely rejected this candidate.",
+      "candidate_answer": "Not every journey requires advance approval. Domestic journeys do not require advance approval, while international journeys require written advance approval from the team lead. [fixture_travel_policy]\nNot every travel expense is reimbursed. Eligible travel expenses are reimbursed only when an itemized receipt is supplied. [fixture_travel_policy]"
+    },
+    {
+      "name": "conflicting_deadlines/retrieved",
+      "kind": "saved_v13_candidate",
+      "qwen_status": "context_objection_confirmed",
+      "gemma_status": "context_clear",
+      "gemma_source_assessment": "appropriate_context_clear",
+      "notes": "Both conflicting dates and the unresolved-conflict prefix are present. Gemma appropriately proposes no objection.",
+      "candidate_answer": "The supplied sources contain conflicting statements. They are reported below without choosing one as authoritative.\nThe application deadline for the Robotics summer 2027 intake is 15 June 2027. [fixture_handbook]\nThe application deadline for the Robotics summer 2027 intake is 30 June 2027. [fixture_memo]"
+    },
+    {
+      "name": "conflicting_deadlines/reversed",
+      "kind": "saved_v13_candidate",
+      "qwen_status": "context_objection_confirmed",
+      "gemma_status": "context_objection_confirmed",
+      "gemma_source_assessment": "false_rejection",
+      "notes": "Gemma treats fixture labels and absence of an override rule as invalidating an explicitly unresolved conflict. One confirmation sees only the 30 June source and calls that a resolution. The two actual sources still conflict.",
+      "candidate_answer": "The supplied sources contain conflicting statements. They are reported below without choosing one as authoritative.\nThe application deadline for the Robotics summer 2027 intake is 30 June 2027. [fixture_memo]\nThe application deadline for the Robotics summer 2027 intake is 15 June 2027. [fixture_handbook]"
+    },
+    {
+      "name": "hidden_opposing_deadline",
+      "kind": "saved_negative_control",
+      "qwen_status": "context_objection_confirmed",
+      "gemma_status": "context_clear",
+      "gemma_source_assessment": "missed_material_error",
+      "notes": "The candidate gives only 30 June although the original evidence also gives 15 June without an override rule. Gemma returns no objections.",
+      "candidate_answer": "The application deadline for the Robotics summer 2027 intake is 30 June 2027. [fixture_memo]"
+    },
+    {
+      "name": "certainty_overstatement",
+      "kind": "saved_negative_control",
+      "qwen_status": "context_objection_confirmed",
+      "gemma_status": "context_objection_confirmed",
+      "gemma_source_assessment": "correct_rejection_label_without_sound_confirmation",
+      "notes": "The real error is definitely forever instead of likely permanent. Gemma invents a candidate recommendation to use 410 when permanence is unknown; the candidate actually recommends 404. The other confirmation describes known/unknown conditions as a conflict rather than identifying certainty overstatement.",
+      "candidate_answer": "HTTP 410 Gone means a resource is definitely gone forever [doc_818496e68519f685dc7b_p0_c539]\nIf permanence is unknown, the status code 404 (Not Found) should be used [doc_818496e68519f685dc7b_p0_c539]"
+    },
+    {
+      "name": "invented_deadline_time",
+      "kind": "saved_negative_control",
+      "qwen_status": "context_objection_confirmed",
+      "gemma_status": "context_objection_confirmed",
+      "gemma_source_assessment": "correct_rejection_label_without_sound_confirmation",
+      "notes": "The real error is the unsupported 2:00 PM detail. Gemma never identifies it; it faults reporting both dates even though the original sources contain both and neither overrides the other. This is not demonstrated detection of the planted time error.",
+      "candidate_answer": "The application deadline for the Robotics summer 2027 intake is 15 June 2:00 PM [fixture_handbook]\nThe application deadline for the Robotics summer 2027 intake is 30 June 2027 [fixture_memo]"
+    },
+    {
+      "name": "removed_travel_qualification",
+      "kind": "synthetic_negative_control",
+      "qwen_status": "context_objection_confirmed",
+      "gemma_status": "context_clear",
+      "gemma_source_assessment": "missed_material_error",
+      "notes": "The synthetic candidate makes domestic approval mandatory and allows all expenses without receipts, directly contrary to the supplied policy. Gemma returns no objections.",
+      "candidate_answer": "Every journey requires written advance approval, including domestic journeys. [fixture_travel_policy]\nEvery travel expense is reimbursed even without an itemized receipt. [fixture_travel_policy]"
+    }
+  ]
+}

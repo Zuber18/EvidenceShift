@@ -1,0 +1,3 @@
+{
+  "unavailable": "AttributeError: 'Client' object has no attribute 'version'"
+}

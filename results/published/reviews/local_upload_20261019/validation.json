@@ -1,0 +1,29 @@
+{
+  "revision": "source-first-2.0.0",
+  "new_regression_tests_passed": 22,
+  "preserved_service_tests_passed": 13,
+  "installer_checks": [
+    "additive_install",
+    "idempotent_rerun",
+    "baseline_API_cloud_app_and_results_preserved",
+    "edited_repair_file_refused_before_mutation",
+    "changed_baseline_refused"
+  ],
+  "payload_python_syntax": "passed",
+  "replay_loop": {
+    "attempts_saved": 18,
+    "controlled_model_calls": 16,
+    "zero_call_controls": 2,
+    "actual_uploaded_PDF_parsed": true,
+    "complete_zip_and_plan_report_saved": true
+  },
+  "controlled_components": [
+    "search/encoder/store responses",
+    "model output and inventory"
+  ],
+  "actual_MiniLM_or_Chroma_executed_here": false,
+  "actual_Ollama_executed_here": false,
+  "live_Streamlit_browser_tested_here": false,
+  "not_an_accuracy_score": true,
+  "next_step": "Run evaluation/run_upload_repair.py locally; assess selected excerpts against original source."
+}

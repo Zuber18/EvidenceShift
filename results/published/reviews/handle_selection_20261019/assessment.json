@@ -1,0 +1,307 @@
+{
+  "assessment_role": "final_project_assessment",
+  "reviewer": "ChatGPT",
+  "method": "Saved PDF, all raw model outputs, source-unit mappings and spans, matched context orders",
+  "source_archive_sha256": "b1a763f06e6f7ff4163cc111bbcdbceffe86df610e911bb85facddccffc17a9a",
+  "decision": "Do not promote 2.1.0 as a reliable answer system. Freeze as mechanical improvement with unresolved or regressed semantic outcomes.",
+  "runs": 18,
+  "model_calls": 16,
+  "code_controls": 2,
+  "schema_valid_and_completed_model_calls": 16,
+  "mechanical_failures": 0,
+  "validated_rendered_spans": 64,
+  "matched_order_pairs": 8,
+  "all_nonempty_contexts_have_19_chunks": true,
+  "unit_ids_and_mappings_stable_across_matched_orders": true,
+  "same_measured_embedding_identity_as_2_0": true,
+  "actual_prompt_token_range": [
+    6746,
+    6762
+  ],
+  "stage_seconds_sum": 486.96,
+  "generated_tokens_sum": 705,
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "all_16_model_response_types": "supported",
+  "all_16_unanswered_parts_empty": true,
+  "unanswerable_trials": 4,
+  "correct_abstentions_on_unanswerable_trials": 0,
+  "observations": [
+    "Nine quote contract failures of 2.0.0 are removed by construction; model supplies no quotation text.",
+    "The 2.0.0 insufficient-with-excerpts failure does not recur in this replay, but the contract can still fail if model supplies insufficient with selected IDs.",
+    "Passing structural validation is not semantic accuracy. Birth date and flute trials all fail abstention.",
+    "Four trials contain core useful evidence, with varying extra/fragmented context. This is not reported as four fully correct generated answers.",
+    "Two compound trials omit explicit unsupported-premise disclosure; why questions, reverse marriage/savings and summaries remain incomplete or misleading.",
+    "Punctuation segmentation exposes headers such as O . and clause/dialogue/chunk fragments as selectable units. These can weaken standalone interpretability.",
+    "Same model digest and retrieval pipeline do not isolate the effect of unit granularity, schema and prompt; all changed together.",
+    "Stage durations are local model-call measurements, not hosted latency."
+  ],
+  "next_experiment": "Freeze current pipeline. Compare a small prespecified matrix of fixed evidence representations and available generation models, keeping documents/questions/options logged. Include new held-out questions; do not tune on their answers.",
+  "limitations": [
+    "Single known six-page story; not held-out data.",
+    "One generation per context order, no repeated-seed study.",
+    "Small-corpus full coverage does not assess large-document retrieval.",
+    "This is an evidence view and does not evaluate a fluent synthesized answer."
+  ],
+  "reviews": [
+    {
+      "run_id": "run_20261019T121052Z_f1a4093f",
+      "question": "what did Jim buy as a gift for Della?",
+      "variant": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“It was a gold watch chain, very simply made.” [doc_90949049db10b9f640c8_p3_c2]\n\n“For there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time.” [doc_90949049db10b9f640c8_p5_c2]\n\n“I sold the watch to get the money \nto buy the combs.” [doc_90949049db10b9f640c8_p6_c0]",
+      "assessment": "core_evidence_with_confusing_extra",
+      "notes": "Combs and watch-sale evidence are useful, but the gold watch chain is Della gift to Jim and is misleading extra evidence for this question.",
+      "selected_ids": [
+        "U93",
+        "U188",
+        "U211"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121127Z_5f45a730",
+      "question": "what did Jim buy as a gift for Della?",
+      "variant": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“I sold the watch to get the money \nto buy the combs.” [doc_90949049db10b9f640c8_p6_c0]\n\n“For there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time.” [doc_90949049db10b9f640c8_p5_c2]\n\n“She had known they cost too much for  \nher to buy them.” [doc_90949049db10b9f640c8_p5_c2]",
+      "assessment": "core_evidence_with_extra",
+      "notes": "Combs and watch-sale excerpts establish the requested gift; cost-to-Della excerpt is not necessary.",
+      "selected_ids": [
+        "U211",
+        "U188",
+        "U190"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121157Z_b371dcd8",
+      "question": "Was the flute made out of jewels? If not then what did Jim buy as a gift for Della?",
+      "variant": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“For there lay The Combs—the combs that Della had seen in a \nshop window and loved for a long time.” [doc_90949049db10b9f640c8_p5_c2]\n\n“I sold the watch to get the money \nto buy the combs.” [doc_90949049db10b9f640c8_p6_c0]",
+      "assessment": "partial_answer_missing_premise_disclosure",
+      "notes": "Correct evidence for combs, but flute subquestion is not answered or marked unsupported. unanswered_parts is empty.",
+      "selected_ids": [
+        "U188",
+        "U211"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121227Z_08b85972",
+      "question": "Was the flute made out of jewels? If not then what did Jim buy as a gift for Della?",
+      "variant": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“Beautiful combs, with jewels, \nperfect for her beautiful hair.” [doc_90949049db10b9f640c8_p5_c2]\n\n“I sold the watch to get the money \nto buy the combs.” [doc_90949049db10b9f640c8_p6_c0]",
+      "assessment": "partial_answer_missing_premise_disclosure",
+      "notes": "Correct jeweled-comb/watch-sale evidence; absent flute premise is not disclosed as unsupported.",
+      "selected_ids": [
+        "U189",
+        "U211"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121256Z_29025891",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "variant": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“I sold the watch to get the money \nto buy the combs.” [doc_90949049db10b9f640c8_p6_c0]\n\n“And now they were hers, but her hair was gone.” [doc_90949049db10b9f640c8_p5_c3]\n\n“But she held them to her heart, and at last was able to look up  \nand say: “My hair grows so fast, Jim!”” [doc_90949049db10b9f640c8_p5_c3]\n\n“O .” [doc_90949049db10b9f640c8_p6_c0]\n\n“She held it out to him in  \nher open hand.” [doc_90949049db10b9f640c8_p6_c0]\n\n“You’ll have \nto look at your watch a hundred times a day now.” [doc_90949049db10b9f640c8_p6_c0]",
+      "assessment": "partial_evidence_with_fragments",
+      "notes": "Hair-gone and watch-sale facts help, but item/use links are not fully explained. Includes irrelevant O . header and weak context fragments.",
+      "selected_ids": [
+        "U211",
+        "U195",
+        "U196",
+        "U198",
+        "U201",
+        "U205"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121328Z_511d0b2c",
+      "question": "Why they botth could not use the gifts they recieved?",
+      "variant": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“I couldn’t live through Christmas without giving you a  \n4” [doc_90949049db10b9f640c8_p4_c3]\n\n“asked Jim slowly.” [doc_90949049db10b9f640c8_p5_c0]\n\n““Nothing like a  \nhaircut could make me love you any less.” [doc_90949049db10b9f640c8_p5_c2]\n\n“I sold the watch to get the money \nto buy the combs.” [doc_90949049db10b9f640c8_p6_c0]",
+      "assessment": "incomplete_evidence",
+      "notes": "Watch-sale excerpt is useful, but hair-gone/comb-use side is missing; asked Jim slowly and other excerpts do not provide the reason.",
+      "selected_ids": [
+        "U144",
+        "U153",
+        "U184",
+        "U211"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121358Z_07dbd9bd",
+      "question": "What is the relationship between Jim and Della?",
+      "variant": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“She is Della.” [doc_90949049db10b9f640c8_p2_c0]\n\n“Mrs. \nJames Dillingham Young put her arms warmly about him and called  \nhim “Jim.”” [doc_90949049db10b9f640c8_p2_c0]\n\n“I had my hair cut \noff and sold it.” [doc_90949049db10b9f640c8_p4_c3]\n\n“asked Jim slowly.” [doc_90949049db10b9f640c8_p5_c0]\n\n““You say your hair is gone?”” [doc_90949049db10b9f640c8_p5_c0]\n\n““Nothing like a  \nhaircut could make me love you any less.” [doc_90949049db10b9f640c8_p5_c2]",
+      "assessment": "core_evidence_with_fragments",
+      "notes": "Mrs James Young identification and She is Della support marriage when read with parent passage. Four other units are unnecessary or incomplete.",
+      "selected_ids": [
+        "U27",
+        "U25",
+        "U143",
+        "U153",
+        "U161",
+        "U184"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121429Z_28a99eca",
+      "question": "What is the relationship between Jim and Della?",
+      "variant": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“She is Della.” [doc_90949049db10b9f640c8_p2_c0]\n\n“Della finished her crying and cleaned the marks of it from her face.” [doc_90949049db10b9f640c8_p2_c0]\n\n“She stood by the window and looked out with no interest.” [doc_90949049db10b9f640c8_p2_c0]\n\n“Tomorrow \nwould be Christmas Day, and she had only $1.87 with which to buy  \nJim a gift.” [doc_90949049db10b9f640c8_p2_c0]\n\n“She had put aside as much as she could for months, with this” [doc_90949049db10b9f640c8_p2_c0]\n\n“The  \nother thing was Della’s hair.” [doc_90949049db10b9f640c8_p2_c2]",
+      "assessment": "incomplete_evidence",
+      "notes": "Della identification, Christmas savings and hair ownership do not establish marital relationship. Explicit Mrs James Young unit is omitted.",
+      "selected_ids": [
+        "U27",
+        "U28",
+        "U29",
+        "U30",
+        "U31",
+        "U57"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121500Z_a1d22046",
+      "question": "How much money had Della saved before selling her hair?",
+      "variant": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food.” [doc_90949049db10b9f640c8_p1_c0]\n\n“Della counted  \nit three times.” [doc_90949049db10b9f640c8_p1_c0]\n\n“One dollar and eighty-seven cents.” [doc_90949049db10b9f640c8_p1_c0]\n\n“Only $ 1.87 to buy a gift for Jim.” [doc_90949049db10b9f640c8_p2_c1]",
+      "assessment": "supported_amount_with_extra",
+      "notes": "Includes both One dollar and eighty-seven cents and Only $1.87. Additional saving/counting units are unnecessary but relevant.",
+      "selected_ids": [
+        "U3",
+        "U4",
+        "U5",
+        "U37"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121531Z_c282c454",
+      "question": "How much money had Della saved before selling her hair?",
+      "variant": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food.” [doc_90949049db10b9f640c8_p1_c0]\n\n“She had put aside as much as she could for months, with this” [doc_90949049db10b9f640c8_p2_c0]\n\n“And she hurried home with  \nthe chain and eighty-seven cents.” [doc_90949049db10b9f640c8_p3_c2]",
+      "assessment": "wrong_temporal_evidence",
+      "notes": "Omits initial $1.87. Selects eighty-seven cents after purchasing the chain, a different point in time, without resolving requested pre-hair-sale amount.",
+      "selected_ids": [
+        "U3",
+        "U31",
+        "U102"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121602Z_1a63f625",
+      "question": "what is della's birth date?",
+      "variant": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“Tomorrow \nwould be Christmas Day, and she had only $1.87 with which to buy  \nJim a gift.” [doc_90949049db10b9f640c8_p2_c0]",
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "Christmas Eve and $1.87 do not establish Della birth date; response incorrectly marked supported.",
+      "selected_ids": [
+        "U30"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121631Z_56541d5e",
+      "question": "what is della's birth date?",
+      "variant": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food.” [doc_90949049db10b9f640c8_p1_c0]\n\n“She stood by the window and looked out with no interest.” [doc_90949049db10b9f640c8_p2_c0]",
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "Saving money and looking out the window do not establish Della birth date; response incorrectly marked supported.",
+      "selected_ids": [
+        "U3",
+        "U29"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121701Z_6c8ce242",
+      "question": "Was the flute made out of jewels? ",
+      "variant": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“Beautiful combs, with jewels, \nperfect for her beautiful hair.” [doc_90949049db10b9f640c8_p5_c2]\n\n“She had known they cost too much for  \nher to buy them.” [doc_90949049db10b9f640c8_p5_c2]\n\n“She had looked at them without the least hope of” [doc_90949049db10b9f640c8_p5_c2]\n\n“perfect for her beautiful hair.” [doc_90949049db10b9f640c8_p5_c3]\n\n“She had known they cost too much for  \nher to buy them.” [doc_90949049db10b9f640c8_p5_c3]\n\n“She had looked at them without the least hope of  \nowning them.” [doc_90949049db10b9f640c8_p5_c3]",
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "Combs and their cost do not establish anything about a flute. Response incorrectly marked supported with no unanswered part.",
+      "selected_ids": [
+        "U189",
+        "U190",
+        "U191",
+        "U192",
+        "U193",
+        "U194"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121732Z_c8d54451",
+      "question": "Was the flute made out of jewels? ",
+      "variant": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“Beautiful combs, with jewels, \nperfect for her beautiful hair.” [doc_90949049db10b9f640c8_p5_c2]\n\n“She had known they cost too much for  \nher to buy them.” [doc_90949049db10b9f640c8_p5_c2]\n\n“She had looked at them without the least hope of” [doc_90949049db10b9f640c8_p5_c2]\n\n“I sold the watch to get the money \nto buy the combs.” [doc_90949049db10b9f640c8_p6_c0]",
+      "assessment": "irrelevant_instead_of_abstention",
+      "notes": "Jewels on combs and sale of watch do not establish flute properties. Correct behavior is abstention about the flute.",
+      "selected_ids": [
+        "U189",
+        "U190",
+        "U191",
+        "U211"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121803Z_15f07c61",
+      "question": "What is this text about?",
+      "variant": "retrieved",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\np\nT h e  G i f t  o f  t h e  M a g i\nO\nNE DOLLAR AND EIGHTY-SEVEN CENTS.” [doc_90949049db10b9f640c8_p1_c0]\n\n“That was all.” [doc_90949049db10b9f640c8_p1_c0]\n\n“She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food.” [doc_90949049db10b9f640c8_p1_c0]\n\n“Della counted  \nit three times.” [doc_90949049db10b9f640c8_p1_c0]\n\n“One dollar and eighty-seven cents.” [doc_90949049db10b9f640c8_p1_c0]\n\n“And the next day  \nwould be Christmas.” [doc_90949049db10b9f640c8_p1_c0]",
+      "assessment": "incomplete_summary_evidence",
+      "notes": "Title and opening savings scene only. Omits mutual gift sacrifice and central story events/theme; not an adequate story overview.",
+      "selected_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121833Z_ad93ff04",
+      "question": "What is this text about?",
+      "variant": "reversed",
+      "mechanical_status": "candidate_recorded",
+      "answer": "“T h e  G i f t  o f  t h e  M a g i\np\nT h e  G i f t  o f  t h e  M a g i\nO\nNE DOLLAR AND EIGHTY-SEVEN CENTS.” [doc_90949049db10b9f640c8_p1_c0]\n\n“That was all.” [doc_90949049db10b9f640c8_p1_c0]\n\n“She had put it aside, one cent and then another and then \nanother, in her careful buying of meat and other food.” [doc_90949049db10b9f640c8_p1_c0]\n\n“Della counted  \nit three times.” [doc_90949049db10b9f640c8_p1_c0]\n\n“One dollar and eighty-seven cents.” [doc_90949049db10b9f640c8_p1_c0]\n\n“And the next day  \nwould be Christmas.” [doc_90949049db10b9f640c8_p1_c0]",
+      "assessment": "incomplete_summary_evidence",
+      "notes": "Same six introductory units selected under reversal. Does not cover central plot/theme.",
+      "selected_ids": [
+        "U1",
+        "U2",
+        "U3",
+        "U4",
+        "U5",
+        "U6"
+      ]
+    },
+    {
+      "run_id": "run_20261019T121904Z_4c2c4909",
+      "question": "Was the flute made out of jewels? If not then what did Jim buy as a gift for Della?",
+      "variant": "no_context",
+      "mechanical_status": "empty_context_control",
+      "answer": "The supplied evidence does not answer this question.",
+      "assessment": "code_control",
+      "notes": "No-context abstention with no model calls.",
+      "selected_ids": []
+    },
+    {
+      "run_id": "run_20261019T121904Z_defb2bc1",
+      "question": "what did Jim buy as a gift for Della?",
+      "variant": "no_context",
+      "mechanical_status": "empty_context_control",
+      "answer": "The supplied evidence does not answer this question.",
+      "assessment": "code_control",
+      "notes": "No-context abstention with no model calls.",
+      "selected_ids": []
+    }
+  ]
+}

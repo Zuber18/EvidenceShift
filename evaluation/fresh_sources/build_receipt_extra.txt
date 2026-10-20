@@ -1,0 +1,3 @@
+Fictional EvidenceShift evaluation document.
+
+Build receipts include a request identifier. The status page shows queued, running, failed or completed builds.

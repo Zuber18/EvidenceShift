@@ -1,0 +1,10 @@
+{
+  "self_tests_passed": 12,
+  "controlled_batch_records": 33,
+  "controlled_batch_generation_calls": 30,
+  "completed_resume_additional_calls": 0,
+  "interrupted_record_preserved_before_rerun": true,
+  "fixed_cases_digest_matches_reviewed_matrix": true,
+  "actual_Ollama_tested_here": false,
+  "semantic_accuracy_established": false
+}

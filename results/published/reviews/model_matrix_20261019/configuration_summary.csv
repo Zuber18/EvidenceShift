@@ -1,0 +1,7 @@
+model,representation,completed_structural_passes,birth_date_correct_abstentions_out_of_2,flute_correct_abstentions_out_of_2,stage_seconds_sum,confirmation_qualified
+qwen3:4b,passages,10,2,0,105.86,False
+qwen3:4b,sentence_units,10,2,0,192.63,False
+qwen3:8b,passages,10,0,0,171.91,False
+qwen3:8b,sentence_units,10,0,0,302.55,False
+gemma3:4b,passages,10,0,0,90.61,False
+gemma3:4b,sentence_units,10,0,0,135.96,False

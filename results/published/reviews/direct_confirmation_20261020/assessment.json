@@ -1,0 +1,487 @@
+{
+  "assessment_role": "final_project_assessment",
+  "reviewer": "ChatGPT",
+  "method": "Independent source-based assessment of all 16 actual answers against supplied fictional passages and cited IDs; arithmetic recomputed explicitly",
+  "source_archive_sha256": "6fa73b65d6f67dc2d98e9eceb09227d6ded1aa8fe1eaf351914244ac638a2aa0",
+  "decision": "Limited transfer shown; reliable-answer release criteria not met. Freeze confirmation results. Consolidate the research/evaluation project with explicit experimental status instead of tuning further on these confirmation cases.",
+  "recorded_trials": 17,
+  "model_calls": 16,
+  "zero_call_controls": 1,
+  "completed_model_calls": 16,
+  "mechanical_failures": 0,
+  "clean_supported_substantive_answers": 7,
+  "clean_justified_abstentions": 2,
+  "clean_answers_total": 9,
+  "supported_answers_with_minor_caveats": 2,
+  "correct_core_with_false_abstention": 4,
+  "material_arithmetic_errors": 1,
+  "all_citation_ids_valid": true,
+  "all_eight_context_order_pairs_exact_reversals": true,
+  "source_and_runner_snapshot_hashes_verified": true,
+  "frozen_prompt_model_digest_options_verified": true,
+  "actual_prompt_tokens_range": [
+    661,
+    668
+  ],
+  "model_stage_seconds_sum": 52.11,
+  "generated_tokens_sum": 495,
+  "model": "qwen3:8b",
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "prompt_sha256": "f63bfad7200d3dc459e615fc388a27b0b2c4fa85b9149d20a24b44158bfdb6e8",
+  "confirmation_cases_sha256": "4debcbbd98959d174f64ab010c10111c8d01a5ebf4481cbed26e7c7c9c360386",
+  "reviews": [
+    {
+      "job_id": "a88f2107e8d97e926706",
+      "model": "qwen3:8b",
+      "case_id": "confirm_1",
+      "question": "Does receipt L-84 prove that the booking is approved?",
+      "order": "no_context",
+      "status": "empty_context_control",
+      "assessment": "code_control",
+      "notes": "Zero model calls; code abstention, not a semantic model success.",
+      "answer": "The supplied evidence does not answer this question.",
+      "checks": {
+        "completed": true,
+        "citation_ids": [],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": false,
+        "exact_abstention": true,
+        "abstention_with_extra_text": false,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/a88f2107e8d97e926706/record.json"
+    },
+    {
+      "job_id": "6680af6b0662ab5815ee",
+      "model": "qwen3:8b",
+      "case_id": "confirm_1",
+      "question": "Does receipt L-84 prove that the booking is approved?",
+      "order": "retrieved",
+      "status": "candidate_recorded",
+      "assessment": "correct_core_with_false_abstention",
+      "notes": "Correct receipt/approval distinction, supported by cited c0, followed by false assertion that evidence cannot answer the question.",
+      "answer": "Receipt L-84 confirms that a booking form arrived, but it does not confirm approval [confirm_p0_c0]. The supplied evidence does not answer this question.",
+      "checks": {
+        "completed": true,
+        "citation_ids": [
+          "confirm_p0_c0"
+        ],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": true,
+        "exact_abstention": false,
+        "abstention_with_extra_text": true,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/6680af6b0662ab5815ee/record.json"
+    },
+    {
+      "job_id": "fcd9730b34dc4786e23f",
+      "model": "qwen3:8b",
+      "case_id": "confirm_1",
+      "question": "Does receipt L-84 prove that the booking is approved?",
+      "order": "reversed",
+      "status": "candidate_recorded",
+      "assessment": "correct_core_with_false_abstention",
+      "notes": "Correct receipt does not confirm approval statement, then paraphrased false abstention about that same question. Exact-phrase detector misses this form.",
+      "answer": "Receipt L-84 confirms that a booking form arrived but does not confirm approval [confirm_p0_c0]. The supplied evidence does not answer whether receipt L-84 proves that the booking is approved.",
+      "checks": {
+        "completed": true,
+        "citation_ids": [
+          "confirm_p0_c0"
+        ],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": true,
+        "exact_abstention": false,
+        "abstention_with_extra_text": false,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/fcd9730b34dc4786e23f/record.json"
+    },
+    {
+      "job_id": "70c0234a4a803e6c596d",
+      "model": "qwen3:8b",
+      "case_id": "confirm_2",
+      "question": "What time does a Saturday workshop begin?",
+      "order": "retrieved",
+      "status": "candidate_recorded",
+      "assessment": "supported_answer",
+      "notes": "Saturday 09:30 directly supported by c1; Wednesday scope kept separate.",
+      "answer": "Saturday workshops begin at 09:30 [confirm_p0_c1].",
+      "checks": {
+        "completed": true,
+        "citation_ids": [
+          "confirm_p0_c1"
+        ],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": true,
+        "exact_abstention": false,
+        "abstention_with_extra_text": false,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/70c0234a4a803e6c596d/record.json"
+    },
+    {
+      "job_id": "e29b2981e8094e54ab03",
+      "model": "qwen3:8b",
+      "case_id": "confirm_2",
+      "question": "What time does a Saturday workshop begin?",
+      "order": "reversed",
+      "status": "candidate_recorded",
+      "assessment": "supported_answer",
+      "notes": "Saturday 09:30 directly supported by c1; correct under reversal.",
+      "answer": "Saturday workshops begin at 09:30 [confirm_p0_c1].",
+      "checks": {
+        "completed": true,
+        "citation_ids": [
+          "confirm_p0_c1"
+        ],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": true,
+        "exact_abstention": false,
+        "abstention_with_extra_text": false,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/e29b2981e8094e54ab03/record.json"
+    },
+    {
+      "job_id": "da9e480ba7e42efe6480",
+      "model": "qwen3:8b",
+      "case_id": "confirm_3",
+      "question": "Must participants request an email copy, and what must they bring?",
+      "order": "retrieved",
+      "status": "candidate_recorded",
+      "assessment": "supported_answer",
+      "notes": "Optional email copy and mandatory membership card correctly distinguished; c2 supports both parts.",
+      "answer": "Participants may request an email copy of the handout; requesting it is optional [confirm_p0_c2]. Every participant must bring a membership card [confirm_p0_c2].",
+      "checks": {
+        "completed": true,
+        "citation_ids": [
+          "confirm_p0_c2"
+        ],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": true,
+        "exact_abstention": false,
+        "abstention_with_extra_text": false,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/da9e480ba7e42efe6480/record.json"
+    },
+    {
+      "job_id": "ab721c95d4df337bd812",
+      "model": "qwen3:8b",
+      "case_id": "confirm_3",
+      "question": "Must participants request an email copy, and what must they bring?",
+      "order": "reversed",
+      "status": "candidate_recorded",
+      "assessment": "supported_answer",
+      "notes": "Optional email copy and mandatory card correctly distinguished under reversal.",
+      "answer": "Participants may request an email copy of the handout; requesting it is optional [confirm_p0_c2]. Every participant must bring a membership card [confirm_p0_c2].",
+      "checks": {
+        "completed": true,
+        "citation_ids": [
+          "confirm_p0_c2"
+        ],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": true,
+        "exact_abstention": false,
+        "abstention_with_extra_text": false,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/ab721c95d4df337bd812/record.json"
+    },
+    {
+      "job_id": "c8551367286fb359b6bc",
+      "model": "qwen3:8b",
+      "case_id": "confirm_4",
+      "question": "Are notes linked to an unresolved incident deleted after 30 days?",
+      "order": "retrieved",
+      "status": "candidate_recorded",
+      "assessment": "correct_core_with_false_abstention",
+      "notes": "Correct exception: unresolved incident notes kept 90 days instead of 30, supported by c3. False exact abstention appended.",
+      "answer": "Notes linked to an unresolved incident are kept for 90 days instead of 30 days [confirm_p0_c3]. The supplied evidence does not answer this question.",
+      "checks": {
+        "completed": true,
+        "citation_ids": [
+          "confirm_p0_c3"
+        ],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": true,
+        "exact_abstention": false,
+        "abstention_with_extra_text": true,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/c8551367286fb359b6bc/record.json"
+    },
+    {
+      "job_id": "af8946031ecbba76666a",
+      "model": "qwen3:8b",
+      "case_id": "confirm_4",
+      "question": "Are notes linked to an unresolved incident deleted after 30 days?",
+      "order": "reversed",
+      "status": "candidate_recorded",
+      "assessment": "correct_core_with_false_abstention",
+      "notes": "Correct 90-day exception, then false exact abstention; preserved under reversal.",
+      "answer": "Notes linked to an unresolved incident are kept for 90 days instead of 30 days [confirm_p0_c3]. The supplied evidence does not answer this question.",
+      "checks": {
+        "completed": true,
+        "citation_ids": [
+          "confirm_p0_c3"
+        ],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": true,
+        "exact_abstention": false,
+        "abstention_with_extra_text": true,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/af8946031ecbba76666a/record.json"
+    },
+    {
+      "job_id": "eb9826c14917bad60a88",
+      "model": "qwen3:8b",
+      "case_id": "confirm_5",
+      "question": "Which pickup day applies this month, and why?",
+      "order": "retrieved",
+      "status": "candidate_recorded",
+      "assessment": "supported_with_scope_caveat",
+      "notes": "Correct Wednesday pickup and blue-notice precedence, cited c4. Extra sentence about unprovided reason for the change addresses an unasked interpretation of why; core question is already answered.",
+      "answer": "The blue notice applies this month because it replaces the green notice for this month, and the blue notice lists Wednesday pickup [confirm_p0_c4]. The reason for the change is not specified in the provided passages.",
+      "checks": {
+        "completed": true,
+        "citation_ids": [
+          "confirm_p0_c4"
+        ],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": true,
+        "exact_abstention": false,
+        "abstention_with_extra_text": false,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/eb9826c14917bad60a88/record.json"
+    },
+    {
+      "job_id": "a5db7ba803e794d3d1e7",
+      "model": "qwen3:8b",
+      "case_id": "confirm_5",
+      "question": "Which pickup day applies this month, and why?",
+      "order": "reversed",
+      "status": "candidate_recorded",
+      "assessment": "supported_with_citation_placement_caveat",
+      "notes": "Correct Wednesday and explicit blue-over-green precedence. Final inferred Wednesday statement lacks its own adjacent citation, though preceding cited sentences directly support it.",
+      "answer": "The blue notice applies this month because it replaces the green notice for this month [confirm_p0_c4]. The green notice lists Monday pickup, and the blue notice lists Wednesday pickup [confirm_p0_c4]. Therefore, the pickup day this month is Wednesday.",
+      "checks": {
+        "completed": true,
+        "citation_ids": [
+          "confirm_p0_c4"
+        ],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": true,
+        "exact_abstention": false,
+        "abstention_with_extra_text": false,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/a5db7ba803e794d3d1e7/record.json"
+    },
+    {
+      "job_id": "70b71affbf6f348814b9",
+      "model": "qwen3:8b",
+      "case_id": "confirm_6",
+      "question": "How many workshop credits are required for the five practice kits?",
+      "order": "retrieved",
+      "status": "candidate_recorded",
+      "assessment": "supported_answer",
+      "notes": "Correct derived total: (5 ordered - 2 free) x 4 credits = 12, with valid source c5 and explicit arithmetic.",
+      "answer": "The five practice kits require a total of 12 workshop credits. The first two kits are free, and each additional kit requires four workshop credits, so 3 kits × 4 credits = 12 credits [confirm_p0_c5].",
+      "checks": {
+        "completed": true,
+        "citation_ids": [
+          "confirm_p0_c5"
+        ],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": true,
+        "exact_abstention": false,
+        "abstention_with_extra_text": false,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/70b71affbf6f348814b9/record.json"
+    },
+    {
+      "job_id": "99e333a515987897f39e",
+      "model": "qwen3:8b",
+      "case_id": "confirm_6",
+      "question": "How many workshop credits are required for the five practice kits?",
+      "order": "reversed",
+      "status": "candidate_recorded",
+      "assessment": "material_arithmetic_error",
+      "notes": "Incorrect total 8. The same cited source gives five kits, first two free and four credits per additional kit; correct total is 12.",
+      "answer": "The five practice kits require a total of 8 workshop credits. The first two kits are free, and each additional kit requires four workshop credits [confirm_p0_c5].",
+      "checks": {
+        "completed": true,
+        "citation_ids": [
+          "confirm_p0_c5"
+        ],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": true,
+        "exact_abstention": false,
+        "abstention_with_extra_text": false,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/99e333a515987897f39e/record.json"
+    },
+    {
+      "job_id": "43211bb3d8dcba6df3fe",
+      "model": "qwen3:8b",
+      "case_id": "confirm_7",
+      "question": "What did Omar give Rina?",
+      "order": "retrieved",
+      "status": "candidate_recorded",
+      "assessment": "supported_answer",
+      "notes": "Omar-to-Rina calendar direction correctly preserved; c6 supports it.",
+      "answer": "Omar gave Rina a calendar [confirm_p0_c6].",
+      "checks": {
+        "completed": true,
+        "citation_ids": [
+          "confirm_p0_c6"
+        ],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": true,
+        "exact_abstention": false,
+        "abstention_with_extra_text": false,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/43211bb3d8dcba6df3fe/record.json"
+    },
+    {
+      "job_id": "f4899ef537cceb7161f3",
+      "model": "qwen3:8b",
+      "case_id": "confirm_7",
+      "question": "What did Omar give Rina?",
+      "order": "reversed",
+      "status": "candidate_recorded",
+      "assessment": "supported_answer",
+      "notes": "Omar-to-Rina calendar direction preserved under reversal.",
+      "answer": "Omar gave Rina a calendar [confirm_p0_c6].",
+      "checks": {
+        "completed": true,
+        "citation_ids": [
+          "confirm_p0_c6"
+        ],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": true,
+        "exact_abstention": false,
+        "abstention_with_extra_text": false,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/f4899ef537cceb7161f3/record.json"
+    },
+    {
+      "job_id": "b7ec0d9ee9daba752e1f",
+      "model": "qwen3:8b",
+      "case_id": "confirm_8",
+      "question": "Where was Rina born, and are the tickets waterproof?",
+      "order": "retrieved",
+      "status": "candidate_recorded",
+      "assessment": "justified_exact_abstention",
+      "notes": "Source provides neither birthplace nor ticket water resistance; exact abstention covers both.",
+      "answer": "The supplied evidence does not answer this question.",
+      "checks": {
+        "completed": true,
+        "citation_ids": [],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": false,
+        "exact_abstention": true,
+        "abstention_with_extra_text": false,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/b7ec0d9ee9daba752e1f/record.json"
+    },
+    {
+      "job_id": "b196385392036ceed89c",
+      "model": "qwen3:8b",
+      "case_id": "confirm_8",
+      "question": "Where was Rina born, and are the tickets waterproof?",
+      "order": "reversed",
+      "status": "candidate_recorded",
+      "assessment": "justified_exact_abstention",
+      "notes": "Same justified exact abstention under reversal.",
+      "answer": "The supplied evidence does not answer this question.",
+      "checks": {
+        "completed": true,
+        "citation_ids": [],
+        "unknown_citation_ids": [],
+        "citation_ids_valid": true,
+        "has_citations": false,
+        "exact_abstention": true,
+        "abstention_with_extra_text": false,
+        "factual_correctness": "not_automatically_scored",
+        "semantic_citation_support": "not_automatically_scored",
+        "answer_completeness": "not_automatically_scored"
+      },
+      "original_job_path": "jobs/b196385392036ceed89c/record.json"
+    }
+  ],
+  "observations": [
+    "Direct Qwen 8B transfers successfully on time scope, optional versus mandatory actions, actor direction, some precedence and one arithmetic order, and absence of two requested facts.",
+    "Four negative/exception questions contain correct cited information followed by false abstention. This is answer incoherence, not missing evidence.",
+    "The original exact-phrase mixed-abstention check catches only three of these four. The reversed receipt response paraphrases abstention; source review identifies the same defect.",
+    "Arithmetic changes from 12 to 8 between matched orders despite identical facts. One paired observation supports an observed order-associated failure, not a population-level causal estimate.",
+    "All citation IDs exist, including the wrong arithmetic answer. Citation membership is not factual support or arithmetic correctness.",
+    "Known development role reversal and unjustified why-abstentions remain unresolved; confirmation successes do not erase them.",
+    "The optional runtime version observation was unavailable because the installed Client lacks version(). Model digest and request options are verified; server version is not pinned by this archive."
+  ],
+  "limitations": [
+    "Eight short fictional cases reserved before selection, not an independently held-out benchmark.",
+    "One response per case/order. Counts are trial outcomes, not a general accuracy estimate.",
+    "The absent-fact case explicitly says the facts are unprovided, making it easier than arbitrary-document abstention.",
+    "Fixed full context: no retrieval, PDF/DOCX ingestion, hostile-document, multi-document or hosted behavior is evaluated here.",
+    "No independent semantic model judge used; this is saved source-based assessment."
+  ],
+  "next_step": "Consolidate reproducible code/results/docs and a clearly labelled experimental demo. Retain frozen direct Qwen 8B as candidate and preserve failure corpus. Production reliability remains unproven; do not tune on this confirmation set and still call it held out."
+}

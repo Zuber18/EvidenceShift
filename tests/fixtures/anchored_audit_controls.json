@@ -1,0 +1,122 @@
+[
+  {
+    "name": "delivery_negation/supported",
+    "kind": "new_regression_control",
+    "question": "Does a received booking request guarantee a confirmed booking?",
+    "context": [
+      {
+        "id": "booking_policy",
+        "text": "Fictional test policy.\n\nReceiving a booking request does not confirm a booking. A booking is confirmed only after a separate confirmation email is sent."
+      }
+    ],
+    "candidate_answer": "Receiving a booking request does not guarantee a confirmed booking. [booking_policy]",
+    "expected_context_result": "advisory_no_error_reported",
+    "origin": "Newly authored fictional regression pair; not held-out evaluation."
+  },
+  {
+    "name": "delivery_negation/incorrect",
+    "kind": "new_regression_control",
+    "question": "Does a received booking request guarantee a confirmed booking?",
+    "context": [
+      {
+        "id": "booking_policy",
+        "text": "Fictional test policy.\n\nReceiving a booking request does not confirm a booking. A booking is confirmed only after a separate confirmation email is sent."
+      }
+    ],
+    "candidate_answer": "Receiving a booking request guarantees a confirmed booking. [booking_policy]",
+    "expected_context_result": "advisory_error_reported",
+    "origin": "Newly authored fictional regression pair; not held-out evaluation."
+  },
+  {
+    "name": "optional_notice/supported",
+    "kind": "new_regression_control",
+    "question": "Must support staff send a delay notice in every case?",
+    "context": [
+      {
+        "id": "support_policy",
+        "text": "Fictional test policy.\n\nSupport staff may send a delay notice. Sending a delay notice is optional, not required in every case."
+      }
+    ],
+    "candidate_answer": "A delay notice is optional; support staff may send one. [support_policy]",
+    "expected_context_result": "advisory_no_error_reported",
+    "origin": "Newly authored fictional regression pair; not held-out evaluation."
+  },
+  {
+    "name": "optional_notice/incorrect",
+    "kind": "new_regression_control",
+    "question": "Must support staff send a delay notice in every case?",
+    "context": [
+      {
+        "id": "support_policy",
+        "text": "Fictional test policy.\n\nSupport staff may send a delay notice. Sending a delay notice is optional, not required in every case."
+      }
+    ],
+    "candidate_answer": "Support staff must send a delay notice in every case. [support_policy]",
+    "expected_context_result": "advisory_error_reported",
+    "origin": "Newly authored fictional regression pair; not held-out evaluation."
+  },
+  {
+    "name": "conditional_access/supported",
+    "kind": "new_regression_control",
+    "question": "Does every contractor have access to the staging dashboard?",
+    "context": [
+      {
+        "id": "access_policy",
+        "text": "Fictional test policy.\n\nContractors have access to the staging dashboard only after their manager records written approval. Contractors without that recorded approval do not have access."
+      }
+    ],
+    "candidate_answer": "Contractors have access only after their manager records written approval. [access_policy]",
+    "expected_context_result": "advisory_no_error_reported",
+    "origin": "Newly authored fictional regression pair; not held-out evaluation."
+  },
+  {
+    "name": "conditional_access/incorrect",
+    "kind": "new_regression_control",
+    "question": "Does every contractor have access to the staging dashboard?",
+    "context": [
+      {
+        "id": "access_policy",
+        "text": "Fictional test policy.\n\nContractors have access to the staging dashboard only after their manager records written approval. Contractors without that recorded approval do not have access."
+      }
+    ],
+    "candidate_answer": "Every contractor has access to the staging dashboard, whether or not written approval is recorded. [access_policy]",
+    "expected_context_result": "advisory_error_reported",
+    "origin": "Newly authored fictional regression pair; not held-out evaluation."
+  },
+  {
+    "name": "opposing_dispatch_dates/supported",
+    "kind": "new_regression_control",
+    "question": "What dispatch date do the supplied notices give for batch X7?",
+    "context": [
+      {
+        "id": "notice_alpha",
+        "text": "Fictional test notice.\n\nBatch X7 will be dispatched on 4 May 2028. This notice does not establish precedence over other notices."
+      },
+      {
+        "id": "notice_beta",
+        "text": "Fictional test notice.\n\nBatch X7 will be dispatched on 9 May 2028. This notice does not establish precedence over other notices."
+      }
+    ],
+    "candidate_answer": "The supplied notices conflict: one gives 4 May 2028 [notice_alpha], while the other gives 9 May 2028 [notice_beta]. Neither establishes precedence.",
+    "expected_context_result": "advisory_no_error_reported",
+    "origin": "Newly authored fictional regression pair; not held-out evaluation."
+  },
+  {
+    "name": "opposing_dispatch_dates/incorrect",
+    "kind": "new_regression_control",
+    "question": "What dispatch date do the supplied notices give for batch X7?",
+    "context": [
+      {
+        "id": "notice_alpha",
+        "text": "Fictional test notice.\n\nBatch X7 will be dispatched on 4 May 2028. This notice does not establish precedence over other notices."
+      },
+      {
+        "id": "notice_beta",
+        "text": "Fictional test notice.\n\nBatch X7 will be dispatched on 9 May 2028. This notice does not establish precedence over other notices."
+      }
+    ],
+    "candidate_answer": "Batch X7 will be dispatched on 9 May 2028. [notice_beta]",
+    "expected_context_result": "advisory_error_reported",
+    "origin": "Newly authored fictional regression pair; not held-out evaluation."
+  }
+]

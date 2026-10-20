@@ -1,0 +1,11 @@
+{
+  "component_tests_passed": 10,
+  "real_pdf_docx_parser_tests": "passed",
+  "api_orchestration_tests": "controlled responses, not real FastAPI/Chroma inference",
+  "installer_checks": "passed",
+  "intended_documents": 48,
+  "intended_answer_records": 24,
+  "real_embedding_search_performed_here": false,
+  "real_ollama_inference_performed_here": false,
+  "semantic_and_factual_results": "await local run"
+}

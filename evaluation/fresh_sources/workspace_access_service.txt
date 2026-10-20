@@ -1,0 +1,3 @@
+Fictional EvidenceShift evaluation document.
+
+Service accounts use a separate rule: an active workspace token is required. The human-user two-factor-authentication rule does not apply to service accounts.

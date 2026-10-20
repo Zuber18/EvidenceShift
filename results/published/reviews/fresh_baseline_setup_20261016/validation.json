@@ -1,0 +1,11 @@
+{
+  "component_tests_passed": 13,
+  "installer_checks": "PASS",
+  "planned_records": 24,
+  "nonempty_context_records": 16,
+  "empty_context_code_controls": 8,
+  "maximum_planned_input_bytes_including_all_selectable_evidence": 2493,
+  "input_budget": 6000,
+  "real_model_inference_performed": false,
+  "factual_accuracy": "not_measured"
+}
