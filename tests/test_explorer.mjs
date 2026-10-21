@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {pairFor, filteredRecords, citationIds, confirmationBuckets, assessmentDistribution, toCsv, safeState} from '../website/core.mjs';
+import {pairFor, filteredRecords, citationIds, confirmationBuckets, assessmentDistribution, toCsv, safeState, modelComparisons} from '../website/core.mjs';
 const data=JSON.parse(readFileSync(new URL('../website/data/experiments.json',import.meta.url),'utf8'));
 const confirmation=data.experiments.find(e=>e.id==='direct_confirmation');
 
@@ -48,7 +48,7 @@ test('distribution totals never drop categories or include controls',()=>{
 });
 test('query parameters fall back to known model, case and representation values',()=>{
   const state=safeState(data,new URLSearchParams('experiment=unknown&model=<script>&case=bad&representation=bad&order=bad'));
-  assert.deepEqual(state,{experiment:'direct_confirmation',model:'qwen3:8b',representation:'direct',caseId:'confirm_6',order:'retrieved'});
+  assert.deepEqual(state,{experiment:'direct_answer',model:'qwen3:8b',representation:'direct',caseId:'1f939d31',order:'retrieved'});
 });
 test('share-link state recovers a specific recorded comparison',()=>{
   const state=safeState(data,new URLSearchParams('experiment=model_matrix&model=gemma3:4b&case=ae8d2dc4&representation=sentence_units&order=reversed'));
@@ -62,4 +62,17 @@ test('every displayed record has a source hash and a current owner assessment',(
   for(const e of data.experiments){assert.equal(e.reviewer,'Zuber Shaikh');for(const r of e.records){
     assert.match(r.raw_sha256,/^[a-f0-9]{64}$/);assert.ok(r.notes);assert.equal(r.model_calls,r.order==='no_context'?0:1);
   }}
+});
+
+test('the default opens the three-model baseline and comparisons retain every model',()=>{
+  const state=safeState(data,new URLSearchParams());assert.equal(state.experiment,'direct_answer');
+  const exp=data.experiments.find(e=>e.id===state.experiment);
+  const comparisons=modelComparisons(exp,state.representation,state.caseId);
+  assert.deepEqual(comparisons.map(c=>c.model),['qwen3:4b','qwen3:8b','gemma3:4b']);
+  assert.equal(comparisons.flatMap(c=>Object.values(c.pair)).length,6);
+  assert.equal(filteredRecords(exp,'all','direct').length,30);
+  assert.equal(filteredRecords(exp,'all','direct','all',true).length,33);
+});
+test('confirmation remains explicitly limited to its actual tested model',()=>{
+  assert.deepEqual(modelComparisons(confirmation,'direct','confirm_1').map(c=>c.model),['qwen3:8b']);
 });

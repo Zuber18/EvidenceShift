@@ -5,6 +5,15 @@ requiring a Python environment or a model download. The browser presents recorde
 answers, manual assessments, original source passages and mechanical checks.
 Changing a question or filter does not perform inference.
 
+The page follows a linear sequence: project introduction, research question,
+method and evaluation, results, and conclusions. The default detail view is the
+three-model direct baseline. Each selected question shows both evidence orders
+for all models tested in that protocol; the source selector only chooses whose
+citations to inspect. Trial tables and CSV exports include every tested model.
+Comparison JSON exports include every model pair for the selected question.
+The Qwen 8B confirmation remains a single-model protocol and is identified as such.
+
+
 ## Included experiments
 
 | Experiment | Model calls | Code controls | Exact order pairs |
