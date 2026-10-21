@@ -10,6 +10,17 @@ an experimental local evidence viewer.
 false abstentions and a cited arithmetic error. Valid citation IDs and exact
 copied quotations do not establish a correct or complete answer.
 
+## Interactive results website
+
+The recorded-results explorer in `website/` presents 53 evidence-order pairs
+across three experiments. Visitors can compare answers, follow citations to saved
+passages, inspect owner assessments and download filtered records. It uses saved
+outputs; the local MiniLM/Chroma retrieval and Ollama workflow remain available
+for live document work.
+
+See [website setup and deployment](docs/WEBSITE.md) for GitHub Pages configuration,
+local preview commands and data verification.
+
 ## What is implemented
 
 | Path | Purpose | Inference | Evidence |

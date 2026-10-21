@@ -1,0 +1,56 @@
+name: EvidenceShift results explorer
+
+on:
+  push:
+    branches: [main]
+    paths: ['website/**', 'scripts/build_site_data.py', 'tests/test_explorer.mjs', 'results/published/**', '.github/workflows/pages.yml']
+  pull_request:
+    paths: ['website/**', 'scripts/build_site_data.py', 'tests/test_explorer.mjs', 'results/published/**', '.github/workflows/pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify and prepare the recorded dataset
+        run: python scripts/build_site_data.py --source-commit "${{ github.sha }}"
+      - name: Check JavaScript and recorded-data contracts
+        run: |
+          node --check website/app.js
+          node --test tests/test_explorer.mjs
+      - name: Upload the static website only
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: website
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Deploy the explorer
+        id: deployment
+        uses: actions/deploy-pages@v4
