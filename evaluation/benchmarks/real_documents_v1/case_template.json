@@ -1,0 +1,45 @@
+{
+  "template_only": true,
+  "id": null,
+  "source_ids": [],
+  "document_family": null,
+  "split": null,
+  "primary_category": null,
+  "secondary_tags": [],
+  "question": null,
+  "source_scope": {
+    "allowed_document_ids": [],
+    "external_knowledge_allowed": false,
+    "full_snapshot_reviewed_for_missing_facts": false
+  },
+  "answerability": "answerable | partially_answerable | unanswerable",
+  "required_response_units": [
+    {
+      "id": "u1",
+      "meaning": null,
+      "accepted_paraphrases": [],
+      "required_qualifications": [],
+      "response_kind": "supported_fact | insufficient_information | unresolved_conflict",
+      "evidence_alternatives": [
+        {
+          "all_required_spans": [
+            {
+              "source_id": null,
+              "text_sha256": null,
+              "start_char": null,
+              "end_char_exclusive": null,
+              "exact_text": null,
+              "section": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "forbidden_claims": [],
+  "calculation": null,
+  "gold_notes": null,
+  "annotation_status": "not_authored",
+  "annotation_history": [],
+  "annotation_contract": "Offsets are zero-based Python Unicode string indexes in the exact frozen extracted-text file, not bytes or browser-rendered character counts. Citations may use alternate evidence sets if adjudicated sufficient. Unanswerability is scoped to the declared complete source set, never inferred merely from retrieval failure."
+}

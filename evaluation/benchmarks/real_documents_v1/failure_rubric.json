@@ -1,0 +1,169 @@
+{
+  "version": "0.1.0-draft",
+  "review_status": "proposed_for_owner_decision",
+  "annotation_unit": "response plus atomic factual claims and required response units",
+  "labels_are_multi_select": true,
+  "failure_codes": [
+    {
+      "code": "UNSUPPORTED_CLAIM",
+      "dimension": "semantic",
+      "definition": "An asserted factual claim is not established by the allowed evidence. It may be true externally; that does not establish document grounding."
+    },
+    {
+      "code": "CONTRADICTED_CLAIM",
+      "dimension": "semantic",
+      "definition": "The source evidence establishes an incompatible fact, with relevant conditions and scope considered."
+    },
+    {
+      "code": "WRONG_RELATION",
+      "dimension": "semantic",
+      "definition": "Person, action, object, direction, ownership or causal relation is wrongly connected. Also record support/contradiction status."
+    },
+    {
+      "code": "NUMERIC_ERROR",
+      "dimension": "semantic",
+      "definition": "Wrong value, arithmetic, denominator, sign, unit, date calculation or precision. Log whether the error begins with operand extraction or computation."
+    },
+    {
+      "code": "QUALIFICATION_LOSS",
+      "dimension": "semantic",
+      "definition": "A necessary condition, exception, uncertainty, scope or optional/required distinction is lost or strengthened."
+    },
+    {
+      "code": "MISSING_REQUIRED_UNIT",
+      "dimension": "coverage",
+      "definition": "One or more required answer components are absent, despite being answerable in the declared source scope."
+    },
+    {
+      "code": "IRRELEVANT_ANSWER",
+      "dimension": "relevance",
+      "definition": "The response does not answer the question. Exact quotations can still be irrelevant."
+    },
+    {
+      "code": "FALSE_ABSTENTION",
+      "dimension": "answerability",
+      "definition": "The response wholly or partly declines to answer a fact supported within the evaluation evidence. Distinguish source-level answerability from retrieved-context availability."
+    },
+    {
+      "code": "MIXED_ABSTENTION",
+      "dimension": "answerability",
+      "definition": "An answer supplies a fact and then inconsistently claims that the supplied evidence cannot answer that same fact. An explicitly marked genuinely unknown subpart is not mixed abstention."
+    },
+    {
+      "code": "UNJUSTIFIED_ANSWER",
+      "dimension": "answerability",
+      "definition": "The response supplies a requested fact whose premises are absent from the declared source scope. Usually co-occurs with UNSUPPORTED_CLAIM."
+    },
+    {
+      "code": "CITATION_SUPPORT",
+      "dimension": "citation",
+      "definition": "A cited passage does not support its attached claim, including citations to a wrong relation or irrelevant text."
+    },
+    {
+      "code": "CITATION_COVERAGE",
+      "dimension": "citation",
+      "definition": "A factual claim lacks sufficient supporting citations; joint evidence may require multiple passages."
+    },
+    {
+      "code": "UNKNOWN_CITATION",
+      "dimension": "mechanical",
+      "definition": "A citation refers to an ID absent from the actually supplied context after canonical grouped-ID parsing."
+    },
+    {
+      "code": "OUTPUT_FAILURE",
+      "dimension": "execution",
+      "definition": "No completed usable answer because of truncation, timeout, invalid output contract or unhandled error. Not automatically labelled hallucination."
+    },
+    {
+      "code": "RETRIEVAL_MISS",
+      "dimension": "retrieval",
+      "definition": "Required evidence exists in the allowed source scope but is absent from the supplied context. Not itself a generation hallucination."
+    },
+    {
+      "code": "PARSER_DEFECT",
+      "dimension": "instrumentation",
+      "definition": "The evaluation parser incorrectly interprets a model output, such as known IDs in grouped brackets. Preserve the raw check; adjudicate with canonical parsing."
+    },
+    {
+      "code": "SOURCE_DEFECT",
+      "dimension": "data",
+      "definition": "Extraction, document version, gold answer or scope is ambiguous or defective. Requires documented adjudication, not a quiet favorable relabel."
+    }
+  ],
+  "severity": {
+    "critical": "A material wrong or unsupported answer, wrong calculation, missing qualification that changes meaning, unsupported answer to an absent fact, or contradiction about the requested fact.",
+    "major": "Incomplete required response, unjustified refusal, irrelevant answer, missing or misleading required citation, or failure to return a usable response.",
+    "minor": "Clarity or placement issue that does not alter facts, required coverage, answerability or ability to identify support. Minor issues are recorded and can pass only if all strict gates remain satisfied.",
+    "not_applicable": "No response-level severity is assigned to retrieval/parser/data diagnostics alone; record downstream effects separately."
+  },
+  "strict_pass": {
+    "all_required": true,
+    "gates": [
+      "Completed response meets the declared output contract",
+      "Every asserted factual claim follows from the supplied evidence and is consistent with the frozen source scope",
+      "All required response units are addressed with required qualifications",
+      "All factual claims have adequate citations to actually supplied evidence, with valid canonical IDs",
+      "Answerability and partial-answer behavior match the gold contract",
+      "No unresolved material contradiction or source defect"
+    ],
+    "unknown_verdict": "unresolved, never auto-pass",
+    "unanswerable_case": "An appropriate explanation of unavailable evidence can pass without invented citations. Citations to absence evidence are optional unless the case contract requires them."
+  },
+  "partial_credit": {
+    "field": "required_unit_coverage",
+    "formula": "correctly_supported_required_units / total_required_units",
+    "range": [
+      0,
+      1
+    ],
+    "strict_pass_is_separate": true,
+    "unsupported_extras": "Do not subtract arbitrary points; record the failure and fail strict pass even when required-unit coverage is 1.",
+    "partial_answer_gold": "Identify supported units and explicitly unknown subparts. A mixed question may pass strictly when all supported units and required uncertainty statements are correctly addressed.",
+    "no_gold_units": "Invalid case annotation. Even fully unanswerable cases require an appropriate-insufficiency response unit."
+  },
+  "mechanical_vs_semantic": "Citation membership is not semantic support. Exact source copies are not automatically relevant or complete. A second model judgment is an annotation aid, not gold truth.",
+  "review_rule": "Reviewers assess against frozen sources and gold units, preferably with model identity and comparison order hidden. Record rationale and evidence spans for each failure. Owner adjudication and any independent review are attributed separately.",
+  "metrics": [
+    {
+      "name": "strict_system_pass_rate",
+      "numerator": "strict passes",
+      "denominator": "all attempted, evaluable jobs including execution failures"
+    },
+    {
+      "name": "unsupported_claim_rate",
+      "numerator": "asserted factual claims labelled unsupported or contradicted (unique claim count)",
+      "denominator": "all adjudicated asserted factual claims; undefined when there are none"
+    },
+    {
+      "name": "required_unit_coverage",
+      "numerator": "correctly supported required units",
+      "denominator": "all required units across attempted evaluable jobs; execution failures cover zero"
+    },
+    {
+      "name": "false_abstention_rate",
+      "numerator": "jobs with unjustified full/partial refusal despite sufficient actually supplied evidence",
+      "denominator": "all attempted evaluable jobs with at least one answerable unit and sufficient supplied evidence; report retrieval misses separately"
+    },
+    {
+      "name": "unanswerable_success_rate",
+      "numerator": "strict passes on fully unanswerable questions",
+      "denominator": "all attempted evaluable fully unanswerable jobs"
+    },
+    {
+      "name": "order_robust_pair_rate",
+      "numerator": "pairs whose canonical and reversed responses both pass strictly",
+      "denominator": "all attempted evaluable pairs; include execution failures"
+    },
+    {
+      "name": "correctness_flip_rate",
+      "numerator": "pairs with exactly one strict pass",
+      "denominator": "all attempted evaluable pairs; report which order passed"
+    },
+    {
+      "name": "retrieval_required_unit_recall",
+      "numerator": "answerable required units with at least one sufficient complete evidence set in the supplied context",
+      "denominator": "all answerable required units; a multi-span evidence set is covered only when every required span is present"
+    }
+  ],
+  "reporting": "Report by model, split, category, execution stage and protocol. Keep document-level clustering visible; 30 questions over three documents are not 30 independent documents. Publish raw counts. Planned-but-unattempted jobs and unresolved data defects are listed, never silently dropped. No arbitrary weighted composite or hallucination-free certification."
+}
