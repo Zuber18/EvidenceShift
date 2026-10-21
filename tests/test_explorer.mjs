@@ -48,7 +48,7 @@ test('distribution totals never drop categories or include controls',()=>{
 });
 test('query parameters fall back to known model, case and representation values',()=>{
   const state=safeState(data,new URLSearchParams('experiment=unknown&model=<script>&case=bad&representation=bad&order=bad'));
-  assert.deepEqual(state,{experiment:'direct_answer',model:'qwen3:8b',representation:'direct',caseId:'1f939d31',order:'retrieved'});
+  assert.deepEqual(state,{experiment:'direct_answer',model:'all',sourceModel:'qwen3:8b',representation:'direct',caseId:'1f939d31',order:'retrieved'});
 });
 test('share-link state recovers a specific recorded comparison',()=>{
   const state=safeState(data,new URLSearchParams('experiment=model_matrix&model=gemma3:4b&case=ae8d2dc4&representation=sentence_units&order=reversed'));
@@ -75,4 +75,23 @@ test('the default opens the three-model baseline and comparisons retain every mo
 });
 test('confirmation remains explicitly limited to its actual tested model',()=>{
   assert.deepEqual(modelComparisons(confirmation,'direct','confirm_1').map(c=>c.model),['qwen3:8b']);
+});
+
+test('each model selection changes the displayed answer pairs and record scope',()=>{
+  const exp=data.experiments.find(e=>e.id==='direct_answer');
+  for(const model of exp.models){
+    const state=safeState(data,new URLSearchParams({experiment:exp.id,model,case:exp.cases[0].id}));
+    assert.equal(state.model,model);assert.equal(state.sourceModel,model);
+    const groups=modelComparisons(exp,state.representation,state.caseId,state.model);
+    assert.deepEqual(groups.map(g=>g.model),[model]);
+    assert.equal(Object.values(groups[0].pair).length,2);
+    assert.equal(filteredRecords(exp,model,'direct').length,10);
+  }
+});
+test('All models restores three pairs while shared citation state retains its source model',()=>{
+  const state=safeState(data,new URLSearchParams('experiment=direct_answer&model=all&source_model=gemma3:4b'));
+  assert.equal(state.model,'all');assert.equal(state.sourceModel,'gemma3:4b');
+  const exp=data.experiments.find(e=>e.id===state.experiment);
+  assert.equal(modelComparisons(exp,state.representation,state.caseId,state.model).length,3);
+  assert.equal(safeState(data,new URLSearchParams('experiment=direct_confirmation&model=all')).model,'qwen3:8b');
 });

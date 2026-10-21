@@ -67,14 +67,15 @@ export function toCsv(records) {
 }
 export function safeState(data, params) {
   const experiment=data.experiments.find(e=>e.id===params.get('experiment')) || data.experiments.find(e=>e.id==='direct_answer') || data.experiments[0];
-  const model=experiment.models.includes(params.get('model')) ? params.get('model') : experiment.models.includes('qwen3:8b') ? 'qwen3:8b' : experiment.models[0];
+  const model=experiment.models.includes(params.get('model')) ? params.get('model') : experiment.models.length>1 ? 'all' : experiment.models[0];
+  const sourceModel=model!=='all'?model:experiment.models.includes(params.get('source_model'))?params.get('source_model'):experiment.models.includes('qwen3:8b')?'qwen3:8b':experiment.models[0];
   const representation=experiment.representations.includes(params.get('representation')) ? params.get('representation') : experiment.representations[0];
   const caseId=experiment.cases.some(c=>c.id===params.get('case')) ? params.get('case') : experiment.cases[0].id;
-  return {experiment:experiment.id,model,representation,caseId,order:params.get('order')==='reversed'?'reversed':'retrieved'};
+  return {experiment:experiment.id,model,sourceModel,representation,caseId,order:params.get('order')==='reversed'?'reversed':'retrieved'};
 }
 
 /** Preserve a separate original/reversed pair for every tested model. */
-export function modelComparisons(experiment, representation, caseId) {
+export function modelComparisons(experiment, representation, caseId, selectedModel='all') {
   const order=['qwen3:4b','qwen3:8b','gemma3:4b'];
-  return order.filter(model=>experiment.models.includes(model)).map(model=>({model,pair:pairFor(experiment,model,representation,caseId)}));
+  return order.filter(model=>experiment.models.includes(model)&&(selectedModel==='all'||model===selectedModel)).map(model=>({model,pair:pairFor(experiment,model,representation,caseId)}));
 }
