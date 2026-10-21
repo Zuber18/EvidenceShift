@@ -32,7 +32,7 @@ export function pairFor(experiment, model, representation, caseId) {
   return Object.fromEntries(experiment.records.filter(r => r.model === model && r.representation === representation && r.case_id === caseId && r.order !== 'no_context').map(r => [r.order, r]));
 }
 export function filteredRecords(experiment, model, representation, outcome='all', controls=false) {
-  return experiment.records.filter(r => r.model === model && r.representation === representation && (controls || r.order !== 'no_context') && (outcome === 'all' || r.assessment === outcome));
+  return experiment.records.filter(r => (model === 'all' || r.model === model) && r.representation === representation && (controls || r.order !== 'no_context') && (outcome === 'all' || r.assessment === outcome));
 }
 export function citationIds(answer, contextIds) {
   const known = new Set(contextIds), ids = new Set();
@@ -66,9 +66,15 @@ export function toCsv(records) {
   return [columns,...rows].map(row=>row.map(cell).join(',')).join('\r\n')+'\r\n';
 }
 export function safeState(data, params) {
-  const experiment=data.experiments.find(e=>e.id===params.get('experiment')) || data.experiments[0];
+  const experiment=data.experiments.find(e=>e.id===params.get('experiment')) || data.experiments.find(e=>e.id==='direct_answer') || data.experiments[0];
   const model=experiment.models.includes(params.get('model')) ? params.get('model') : experiment.models.includes('qwen3:8b') ? 'qwen3:8b' : experiment.models[0];
   const representation=experiment.representations.includes(params.get('representation')) ? params.get('representation') : experiment.representations[0];
-  const caseId=experiment.cases.some(c=>c.id===params.get('case')) ? params.get('case') : experiment.id==='direct_confirmation' ? 'confirm_6' : experiment.cases[0].id;
+  const caseId=experiment.cases.some(c=>c.id===params.get('case')) ? params.get('case') : experiment.cases[0].id;
   return {experiment:experiment.id,model,representation,caseId,order:params.get('order')==='reversed'?'reversed':'retrieved'};
+}
+
+/** Preserve a separate original/reversed pair for every tested model. */
+export function modelComparisons(experiment, representation, caseId) {
+  const order=['qwen3:4b','qwen3:8b','gemma3:4b'];
+  return order.filter(model=>experiment.models.includes(model)).map(model=>({model,pair:pairFor(experiment,model,representation,caseId)}));
 }

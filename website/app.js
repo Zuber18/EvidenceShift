@@ -1,7 +1,7 @@
-import {label, modelLabel, tone, pairFor, filteredRecords, citationIds, assessmentDistribution, toCsv, safeState} from './core.mjs';
+import {label, modelLabel, tone, pairFor, filteredRecords, citationIds, assessmentDistribution, toCsv, safeState, modelComparisons} from './core.mjs';
 
 const $ = id => document.getElementById(id);
-const state = {data:null, experiment:'direct_confirmation',model:'qwen3:8b',representation:'direct',caseId:'confirm_6',order:'retrieved',outcome:'all',controls:false,citedOnly:false,highlight:null};
+const state = {data:null, experiment:'direct_answer',model:'qwen3:8b',representation:'direct',caseId:'1f939d31',order:'retrieved',outcome:'all',controls:false,citedOnly:false,highlight:null};
 let toastTimer;
 
 /** All saved source/model content is inserted as text, never trusted HTML. */
@@ -28,7 +28,7 @@ function fillSelect(element, items, selected) {
 }
 function renderFilters() {
   const exp=experiment();
-  $('experiment-tabs').replaceChildren(...state.data.experiments.map((item,index)=>{
+  $('experiment-tabs').replaceChildren(...[...state.data.experiments].sort((a,b)=>['direct_answer','model_matrix','direct_confirmation'].indexOf(a.id)-['direct_answer','model_matrix','direct_confirmation'].indexOf(b.id)).map((item,index)=>{
     const button=node('button','experiment-tab');button.type='button';button.setAttribute('aria-pressed',String(item.id===state.experiment));
     button.append(node('span','tab-number',String(index+1).padStart(2,'0')),node('span','',item.title));
     button.addEventListener('click',()=>{
@@ -45,7 +45,7 @@ function renderFilters() {
   const multiple=exp.representations.length>1;
   $('representation-field').hidden=!multiple;
   document.querySelector('.filter-grid').classList.toggle('has-representation',multiple);
-  const outcomes=[...new Set(exp.records.filter(r=>r.model===state.model && r.representation===state.representation && (state.controls||r.order!=='no_context')).map(r=>r.assessment))].sort();
+  const outcomes=[...new Set(exp.records.filter(r=>r.representation===state.representation && (state.controls||r.order!=='no_context')).map(r=>r.assessment))].sort();
   if (!outcomes.includes(state.outcome)) state.outcome='all';
   fillSelect($('outcome-filter'),[['all','All assessments'],...outcomes.map(v=>[v,label(v)])],state.outcome);
 }
@@ -62,7 +62,7 @@ function renderAnswerText(container, text, record) {
       button.setAttribute('aria-label','Inspect cited source '+ids.join(', '));
       button.title=ids.length>1?'Open the first passage in this citation group. All passages remain available below.':'Open this source passage';
       button.addEventListener('click',()=>{
-        state.order=record.order;state.highlight=ids[0];renderEvidence();syncUrl();
+        state.model=record.model;state.order=record.order;state.highlight=ids[0];state.citedOnly=false;$('cited-only').checked=false;renderFilters();renderEvidence();syncUrl();
         const target=document.getElementById('passage-'+ids[0]);
         if (target) {target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest'});target.focus({preventScroll:true});}
       });container.append(button);
@@ -98,7 +98,15 @@ function renderAnswer(record,order) {
 function renderPair() {
   const records=pair();
   $('selected-question').textContent=experiment().cases.find(c=>c.id===state.caseId).question;
-  $('answer-grid').replaceChildren(...['retrieved','reversed'].map(order=>records[order]?renderAnswer(records[order],order):node('p','load-state','This saved order is unavailable.')));
+  $('answer-grid').replaceChildren(...modelComparisons(experiment(),state.representation,state.caseId).map(({model,pair:records})=>{
+    const group=node('section','model-comparison');
+    const heading=node('div','model-comparison-heading');heading.append(node('h4','',modelLabel(model)));
+    const inspect=node('button','text-link','Inspect this model’s sources ↓');inspect.type='button';
+    inspect.addEventListener('click',()=>{state.model=model;state.highlight=null;renderFilters();renderEvidence();syncUrl();document.querySelector('.evidence-section').scrollIntoView({behavior:'smooth',block:'start'});});
+    heading.append(inspect);const grid=node('div','answer-grid');
+    grid.append(...['retrieved','reversed'].map(order=>records[order]?renderAnswer(records[order],order):node('p','load-state','This saved order is unavailable.')));
+    group.append(heading,grid);return group;
+  }));
   const same=records.retrieved && records.reversed && JSON.stringify(records.retrieved.context_ids)===JSON.stringify([...records.reversed.context_ids].reverse());
   $('pair-status').textContent=same?`${records.retrieved.context_ids.length} passages · exact reversal`:'Inspect the saved context';
 }
@@ -110,7 +118,7 @@ function renderEvidence() {
   if (!record) {$('evidence-list').replaceChildren();return;}
   const cited=citationIds(record.answer,record.context_ids);
   const ids=state.citedOnly?record.context_ids.filter(id=>cited.has(id)):record.context_ids;
-  $('evidence-count').textContent=`${ids.length} of ${record.context_ids.length} supplied passages · ${state.order==='retrieved'?'original':'reversed'} order`;
+  $('evidence-count').textContent=`${modelLabel(state.model)} · ${ids.length} of ${record.context_ids.length} supplied passages · ${state.order==='retrieved'?'original':'reversed'} order`;
   const elements=ids.map(id=>{
     const passage=state.data.passages[id],article=node('article','passage'+(state.highlight===id?' highlighted':''));
     article.id='passage-'+id;article.tabIndex=-1;
@@ -144,10 +152,28 @@ function renderSummary() {
   $('result-notes').replaceChildren(node('strong','','Reading this experiment. '),document.createTextNode(note));
 }
 
-function tableRecords() {return filteredRecords(experiment(),state.model,state.representation,state.outcome,state.controls);}
+/** The overview always uses the three-model direct baseline, regardless of the selected detail tab. */
+function renderModelOverview() {
+  const baseline=state.data.experiments.find(e=>e.id==='direct_answer');
+  const descriptions={
+    'qwen3:4b':'Six outputs reached the generation limit. The other four placed analysis in the answer field.',
+    'qwen3:8b':'Three supported answers and four justified abstentions. The remaining trials include one role reversal and two unjustified abstentions.',
+    'gemma3:4b':'Three justified abstentions. The remaining trials contain contradictions, wrong facts, citation defects or unsupported extra text.'
+  };
+  $('model-overview').replaceChildren(...['qwen3:4b','qwen3:8b','gemma3:4b'].map(model=>{
+    const records=baseline.records.filter(r=>r.model===model&&r.order!=='no_context');
+    const completed=records.filter(r=>r.checks.completed??r.status==='candidate_recorded').length;
+    const card=node('article','model-overview-card');card.append(node('h3','',modelLabel(model)),node('p','model-overview-count',`${records.length} model calls · ${completed} completed`),node('p','',descriptions[model]));
+    const button=node('button','text-link','Inspect saved comparisons ↓');button.type='button';
+    button.addEventListener('click',()=>{Object.assign(state,safeState(state.data,new URLSearchParams({experiment:'direct_answer',model})),{outcome:'all',highlight:null,controls:false,citedOnly:false});$('include-controls').checked=false;$('cited-only').checked=false;renderAll();$('explore').scrollIntoView({behavior:'smooth',block:'start'});});
+    card.append(button);return card;
+  }));
+}
+
+function tableRecords() {return filteredRecords(experiment(),'all',state.representation,state.outcome,state.controls);}
 function renderTable() {
   const records=tableRecords();
-  $('table-caption').textContent=`${records.length} saved records · ${modelLabel(state.model)}${state.representation==='direct'?'':' · '+(state.representation==='passages'?'whole passages':'text units')}${state.controls?' · controls included':' · code controls excluded'}. Figures above describe the entire selected experiment.`;
+  $('table-caption').textContent=`${records.length} saved records · ${experiment().models.length} tested model${experiment().models.length===1?'':'s'}${state.representation==='direct'?'':' · '+(state.representation==='passages'?'whole passages':'text units')}${state.controls?' · controls included':' · code controls excluded'}. Figures above describe the entire selected experiment.`;
   $('records-body').replaceChildren(...records.map(record=>{
     const row=node('tr');
     row.append(node('td','',record.question),node('td','',modelLabel(record.model)),node('td','',record.order==='no_context'?'No context':record.order==='retrieved'?'Original':'Reversed'));
@@ -157,7 +183,7 @@ function renderTable() {
       const link=node('a','','↗');link.href=sourceUrl(record.raw_path);link.target='_blank';link.rel='noopener noreferrer';link.setAttribute('aria-label','Inspect zero-model-call control record');action.append(link);
     } else {
       const button=node('button','','↗');button.type='button';button.setAttribute('aria-label','Inspect '+record.question+' in '+record.order+' order');
-      button.addEventListener('click',()=>{state.caseId=record.case_id;state.order=record.order;state.highlight=null;renderFilters();renderPair();renderEvidence();syncUrl();document.getElementById('explore').scrollIntoView({behavior:'smooth',block:'start'});});action.append(button);
+      button.addEventListener('click',()=>{state.model=record.model;state.caseId=record.case_id;state.order=record.order;state.highlight=null;renderFilters();renderPair();renderEvidence();syncUrl();document.getElementById('explore').scrollIntoView({behavior:'smooth',block:'start'});});action.append(button);
     }
     row.append(action);return row;
   }));
@@ -177,8 +203,8 @@ function initializeEvents() {
   $('outcome-filter').addEventListener('change',event=>{state.outcome=event.target.value;renderTable();});
   $('include-controls').addEventListener('change',event=>{state.controls=event.target.checked;renderFilters();renderTable();});
   $('download-pair').addEventListener('click',()=>{
-    const records=Object.values(pair()),ids=new Set(records.flatMap(r=>r.context_ids));
-    download(`evidenceshift-${state.experiment}-${state.caseId}-${state.model.replace(':','-')}.json`,JSON.stringify({mode:'recorded_results',source_commit:state.data.source_commit,records,passages:[...ids].map(id=>state.data.passages[id])},null,2)+'\n','application/json');
+    const records=modelComparisons(experiment(),state.representation,state.caseId).flatMap(item=>Object.values(item.pair)),ids=new Set(records.flatMap(r=>r.context_ids));
+    download(`evidenceshift-${state.experiment}-${state.caseId}-all-models.json`,JSON.stringify({mode:'recorded_results',source_commit:state.data.source_commit,records,passages:[...ids].map(id=>state.data.passages[id])},null,2)+'\n','application/json');
   });
   $('download-results').addEventListener('click',()=>download(`evidenceshift-${state.experiment}-filtered.csv`,toCsv(tableRecords()),'text/csv;charset=utf-8'));
   $('share-comparison').addEventListener('click',async()=>{
@@ -203,7 +229,7 @@ async function start() {
     if (!response.ok) throw new Error('Dataset request failed');
     const data=await response.json();
     if (data.schema_version!==1 || !data.experiments?.length) throw new Error('Unexpected dataset schema');
-    state.data=data;Object.assign(state,safeState(data,new URLSearchParams(location.search)));
+    state.data=data;renderModelOverview();Object.assign(state,safeState(data,new URLSearchParams(location.search)));
     initializeEvents();renderAll();$('load-state').hidden=true;$('explorer-content').hidden=false;
   } catch {
     $('load-state').classList.add('error');$('load-state').textContent='The saved records could not be loaded. Reload this page, or inspect results/published in the GitHub repository.';
