@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="Explore EvidenceShift: real local-model experiments on evidence order, citation support, and abstention. Compare saved answers and inspect their sources.">
+  <meta property="og:title" content="EvidenceShift — Same evidence. Different order.">
+  <meta property="og:description" content="An interactive explorer of recorded document-grounded QA experiments. Compare the answers. Follow the citations. Inspect the failures.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://Zuber18.github.io/EvidenceShift/">
+  <meta property="og:image" content="https://Zuber18.github.io/EvidenceShift/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>EvidenceShift — Same evidence. Different order.</title>
+  <link rel="icon" href="mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#explore">Skip to the experiment</a>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="EvidenceShift home"><img src="mark.svg" width="30" height="30" alt=""><span>Evidence<span class="brand-light">Shift</span></span></a>
+    <nav aria-label="Main navigation">
+      <a href="#explore">Explore</a><a href="#results">Results</a><a href="#method">Method</a>
+      <a class="repository-link" href="https://github.com/Zuber18/EvidenceShift" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+    <button class="theme-button" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">◐</button>
+  </header>
+
+  <main id="home">
+    <section class="hero section-wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> An open experiment in grounded answers</p>
+        <h1 id="hero-title">Same evidence.<br><span>Different order.</span><br>What changes?</h1>
+        <p class="hero-description">A citation can be real and the answer can still be wrong. Explore my local-model experiments to see where evidence order, reasoning, and abstention come apart.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#explore">Explore the evidence <span aria-hidden="true">↗</span></a><a class="text-link" href="#method">Read the approach <span aria-hidden="true">→</span></a></div>
+        <div class="hero-facts" aria-label="Dataset overview"><div><strong>3</strong><span>local models</span></div><div><strong>53</strong><span>paired comparisons</span></div><div><strong>116</strong><span>saved records<small>including 10 code controls</small></span></div></div>
+      </div>
+      <div class="hero-artifact" aria-label="An actual arithmetic failure from the confirmation experiment">
+        <div class="artifact-top"><span class="mono">CASE 06 / HARBOR WORKSHOP</span><span class="mini-pill">Actual saved result</span></div>
+        <p class="artifact-source">Five kits. First two free.<br>Four credits per additional kit.</p>
+        <div class="source-strips" aria-hidden="true"><i></i><i></i><i></i><span>same passages</span><i></i><i></i><i></i></div>
+        <div class="artifact-answers"><div><span class="mono">ORIGINAL ORDER</span><strong class="number-good">12<span>credits</span></strong><span class="artifact-verdict"><span class="small-dot good"></span>Supported answer</span></div><div><span class="mono">REVERSED ORDER</span><strong class="number-bad">8<span>credits</span></strong><span class="artifact-verdict"><span class="small-dot bad"></span>Arithmetic error</span></div></div>
+        <div class="artifact-bottom"><span class="mono">QWEN 3 · 8B</span><span>Both cite the relevant passage.</span></div>
+      </div>
+    </section>
+
+    <div class="context-ribbon"><div class="section-wrap ribbon-inner"><span><span class="small-dot"></span> Recorded experiment explorer</span><p>Every displayed answer was saved during a local run. Changing a filter does not call a model.</p><span class="mono">20 OCT 2026</span></div></div>
+
+    <section class="section-wrap explorer-section" id="explore" aria-labelledby="explorer-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / FOLLOW THE EVIDENCE</p><h2 id="explorer-title">Look beyond the citation.</h2><p>Pick a recorded question. Compare the answers, then inspect what the sources actually say.</p></div><button class="button button-outline" id="share-comparison" type="button">Copy comparison link <span aria-hidden="true">↗</span></button></div>
+      <div class="load-state" id="load-state" role="status">Loading the published experiment records…</div>
+      <div id="explorer-content" hidden>
+        <div class="experiment-tabs" id="experiment-tabs" role="group" aria-label="Recorded experiment"></div>
+        <div class="experiment-intro"><p id="experiment-description"></p><a id="experiment-review" href="https://github.com/Zuber18/EvidenceShift/tree/main/results/published/reviews" target="_blank" rel="noopener noreferrer">View assessment <span aria-hidden="true">↗</span></a></div>
+        <div class="filter-grid">
+          <label class="field question-field">Recorded question<select id="case-select"></select></label>
+          <label class="field">Local model<select id="model-select"></select></label>
+          <label class="field" id="representation-field" hidden>Evidence representation<select id="representation-select"></select></label>
+        </div>
+        <div class="comparison-heading"><h3 id="selected-question"></h3><span class="quiet-pill" id="pair-status">Same passages · exact reversal</span></div>
+        <div class="answer-grid" id="answer-grid" aria-label="Saved answer comparison"></div>
+        <div class="comparison-footer"><p>Assessment: project-owner manual review against saved passages. Mechanical checks are shown separately.</p><button class="text-link" id="download-pair" type="button">Download this pair <span aria-hidden="true">↓</span></button></div>
+        <div class="evidence-section">
+          <div class="evidence-heading"><div><p class="eyebrow">THE SOURCE RECORD</p><h3>Evidence in the order supplied</h3><p>Click a citation above to locate its passage. Source text is preserved as indexed.</p></div><div class="segmented" role="group" aria-label="Source passage order"><button id="evidence-original" type="button" aria-pressed="true">Original</button><button id="evidence-reversed" type="button" aria-pressed="false">Reversed</button></div></div>
+          <div class="evidence-toolbar"><span id="evidence-count"></span><label><input type="checkbox" id="cited-only"> Show cited passages only</label></div>
+          <div class="evidence-list" id="evidence-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section" id="results" aria-labelledby="results-title">
+      <div class="section-wrap">
+        <div class="section-heading"><div><p class="eyebrow">02 / THE RECORDED RESULTS</p><h2 id="results-title">Keep the failures in view.</h2><p>Three experiments answer different questions. Their denominators stay separate.</p></div><button class="button button-outline" id="download-results" type="button">Download filtered CSV <span aria-hidden="true">↓</span></button></div>
+        <div class="result-metrics" id="result-metrics"></div>
+        <div class="results-summary"><div class="distribution-panel"><h3 id="distribution-title">Recorded assessments</h3><div id="distribution"></div><p class="fine-print">These are counts of saved trials, not an accuracy estimate over arbitrary documents.</p></div><div class="model-panel"><h3>Models in this experiment</h3><div id="model-summary"></div><p class="fine-print">Completion is a software check. It does not establish factual correctness.</p></div></div>
+        <div class="records-heading"><h3>Browse the trial records</h3><div class="record-filters"><label class="field compact-field">Assessment<select id="outcome-filter"><option value="all">All assessments</option></select></label><label class="control-checkbox"><input id="include-controls" type="checkbox"> Include code controls</label></div></div>
+        <p class="table-caption" id="table-caption"></p>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Recorded trial results"><table><thead><tr><th scope="col">Question</th><th scope="col">Model</th><th scope="col">Order</th><th scope="col">Assessment</th><th scope="col"><span class="sr-only">Inspect record</span></th></tr></thead><tbody id="records-body"></tbody></table></div>
+        <p class="empty-state" id="no-results" hidden>No records match this filter. Select another assessment or include the code controls.</p>
+        <div class="result-notes" id="result-notes"></div>
+      </div>
+    </section>
+
+    <section class="section-wrap method-section" id="method" aria-labelledby="method-title">
+      <div class="method-intro"><p class="eyebrow">03 / WHAT I AM MEASURING</p><h2 id="method-title">Structure is not<br>the same as support.</h2><p>I built EvidenceShift to make the difference inspectable: what the model received, what it returned, and whether its answer follows from the cited source.</p><a class="text-link" href="https://github.com/Zuber18/EvidenceShift/blob/main/docs/METHODOLOGY.md" target="_blank" rel="noopener noreferrer">Read the full methodology <span aria-hidden="true">↗</span></a></div>
+      <div class="method-steps"><article><span class="step-index">01</span><div><h3>Hold the evidence fixed</h3><p>Keep the question, passage text, source IDs, model, and request options fixed. Reverse only the passage order.</p></div></article><article><span class="step-index">02</span><div><h3>Separate the checks</h3><p>Inspect completion and citation membership separately from factual support, conditions, relevance, and completeness.</p></div></article><article><span class="step-index">03</span><div><h3>Retain the original output</h3><p>Keep failed completions, false abstentions, and wrong answers. Review against saved passages without replacing failures with favorable reruns.</p></div></article></div>
+      <div class="limits-note"><strong>What this explorer establishes</strong><p>It presents recorded outcomes from limited local experiments. The fixed-context comparisons do not test new document ingestion or retrieval. Single outputs per order are not a population-level causal estimate. The reserved questions were not independently held out.</p></div>
+    </section>
+
+    <section class="next-section section-wrap" aria-labelledby="next-title"><div><p class="eyebrow">NEXT / BRING YOUR OWN DOCUMENT</p><h2 id="next-title">The live workspace<br>is the next experiment.</h2><p>This website explores saved records. The local project already supports PDF, DOCX, TXT and Markdown with MiniLM/Chroma semantic retrieval. Public live inference is not connected here yet.</p></div><a class="button button-primary" href="https://github.com/Zuber18/EvidenceShift#start-the-local-viewer" target="_blank" rel="noopener noreferrer">Run the local workspace <span aria-hidden="true">↗</span></a></section>
+  </main>
+
+  <footer class="site-footer section-wrap"><div><a class="brand" href="#home"><img src="mark.svg" width="26" height="26" alt=""><span>Evidence<span class="brand-light">Shift</span></span></a><p>A project by Zuber Shaikh.</p></div><div class="footer-links"><a href="https://github.com/Zuber18/EvidenceShift" target="_blank" rel="noopener noreferrer">Source code ↗</a><a href="https://github.com/Zuber18/EvidenceShift/tree/main/references" target="_blank" rel="noopener noreferrer">References ↗</a><a href="https://github.com/Zuber18/EvidenceShift/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT license ↗</a><span>No live inference · No account required</span></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><p class="section-wrap">Enable JavaScript to explore the saved records, or read them directly in the <a href="https://github.com/Zuber18/EvidenceShift/tree/main/results/published">published results</a>.</p></noscript>
+</body>
+</html>
