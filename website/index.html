@@ -47,14 +47,14 @@
     </section>
     <section class="section-wrap overview-section" id="results" aria-labelledby="overview-title"><p class="eyebrow">04 / RESULTS ACROSS THREE MODELS</p><h2 id="overview-title">All three models, in view.</h2><p class="section-description">The direct-answer baseline contains five questions in two evidence orders for each model: 10 model calls each. The summaries below describe that baseline only.</p><div class="model-overview" id="model-overview"></div></section>
     <section class="section-wrap explorer-section" id="explore" aria-labelledby="explorer-title">
-      <div class="section-heading"><div><p class="eyebrow">RECORDED COMPARISONS</p><h2 id="explorer-title">Compare the saved outputs.</h2><p>Choose a question to see every tested model in both evidence orders. Select a model below to inspect its source passages.</p></div><button class="button button-outline" id="share-comparison" type="button">Copy comparison link <span aria-hidden="true">↗</span></button></div>
+      <div class="section-heading"><div><p class="eyebrow">RECORDED COMPARISONS</p><h2 id="explorer-title">Compare the saved outputs.</h2><p>Choose a question, then select All models or one model to compare its original and reversed outputs. Click a citation to inspect the supplied evidence.</p></div><button class="button button-outline" id="share-comparison" type="button">Copy comparison link <span aria-hidden="true">↗</span></button></div>
       <div class="load-state" id="load-state" role="status">Loading the published experiment records…</div>
       <div id="explorer-content" hidden>
         <div class="experiment-tabs" id="experiment-tabs" role="group" aria-label="Recorded experiment"></div>
         <div class="experiment-intro"><p id="experiment-description"></p><a id="experiment-review" href="https://github.com/Zuber18/EvidenceShift/tree/main/results/published/reviews" target="_blank" rel="noopener noreferrer">View assessment <span aria-hidden="true">↗</span></a></div>
         <div class="filter-grid">
           <label class="field question-field">Recorded question<select id="case-select"></select></label>
-          <label class="field">Inspect sources for<select id="model-select"></select></label>
+          <label class="field">Model<select id="model-select"></select></label>
           <label class="field" id="representation-field" hidden>Evidence representation<select id="representation-select"></select></label>
         </div>
         <div class="comparison-heading"><h3 id="selected-question"></h3><span class="quiet-pill" id="pair-status">Same passages · exact reversal</span></div>
@@ -70,7 +70,7 @@
 
     <section class="results-section" id="trial-results" aria-labelledby="results-title">
       <div class="section-wrap">
-        <div class="section-heading"><div><p class="eyebrow">EXPERIMENT DETAIL</p><h2 id="results-title">Inspect the selected experiment.</h2><p>Counts below follow the selected experiment above. The record table includes every model tested in that experiment.</p></div><button class="button button-outline" id="download-results" type="button">Download filtered CSV <span aria-hidden="true">↓</span></button></div>
+        <div class="section-heading"><div><p class="eyebrow">EXPERIMENT DETAIL</p><h2 id="results-title">Inspect the selected experiment.</h2><p>Counts below follow the selected experiment above. The record table and downloads follow the Model selector.</p></div><button class="button button-outline" id="download-results" type="button">Download filtered CSV <span aria-hidden="true">↓</span></button></div>
         <div class="result-metrics" id="result-metrics"></div>
         <div class="results-summary"><div class="distribution-panel"><h3 id="distribution-title">Recorded assessments</h3><div id="distribution"></div><p class="fine-print">These are counts of saved trials, not an accuracy estimate over arbitrary documents.</p></div><div class="model-panel"><h3>Models in this experiment</h3><div id="model-summary"></div><p class="fine-print">Completion is a software check. It does not establish factual correctness.</p></div></div>
         <div class="records-heading"><h3>Browse the trial records</h3><div class="record-filters"><label class="field compact-field">Assessment<select id="outcome-filter"><option value="all">All assessments</option></select></label><label class="control-checkbox"><input id="include-controls" type="checkbox"> Include code controls</label></div></div>

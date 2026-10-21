@@ -1,7 +1,7 @@
 import {label, modelLabel, tone, pairFor, filteredRecords, citationIds, assessmentDistribution, toCsv, safeState, modelComparisons} from './core.mjs';
 
 const $ = id => document.getElementById(id);
-const state = {data:null, experiment:'direct_answer',model:'qwen3:8b',representation:'direct',caseId:'1f939d31',order:'retrieved',outcome:'all',controls:false,citedOnly:false,highlight:null};
+const state = {data:null, experiment:'direct_answer',model:'all',sourceModel:'qwen3:8b',representation:'direct',caseId:'1f939d31',order:'retrieved',outcome:'all',controls:false,citedOnly:false,highlight:null};
 let toastTimer;
 
 /** All saved source/model content is inserted as text, never trusted HTML. */
@@ -12,14 +12,14 @@ function node(tag, className, text) {
   return element;
 }
 function experiment() { return state.data.experiments.find(e=>e.id===state.experiment); }
-function pair() { return pairFor(experiment(),state.model,state.representation,state.caseId); }
+function pair() { return pairFor(experiment(),state.model==='all'?state.sourceModel:state.model,state.representation,state.caseId); }
 function sourceUrl(path) { return `${state.data.repository}/blob/${state.data.source_commit || 'main'}/${path}`; }
 function tag(assessment) { return node('span',`assessment-tag ${tone(assessment)}`,label(assessment)); }
 function notify(message) { clearTimeout(toastTimer); $('toast').textContent=message; $('toast').hidden=false; toastTimer=setTimeout(()=>$('toast').hidden=true,3500); }
 
 function syncUrl() {
   const url=new URL(location.href);
-  for (const [key,value] of Object.entries({experiment:state.experiment,model:state.model,representation:state.representation,case:state.caseId,order:state.order})) url.searchParams.set(key,value);
+  for (const [key,value] of Object.entries({experiment:state.experiment,model:state.model,representation:state.representation,case:state.caseId,order:state.order,source_model:state.model==='all'?state.sourceModel:state.model})) url.searchParams.set(key,value);
   history.replaceState(null,'',url);
 }
 function fillSelect(element, items, selected) {
@@ -40,12 +40,12 @@ function renderFilters() {
   $('experiment-description').textContent=exp.description;
   $('experiment-review').href=sourceUrl(exp.records[0].review_path);
   fillSelect($('case-select'),exp.cases.map(c=>[c.id,c.question]),state.caseId);
-  fillSelect($('model-select'),exp.models.map(m=>[m,modelLabel(m)]),state.model);
+  fillSelect($('model-select'),[...(exp.models.length>1?[['all','All models']]:[]),...exp.models.map(m=>[m,modelLabel(m)])],state.model);
   fillSelect($('representation-select'),exp.representations.map(r=>[r,r==='sentence_units'?'Text units':r==='passages'?'Whole passages':'Direct answer']),state.representation);
   const multiple=exp.representations.length>1;
   $('representation-field').hidden=!multiple;
   document.querySelector('.filter-grid').classList.toggle('has-representation',multiple);
-  const outcomes=[...new Set(exp.records.filter(r=>r.representation===state.representation && (state.controls||r.order!=='no_context')).map(r=>r.assessment))].sort();
+  const outcomes=[...new Set(exp.records.filter(r=>(state.model==='all'||r.model===state.model) && r.representation===state.representation && (state.controls||r.order!=='no_context')).map(r=>r.assessment))].sort();
   if (!outcomes.includes(state.outcome)) state.outcome='all';
   fillSelect($('outcome-filter'),[['all','All assessments'],...outcomes.map(v=>[v,label(v)])],state.outcome);
 }
@@ -62,7 +62,7 @@ function renderAnswerText(container, text, record) {
       button.setAttribute('aria-label','Inspect cited source '+ids.join(', '));
       button.title=ids.length>1?'Open the first passage in this citation group. All passages remain available below.':'Open this source passage';
       button.addEventListener('click',()=>{
-        state.model=record.model;state.order=record.order;state.highlight=ids[0];state.citedOnly=false;$('cited-only').checked=false;renderFilters();renderEvidence();syncUrl();
+        state.sourceModel=record.model;state.order=record.order;state.highlight=ids[0];state.citedOnly=false;$('cited-only').checked=false;renderFilters();renderEvidence();syncUrl();
         const target=document.getElementById('passage-'+ids[0]);
         if (target) {target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest'});target.focus({preventScroll:true});}
       });container.append(button);
@@ -98,15 +98,16 @@ function renderAnswer(record,order) {
 function renderPair() {
   const records=pair();
   $('selected-question').textContent=experiment().cases.find(c=>c.id===state.caseId).question;
-  $('answer-grid').replaceChildren(...modelComparisons(experiment(),state.representation,state.caseId).map(({model,pair:records})=>{
+  $('answer-grid').replaceChildren(...modelComparisons(experiment(),state.representation,state.caseId,state.model).map(({model,pair:records})=>{
     const group=node('section','model-comparison');
     const heading=node('div','model-comparison-heading');heading.append(node('h4','',modelLabel(model)));
     const inspect=node('button','text-link','Inspect this model’s sources ↓');inspect.type='button';
-    inspect.addEventListener('click',()=>{state.model=model;state.highlight=null;renderFilters();renderEvidence();syncUrl();document.querySelector('.evidence-section').scrollIntoView({behavior:'smooth',block:'start'});});
+    inspect.addEventListener('click',()=>{state.sourceModel=model;state.highlight=null;renderEvidence();syncUrl();document.querySelector('.evidence-section').scrollIntoView({behavior:'smooth',block:'start'});});
     heading.append(inspect);const grid=node('div','answer-grid');
     grid.append(...['retrieved','reversed'].map(order=>records[order]?renderAnswer(records[order],order):node('p','load-state','This saved order is unavailable.')));
     group.append(heading,grid);return group;
   }));
+  $('download-pair').textContent=state.model==='all'?'Download all model pairs ↓':'Download this model pair ↓';
   const same=records.retrieved && records.reversed && JSON.stringify(records.retrieved.context_ids)===JSON.stringify([...records.reversed.context_ids].reverse());
   $('pair-status').textContent=same?`${records.retrieved.context_ids.length} passages · exact reversal`:'Inspect the saved context';
 }
@@ -118,7 +119,7 @@ function renderEvidence() {
   if (!record) {$('evidence-list').replaceChildren();return;}
   const cited=citationIds(record.answer,record.context_ids);
   const ids=state.citedOnly?record.context_ids.filter(id=>cited.has(id)):record.context_ids;
-  $('evidence-count').textContent=`${modelLabel(state.model)} · ${ids.length} of ${record.context_ids.length} supplied passages · ${state.order==='retrieved'?'original':'reversed'} order`;
+  $('evidence-count').textContent=`${modelLabel(record.model)} · ${ids.length} of ${record.context_ids.length} supplied passages · ${state.order==='retrieved'?'original':'reversed'} order`;
   const elements=ids.map(id=>{
     const passage=state.data.passages[id],article=node('article','passage'+(state.highlight===id?' highlighted':''));
     article.id='passage-'+id;article.tabIndex=-1;
@@ -170,10 +171,10 @@ function renderModelOverview() {
   }));
 }
 
-function tableRecords() {return filteredRecords(experiment(),'all',state.representation,state.outcome,state.controls);}
+function tableRecords() {return filteredRecords(experiment(),state.model,state.representation,state.outcome,state.controls);}
 function renderTable() {
   const records=tableRecords();
-  $('table-caption').textContent=`${records.length} saved records · ${experiment().models.length} tested model${experiment().models.length===1?'':'s'}${state.representation==='direct'?'':' · '+(state.representation==='passages'?'whole passages':'text units')}${state.controls?' · controls included':' · code controls excluded'}. Figures above describe the entire selected experiment.`;
+  $('table-caption').textContent=`${records.length} saved records · ${state.model==='all'?experiment().models.length+' tested models':modelLabel(state.model)}${state.representation==='direct'?'':' · '+(state.representation==='passages'?'whole passages':'text units')}${state.controls?' · controls included':' · code controls excluded'}. Figures above describe the entire selected experiment.`;
   $('records-body').replaceChildren(...records.map(record=>{
     const row=node('tr');
     row.append(node('td','',record.question),node('td','',modelLabel(record.model)),node('td','',record.order==='no_context'?'No context':record.order==='retrieved'?'Original':'Reversed'));
@@ -183,7 +184,7 @@ function renderTable() {
       const link=node('a','','↗');link.href=sourceUrl(record.raw_path);link.target='_blank';link.rel='noopener noreferrer';link.setAttribute('aria-label','Inspect zero-model-call control record');action.append(link);
     } else {
       const button=node('button','','↗');button.type='button';button.setAttribute('aria-label','Inspect '+record.question+' in '+record.order+' order');
-      button.addEventListener('click',()=>{state.model=record.model;state.caseId=record.case_id;state.order=record.order;state.highlight=null;renderFilters();renderPair();renderEvidence();syncUrl();document.getElementById('explore').scrollIntoView({behavior:'smooth',block:'start'});});action.append(button);
+      button.addEventListener('click',()=>{state.model=record.model;state.sourceModel=record.model;state.caseId=record.case_id;state.order=record.order;state.highlight=null;state.outcome='all';renderAll();document.getElementById('explore').scrollIntoView({behavior:'smooth',block:'start'});});action.append(button);
     }
     row.append(action);return row;
   }));
@@ -196,15 +197,15 @@ function download(filename,content,type) {
 }
 function initializeEvents() {
   $('case-select').addEventListener('change',event=>{state.caseId=event.target.value;state.highlight=null;renderPair();renderEvidence();syncUrl();});
-  $('model-select').addEventListener('change',event=>{state.model=event.target.value;state.highlight=null;state.outcome='all';renderAll();});
+  $('model-select').addEventListener('change',event=>{state.model=event.target.value;if(state.model!=='all')state.sourceModel=state.model;state.highlight=null;state.outcome='all';renderAll();});
   $('representation-select').addEventListener('change',event=>{state.representation=event.target.value;state.highlight=null;state.outcome='all';renderAll();});
   for (const [id,order] of [['evidence-original','retrieved'],['evidence-reversed','reversed']]) $(id).addEventListener('click',()=>{state.order=order;state.highlight=null;renderEvidence();syncUrl();});
   $('cited-only').addEventListener('change',event=>{state.citedOnly=event.target.checked;renderEvidence();});
   $('outcome-filter').addEventListener('change',event=>{state.outcome=event.target.value;renderTable();});
   $('include-controls').addEventListener('change',event=>{state.controls=event.target.checked;renderFilters();renderTable();});
   $('download-pair').addEventListener('click',()=>{
-    const records=modelComparisons(experiment(),state.representation,state.caseId).flatMap(item=>Object.values(item.pair)),ids=new Set(records.flatMap(r=>r.context_ids));
-    download(`evidenceshift-${state.experiment}-${state.caseId}-all-models.json`,JSON.stringify({mode:'recorded_results',source_commit:state.data.source_commit,records,passages:[...ids].map(id=>state.data.passages[id])},null,2)+'\n','application/json');
+    const records=modelComparisons(experiment(),state.representation,state.caseId,state.model).flatMap(item=>Object.values(item.pair)),ids=new Set(records.flatMap(r=>r.context_ids));
+    download(`evidenceshift-${state.experiment}-${state.caseId}-${state.model==='all'?'all-models':state.model.replace(':','-')}.json`,JSON.stringify({mode:'recorded_results',source_commit:state.data.source_commit,records,passages:[...ids].map(id=>state.data.passages[id])},null,2)+'\n','application/json');
   });
   $('download-results').addEventListener('click',()=>download(`evidenceshift-${state.experiment}-filtered.csv`,toCsv(tableRecords()),'text/csv;charset=utf-8'));
   $('share-comparison').addEventListener('click',async()=>{
