@@ -1,6 +1,6 @@
 # EvidenceShift
 
-I built EvidenceShift to examine whether document-grounded answers remain
+I built EvidenceShift to examine whether document grounded answers remain
 supported when evidence order changes. I compare local models, inspect their
 citations and abstentions, and retain the source passages and failed outputs
 alongside the results. The project includes semantic document retrieval and
