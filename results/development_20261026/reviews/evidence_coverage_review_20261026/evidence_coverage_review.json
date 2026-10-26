@@ -1,0 +1,104 @@
+{
+  "experiment": "evidence-coverage-pilot-1.0.0",
+  "bundle_sha256": "33f80f4e9c42d46c57af92179d85107e7b3c7e4778ee06da3d52c8f04b4575d5",
+  "review_method": "Assessment against saved source passages, raw generation streams and validation errors.",
+  "frozen_file_hashes_valid": true,
+  "raw_streams_match": true,
+  "generation_attempts": 6,
+  "normally_completed_planner_calls": 6,
+  "writer_calls": 0,
+  "valid_evidence_plans": 0,
+  "final_answers": 0,
+  "quote_contract_failures": 4,
+  "json_syntax_failures": 2,
+  "false_unsupported_classifications_in_well_formed_drafts": 4,
+  "semantic_accuracy": null,
+  "review_model_calls": 0,
+  "records": [
+    {
+      "case_id": "calibration_05",
+      "order": "canonical",
+      "pipeline_status": "evidence_plan_failed_preserved",
+      "failure_codes": [
+        "nonliteral_evidence_quote",
+        "false_unsupported_classification"
+      ],
+      "assessment": "The study’s Chinese sample supports rejecting worldwide generalization. The plan instead calls that decision unsupported. The cited numerical facts are present, but model-retyped quotes remove source line breaks and extraction artifacts, violating the exact-span contract.",
+      "saved_error": "ValueError: Evidence quote is not exactly source anchored.",
+      "raw_planner_answer": "{\"parts\":[{\"id\":\"p1\",\"request\":\"Can this paper’s reported 64% moderate-to-high heat-risk result be described as 64% of cities worldwide?\",\"status\":\"unsupported\",\"claim\":\"\",\"evidence\":[]},{\"id\":\"p2\",\"request\":\"State the actual city sample to which the result refers.\",\"status\":\"supported\",\"claim\":\"The result refers to 293 prefecture-level cities in China.\",\"evidence\":[{\"citation_id\":\"doc_fc173dce3e92f6ada246_p0_c40\",\"quote\":\"Based on the results, 64.16% of China’s 293 prefecture-level cities were classified as having moderate or higher levels of urban heat risk.\"},{\"citation_id\":\"doc_fc173dce3e92f6ada246_p0_c6\",\"quote\":\"based on multi-source data from 293 prefecture-level cities in China\"}]}]}",
+      "final_answer": null
+    },
+    {
+      "case_id": "calibration_05",
+      "order": "reversed",
+      "pipeline_status": "evidence_plan_failed_preserved",
+      "failure_codes": [
+        "nonliteral_evidence_quote",
+        "false_unsupported_classification"
+      ],
+      "assessment": "The study’s Chinese sample supports rejecting worldwide generalization. The plan instead calls that decision unsupported. The cited numerical facts are present, but model-retyped quotes remove source line breaks and extraction artifacts, violating the exact-span contract.",
+      "saved_error": "ValueError: Evidence quote is not exactly source anchored.",
+      "raw_planner_answer": "{\n  \"parts\": [\n    {\n      \"id\": \"p1\",\n      \"request\": \"Can this paper’s reported 64% moderate-to-high heat-risk result be described as 64% of cities worldwide?\",\n      \"status\": \"unsupported\",\n      \"claim\": \"\",\n      \"evidence\": []\n    },\n    {\n      \"id\": \"p2\",\n      \"request\": \"State the actual city sample to which the result refers.\",\n      \"status\": \"supported\",\n      \"claim\": \"The result refers to 293 prefecture-level cities in China.\",\n      \"evidence\": [\n        {\n          \"citation_id\": \"doc_fc173dce3e92f6ada246_p0_c6\",\n          \"quote\": \"based on multi-source data from 293 prefecture-level cities in China\"\n        },\n        {\n          \"citation_id\": \"doc_fc173dce3e92f6ada246_p0_c40\",\n          \"quote\": \"Based on the results, 64.16% of China’s 293 prefecture-level cities were classified as having moderate or higher levels of urban heat risk.\"\n        }\n      ]\n    }\n  ]\n}",
+      "final_answer": null
+    },
+    {
+      "case_id": "calibration_06",
+      "order": "reversed",
+      "pipeline_status": "evidence_plan_failed_preserved",
+      "failure_codes": [
+        "invalid_json"
+      ],
+      "assessment": "The draft classification as unsupported is consistent with the saved source review, but an extra closing brace makes the output invalid JSON. It cannot count as a successful pipeline abstention.",
+      "saved_error": "JSONDecodeError: Extra data: line 1 column 118 (char 117)",
+      "raw_planner_answer": "{\"parts\":[{\"id\":\"p1\",\"request\":\"minimum Flesch Reading Ease score\",\"status\":\"unsupported\",\"claim\":\"\",\"evidence\":[]}]}}",
+      "final_answer": null
+    },
+    {
+      "case_id": "calibration_06",
+      "order": "canonical",
+      "pipeline_status": "evidence_plan_failed_preserved",
+      "failure_codes": [
+        "invalid_json"
+      ],
+      "assessment": "The draft classification as unsupported is consistent with the saved source review, but an extra closing brace makes the output invalid JSON. It cannot count as a successful pipeline abstention.",
+      "saved_error": "JSONDecodeError: Extra data: line 1 column 118 (char 117)",
+      "raw_planner_answer": "{\"parts\":[{\"id\":\"p1\",\"request\":\"minimum Flesch Reading Ease score\",\"status\":\"unsupported\",\"claim\":\"\",\"evidence\":[]}]}}",
+      "final_answer": null
+    },
+    {
+      "case_id": "calibration_08",
+      "order": "canonical",
+      "pipeline_status": "evidence_plan_failed_preserved",
+      "failure_codes": [
+        "nonliteral_evidence_quote",
+        "false_unsupported_classification"
+      ],
+      "assessment": "The two exceptions support rejecting the blanket rules. The plan instead calls that decision unsupported. Quotations alter punctuation, line breaks and quotation marks. General accessibility claims are not supported by the selected c3/c7 quotes; c0/c1 were available but not selected.",
+      "saved_error": "ValueError: Evidence quote is not exactly source anchored.",
+      "raw_planner_answer": "{\n  \"parts\": [\n    {\n      \"id\": \"p1\",\n      \"request\": \"Do those rules follow from the guide?\",\n      \"status\": \"unsupported\",\n      \"claim\": \"\",\n      \"evidence\": []\n    },\n    {\n      \"id\": \"p2\",\n      \"request\": \"Give a revision policy that preserves the guide's general aims and both exceptions.\",\n      \"status\": \"supported\",\n      \"claim\": \"The revision policy should preserve the guide's general aim of making content accessible and understandable to everyone, including specialists, while allowing exceptions for when specialist terms are needed and when passive voice is more user-centred.\",\n      \"evidence\": [\n        {\n          \"citation_id\": \"doc_9f26104ace24902c0800_p0_c3\",\n          \"quote\": \"Use specialist language if needed. Where you need to use specialist terms, you can. They’re not always jargon. You just need to explain what they mean the first time you use them.\"\n        },\n        {\n          \"citation_id\": \"doc_9f26104ace24902c0800_p0_c7\",\n          \"quote\": \"There are some circumstances when the passive voice can work. These include: when the outcome is more important than the agent of the action – for example, 'Biometric residence permits have been replaced by eVisas' when the writing is more user-centred – for example, 'You’ll be told what you need to do when you apply' rather than 'The Home Office will tell you what you need to do when you apply'.\"\n        }\n      ]\n    }\n  ]\n}",
+      "final_answer": null
+    },
+    {
+      "case_id": "calibration_08",
+      "order": "reversed",
+      "pipeline_status": "evidence_plan_failed_preserved",
+      "failure_codes": [
+        "nonliteral_evidence_quote",
+        "false_unsupported_classification"
+      ],
+      "assessment": "The two exceptions support rejecting the blanket rules. The plan instead calls that decision unsupported. Quotations alter punctuation, line breaks and quotation marks. General accessibility claims are not supported by the selected c3/c7 quotes; c0/c1 were available but not selected. The proposed policy claim also fails to state the specialist-term exception despite listing specialist-term evidence.",
+      "saved_error": "ValueError: Evidence quote is not exactly source anchored.",
+      "raw_planner_answer": "{\n  \"parts\": [\n    {\n      \"id\": \"p1\",\n      \"request\": \"Do those rules follow from the guide?\",\n      \"status\": \"unsupported\",\n      \"claim\": \"\",\n      \"evidence\": []\n    },\n    {\n      \"id\": \"p2\",\n      \"request\": \"Give a revision policy that preserves the guide's general aims and both exceptions.\",\n      \"status\": \"supported\",\n      \"claim\": \"The revision policy should preserve the guide's general aim of making content accessible and understandable to all users, including those with limited literacy skills or non-native English speakers. It should allow for exceptions when the passive voice is more user-centred or when the outcome is more important than the agent of the action.\",\n      \"evidence\": [\n        {\n          \"citation_id\": \"doc_9f26104ace24902c0800_p0_c7\",\n          \"quote\": \"There are some circumstances when the passive voice can work. These include: when the outcome is more important than the agent of the action – for example, 'Biometric residence permits have been replaced by eVisas' when the writing is more user-centred – for example, 'You’ll be told what you need to do when you apply' rather than 'The Home Office will tell you what you need to do when you apply'\"\n        },\n        {\n          \"citation_id\": \"doc_9f26104ace24902c0800_p0_c3\",\n          \"quote\": \"Use specialist language if needed Where you need to use specialist terms, you can. They’re not always jargon. You just need to explain what they mean the first time you use them.\"\n        }\n      ]\n    }\n  ]\n}",
+      "final_answer": null
+    }
+  ],
+  "limits": "Three exposed questions, two orders, one model. Draft-plan findings are not final-answer outcomes. No successful abstention or coverage improvement can be claimed. All failed outputs retained.",
+  "next_protocol_requirements": [
+    "Select existing passage or pre-extracted span IDs instead of regenerating source quotes.",
+    "Use a JSON-constrained output protocol with its own recorded settings; preserve raw output and reject invalid semantics.",
+    "Freeze question-only coverage requirements before generation and keep them separate from gold answers.",
+    "Test supported negative answers separately from genuine missing evidence.",
+    "Keep source selection, claim support, requested coverage and rendering checks distinct."
+  ],
+  "fine_tuning": false
+}

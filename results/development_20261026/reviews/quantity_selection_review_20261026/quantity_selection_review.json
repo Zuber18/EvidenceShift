@@ -1,0 +1,47 @@
+{
+  "experiment": "quantity-selection-pilot-1.0.0",
+  "review_method": "Assessment against saved cited passages, resolved source quantities, candidate IDs, request payloads and raw generation streams.",
+  "source_bundle_sha256": "c69a776f6c59aa6d2c5e01218842386de719c2504348f05e042bd9335951f368",
+  "recorded_attempts": 4,
+  "recorded_answers": 2,
+  "completed_normally": 4,
+  "frozen_file_hashes_valid": true,
+  "candidate_ids_offsets_and_orders_recomputed": true,
+  "raw_streams_match_saved_answers": true,
+  "arithmetic_recomputed": true,
+  "same_answer_in_both_orders": true,
+  "records": [
+    {
+      "case_id": "calibration_04",
+      "order": "reversed",
+      "verdict": "supported",
+      "operand_roles": "self-reported mean minus logged mean",
+      "left_value": "6.26",
+      "right_value": "2.11",
+      "unit": "hours/week",
+      "calculated_difference": "4.15",
+      "citation_id": "doc_5843af9345b8b68595b9_p0_c1",
+      "citation_support": "Passage supplies both labelled weekly means; the difference follows by the saved calculation.",
+      "answer": "The self-reported reading-time estimate is 4.15 hours/week higher than the logged estimate [doc_5843af9345b8b68595b9_p0_c1]. The units are hours/week."
+    },
+    {
+      "case_id": "calibration_04",
+      "order": "canonical",
+      "verdict": "supported",
+      "operand_roles": "self-reported mean minus logged mean",
+      "left_value": "6.26",
+      "right_value": "2.11",
+      "unit": "hours/week",
+      "calculated_difference": "4.15",
+      "citation_id": "doc_5843af9345b8b68595b9_p0_c1",
+      "citation_support": "Passage supplies both labelled weekly means; the difference follows by the saved calculation.",
+      "answer": "The self-reported reading-time estimate is 4.15 hours/week higher than the logged estimate [doc_5843af9345b8b68595b9_p0_c1]. The units are hours/week."
+    }
+  ],
+  "comparison": "The v2 reversed selection failed its exact literal-unit anchor check. The candidate-ID selector produced a valid selection and supported answer in both orders. Canonical numerical correctness was retained.",
+  "semantic_accuracy": null,
+  "review_generation_calls": 0,
+  "fine_tuning": false,
+  "limits": "One previously exposed development question in two orders, one model, one generation per stage. No population accuracy estimate, repeatability estimate, isolated causal attribution or held-out generalization claim. Candidate extraction does not certify semantic operand roles; those were assessed here against saved source labels.",
+  "next_step": "Freeze this successful development result; test evidence planning for scope contradictions and completeness of requested policies against preserved baseline outputs, without using expected answers in model inputs."
+}

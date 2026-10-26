@@ -10,6 +10,27 @@ an experimental local evidence viewer.
 false abstentions and a cited arithmetic error. Valid citation IDs and exact
 copied quotations do not establish a correct or complete answer.
 
+<!-- evidenceshift-development-20261026:start -->
+## Latest development regression · 26 October 2026
+
+The final frozen regression compares Qwen 3 8B, the replacement Qwen 3 4B
+instruct artifact and Gemma 3 4B on three exposed questions in both passage
+orders. All 18 calls completed; 17 answers rendered and one was blocked.
+These are structural counts, not semantic accuracy. Unsupported scope claims,
+metric confusion, missed abstention and citation-support errors remain.
+
+- [Final findings and record-level review](docs/FINAL_DEVELOPMENT_RESULTS.md)
+- [Development artifacts and original bundles](results/development_20261026/README.md)
+- [Reproduction scope and local preview](docs/DEVELOPMENT_REPRODUCTION.md)
+- [Release scope and limitations](docs/RELEASE_20261026.md)
+- [Latest recorded-results page](https://Zuber18.github.io/EvidenceShift/development-regression.html)
+
+The historical explorer below retains its original cases and counts. This
+three-question development regression is separate from the prepared 100-question
+benchmark. The public website shows saved results; live semantic document work
+remains local. No TF-IDF replacement or hosted inference claim is introduced.
+<!-- evidenceshift-development-20261026:end -->
+
 ## Interactive results website
 
 The recorded-results explorer in `website/` presents 53 evidence-order pairs

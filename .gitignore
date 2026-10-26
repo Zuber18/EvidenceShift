@@ -67,3 +67,8 @@ install_handle_selection.py
 /EvidenceShift_Fixes/
 /EvidenceShift_Grounded/
 /EvidenceShift_Repair/
+
+# Final reviewed development release (local runs remain ignored)
+!/results/development_20261026/
+!/results/development_20261026/**
+/install_final_consolidation.py

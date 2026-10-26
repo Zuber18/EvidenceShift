@@ -1,0 +1,74 @@
+{
+  "experiment": "evidence-coverage-2.0.0",
+  "review_method": "Assessment against saved passages, schema-bearing requests, source selections and raw generation streams.",
+  "bundle_sha256": "0eb433ca68873825d8406ebb11ff33a3953e4c3ef9f11d4a04a2ea3f223b658a",
+  "attempts": 6,
+  "normal_completions": 6,
+  "schema_valid_answers": 6,
+  "frozen_hashes_requests_and_raw_streams_valid": true,
+  "appropriate_exact_abstentions": 2,
+  "policy_answers_cover_general_aim_and_exceptions": 2,
+  "observed_cross_part_contradictions": 0,
+  "citation_overselection_answers": 2,
+  "answers_with_incomplete_local_citation_support": 1,
+  "semantic_accuracy": null,
+  "records": [
+    {
+      "case_id": "calibration_05",
+      "order": "canonical",
+      "answer": "The reported 64% moderate-to-high heat-risk result cannot be described as a result about cities worldwide. The study specifically refers to cities in China. [doc_fc173dce3e92f6ada246_p0_c7] [doc_fc173dce3e92f6ada246_p0_c40] [doc_fc173dce3e92f6ada246_p0_c60] [doc_fc173dce3e92f6ada246_p0_c6] [doc_fc173dce3e92f6ada246_p0_c19]\n\nThe actual city sample to which the result refers is 293 prefecture-level cities in China. [doc_fc173dce3e92f6ada246_p0_c7] [doc_fc173dce3e92f6ada246_p0_c40] [doc_fc173dce3e92f6ada246_p0_c60] [doc_fc173dce3e92f6ada246_p0_c6] [doc_fc173dce3e92f6ada246_p0_c19]",
+      "assessment": "Correctly rejects worldwide generalization and gives the Chinese sample of 293 prefecture-level cities. No contradictory abstention. The selected citation set collectively supports the response. All five supplied passages are cited twice; c7 does not itself identify the sample and c19 concerns component-risk statistics. Citation precision remains weak.",
+      "review_codes": [
+        "citation_overselection"
+      ],
+      "verdict": "supported_core_with_citation_limits"
+    },
+    {
+      "case_id": "calibration_05",
+      "order": "reversed",
+      "answer": "The reported 64% moderate-to-high heat-risk result cannot be described as a result about cities worldwide. The study specifically focused on 293 prefecture-level cities in China. [doc_fc173dce3e92f6ada246_p0_c6] [doc_fc173dce3e92f6ada246_p0_c60] [doc_fc173dce3e92f6ada246_p0_c40]\n\nThe actual city sample to which the result refers is 293 prefecture-level cities in China. [doc_fc173dce3e92f6ada246_p0_c6] [doc_fc173dce3e92f6ada246_p0_c60] [doc_fc173dce3e92f6ada246_p0_c40]",
+      "assessment": "Correctly rejects worldwide generalization and gives the Chinese sample of 293 prefecture-level cities. No contradictory abstention. The selected citation set collectively supports the response.",
+      "review_codes": [],
+      "verdict": "supported_core"
+    },
+    {
+      "case_id": "calibration_06",
+      "order": "reversed",
+      "answer": "The supplied evidence does not answer this question.",
+      "assessment": "Appropriate exact abstention: no mandatory minimum Flesch score is established in the supplied passages.",
+      "review_codes": [],
+      "verdict": "appropriate_abstention"
+    },
+    {
+      "case_id": "calibration_06",
+      "order": "canonical",
+      "answer": "The supplied evidence does not answer this question.",
+      "assessment": "Appropriate exact abstention: no mandatory minimum Flesch score is established in the supplied passages.",
+      "review_codes": [],
+      "verdict": "appropriate_abstention"
+    },
+    {
+      "case_id": "calibration_08",
+      "order": "canonical",
+      "answer": "The proposed blanket rules do not follow from the guide. The guide allows for the use of specialist terms when needed and permits the use of passive voice in certain circumstances. [doc_9f26104ace24902c0800_p0_c3] [doc_9f26104ace24902c0800_p0_c7]\n\nThe general aim that the proposed revision policy should preserve is to ensure that GOV.UK content is accessible and understandable to everyone who needs it, including those with limited literacy skills and non-native English speakers. [doc_9f26104ace24902c0800_p0_c0]\n\nThe revision policy for specialist terms should allow their use when needed, provided they are explained in plain English the first time they are used. This ensures that users who need the terms to complete a task can understand them. [doc_9f26104ace24902c0800_p0_c3]\n\nThe revision policy for passive voice should allow its use when the outcome is more important than the agent of the action or when the writing is more user-centred. This preserves the guide's aim of making content accessible and user-focused. [doc_9f26104ace24902c0800_p0_c7]",
+      "assessment": "Correctly rejects both blanket rules and covers the general accessibility aim, first-use explanation of necessary specialist terms, and the permitted passive-voice circumstances.",
+      "review_codes": [],
+      "verdict": "supported_core"
+    },
+    {
+      "case_id": "calibration_08",
+      "order": "reversed",
+      "answer": "The proposed blanket rules do not follow from the guide. The guide allows for the use of specialist terms when needed and permits passive voice in specific circumstances, such as when the outcome is more important than the agent of the action or when the writing is more user-centred. [doc_9f26104ace24902c0800_p0_c7] [doc_9f26104ace24902c0800_p0_c2] [doc_9f26104ace24902c0800_p0_c1]\n\nThe general aim that the proposed revision policy should preserve is to ensure that content is accessible and understandable to everyone who needs it, including those with limited literacy skills and non-native English speakers. [doc_9f26104ace24902c0800_p0_c0] [doc_9f26104ace24902c0800_p0_c1]\n\nThe revision policy for specialist terms should allow their use when needed, such as when users require them to complete a task. Specialist terms should be explained in plain English the first time they are used to ensure clarity for all users. [doc_9f26104ace24902c0800_p0_c3] [doc_9f26104ace24902c0800_p0_c2]\n\nThe revision policy for passive voice should allow its use in specific circumstances, such as when the outcome is more important than the agent of the action or when the writing is more user-centred. Passive voice should be used judiciously and only when it enhances clarity and user focus. [doc_9f26104ace24902c0800_p0_c7] [doc_9f26104ace24902c0800_p0_c1]",
+      "assessment": "Correctly rejects both blanket rules and covers the general accessibility aim, first-use explanation of necessary specialist terms, and the permitted passive-voice circumstances. The first paragraph asserts the specialist-term exception but cites c7/c2/c1, omitting direct support c3. A later paragraph cites c3 correctly, so the fact is available in context but not fully supported by the citations attached to the first paragraph. Additional policy wording about using passive voice only when it enhances clarity/user focus is a proposed synthesis, not a verbatim rule.",
+      "review_codes": [
+        "local_citation_support_incomplete",
+        "citation_overselection"
+      ],
+      "verdict": "supported_core_with_citation_limits"
+    }
+  ],
+  "limits": "Three exposed development questions, one model, two orders. The two order variants are not independent question samples. Manual question-only coverage requirements, generation constraints and renderer changed together, so individual causal contributions are not isolated. Source membership and coverage do not establish entailment. No representative accuracy claim.",
+  "method_decision": "Freeze the method. Proceed to one 18-attempt cross-model regression with unchanged questions, contexts, coverage requirements, prompt, schema construction and rendering. Preserve errors and compatibility failures. No more prompt tuning.",
+  "review_model_calls": 0,
+  "fine_tuning": false
+}

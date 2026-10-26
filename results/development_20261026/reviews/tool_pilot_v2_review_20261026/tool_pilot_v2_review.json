@@ -1,0 +1,161 @@
+{
+  "bundle_sha256": "0de85967c3da0a3a0423215ad624ff00f126fcc6064f9bfe2732fa339dfa0f94",
+  "review_method": "Assessment against saved supplied passages, raw model streams, planner selections and source-derived tool traces.",
+  "version": "tool-assisted-pilot-0.2.0",
+  "recorded_attempts": 17,
+  "planner_calls": 2,
+  "answer_calls": 15,
+  "factual_answers_with_bracket_citations": 13,
+  "appropriate_exact_abstentions": 2,
+  "non_tool_answers_identical_to_prior_baseline": 12,
+  "trace_outputs_match": 2,
+  "false_trace_rejections": 1,
+  "arithmetic_answers_supported": 1,
+  "arithmetic_selections_refused": 1,
+  "contradictory_partial_abstentions": 1,
+  "incomplete_policy_answers": 2,
+  "semantic_accuracy": null,
+  "model_calls_during_review": 0,
+  "records": [
+    {
+      "case_id": "calibration_01",
+      "order": "canonical",
+      "saved_pipeline_status": "candidate_unverified",
+      "answer": "The Artemis I mission launched on Nov. 16, 2022 [doc_d55e1b4cf49d694cbaac_p0_c0].",
+      "review_codes": [],
+      "assessment": "Core answer supported by the supplied cited passage(s)."
+    },
+    {
+      "case_id": "calibration_01",
+      "order": "reversed",
+      "saved_pipeline_status": "candidate_unverified",
+      "answer": "The Artemis I mission launched on Nov. 16, 2022 [doc_d55e1b4cf49d694cbaac_p0_c0].",
+      "review_codes": [],
+      "assessment": "Core answer supported by the supplied cited passage(s)."
+    },
+    {
+      "case_id": "calibration_02",
+      "order": "reversed",
+      "saved_pipeline_status": "candidate_unverified",
+      "answer": "The guidance does not prohibit all specialist terms. If specialist terms are needed, the writer must explain what they mean the first time they are used [doc_9f26104ace24902c0800_p0_c3].",
+      "review_codes": [],
+      "assessment": "Core answer supported by the supplied cited passage(s)."
+    },
+    {
+      "case_id": "calibration_02",
+      "order": "canonical",
+      "saved_pipeline_status": "candidate_unverified",
+      "answer": "The guidance does not prohibit all specialist terms. If specialist terms are needed, the writer must explain what they mean the first time they are used [doc_9f26104ace24902c0800_p0_c3].",
+      "review_codes": [],
+      "assessment": "Core answer supported by the supplied cited passage(s)."
+    },
+    {
+      "case_id": "calibration_03",
+      "order": "canonical",
+      "saved_pipeline_status": "candidate_unverified",
+      "answer": "When L is omitted, repeated calls to the documented f(a, L=[]) accumulate values because the default value for L is evaluated only once, and it is a mutable object (like a list). This means that the same list is reused across function calls, leading to the accumulation of values [doc_e94742212cb6e9b2f35c_p0_c35]. The L=None alternative avoids sharing the default list by checking if L is None and initializing a new list if it is, thus ensuring that each function call has its own separate list [doc_e94742212cb6e9b2f35c_p0_c36].",
+      "review_codes": [],
+      "assessment": "Supported in the question’s omitted-argument scope. New-list wording should remain conditional on L being omitted or None; an explicitly supplied list can still be shared."
+    },
+    {
+      "case_id": "calibration_03",
+      "order": "reversed",
+      "saved_pipeline_status": "candidate_unverified",
+      "answer": "When L is omitted, repeated calls to the documented f(a, L=[]) accumulate values because the default list is evaluated only once and shared between subsequent calls [doc_e94742212cb6e9b2f35c_p0_c35]. The L=None alternative avoids sharing the default list by checking if L is None and initializing it to a new list if it is, thus ensuring each call has its own list [doc_e94742212cb6e9b2f35c_p0_c36].",
+      "review_codes": [],
+      "assessment": "Supported in the question’s omitted-argument scope. New-list wording should remain conditional on L being omitted or None; an explicitly supplied list can still be shared."
+    },
+    {
+      "case_id": "calibration_04",
+      "order": "reversed",
+      "saved_pipeline_status": "tool_selection_failed_preserved",
+      "answer": null,
+      "review_codes": [
+        "invalid_tool_selection",
+        "requested_section_not_followed"
+      ],
+      "assessment": "Planner cited results c33 instead of abstract c1 and labelled quantities hours/week although the selected literal quote prints hours. The passage does describe weekly durations, but the strict literal-anchor contract correctly refused the selection. No answer generated; no retry."
+    },
+    {
+      "case_id": "calibration_04",
+      "order": "canonical",
+      "saved_pipeline_status": "candidate_unverified",
+      "answer": "The self-reported reading-time estimate is 4.15 hours/week higher than the logged estimate [doc_5843af9345b8b68595b9_p0_c1]. The units are hours/week.",
+      "review_codes": [],
+      "assessment": "Abstract c1 supports 6.26 minus 2.11 = 4.15 hours/week and the direction self-reported higher than logged."
+    },
+    {
+      "case_id": "calibration_05",
+      "order": "canonical",
+      "saved_pipeline_status": "candidate_unverified",
+      "answer": "The paper's reported 64% moderate-to-high heat-risk result refers to 293 prefecture-level cities in China, not cities worldwide [doc_fc173dce3e92f6ada246_p0_c6]. The supplied evidence does not answer whether this result can be described as 64% of cities worldwide.",
+      "review_codes": [
+        "contradictory_partial_abstention"
+      ],
+      "assessment": "First sentence correctly restricts the result to the Chinese sample, then the final sentence says evidence does not answer that very scope question. The literal exact-abstention detector misses this paraphrased contradiction."
+    },
+    {
+      "case_id": "calibration_05",
+      "order": "reversed",
+      "saved_pipeline_status": "candidate_unverified",
+      "answer": "The paper's reported 64% moderate-to-high heat-risk result refers to 64.16% of the 293 prefecture-level cities in China [doc_fc173dce3e92f6ada246_p0_c60]. The result cannot be described as 64% of cities worldwide, as the study specifically analyzed cities in China [doc_fc173dce3e92f6ada246_p0_c40].",
+      "review_codes": [],
+      "assessment": "Core answer supported by the supplied cited passage(s)."
+    },
+    {
+      "case_id": "calibration_06",
+      "order": "reversed",
+      "saved_pipeline_status": "candidate_unverified",
+      "answer": "The supplied evidence does not answer this question.",
+      "review_codes": [],
+      "assessment": "Appropriate exact abstention: supplied passages do not establish a minimum Flesch Reading Ease score."
+    },
+    {
+      "case_id": "calibration_06",
+      "order": "canonical",
+      "saved_pipeline_status": "candidate_unverified",
+      "answer": "The supplied evidence does not answer this question.",
+      "review_codes": [],
+      "assessment": "Appropriate exact abstention: supplied passages do not establish a minimum Flesch Reading Ease score."
+    },
+    {
+      "case_id": "calibration_07",
+      "order": "canonical",
+      "saved_pipeline_status": "candidate_unverified",
+      "answer": "The first call `print(f(1))` outputs `[1]` because the default list is used and appended with `1` [doc_e94742212cb6e9b2f35c_p0_c35]. The second call `print(f(2, []))` outputs `[2]` because an explicit list is provided, resetting the list used [doc_e94742212cb6e9b2f35c_p0_c35]. The third call `print(f(3))` outputs `[1, 3]` because it uses the shared default list, which already contains `1` from the first call [doc_e94742212cb6e9b2f35c_p0_c35]. The middle call does not reset the list used by the final call because the explicit list is provided, and the default list remains unchanged for subsequent calls [doc_e94742212cb6e9b2f35c_p0_c35].",
+      "review_codes": [],
+      "assessment": "All three printed lists [1], [2], [1, 3] and the separate explicit-list explanation are supported by source c35 and the deterministic trace."
+    },
+    {
+      "case_id": "calibration_07",
+      "order": "reversed",
+      "saved_pipeline_status": "blocked_by_check",
+      "answer": "The first call, `print(f(1))`, outputs `[1]` because the default list is used and appended with `1` [doc_e94742212cb6e9b2f35c_p0_c35]. The second call, `print(f(2, []))`, outputs `[2]` because an explicit list is provided, which does not share the default list [doc_e94742212cb6e9b2f35c_p0_c35]. The third call, `print(f(3))`, outputs `[1, 3]` because it uses the shared default list, which already contains `1` from the first call [doc_e94742212cb6e9b2f35c_p0_c35]. The middle call does not reset the list used by the final call because it explicitly provides a new list, while the final call reuses the shared default list [doc_e94742212cb6e9b2f35c_p0_c35].",
+      "review_codes": [
+        "checker_false_rejection"
+      ],
+      "assessment": "All three printed lists [1], [2], [1, 3] and the separate explicit-list explanation are supported by source c35 and the deterministic trace. Commas between code and outputs break the old parser; the offline punctuation-only audit correctly matches all lists. Original blocked status retained."
+    },
+    {
+      "case_id": "calibration_08",
+      "order": "reversed",
+      "saved_pipeline_status": "candidate_unverified",
+      "answer": "The GOV.UK guide does not support the first rule of removing every specialist term even when a user needs it. The guide states that specialist terms can be used if needed, and they should be explained the first time they are used [doc_9f26104ace24902c0800_p0_c3]. The guide also does not support the second rule of rewriting every passive sentence even when the passive wording is more user-centred. The guide acknowledges that passive voice can be appropriate when the outcome is more important than the agent of the action or when the writing is more user-centred [doc_9f26104ace24902c0800_p0_c7]. A revision policy that preserves the guide's general aims and both exceptions could include: use specialist terms when necessary and explain them the first time they are used, and use passive voice when the outcome is more important than the agent of the action or when the writing is more user-centred.",
+      "review_codes": [
+        "incomplete_requested_policy"
+      ],
+      "assessment": "Both exceptions are correctly supported by c3 and c7, but the requested revised policy omits the general plain-English/accessibility aim supported by c0/c1/c2. The general active-voice preference passage c6 was excluded from the reranked context; that retrieval limitation is separate from the omission of available clarity guidance."
+    },
+    {
+      "case_id": "calibration_08",
+      "order": "canonical",
+      "saved_pipeline_status": "candidate_unverified",
+      "answer": "The GOV.UK guide does not support the editor's rules. The guide states that specialist language can be used if needed, and it should be explained the first time it is used [doc_9f26104ace24902c0800_p0_c3]. Additionally, the guide acknowledges that passive voice can be appropriate when the outcome is more important than the agent of the action or when the writing is more user-centred [doc_9f26104ace24902c0800_p0_c7]. A revision policy that preserves the guide's general aims and both exceptions could include: retaining specialist terms when necessary and explaining them upon first use, and using passive voice when the outcome is more important than the agent or when the writing is more user-centred.",
+      "review_codes": [
+        "incomplete_requested_policy"
+      ],
+      "assessment": "Both exceptions are correctly supported by c3 and c7, but the requested revised policy omits the general plain-English/accessibility aim supported by c0/c1/c2. The general active-voice preference passage c6 was excluded from the reranked context; that retrieval limitation is separate from the omission of available clarity guidance."
+    }
+  ],
+  "limits": "Eight exposed development questions, two orders, one model. Counts describe distinct observed phenomena and are not additive accuracy categories. Restored non-tool answers reproduce the earlier baseline, not new semantic improvement. No held-out evaluation or fine-tuning."
+}

@@ -1,0 +1,160 @@
+{
+  "input_archive_sha256": "a6d8a4f3ec894e4ff772a064b9f8fc1220a1f7ebcee8e8957b375ab71026cd75",
+  "generation_calls": 0,
+  "verification": {
+    "question_passage_pairs_checked": 216,
+    "pair_text_matches_original_frozen_chunks": true,
+    "all_scores_and_selected_ids_consistent": true,
+    "max_pair_tokens": 257,
+    "configured_pair_limit": 512
+  },
+  "assessment": "Promising local retrieval improvement with one explicit coverage regression; no generated-answer or held-out accuracy conclusion.",
+  "cases": [
+    {
+      "case_id": "calibration_01",
+      "review": "Annotated mission overview is now rank 3; other directly supporting launch-date passages remain ranks 1 and 2.",
+      "annotated_chunk_diagnostics": [
+        {
+          "id": "doc_d55e1b4cf49d694cbaac_p0_c0",
+          "in_original_top5": false,
+          "in_exact_top40": true,
+          "rerank_position": 3,
+          "selected_top5": true
+        }
+      ]
+    },
+    {
+      "case_id": "calibration_02",
+      "review": "Necessary specialist terms and first-use explanation remain available, now rank 1. No demonstrated change to answer reliability without generation.",
+      "annotated_chunk_diagnostics": [
+        {
+          "id": "doc_9f26104ace24902c0800_p0_c3",
+          "in_original_top5": true,
+          "in_exact_top40": true,
+          "rerank_position": 1,
+          "selected_top5": true
+        }
+      ]
+    },
+    {
+      "case_id": "calibration_03",
+      "review": "Both default-list mechanism and None alternative remain available at ranks 1 and 2.",
+      "annotated_chunk_diagnostics": [
+        {
+          "id": "doc_e94742212cb6e9b2f35c_p0_c35",
+          "in_original_top5": true,
+          "in_exact_top40": true,
+          "rerank_position": 1,
+          "selected_top5": true
+        },
+        {
+          "id": "doc_e94742212cb6e9b2f35c_p0_c36",
+          "in_original_top5": true,
+          "in_exact_top40": true,
+          "rerank_position": 2,
+          "selected_top5": true
+        }
+      ]
+    },
+    {
+      "case_id": "calibration_04",
+      "review": "Requested abstract with exact weekly means is now rank 1. Results-section operands remain rank 2. Rounded four-hour prose remains rank 5, so precision selection still needs testing.",
+      "annotated_chunk_diagnostics": [
+        {
+          "id": "doc_5843af9345b8b68595b9_p0_c1",
+          "in_original_top5": false,
+          "in_exact_top40": true,
+          "rerank_position": 1,
+          "selected_top5": true
+        }
+      ]
+    },
+    {
+      "case_id": "calibration_05",
+      "review": "Former cosine ranks 24 and 28 become reranker positions 1 and 4. A discussion passage at position 2 independently states 293 prefecture-level cities in China. This repairs the observed missing-sample retrieval in this case, not hallucination generally.",
+      "annotated_chunk_diagnostics": [
+        {
+          "id": "doc_fc173dce3e92f6ada246_p0_c6",
+          "in_original_top5": false,
+          "in_exact_top40": true,
+          "rerank_position": 4,
+          "selected_top5": true
+        },
+        {
+          "id": "doc_fc173dce3e92f6ada246_p0_c7",
+          "in_original_top5": false,
+          "in_exact_top40": true,
+          "rerank_position": 1,
+          "selected_top5": true
+        }
+      ]
+    },
+    {
+      "case_id": "calibration_06",
+      "review": "There is still no specified universal Flesch threshold. High relevance cannot establish an answer. Correct abstention must be checked in generation.",
+      "annotated_chunk_diagnostics": []
+    },
+    {
+      "case_id": "calibration_07",
+      "review": "Required original function remains rank 1. Prior wrong traces cannot be assumed fixed by reranking.",
+      "annotated_chunk_diagnostics": [
+        {
+          "id": "doc_e94742212cb6e9b2f35c_p0_c35",
+          "in_original_top5": true,
+          "in_exact_top40": true,
+          "rerank_position": 1,
+          "selected_top5": true
+        }
+      ]
+    },
+    {
+      "case_id": "calibration_08",
+      "review": "General clarity passage enters rank 4 and both specialist/passive exceptions remain ranks 1 and 5, but explicit general active-voice preference moves from original rank 5 to reranker rank 6 and is excluded. This is an evidence-coverage tradeoff.",
+      "annotated_chunk_diagnostics": [
+        {
+          "id": "doc_9f26104ace24902c0800_p0_c0",
+          "in_original_top5": false,
+          "in_exact_top40": true,
+          "rerank_position": 4,
+          "selected_top5": true
+        },
+        {
+          "id": "doc_9f26104ace24902c0800_p0_c6",
+          "in_original_top5": true,
+          "in_exact_top40": true,
+          "rerank_position": 6,
+          "selected_top5": false
+        },
+        {
+          "id": "doc_9f26104ace24902c0800_p0_c3",
+          "in_original_top5": true,
+          "in_exact_top40": true,
+          "rerank_position": 1,
+          "selected_top5": true
+        },
+        {
+          "id": "doc_9f26104ace24902c0800_p0_c7",
+          "in_original_top5": true,
+          "in_exact_top40": true,
+          "rerank_position": 5,
+          "selected_top5": true
+        }
+      ]
+    }
+  ],
+  "next_experiment_proposal": {
+    "model": "qwen3:8b",
+    "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "questions": 8,
+    "context_arms": [
+      "original_top5",
+      "reranked_top5"
+    ],
+    "orders": [
+      "canonical",
+      "reversed"
+    ],
+    "generation_attempts": 32,
+    "rationale": "Rerun both context arms in one new run under the same pinned generator and settings. Keep model replacement out of this comparison; evaluate all three after this development check. Preserve every failure; no automatic retries. This is still an exposed-development study, not final generalization evidence."
+  }
+}

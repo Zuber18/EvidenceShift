@@ -1,0 +1,624 @@
+{
+  "review_id": "comparison_review_20261023",
+  "input_bundle_sha256": "1dff9855bf39c783971c8f5514a96aecac6cb8bf1559bceaee7bc29cf3472824",
+  "review_method": "Record-level assessment against frozen project gold, actual supplied passages, raw request/stream consistency and independent execution of the documented fixed Python function.",
+  "verification": {
+    "attempts": 32,
+    "normal_stops": 32,
+    "mechanical_checks_passed": 32,
+    "unexpected_thinking_outputs": 0,
+    "prepared_file_hashes_valid": true,
+    "all_contexts_and_streams_consistent": true,
+    "original_arm_historical_requests_identical": 16,
+    "original_arm_historical_answers_identical": 16
+  },
+  "model": "qwen3:8b",
+  "fine_tuning_performed": false,
+  "new_review_generation_calls": 0,
+  "python_execution_control": [
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      1,
+      3
+    ]
+  ],
+  "aggregate_semantic_accuracy": null,
+  "conclusion": "Reranking improves availability and use of evidence on the heat-study scope question and removes the reversed editing-exception contradiction in this run. It does not solve exact calculation, Python state tracking, full policy coverage or contradictory partial abstention.",
+  "limits": "Eight exposed development questions; one sample per condition and fixed seed. Context-faithful abstention is distinguished from end-to-end document coverage. No representative accuracy, independent human validation, other-model improvement or general hallucination-resolution claim.",
+  "next_step_recommendation": "Keep weights fixed. Develop explicit computation/state-trace checks and a consistency gate using question and cited evidence, without reference answers or benchmark-specific output replacement. Freeze the proposed method and generation budget before a new run. Revisit fine-tuning only with a separate training corpus and untouched evaluation data.",
+  "reviews": [
+    {
+      "job_id": "be4154c55425f0d24873bce9",
+      "case_id": "calibration_01",
+      "arm": "original",
+      "order": "canonical",
+      "verdict": "supported_answer",
+      "failure_codes": [],
+      "notes": [
+        "Correct launch date. Supplied citation supports it. Reranked arm cites the requested mission-overview passage directly."
+      ],
+      "reference_answer": "16 November 2022.",
+      "raw_record": "jobs/be4154c55425f0d24873bce9/record.json",
+      "raw_record_sha256": "ddf1b51a7acc5bcf3feb5e812d110b180a44f652061362927bfcd31d95adf23f",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "c6524786160ae9a9547b8abc",
+      "case_id": "calibration_01",
+      "arm": "original",
+      "order": "reversed",
+      "verdict": "supported_answer",
+      "failure_codes": [],
+      "notes": [
+        "Correct launch date. Supplied citation supports it. Reranked arm cites the requested mission-overview passage directly."
+      ],
+      "reference_answer": "16 November 2022.",
+      "raw_record": "jobs/c6524786160ae9a9547b8abc/record.json",
+      "raw_record_sha256": "d2e8c8f41cdcdfd79459ecdd479035c7cbd45001123c6359ad2a9747d2d978c4",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "b369e5c8aaf4a5b61b651a44",
+      "case_id": "calibration_01",
+      "arm": "reranked",
+      "order": "canonical",
+      "verdict": "supported_answer",
+      "failure_codes": [],
+      "notes": [
+        "Correct launch date. Supplied citation supports it. Reranked arm cites the requested mission-overview passage directly."
+      ],
+      "reference_answer": "16 November 2022.",
+      "raw_record": "jobs/b369e5c8aaf4a5b61b651a44/record.json",
+      "raw_record_sha256": "04cf480b78b3ab361fc205556fbed9ad42a0d1d39d313d107f6f08bedd7cb639",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "91c4e68c255347af4aaa57f7",
+      "case_id": "calibration_01",
+      "arm": "reranked",
+      "order": "reversed",
+      "verdict": "supported_answer",
+      "failure_codes": [],
+      "notes": [
+        "Correct launch date. Supplied citation supports it. Reranked arm cites the requested mission-overview passage directly."
+      ],
+      "reference_answer": "16 November 2022.",
+      "raw_record": "jobs/91c4e68c255347af4aaa57f7/record.json",
+      "raw_record_sha256": "489bb71b0cf0052f4778078abebd0d20d53652ebe672e98f67b8d4a991ffcf33",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "4e266d8019e947f9b0b1b82f",
+      "case_id": "calibration_02",
+      "arm": "original",
+      "order": "canonical",
+      "verdict": "supported_answer",
+      "failure_codes": [],
+      "notes": [
+        "Preserves permission to use needed specialist terms and the obligation to explain them on first use."
+      ],
+      "reference_answer": "No. Specialist terms can be used when needed, but their meaning must be explained the first time they are used.",
+      "raw_record": "jobs/4e266d8019e947f9b0b1b82f/record.json",
+      "raw_record_sha256": "60dfbf8e7cbd6054b10b0225a51621f25c5426a3daa9d0522451b4dbc01afe5d",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "c5652635104c1542f733b637",
+      "case_id": "calibration_02",
+      "arm": "original",
+      "order": "reversed",
+      "verdict": "supported_answer",
+      "failure_codes": [],
+      "notes": [
+        "Preserves permission to use needed specialist terms and the obligation to explain them on first use."
+      ],
+      "reference_answer": "No. Specialist terms can be used when needed, but their meaning must be explained the first time they are used.",
+      "raw_record": "jobs/c5652635104c1542f733b637/record.json",
+      "raw_record_sha256": "11cfe33f200a51a959913002f733485f9b636a15842747602f0cec73c380eb5a",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "d0063406714f679b3b83d39c",
+      "case_id": "calibration_02",
+      "arm": "reranked",
+      "order": "canonical",
+      "verdict": "supported_answer",
+      "failure_codes": [],
+      "notes": [
+        "Preserves permission to use needed specialist terms and the obligation to explain them on first use."
+      ],
+      "reference_answer": "No. Specialist terms can be used when needed, but their meaning must be explained the first time they are used.",
+      "raw_record": "jobs/d0063406714f679b3b83d39c/record.json",
+      "raw_record_sha256": "c7bfc797bf4f75e9eda38ba0c36dcf2614e6b27d6f6f43399fc35ba7930baaab",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "56b76f513f052e2e214e68cf",
+      "case_id": "calibration_02",
+      "arm": "reranked",
+      "order": "reversed",
+      "verdict": "supported_answer",
+      "failure_codes": [],
+      "notes": [
+        "Preserves permission to use needed specialist terms and the obligation to explain them on first use."
+      ],
+      "reference_answer": "No. Specialist terms can be used when needed, but their meaning must be explained the first time they are used.",
+      "raw_record": "jobs/56b76f513f052e2e214e68cf/record.json",
+      "raw_record_sha256": "118a96b3ef1665b9f1a210eb90cbcf6699c2ce15740e75a70718b5f3e0061a1c",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "89a21ef75b43635e865e3cd5",
+      "case_id": "calibration_03",
+      "arm": "original",
+      "order": "canonical",
+      "verdict": "supported_mechanism_summary",
+      "failure_codes": [],
+      "notes": [
+        "Correct shared-default/conditional-new-list explanation in the omitted-argument context. Accumulation is described without explicitly naming append; original reversed also leaves once-only evaluation implicit. Do not read the None check as copying an explicitly supplied list."
+      ],
+      "reference_answer": "The mutable default list is created/evaluated once and reused, so appending on later calls changes the same list. In the alternative, an omitted L defaults to None; the function creates a new empty list inside each such call before appending.",
+      "raw_record": "jobs/89a21ef75b43635e865e3cd5/record.json",
+      "raw_record_sha256": "cab0caf7ec2ef7fac0e67350cf96c8a61b13bf20ace42d869283546f78e11aa9",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "4b8c94b36f15dce82b84f5bc",
+      "case_id": "calibration_03",
+      "arm": "original",
+      "order": "reversed",
+      "verdict": "supported_mechanism_summary",
+      "failure_codes": [],
+      "notes": [
+        "Correct shared-default/conditional-new-list explanation in the omitted-argument context. Accumulation is described without explicitly naming append; original reversed also leaves once-only evaluation implicit. Do not read the None check as copying an explicitly supplied list."
+      ],
+      "reference_answer": "The mutable default list is created/evaluated once and reused, so appending on later calls changes the same list. In the alternative, an omitted L defaults to None; the function creates a new empty list inside each such call before appending.",
+      "raw_record": "jobs/4b8c94b36f15dce82b84f5bc/record.json",
+      "raw_record_sha256": "347d136acb9afde2239de77074c0f4a75f530e3490e9b58970398184e315be70",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "df23a811e5c18f7d99b00701",
+      "case_id": "calibration_03",
+      "arm": "reranked",
+      "order": "canonical",
+      "verdict": "supported_mechanism_summary",
+      "failure_codes": [],
+      "notes": [
+        "Correct shared-default/conditional-new-list explanation in the omitted-argument context. Accumulation is described without explicitly naming append; original reversed also leaves once-only evaluation implicit. Do not read the None check as copying an explicitly supplied list."
+      ],
+      "reference_answer": "The mutable default list is created/evaluated once and reused, so appending on later calls changes the same list. In the alternative, an omitted L defaults to None; the function creates a new empty list inside each such call before appending.",
+      "raw_record": "jobs/df23a811e5c18f7d99b00701/record.json",
+      "raw_record_sha256": "6a4fa944609bd2a62562281c893320b7e8eea6c1d995f2b179c16dd09eea6434",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "2ecf4e8244d8e32c6f91979b",
+      "case_id": "calibration_03",
+      "arm": "reranked",
+      "order": "reversed",
+      "verdict": "supported_mechanism_summary",
+      "failure_codes": [],
+      "notes": [
+        "Correct shared-default/conditional-new-list explanation in the omitted-argument context. Accumulation is described without explicitly naming append; original reversed also leaves once-only evaluation implicit. Do not read the None check as copying an explicitly supplied list."
+      ],
+      "reference_answer": "The mutable default list is created/evaluated once and reused, so appending on later calls changes the same list. In the alternative, an omitted L defaults to None; the function creates a new empty list inside each such call before appending.",
+      "raw_record": "jobs/2ecf4e8244d8e32c6f91979b/record.json",
+      "raw_record_sha256": "7a383d21326106e57b8f979c2212831dd77b877921958b3bd79968332f3d1066",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "c3886bdde230d6f5de0d2a3d",
+      "case_id": "calibration_04",
+      "arm": "original",
+      "order": "canonical",
+      "verdict": "rounded_summary_instead_of_requested_calculation",
+      "failure_codes": [
+        "NUMERIC_ERROR",
+        "QUALIFICATION_LOSS"
+      ],
+      "notes": [
+        "Returns four hours rather than 6.26 minus 2.11 = 4.15 hours/week. C50 supports an approximate summary, not the requested precision. Weekly scope is omitted."
+      ],
+      "reference_answer": "4.15 hours per week higher (6.26 minus 2.11).",
+      "raw_record": "jobs/c3886bdde230d6f5de0d2a3d/record.json",
+      "raw_record_sha256": "90e1f9efbd92e26aae4259a1b657ca6a37b5eb826467f436c63678b8abff4dc8",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "2b2f146e606cee1cb87bce75",
+      "case_id": "calibration_04",
+      "arm": "original",
+      "order": "reversed",
+      "verdict": "correct_number_with_insufficient_citation_and_unit_scope",
+      "failure_codes": [
+        "CITATION_SUPPORT",
+        "QUALIFICATION_LOSS"
+      ],
+      "notes": [
+        "4.15 is numerically correct, but cited c50 only states an average of four hours; it does not establish the exact operands/difference. The answer omits the per-week unit."
+      ],
+      "reference_answer": "4.15 hours per week higher (6.26 minus 2.11).",
+      "raw_record": "jobs/2b2f146e606cee1cb87bce75/record.json",
+      "raw_record_sha256": "a7a03a577e81597a2ff859f48e6182a8cbcd73a5fc8de1b7e020553df82f1192",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "bd72f1c272185cd8e11279f0",
+      "case_id": "calibration_04",
+      "arm": "reranked",
+      "order": "canonical",
+      "verdict": "rounded_summary_instead_of_requested_calculation",
+      "failure_codes": [
+        "NUMERIC_ERROR"
+      ],
+      "notes": [
+        "Returns four hours/week from the Bland–Altman discussion in c35 despite both exact means being available in c1 and c33. Weekly unit improves, but requested 4.15 is not supplied. This establishes precision/operation-selection failure, not an observed internal subtraction error."
+      ],
+      "reference_answer": "4.15 hours per week higher (6.26 minus 2.11).",
+      "raw_record": "jobs/bd72f1c272185cd8e11279f0/record.json",
+      "raw_record_sha256": "5101687a084b4b4d1df6128893b62e81ec53ccb560a7334bda3ff42849d9e3ee",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "002f0c81b3f36d06396e49d8",
+      "case_id": "calibration_04",
+      "arm": "reranked",
+      "order": "reversed",
+      "verdict": "rounded_summary_instead_of_requested_calculation",
+      "failure_codes": [
+        "NUMERIC_ERROR"
+      ],
+      "notes": [
+        "Returns four hours/week from the Bland–Altman discussion in c35 despite both exact means being available in c1 and c33. Weekly unit improves, but requested 4.15 is not supplied. This establishes precision/operation-selection failure, not an observed internal subtraction error."
+      ],
+      "reference_answer": "4.15 hours per week higher (6.26 minus 2.11).",
+      "raw_record": "jobs/002f0c81b3f36d06396e49d8/record.json",
+      "raw_record_sha256": "71cd5d939d2cedf3717abd07cce91f0729d8895a26234f272d691fab9c3d0d8f",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "7776fa739ff42e1fdc5c9613",
+      "case_id": "calibration_05",
+      "arm": "original",
+      "order": "canonical",
+      "verdict": "context_appropriate_abstention_with_end_to_end_retrieval_failure",
+      "failure_codes": [
+        "RETRIEVAL_MISS",
+        "MISSING_REQUIRED_UNIT"
+      ],
+      "notes": [
+        "Correctly refrains from guessing given the supplied five passages. The document is answerable, but the necessary sample/result was omitted by retrieval, leaving the end-to-end task unanswered. Do not label this a generation hallucination."
+      ],
+      "reference_answer": "No. The reported proportion concerns the study’s sample of 293 prefecture-level cities in China, not all cities worldwide.",
+      "raw_record": "jobs/7776fa739ff42e1fdc5c9613/record.json",
+      "raw_record_sha256": "72c306c4d63eea21d4fffd0141281d090aaf3a390aca25f6f61577476a41c0e5",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "3227247cc87fa07392feb4c0",
+      "case_id": "calibration_05",
+      "arm": "original",
+      "order": "reversed",
+      "verdict": "context_appropriate_abstention_with_end_to_end_retrieval_failure",
+      "failure_codes": [
+        "RETRIEVAL_MISS",
+        "MISSING_REQUIRED_UNIT"
+      ],
+      "notes": [
+        "Correctly refrains from guessing given the supplied five passages. The document is answerable, but the necessary sample/result was omitted by retrieval, leaving the end-to-end task unanswered. Do not label this a generation hallucination."
+      ],
+      "reference_answer": "No. The reported proportion concerns the study’s sample of 293 prefecture-level cities in China, not all cities worldwide.",
+      "raw_record": "jobs/3227247cc87fa07392feb4c0/record.json",
+      "raw_record_sha256": "dcafc8702bbb1fd5b0e3ac9f06ddfac63236603e8b87ec15ffac393536e7b17d",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "4a784194ecf278a26ea7ba8a",
+      "case_id": "calibration_05",
+      "arm": "reranked",
+      "order": "canonical",
+      "verdict": "correct_sample_with_contradictory_partial_abstention",
+      "failure_codes": [
+        "MIXED_ABSTENTION"
+      ],
+      "notes": [
+        "Correctly states 293 prefecture-level cities in China, not cities worldwide, then says the evidence does not answer whether the result can be described worldwide. That refusal conflicts with its own supported scope statement."
+      ],
+      "reference_answer": "No. The reported proportion concerns the study’s sample of 293 prefecture-level cities in China, not all cities worldwide.",
+      "raw_record": "jobs/4a784194ecf278a26ea7ba8a/record.json",
+      "raw_record_sha256": "f14455a3488750588563199192989108a2b756672681093d1d90ac31e12f31b3",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "ef40d4e17ac25d91dc89ecae",
+      "case_id": "calibration_05",
+      "arm": "reranked",
+      "order": "reversed",
+      "verdict": "supported_answer",
+      "failure_codes": [],
+      "notes": [
+        "Correctly identifies 293 prefecture-level Chinese cities and rejects worldwide generalization. Uses the paper’s 64.16% discussion result, consistent with the abstract’s rounded 64%. C60 supports count/country/proportion, while c40 also establishes prefecture-level scope; the answer is jointly supported by its cited passages."
+      ],
+      "reference_answer": "No. The reported proportion concerns the study’s sample of 293 prefecture-level cities in China, not all cities worldwide.",
+      "raw_record": "jobs/ef40d4e17ac25d91dc89ecae/record.json",
+      "raw_record_sha256": "b8f585527c3acd1077ef89eb1e57393141f515be702c282b04a9d484981fb3c3",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "075b92a53ed666a9300b9860",
+      "case_id": "calibration_06",
+      "arm": "original",
+      "order": "canonical",
+      "verdict": "appropriate_exact_abstention",
+      "failure_codes": [],
+      "notes": [
+        "No universal minimum Flesch score is specified in the reviewed source. Exact prescribed abstention is appropriate in both arms/orders."
+      ],
+      "reference_answer": "This guidance does not specify a minimum Flesch Reading Ease score.",
+      "raw_record": "jobs/075b92a53ed666a9300b9860/record.json",
+      "raw_record_sha256": "c26287dff706794ca33f1fe4146552399f4ab7b8565572d37718c66ef0c56b68",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "5295dc7357a90566cb9661ca",
+      "case_id": "calibration_06",
+      "arm": "original",
+      "order": "reversed",
+      "verdict": "appropriate_exact_abstention",
+      "failure_codes": [],
+      "notes": [
+        "No universal minimum Flesch score is specified in the reviewed source. Exact prescribed abstention is appropriate in both arms/orders."
+      ],
+      "reference_answer": "This guidance does not specify a minimum Flesch Reading Ease score.",
+      "raw_record": "jobs/5295dc7357a90566cb9661ca/record.json",
+      "raw_record_sha256": "f0c90c642d0548ac2e83cf162918448b1d0ac27037c3a52ad0f619255b05c0fb",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "6323b4a69021de1ad37a52e8",
+      "case_id": "calibration_06",
+      "arm": "reranked",
+      "order": "canonical",
+      "verdict": "appropriate_exact_abstention",
+      "failure_codes": [],
+      "notes": [
+        "No universal minimum Flesch score is specified in the reviewed source. Exact prescribed abstention is appropriate in both arms/orders."
+      ],
+      "reference_answer": "This guidance does not specify a minimum Flesch Reading Ease score.",
+      "raw_record": "jobs/6323b4a69021de1ad37a52e8/record.json",
+      "raw_record_sha256": "1d63f6c3e43f2cc7260b1159eb979365488f9566d07168d4244e671597508d72",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "9227227a890dad15eab6f052",
+      "case_id": "calibration_06",
+      "arm": "reranked",
+      "order": "reversed",
+      "verdict": "appropriate_exact_abstention",
+      "failure_codes": [],
+      "notes": [
+        "No universal minimum Flesch score is specified in the reviewed source. Exact prescribed abstention is appropriate in both arms/orders."
+      ],
+      "reference_answer": "This guidance does not specify a minimum Flesch Reading Ease score.",
+      "raw_record": "jobs/9227227a890dad15eab6f052/record.json",
+      "raw_record_sha256": "ae8eb0371b0756ea64c59e9d945afb93643ece3c20dc1a95a0df91826ec0dad4",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "7dad025343ecf988a20917cd",
+      "case_id": "calibration_07",
+      "arm": "original",
+      "order": "canonical",
+      "verdict": "wrong_execution_trace",
+      "failure_codes": [
+        "CONTRADICTED_CLAIM",
+        "WRONG_RELATION",
+        "CITATION_SUPPORT"
+      ],
+      "notes": [
+        "Correct trace is [1], [2], [1, 3]. The explicit middle [] is a separate object and does not append 2 to the default. All four responses give a wrong final list despite the required function being supplied at rank 1. The cited default-list example uses a different middle call; it does not support the requested trace."
+      ],
+      "reference_answer": "The outputs are [1], [2], and [1, 3]. The first and third calls omit L and reuse the one default list. The middle call supplies a separate empty list, so its append does not replace or reset the default.",
+      "raw_record": "jobs/7dad025343ecf988a20917cd/record.json",
+      "raw_record_sha256": "06800f77dd565454fba6b1dfc88e6f097ff89f3f2e35d6cac9964bc148223bdf",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "11b8212c8fc03ef944ed0568",
+      "case_id": "calibration_07",
+      "arm": "original",
+      "order": "reversed",
+      "verdict": "wrong_execution_trace",
+      "failure_codes": [
+        "CONTRADICTED_CLAIM",
+        "WRONG_RELATION",
+        "CITATION_SUPPORT"
+      ],
+      "notes": [
+        "Correct trace is [1], [2], [1, 3]. The explicit middle [] is a separate object and does not append 2 to the default. All four responses give a wrong final list despite the required function being supplied at rank 1. The cited default-list example uses a different middle call; it does not support the requested trace."
+      ],
+      "reference_answer": "The outputs are [1], [2], and [1, 3]. The first and third calls omit L and reuse the one default list. The middle call supplies a separate empty list, so its append does not replace or reset the default.",
+      "raw_record": "jobs/11b8212c8fc03ef944ed0568/record.json",
+      "raw_record_sha256": "564ffd2383f03de09fd1164593b19e5a903e1fc84326eecbd6a3adb397741a0d",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "233d1cdbd1cbe2962b6816c3",
+      "case_id": "calibration_07",
+      "arm": "reranked",
+      "order": "canonical",
+      "verdict": "wrong_execution_trace",
+      "failure_codes": [
+        "CONTRADICTED_CLAIM",
+        "WRONG_RELATION",
+        "CITATION_SUPPORT"
+      ],
+      "notes": [
+        "Correct trace is [1], [2], [1, 3]. The explicit middle [] is a separate object and does not append 2 to the default. All four responses give a wrong final list despite the required function being supplied at rank 1. The cited default-list example uses a different middle call; it does not support the requested trace."
+      ],
+      "reference_answer": "The outputs are [1], [2], and [1, 3]. The first and third calls omit L and reuse the one default list. The middle call supplies a separate empty list, so its append does not replace or reset the default.",
+      "raw_record": "jobs/233d1cdbd1cbe2962b6816c3/record.json",
+      "raw_record_sha256": "c6c1797996fc10dcebe948a8ba70b8674370137cb33248e659aaa9a134483a47",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "e86dd4956a88ed29fc0aa231",
+      "case_id": "calibration_07",
+      "arm": "reranked",
+      "order": "reversed",
+      "verdict": "wrong_execution_trace",
+      "failure_codes": [
+        "CONTRADICTED_CLAIM",
+        "WRONG_RELATION",
+        "CITATION_SUPPORT"
+      ],
+      "notes": [
+        "Correct trace is [1], [2], [1, 3]. The explicit middle [] is a separate object and does not append 2 to the default. All four responses give a wrong final list despite the required function being supplied at rank 1. The cited default-list example uses a different middle call; it does not support the requested trace."
+      ],
+      "reference_answer": "The outputs are [1], [2], and [1, 3]. The first and third calls omit L and reuse the one default list. The middle call supplies a separate empty list, so its append does not replace or reset the default.",
+      "raw_record": "jobs/e86dd4956a88ed29fc0aa231/record.json",
+      "raw_record_sha256": "eace12d3b6bed4f586f58dcdbf3d592f8c32100cda4c9aca7d7893a3c074c8c1",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "a779d59d31cef947b9d34405",
+      "case_id": "calibration_08",
+      "arm": "original",
+      "order": "canonical",
+      "verdict": "exceptions_preserved_but_general_policy_incomplete",
+      "failure_codes": [
+        "MISSING_REQUIRED_UNIT"
+      ],
+      "notes": [
+        "Rejects both blanket rules and correctly preserves needed terminology/first-use explanation and passive-voice exceptions. However, the frozen gold also requires retaining the general plain-English obligation and normal active-voice preference; these are not explicitly stated as general policy. Reranked context omits the explicit active-voice rule at c6, though it remains in the original arm. This is an exception-handling improvement, not full coverage of every policy unit."
+      ],
+      "reference_answer": "No. Keep language clear and normally prefer active voice. A necessary specialist term may remain, with its meaning explained on first use. Passive wording can be appropriate when it is more user-centred; the guide does not require replacing every passive sentence.",
+      "raw_record": "jobs/a779d59d31cef947b9d34405/record.json",
+      "raw_record_sha256": "084e1d2a4c3dbbac3afb80168269a0858993cc724b651f4c83039b1eb8aff24e",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "7470e9120310a06aec3275a3",
+      "case_id": "calibration_08",
+      "arm": "original",
+      "order": "reversed",
+      "verdict": "contradiction_bad_citation_and_incomplete_policy",
+      "failure_codes": [
+        "MISSING_REQUIRED_UNIT",
+        "CONTRADICTED_CLAIM",
+        "CITATION_SUPPORT"
+      ],
+      "notes": [
+        "Explicitly endorses rewriting every passive sentence, contradicting the supplied exception and its own closing policy. C1 does not establish the claimed active-voice rule. Plain-English obligation is not stated in the proposed policy."
+      ],
+      "reference_answer": "No. Keep language clear and normally prefer active voice. A necessary specialist term may remain, with its meaning explained on first use. Passive wording can be appropriate when it is more user-centred; the guide does not require replacing every passive sentence.",
+      "raw_record": "jobs/7470e9120310a06aec3275a3/record.json",
+      "raw_record_sha256": "74acc33bb0b52deb8aecdf9a5b996011c207c85747323de638eeecbca928f5a9",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "8e8bd90dc83e7c1233b1cdea",
+      "case_id": "calibration_08",
+      "arm": "reranked",
+      "order": "canonical",
+      "verdict": "exceptions_preserved_but_general_policy_incomplete",
+      "failure_codes": [
+        "MISSING_REQUIRED_UNIT"
+      ],
+      "notes": [
+        "Rejects both blanket rules and correctly preserves needed terminology/first-use explanation and passive-voice exceptions. However, the frozen gold also requires retaining the general plain-English obligation and normal active-voice preference; these are not explicitly stated as general policy. Reranked context omits the explicit active-voice rule at c6, though it remains in the original arm. This is an exception-handling improvement, not full coverage of every policy unit."
+      ],
+      "reference_answer": "No. Keep language clear and normally prefer active voice. A necessary specialist term may remain, with its meaning explained on first use. Passive wording can be appropriate when it is more user-centred; the guide does not require replacing every passive sentence.",
+      "raw_record": "jobs/8e8bd90dc83e7c1233b1cdea/record.json",
+      "raw_record_sha256": "c82ab2f1dd94d9b357ddc4c633aa68c82fcfe52098a5f44b4508e5e208cf5760",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    },
+    {
+      "job_id": "8146cacab3c7d334fc4c05b8",
+      "case_id": "calibration_08",
+      "arm": "reranked",
+      "order": "reversed",
+      "verdict": "exceptions_preserved_but_general_policy_incomplete",
+      "failure_codes": [
+        "MISSING_REQUIRED_UNIT"
+      ],
+      "notes": [
+        "Rejects both blanket rules and correctly preserves needed terminology/first-use explanation and passive-voice exceptions. However, the frozen gold also requires retaining the general plain-English obligation and normal active-voice preference; these are not explicitly stated as general policy. Reranked context omits the explicit active-voice rule at c6, though it remains in the original arm. This is an exception-handling improvement, not full coverage of every policy unit."
+      ],
+      "reference_answer": "No. Keep language clear and normally prefer active voice. A necessary specialist term may remain, with its meaning explained on first use. Passive wording can be appropriate when it is more user-centred; the guide does not require replacing every passive sentence.",
+      "raw_record": "jobs/8146cacab3c7d334fc4c05b8/record.json",
+      "raw_record_sha256": "59099b4a83455cab582cc986b22b035b02befd2ec76805ae670a8d318029cac6",
+      "mechanical_checks_passed": true,
+      "status": "output_recorded",
+      "factual_correctness_automatically_scored": false
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "version": "frozen-regression-review-1.0.0",
+  "source_bundle_sha256": "ae42b4457faceeeba564f98bddd1f7e51608a7fffdebd056dfbab1608ee0669f",
+  "review_method": "Assessment against saved supplied passages, model requests, native schema, generation streams and local rendering rules.",
+  "generation_attempts": 18,
+  "normal_completions": 18,
+  "valid_json_outputs": 18,
+  "rendered_answers": 17,
+  "cross_field_blocks": 1,
+  "models": [
+    "qwen3:8b",
+    "qwen3:4b-instruct-2507-q4_K_M",
+    "gemma3:4b"
+  ],
+  "per_model": {
+    "qwen3:8b": {
+      "candidate_unverified": 6
+    },
+    "qwen3:4b-instruct-2507-q4_K_M": {
+      "candidate_unverified": 5,
+      "structure_failed_preserved": 1
+    },
+    "gemma3:4b": {
+      "candidate_unverified": 6
+    }
+  },
+  "qwen8b_outputs_identical_to_final_diagnostic": 6,
+  "appropriate_exact_abstentions": 4,
+  "missed_required_abstentions_without_invented_threshold": 2,
+  "material_factual_errors_in_rendered_answers": 2,
+  "frozen_hashes_raw_streams_and_payloads_valid": true,
+  "non_model_payloads_equal_across_models": true,
+  "semantic_accuracy": null,
+  "review_generation_calls": 0,
+  "records": [
+    {
+      "record_id": "47eee544e98a687c9b280c86",
+      "model": "qwen3:8b",
+      "case_id": "calibration_05",
+      "order": "canonical",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "supported_core",
+      "review_codes": [
+        "citation_overselection"
+      ],
+      "notes": [
+        "Correct scope and sample; all five passages cited for each part, including passages not directly establishing the sample."
+      ],
+      "answer": "The reported 64% moderate-to-high heat-risk result cannot be described as a result about cities worldwide. The study specifically refers to cities in China. [doc_fc173dce3e92f6ada246_p0_c7] [doc_fc173dce3e92f6ada246_p0_c40] [doc_fc173dce3e92f6ada246_p0_c60] [doc_fc173dce3e92f6ada246_p0_c6] [doc_fc173dce3e92f6ada246_p0_c19]\n\nThe actual city sample to which the result refers is 293 prefecture-level cities in China. [doc_fc173dce3e92f6ada246_p0_c7] [doc_fc173dce3e92f6ada246_p0_c40] [doc_fc173dce3e92f6ada246_p0_c60] [doc_fc173dce3e92f6ada246_p0_c6] [doc_fc173dce3e92f6ada246_p0_c19]"
+    },
+    {
+      "record_id": "2bdcf8444c5ada8401de342a",
+      "model": "qwen3:8b",
+      "case_id": "calibration_05",
+      "order": "reversed",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "supported_core",
+      "review_codes": [],
+      "notes": [
+        "Core claims and requested coverage are supported by the saved passages; this is not a claim that every selected citation is minimal."
+      ],
+      "answer": "The reported 64% moderate-to-high heat-risk result cannot be described as a result about cities worldwide. The study specifically focused on 293 prefecture-level cities in China. [doc_fc173dce3e92f6ada246_p0_c6] [doc_fc173dce3e92f6ada246_p0_c60] [doc_fc173dce3e92f6ada246_p0_c40]\n\nThe actual city sample to which the result refers is 293 prefecture-level cities in China. [doc_fc173dce3e92f6ada246_p0_c6] [doc_fc173dce3e92f6ada246_p0_c60] [doc_fc173dce3e92f6ada246_p0_c40]"
+    },
+    {
+      "record_id": "87e3f9a9fc2bea2f5b421eac",
+      "model": "qwen3:8b",
+      "case_id": "calibration_06",
+      "order": "reversed",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "appropriate_abstention",
+      "review_codes": [],
+      "notes": [
+        "Exact abstention is appropriate: no required minimum score is established by the supplied passages."
+      ],
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "record_id": "2f506205c4c4e6c880bf0b0e",
+      "model": "qwen3:8b",
+      "case_id": "calibration_06",
+      "order": "canonical",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "appropriate_abstention",
+      "review_codes": [],
+      "notes": [
+        "Exact abstention is appropriate: no required minimum score is established by the supplied passages."
+      ],
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "record_id": "a375f4184a4aefd4276d24f8",
+      "model": "qwen3:8b",
+      "case_id": "calibration_08",
+      "order": "canonical",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "supported_core",
+      "review_codes": [],
+      "notes": [
+        "Core claims and requested coverage are supported by the saved passages; this is not a claim that every selected citation is minimal."
+      ],
+      "answer": "The proposed blanket rules do not follow from the guide. The guide allows for the use of specialist terms when needed and permits the use of passive voice in certain circumstances. [doc_9f26104ace24902c0800_p0_c3] [doc_9f26104ace24902c0800_p0_c7]\n\nThe general aim that the proposed revision policy should preserve is to ensure that GOV.UK content is accessible and understandable to everyone who needs it, including those with limited literacy skills and non-native English speakers. [doc_9f26104ace24902c0800_p0_c0]\n\nThe revision policy for specialist terms should allow their use when needed, provided they are explained in plain English the first time they are used. This ensures that users who need the terms to complete a task can understand them. [doc_9f26104ace24902c0800_p0_c3]\n\nThe revision policy for passive voice should allow its use when the outcome is more important than the agent of the action or when the writing is more user-centred. This preserves the guide's aim of making content accessible and user-focused. [doc_9f26104ace24902c0800_p0_c7]"
+    },
+    {
+      "record_id": "752dc7f2d30aedb0bbd5c52a",
+      "model": "qwen3:8b",
+      "case_id": "calibration_08",
+      "order": "reversed",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "supported_core",
+      "review_codes": [
+        "local_citation_support_incomplete",
+        "citation_overselection"
+      ],
+      "notes": [
+        "Blanket-rule paragraph includes the specialist-term exception but omits direct supporting passage c3 from that paragraph’s citations. A later paragraph correctly cites c3."
+      ],
+      "answer": "The proposed blanket rules do not follow from the guide. The guide allows for the use of specialist terms when needed and permits passive voice in specific circumstances, such as when the outcome is more important than the agent of the action or when the writing is more user-centred. [doc_9f26104ace24902c0800_p0_c7] [doc_9f26104ace24902c0800_p0_c2] [doc_9f26104ace24902c0800_p0_c1]\n\nThe general aim that the proposed revision policy should preserve is to ensure that content is accessible and understandable to everyone who needs it, including those with limited literacy skills and non-native English speakers. [doc_9f26104ace24902c0800_p0_c0] [doc_9f26104ace24902c0800_p0_c1]\n\nThe revision policy for specialist terms should allow their use when needed, such as when users require them to complete a task. Specialist terms should be explained in plain English the first time they are used to ensure clarity for all users. [doc_9f26104ace24902c0800_p0_c3] [doc_9f26104ace24902c0800_p0_c2]\n\nThe revision policy for passive voice should allow its use in specific circumstances, such as when the outcome is more important than the agent of the action or when the writing is more user-centred. Passive voice should be used judiciously and only when it enhances clarity and user focus. [doc_9f26104ace24902c0800_p0_c7] [doc_9f26104ace24902c0800_p0_c1]"
+    },
+    {
+      "record_id": "7c37b55180fb3ca0993f0e0a",
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "case_id": "calibration_05",
+      "order": "canonical",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "needs_correction",
+      "review_codes": [
+        "material_factual_error",
+        "metric_conflation",
+        "citation_support_incomplete"
+      ],
+      "notes": [
+        "Sample is correct, but the answer says higher heat risk is concentrated in southern/central China. That geography describes the hazard component in c19; abstract c6 describes overall risk as higher in northwestern China. Selected c40/c60/c6 do not support the added geographic assertion."
+      ],
+      "answer": "The reported 64% moderate-to-high heat-risk result is stated in the context of 293 prefecture-level cities in China, not worldwide. While the paper discusses global warming and references the IPCC, the specific heat-risk assessment is limited to China. This contradicts any claim of a worldwide scope, as the sample is geographically restricted to China. The use of 'overall' in the text does not extend the scope beyond China, and no evidence supports a worldwide city sample. Thus, describing the result as 'worldwide' would be a misrepresentation. [doc_fc173dce3e92f6ada246_p0_c7] [doc_fc173dce3e92f6ada246_p0_c40] [doc_fc173dce3e92f6ada246_p0_c60] [doc_fc173dce3e92f6ada246_p0_c6]\n\nThe result refers to 293 prefecture-level cities in China, specifically those analyzed in the study, with higher heat risk concentrated in southern and central China, including parts of Guangxi, Guangdong, Henan, Hebei, and Sichuan. [doc_fc173dce3e92f6ada246_p0_c40] [doc_fc173dce3e92f6ada246_p0_c60] [doc_fc173dce3e92f6ada246_p0_c6]"
+    },
+    {
+      "record_id": "e5d272a7382f27a6f88504fd",
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "case_id": "calibration_05",
+      "order": "reversed",
+      "pipeline_status": "structure_failed_preserved",
+      "verdict": "blocked_no_final_answer",
+      "review_codes": [
+        "cross_field_contract_failure",
+        "inconsistent_answerability"
+      ],
+      "notes": [
+        "The model sets worldwide_scope to insufficient_evidence while supplying nonempty text and IDs, and both rejects worldwide scope and says it cannot confirm or deny it. Raw JSON is valid; the runtime invariant correctly blocks rendering. Draft findings are not final-answer failures."
+      ],
+      "answer": null
+    },
+    {
+      "record_id": "5e0276b940dbd43c44564ca5",
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "case_id": "calibration_06",
+      "order": "reversed",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "appropriate_abstention",
+      "review_codes": [],
+      "notes": [
+        "Exact abstention is appropriate: no required minimum score is established by the supplied passages."
+      ],
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "record_id": "73c20231f8e4f45e37ceeaf5",
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "case_id": "calibration_06",
+      "order": "canonical",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "appropriate_abstention",
+      "review_codes": [],
+      "notes": [
+        "Exact abstention is appropriate: no required minimum score is established by the supplied passages."
+      ],
+      "answer": "The supplied evidence does not answer this question."
+    },
+    {
+      "record_id": "e04c1a3b968560310f82b943",
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "case_id": "calibration_08",
+      "order": "canonical",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "supported_core",
+      "review_codes": [
+        "citation_overselection",
+        "local_citation_support_incomplete",
+        "qualification_overstatement"
+      ],
+      "notes": [
+        "Core rejection, general aim and exceptions are covered. Some claims about specialist-term permission and first-use explanation appear in general-aim slots without c3 among those slot citations.",
+        "The proposed passive policy says only in the listed circumstances, although source c7 introduces examples with These include. Added active-voice responsibility rules are not explicitly established by the selected passage."
+      ],
+      "answer": "The proposed blanket rules conflict with the guide's principles. While the guide encourages removing complex or vague terms and using active voice for user-centredness, it explicitly allows specialist terms when needed, and acknowledges that passive voice can be appropriate when the outcome is more important than the agent. Thus, removing every specialist term or rewriting every passive sentence without exception contradicts the guide's exceptions and specific conditions. The guide supports using specialist language if necessary, with explanation on first use, and permits passive voice when user-centred outcomes are prioritised. Therefore, the blanket rules do not follow from the guide and instead override its established exceptions. [doc_9f26104ace24902c0800_p0_c3] [doc_9f26104ace24902c0800_p0_c1] [doc_9f26104ace24902c0800_p0_c2] [doc_9f26104ace24902c0800_p0_c7]\n\nThe general aim of the GOV.UK clear language guide is to ensure content is accessible and understandable to everyone who needs it, particularly those with limited literacy skills or who do not speak English as their first language. This includes making content clear for both general audiences and specialists, while still allowing for the use of specialist terms when necessary, provided they are explained. The aim is not to eliminate all technical language, but to ensure clarity and usability for all users, regardless of background or expertise. [doc_9f26104ace24902c0800_p0_c0] [doc_9f26104ace24902c0800_p0_c1] [doc_9f26104ace24902c0800_p0_c2]\n\nSpecialist terms should be used when necessary, particularly if users need to complete a task that requires familiarity with such terms. For example, a legal term like 'bona vacantia' may be needed for users to understand a process. However, when specialist terms are used, they must be explained in plain English on first occurrence. The guide does not require removing all specialist terms, but ensures that any such terms are clear and accessible. Thus, the revision policy is to retain specialist terms when needed, with a clear explanation provided to ensure understanding by all users. [doc_9f26104ace24902c0800_p0_c3] [doc_9f26104ace24902c0800_p0_c1] [doc_9f26104ace24902c0800_p0_c2]\n\nPassive voice should be used only when the outcome is more important than the agent of the action, or when the writing is more user-centred. For example, 'You’ll be told what you need to do when you apply' is more user-centred than 'The Home Office will tell you what you need to do when you apply'. In such cases, passive voice can be appropriate. However, when the user action or responsibility is central, active voice is preferred. The guide does not require rewriting every passive sentence, and allows exceptions where user-centredness is achieved through passive construction. Therefore, passive voice should be used selectively, not universally. [doc_9f26104ace24902c0800_p0_c7]"
+    },
+    {
+      "record_id": "fb8c41e635fe74b39cd01ed0",
+      "model": "qwen3:4b-instruct-2507-q4_K_M",
+      "case_id": "calibration_08",
+      "order": "reversed",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "supported_core",
+      "review_codes": [
+        "citation_overselection",
+        "local_citation_support_incomplete"
+      ],
+      "notes": [
+        "Core rejection, general aim and exceptions are covered. Some claims about specialist-term permission and first-use explanation appear in general-aim slots without c3 among those slot citations."
+      ],
+      "answer": "The proposed blanket rule to remove every specialist term even when a user needs it to complete a task contradicts the guide, which states that specialist terms can be used if needed, provided they are explained on first use. Similarly, the rule to rewrite every passive sentence even when the passive wording is more user-centred contradicts the guide, which explicitly acknowledges that passive voice can be user-centred in certain cases, such as when the outcome is more important than the agent. Thus, the two blanket rules go against specific exceptions in the guide and do not follow from its principles. The guide allows for specialist terms and passive voice when they serve user needs and are appropriately contextualized. [doc_9f26104ace24902c0800_p0_c7] [doc_9f26104ace24902c0800_p0_c2] [doc_9f26104ace24902c0800_p0_c1] [doc_9f26104ace24902c0800_p0_c3]\n\nThe general aim of the GOV.UK clear language guide is to ensure content is accessible and understandable to everyone who needs it, including those with limited literacy skills or who do not speak English as their first language. This includes making content clear for both general and specialist audiences, while still allowing for the use of specialist terms when necessary, provided they are explained clearly on first use. [doc_9f26104ace24902c0800_p0_c0] [doc_9f26104ace24902c0800_p0_c1] [doc_9f26104ace24902c0800_p0_c2]\n\nSpecialist terms can be used when necessary for users to complete a task, such as legal or technical terms. However, they must be explained in plain English the first time they are used. For example, a term like 'bona vacantia' should be defined in simple language when introduced. This ensures that users with varying levels of expertise can understand the content. The rule is not to remove all specialist terms, but to use them selectively and transparently with clear explanations. [doc_9f26104ace24902c0800_p0_c2] [doc_9f26104ace24902c0800_p0_c3] [doc_9f26104ace24902c0800_p0_c1]\n\nPassive voice should be used when the outcome is more important than the agent of the action, or when the writing is more user-centred. For example, 'You’ll be told what you need to do when you apply' is more user-centred than 'The Home Office will tell you what you need to do when you apply'. However, passive voice should not be used if it obscures responsibility or makes the content less clear. The guide supports passive voice in specific, user-centred contexts but does not require rewriting every passive sentence. Active voice is preferred when it improves clarity and user-centredness. [doc_9f26104ace24902c0800_p0_c7] [doc_9f26104ace24902c0800_p0_c3]"
+    },
+    {
+      "record_id": "bd0bcf2a90e6aa36927c08d8",
+      "model": "gemma3:4b",
+      "case_id": "calibration_05",
+      "order": "canonical",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "supported_core",
+      "review_codes": [
+        "implicit_scope_decision",
+        "citation_overselection"
+      ],
+      "notes": [
+        "Correct Chinese sample and percentage; rejects worldwide scope implicitly rather than giving an explicit negative decision. Component-risk c19 is an unnecessary supporting citation."
+      ],
+      "answer": "The reported 64% result refers to 64.16% of China’s 293 prefecture-level cities. [doc_fc173dce3e92f6ada246_p0_c40] [doc_fc173dce3e92f6ada246_p0_c60] [doc_fc173dce3e92f6ada246_p0_c19]\n\nThe actual city sample to which the result refers is 293 prefecture-level cities in China. [doc_fc173dce3e92f6ada246_p0_c40] [doc_fc173dce3e92f6ada246_p0_c60] [doc_fc173dce3e92f6ada246_p0_c19]"
+    },
+    {
+      "record_id": "57f0b220c45b2f0ba45c1163",
+      "model": "gemma3:4b",
+      "case_id": "calibration_05",
+      "order": "reversed",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "needs_correction",
+      "review_codes": [
+        "material_factual_error",
+        "scope_generalization",
+        "cross_part_contradiction"
+      ],
+      "notes": [
+        "Incorrectly says the percentage can describe cities worldwide while the next part correctly identifies the Chinese sample. Valid IDs and completed slots failed to detect the unsupported generalization."
+      ],
+      "answer": "The reported percentage of 64% can be described as a result about cities worldwide because 64% of the 293 cities examined fell into moderate to high-risk categories. [doc_fc173dce3e92f6ada246_p0_c19] [doc_fc173dce3e92f6ada246_p0_c6] [doc_fc173dce3e92f6ada246_p0_c60]\n\nThe actual city sample to which the result refers is 293 prefecture-level cities in China. [doc_fc173dce3e92f6ada246_p0_c19] [doc_fc173dce3e92f6ada246_p0_c6] [doc_fc173dce3e92f6ada246_p0_c60]"
+    },
+    {
+      "record_id": "80a75eef425e284e710f3fe4",
+      "model": "gemma3:4b",
+      "case_id": "calibration_06",
+      "order": "reversed",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "protocol_failure",
+      "review_codes": [
+        "missed_required_abstention",
+        "unsupported_absence_attribution",
+        "citation_overselection"
+      ],
+      "notes": [
+        "No numeric threshold is invented, but the model marks the part answered and claims the full guidance does not state one. The supplied excerpts do not establish full-document absence; required insufficient_evidence/exact-abstention behavior is not followed."
+      ],
+      "answer": "The guidance does not state a minimum Flesch Reading Ease score that every GOV.UK page must achieve. [doc_9f26104ace24902c0800_p0_c2] [doc_9f26104ace24902c0800_p0_c5] [doc_9f26104ace24902c0800_p0_c8] [doc_9f26104ace24902c0800_p0_c1] [doc_9f26104ace24902c0800_p0_c0]"
+    },
+    {
+      "record_id": "55c92339d3a09eb6c1eaaf23",
+      "model": "gemma3:4b",
+      "case_id": "calibration_06",
+      "order": "canonical",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "protocol_failure",
+      "review_codes": [
+        "missed_required_abstention",
+        "unsupported_absence_attribution",
+        "citation_overselection"
+      ],
+      "notes": [
+        "No numeric threshold is invented, but the model marks the part answered and claims the full guidance does not state one. The supplied excerpts do not establish full-document absence; required insufficient_evidence/exact-abstention behavior is not followed."
+      ],
+      "answer": "The guidance does not state a minimum Flesch Reading Ease score that every GOV.UK page must achieve. [doc_9f26104ace24902c0800_p0_c0] [doc_9f26104ace24902c0800_p0_c1] [doc_9f26104ace24902c0800_p0_c8] [doc_9f26104ace24902c0800_p0_c5] [doc_9f26104ace24902c0800_p0_c2]"
+    },
+    {
+      "record_id": "5b2bf28bd2a38f2d7e4ae1f8",
+      "model": "gemma3:4b",
+      "case_id": "calibration_08",
+      "order": "canonical",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "needs_correction",
+      "review_codes": [
+        "local_citation_support_incomplete",
+        "source_misattribution"
+      ],
+      "notes": [
+        "Passive-voice conditions are attributed to c2, which discusses vocabulary; the direct source is c7. The blanket-rule paragraph also omits c7. Added no-exceptions claims are unsupported and potentially confusing about the documented exceptions. The specialist policy weakens the needed condition to explained."
+      ],
+      "answer": "The proposed blanket rules – removing specialist terms and rewriting passive sentences – do not follow from the guide. The guide explicitly states that specialist terms can be used if explained, and that the passive voice can be used when the outcome is more important or when the writing is user-centred. These blanket rules contradict this nuanced approach. [doc_9f26104ace24902c0800_p0_c3] [doc_9f26104ace24902c0800_p0_c2]\n\nThe general aim that the proposed revision policy should preserve is to communicate clearly for all users, including those with lower literacy skills and those who may not be native English speakers, while acknowledging that specialist language may be appropriate in certain contexts. [doc_9f26104ace24902c0800_p0_c0] [doc_9f26104ace24902c0800_p0_c1]\n\nThe revision policy for specialist terms should allow their use when explained, as outlined in doc_9f26104ace24902c0800_p0_c3. The policy should also include a condition that the term must be explained the first time it is used. There are no exceptions listed in the provided passages. [doc_9f26104ace24902c0800_p0_c3]\n\nThe revision policy for passive voice should allow its use when the outcome is more important than the agent of the action, as stated in doc_9f26104ace24902c0800_p0_c2. It should also allow its use when the writing is more user-centred. There are no exceptions listed in the provided passages. [doc_9f26104ace24902c0800_p0_c2]"
+    },
+    {
+      "record_id": "7fb00771be70aaaf1fd629ef",
+      "model": "gemma3:4b",
+      "case_id": "calibration_08",
+      "order": "reversed",
+      "pipeline_status": "candidate_unverified",
+      "verdict": "needs_correction",
+      "review_codes": [
+        "local_citation_support_incomplete",
+        "source_misattribution"
+      ],
+      "notes": [
+        "First and specialist-term paragraphs quote or paraphrase c3 but cite c7/c2/c1 or c2/c1 instead. Their core content exists in context; the selected IDs fail to support those local claims. Passive-voice paragraph correctly cites c7."
+      ],
+      "answer": "The proposed blanket rules – removing all specialist terms and rewriting all passive sentences – do not follow from the guide. The guide explicitly states that the passive voice can be acceptable ‘when the outcome is more important than the agent of the action’ and ‘when the writing is more user-centred’. Removing all specialist terms regardless of context contradicts the guidance to use specialist language when necessary, explaining it the first time, and to consider the user’s preference for plain English. The guide also states that ‘For example, users may need to be familiar with a legal term like ‘bona vacantia’ in order to complete a task. Explain the term in plain English when you first use it.’, indicating that specialist terms can be used if explained. [doc_9f26104ace24902c0800_p0_c7] [doc_9f26104ace24902c0800_p0_c2] [doc_9f26104ace24902c0800_p0_c1]\n\nThe general aim that the proposed revision policy should preserve is to communicate clearly and accessibly to all users, including those with low literacy skills, while acknowledging the need for specialist language when appropriate and explaining it clearly. [doc_9f26104ace24902c0800_p0_c0] [doc_9f26104ace24902c0800_p0_c1]\n\nThe revision policy for specialist terms should allow their use when necessary, explaining them clearly the first time they appear. The guide states ‘Where you need to use specialist terms, you can. They’re not always jargon. You just need to explain what they mean the first time you use them.’. There are no conditions or exceptions that would justify a blanket removal of specialist terms. [doc_9f26104ace24902c0800_p0_c2] [doc_9f26104ace24902c0800_p0_c1]\n\nThe revision policy for passive voice should allow its use when the outcome is more important than the agent of the action, or when the writing is more user-centred. The guide states ‘There are some circumstances when the passive voice can work. These include: when the outcome is more important than the agent of the action – for example, ‘Biometric residence permits have been replaced by eVisas’’. It also states ‘when the writing is more user-centred – for example, ‘You’ll be told what you need to do when you apply’ rather than ‘The Home Office will tell you what you need to do when you apply’’. [doc_9f26104ace24902c0800_p0_c7]"
+    }
+  ],
+  "limits": "Three exposed development questions and two orders; not 18 independent questions. Manually specified question-only requirements. No representative model ranking, test-set accuracy or causal isolation of schema/prompt/requirements. Does not evaluate document parsing, full retrieval, arithmetic or Python tracing. Reserved split untouched.",
+  "release_decision": "Freeze this method and results. Consolidate reproducible artifacts and disclose remaining reasoning, abstention and citation-support failures. No further prompt tuning or fine-tuning in this release."
+}
