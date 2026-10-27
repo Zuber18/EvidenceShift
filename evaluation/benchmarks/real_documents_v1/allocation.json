@@ -1,0 +1,425 @@
+{
+  "status": "planned_slots_not_questions",
+  "slots": [
+    {
+      "slot_id": "development_direct_fact_01",
+      "split": "development",
+      "primary_category": "direct_fact",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_direct_fact_02",
+      "split": "development",
+      "primary_category": "direct_fact",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_direct_fact_03",
+      "split": "development",
+      "primary_category": "direct_fact",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_direct_fact_04",
+      "split": "development",
+      "primary_category": "direct_fact",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_direct_fact_05",
+      "split": "development",
+      "primary_category": "direct_fact",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_conditions_negation_01",
+      "split": "development",
+      "primary_category": "conditions_negation",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_conditions_negation_02",
+      "split": "development",
+      "primary_category": "conditions_negation",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_conditions_negation_03",
+      "split": "development",
+      "primary_category": "conditions_negation",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_conditions_negation_04",
+      "split": "development",
+      "primary_category": "conditions_negation",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_conditions_negation_05",
+      "split": "development",
+      "primary_category": "conditions_negation",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_multi_passage_01",
+      "split": "development",
+      "primary_category": "multi_passage",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_multi_passage_02",
+      "split": "development",
+      "primary_category": "multi_passage",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_multi_passage_03",
+      "split": "development",
+      "primary_category": "multi_passage",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_multi_passage_04",
+      "split": "development",
+      "primary_category": "multi_passage",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_multi_passage_05",
+      "split": "development",
+      "primary_category": "multi_passage",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_arithmetic_units_01",
+      "split": "development",
+      "primary_category": "arithmetic_units",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_arithmetic_units_02",
+      "split": "development",
+      "primary_category": "arithmetic_units",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_arithmetic_units_03",
+      "split": "development",
+      "primary_category": "arithmetic_units",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_arithmetic_units_04",
+      "split": "development",
+      "primary_category": "arithmetic_units",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_arithmetic_units_05",
+      "split": "development",
+      "primary_category": "arithmetic_units",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_scope_relations_01",
+      "split": "development",
+      "primary_category": "scope_relations",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_scope_relations_02",
+      "split": "development",
+      "primary_category": "scope_relations",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_scope_relations_03",
+      "split": "development",
+      "primary_category": "scope_relations",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_scope_relations_04",
+      "split": "development",
+      "primary_category": "scope_relations",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_scope_relations_05",
+      "split": "development",
+      "primary_category": "scope_relations",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_missing_information_01",
+      "split": "development",
+      "primary_category": "missing_information",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_missing_information_02",
+      "split": "development",
+      "primary_category": "missing_information",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_missing_information_03",
+      "split": "development",
+      "primary_category": "missing_information",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_missing_information_04",
+      "split": "development",
+      "primary_category": "missing_information",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "development_missing_information_05",
+      "split": "development",
+      "primary_category": "missing_information",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_direct_fact_01",
+      "split": "reserved",
+      "primary_category": "direct_fact",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_direct_fact_02",
+      "split": "reserved",
+      "primary_category": "direct_fact",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_direct_fact_03",
+      "split": "reserved",
+      "primary_category": "direct_fact",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_direct_fact_04",
+      "split": "reserved",
+      "primary_category": "direct_fact",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_direct_fact_05",
+      "split": "reserved",
+      "primary_category": "direct_fact",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_conditions_negation_01",
+      "split": "reserved",
+      "primary_category": "conditions_negation",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_conditions_negation_02",
+      "split": "reserved",
+      "primary_category": "conditions_negation",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_conditions_negation_03",
+      "split": "reserved",
+      "primary_category": "conditions_negation",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_conditions_negation_04",
+      "split": "reserved",
+      "primary_category": "conditions_negation",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_conditions_negation_05",
+      "split": "reserved",
+      "primary_category": "conditions_negation",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_multi_passage_01",
+      "split": "reserved",
+      "primary_category": "multi_passage",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_multi_passage_02",
+      "split": "reserved",
+      "primary_category": "multi_passage",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_multi_passage_03",
+      "split": "reserved",
+      "primary_category": "multi_passage",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_multi_passage_04",
+      "split": "reserved",
+      "primary_category": "multi_passage",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_multi_passage_05",
+      "split": "reserved",
+      "primary_category": "multi_passage",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_arithmetic_units_01",
+      "split": "reserved",
+      "primary_category": "arithmetic_units",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_arithmetic_units_02",
+      "split": "reserved",
+      "primary_category": "arithmetic_units",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_arithmetic_units_03",
+      "split": "reserved",
+      "primary_category": "arithmetic_units",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_arithmetic_units_04",
+      "split": "reserved",
+      "primary_category": "arithmetic_units",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_arithmetic_units_05",
+      "split": "reserved",
+      "primary_category": "arithmetic_units",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_scope_relations_01",
+      "split": "reserved",
+      "primary_category": "scope_relations",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_scope_relations_02",
+      "split": "reserved",
+      "primary_category": "scope_relations",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_scope_relations_03",
+      "split": "reserved",
+      "primary_category": "scope_relations",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_scope_relations_04",
+      "split": "reserved",
+      "primary_category": "scope_relations",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_scope_relations_05",
+      "split": "reserved",
+      "primary_category": "scope_relations",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_missing_information_01",
+      "split": "reserved",
+      "primary_category": "missing_information",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_missing_information_02",
+      "split": "reserved",
+      "primary_category": "missing_information",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_missing_information_03",
+      "split": "reserved",
+      "primary_category": "missing_information",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_missing_information_04",
+      "split": "reserved",
+      "primary_category": "missing_information",
+      "question_id": null,
+      "question_status": "not_authored"
+    },
+    {
+      "slot_id": "reserved_missing_information_05",
+      "split": "reserved",
+      "primary_category": "missing_information",
+      "question_id": null,
+      "question_status": "not_authored"
+    }
+  ]
+}

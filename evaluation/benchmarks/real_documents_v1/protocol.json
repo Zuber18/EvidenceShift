@@ -1,0 +1,98 @@
+{
+  "benchmark_id": "real_documents_v1",
+  "version": "0.1.0-design",
+  "status": "source_selection_pending",
+  "created_on": "2026-10-21",
+  "owner": "Zuber Shaikh",
+  "approved_decisions": {
+    "scope": "mixed_document_qa",
+    "sources": "real_documents_only",
+    "primary_rule": "strict_pass_with_separate_partial_credit",
+    "decision_source": "Project-owner selections in planning conversation"
+  },
+  "planned_questions": 60,
+  "authored_questions": 0,
+  "development_questions": 30,
+  "reserved_questions": 30,
+  "categories": [
+    {
+      "id": "direct_fact",
+      "title": "Direct facts",
+      "development": 5,
+      "reserved": 5
+    },
+    {
+      "id": "conditions_negation",
+      "title": "Conditions, exceptions and negation",
+      "development": 5,
+      "reserved": 5
+    },
+    {
+      "id": "multi_passage",
+      "title": "Combine necessary evidence",
+      "development": 5,
+      "reserved": 5
+    },
+    {
+      "id": "arithmetic_units",
+      "title": "Calculations and units",
+      "development": 5,
+      "reserved": 5
+    },
+    {
+      "id": "scope_relations",
+      "title": "Scope, attribution and explicit precedence",
+      "development": 5,
+      "reserved": 5
+    },
+    {
+      "id": "missing_information",
+      "title": "Absent facts and unsupported premises",
+      "development": 5,
+      "reserved": 5
+    }
+  ],
+  "source_plan": {
+    "documents": 6,
+    "questions_per_document_target": 10,
+    "split_by": "document_family",
+    "proposals_are_approved": false,
+    "formats": "Published HTML documents, subsequently frozen as attributed text. PDF/DOCX extraction is outside this first fixed-context benchmark.",
+    "adaptation_rule": "Original document wording is preserved. Questions may require calculations from cited values; hypothetical inputs must be explicitly identified in the question. No invented source passages or manufactured conflicts."
+  },
+  "splits": {
+    "development": "Used for prompt, verifier and implementation choices.",
+    "reserved": "Question, source and gold revisions frozen before evaluation. No tuning or selective reruns using reserved results.",
+    "claim_limit": "Reserved project evaluation, not independently authored or model-pretraining-unseen. Public documents may be present in model training.",
+    "exposure_log_required": true,
+    "after_exposure": "Record every evaluation access. If reserved outcomes inform changes, retire that evaluation round; report later runs as exposed regression results or create a new untouched evaluation set."
+  },
+  "run_plan": {
+    "status": "not_authorized_by_this_manifest",
+    "models": [
+      "qwen3:4b",
+      "qwen3:8b",
+      "gemma3:4b"
+    ],
+    "orders": [
+      "canonical",
+      "reversed"
+    ],
+    "baseline_calls_per_pipeline": 360,
+    "pilot_questions": 6,
+    "pilot_calls": 36,
+    "note": "Counts assume one generation call per job and no verifier. Additional stage calls are logged separately. No model call is made by design validation. Repeated trials and shuffled orders require a separately agreed run plan.",
+    "empty_context_controls": "Optional zero-model-call software controls; never counted as successful model abstentions."
+  },
+  "readiness_requirements": [
+    "Owner accepts source selection and split proposal",
+    "Redistribution terms and attribution verified per source; exclude third-party media",
+    "Source bytes and extracted text captured and SHA-256 recorded",
+    "60 unique questions authored with atomic response units and exact supporting spans",
+    "Unanswerable labels checked against the entire declared source scope, not only retrieved text",
+    "Document-family split and category quotas validated",
+    "Gold annotations adjudicated before model output is inspected",
+    "Prompt, generation options, model digests and retrieval settings locked separately before execution"
+  ],
+  "results_policy": "Append raw outputs and stage logs. Never replace failed outputs with favorable reruns. Preserve existing published experiments unchanged."
+}
